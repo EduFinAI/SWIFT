@@ -1,0 +1,374 @@
+/* ===== COMPONENTE CARDS ===== */
+
+/* Card base */
+.card {
+  position: relative;
+  display: flex;
+  padding: var(--space-4);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-md) var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Cards de produtos */
+.pginainicial-picanha-premium1,
+.pginainicial-ancho-angus1,
+.pginainicial-filde-frango1,
+.pginainicial-costela-suna {
+  position: relative;
+  display: flex;
+  width: 282px;
+  height: 371px;
+  padding: var(--space-4);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) var(--border-radius-md) var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.pginainicial-filde-frango1,
+.pginainicial-costela-suna {
+  gap: var(--space-5);
+}
+
+/* Cards de produtos mais vendidos */
+.pginainicial-picanha-premium2,
+.pginainicial-picanha-premium3,
+.pginainicial-ancho-angus2 {
+  position: relative;
+  display: flex;
+  box-sizing: content-box;
+  width: 342px;
+  height: 524px;
+  padding: var(--space-4);
+  flex-shrink: 0;
+  align-items: center;
+  gap: 15px;
+  background-color: var(--bg-primary);
+  border-color: var(--color-secondary);
+  border-style: solid;
+  border-width: 5px;
+  border-radius: var(--border-radius-2xl) var(--border-radius-2xl) var(--border-radius-md) var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.pginainicial-picanha-premium3 {
+  z-index: 1;
+}
+
+.pginainicial-ancho-angus2 {
+  z-index: 2;
+  gap: var(--space-4);
+}
+
+/* Imagens dos cards */
+.pginainicial-image11,
+.pginainicial-image12,
+.pginainicial-image13,
+.pginainicial-image14 {
+  z-index: 1;
+  display: flex;
+  overflow: hidden;
+  width: 282px;
+  height: 192px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.pginainicial-image13 {
+  z-index: 2;
+}
+
+.pginainicial-image14 {
+  z-index: 1;
+}
+
+.pginainicial-image19,
+.pginainicial-image20 {
+  display: flex;
+  overflow: hidden;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: var(--border-radius-2xl) var(--border-radius-2xl) 0 0;
+}
+
+.pginainicial-image21 {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 320px;
+  height: 256px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-2xl) var(--border-radius-2xl) 0 0;
+}
+
+/* Corpo dos cards */
+.pginainicial-body10,
+.pginainicial-body11,
+.pginainicial-body12,
+.pginainicial-body13 {
+  z-index: 2;
+  display: flex;
+  width: 169px;
+  height: 93px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pginainicial-body12,
+.pginainicial-body13 {
+  width: 208px;
+  height: 88px;
+}
+
+.pginainicial-body17,
+.pginainicial-body18,
+.pginainicial-body19 {
+  z-index: 1;
+  display: flex;
+  width: 169px;
+  height: 93px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Área de adicionar ao carrinho */
+.pginainicial-adc1,
+.pginainicial-adc2,
+.pginainicial-adc3,
+.pginainicial-adc4,
+.pginainicial-adc5,
+.pginainicial-adc6,
+.pginainicial-adc7 {
+  display: flex;
+  width: 240px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pginainicial-adc2,
+.pginainicial-adc3,
+.pginainicial-adc4 {
+  z-index: 2;
+}
+
+.pginainicial-adc3 {
+  z-index: 1;
+}
+
+.pginainicial-adc5,
+.pginainicial-adc6,
+.pginainicial-adc7 {
+  z-index: 2;
+  width: 224px;
+  height: 40px;
+  padding: 0 0 3px;
+}
+
+/* Títulos dos produtos */
+.pginainicial-text122,
+.pginainicial-text128,
+.pginainicial-text135,
+.pginainicial-text140 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text123,
+.pginainicial-text129,
+.pginainicial-text136,
+.pginainicial-text141 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* Descrições dos produtos */
+.pginainicial-text124,
+.pginainicial-text130 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text125,
+.pginainicial-text131 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* Avaliações com estrelas */
+.pginainicial-starfilled1,
+.pginainicial-starfilled2,
+.pginainicial-starfilled3,
+.pginainicial-starfilled4 {
+  width: 77px;
+  height: 19px;
+}
+
+.pginainicial-starfilled5,
+.pginainicial-starfilled6,
+.pginainicial-starfilled7 {
+  width: 120px;
+  height: 27px;
+}
+
+/* Preços */
+.pginainicial-text-small1,
+.pginainicial-text-small2,
+.pginainicial-text-small3,
+.pginainicial-text-small4,
+.pginainicial-text-small5,
+.pginainicial-text-small6,
+.pginainicial-text-small7 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text126,
+.pginainicial-text132,
+.pginainicial-text137,
+.pginainicial-text142 {
+  height: auto;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.pginainicial-text127,
+.pginainicial-text133,
+.pginainicial-text138,
+.pginainicial-text143 {
+  height: auto;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-primary);
+}
+
+/* Preços com desconto */
+.pginainicial-text-strong1,
+.pginainicial-text-strong2,
+.pginainicial-text-strong3,
+.pginainicial-text-strong4,
+.pginainicial-text-strong5,
+.pginainicial-text-strong6,
+.pginainicial-text-strong7 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pginainicial-text234,
+.pginainicial-text241,
+.pginainicial-text248 {
+  height: auto;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-stretch: normal;
+}
+
+.pginainicial-text235,
+.pginainicial-text242,
+.pginainicial-text249 {
+  height: auto;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  font-style: semi bold;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* Títulos dos produtos mais vendidos */
+.pginainicial-text230,
+.pginainicial-text237,
+.pginainicial-text244 {
+  display: flex;
+  width: 307px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-text231,
+.pginainicial-text238,
+.pginainicial-text245 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text232,
+.pginainicial-text239,
+.pginainicial-text246 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text233,
+.pginainicial-text240,
+.pginainicial-text247 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}

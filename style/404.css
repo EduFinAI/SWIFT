@@ -1,0 +1,41 @@
+/* 404.css — estilos da página 404 (reset e estilos globais movidos para style.css) */
+
+.not-found-container1 {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.not-found-container2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.not-found-text2 {
+  margin-top: -20px;
+  margin-bottom: -20px;
+  font-size: 252px;
+  font-weight: 900;
+  letter-spacing: -20px;
+  color: rgb(38 38 38);
+}
+ 
+.not-found-container3 {
+  display: flex;
+  width: 421px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.not-found-text3 {
+  font-weight: 400;
+  text-align: center;
+}

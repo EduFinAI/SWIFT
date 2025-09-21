@@ -1,0 +1,161 @@
+/* ===== COMPONENTE BOTÕES ===== */
+
+/* Botão de ação principal (laranja) */
+.pginainicial-button-danger10,
+.pginainicial-button-danger11,
+.pginainicial-button-danger12,
+.pginainicial-button-danger13,
+.pginainicial-button-danger14,
+.pginainicial-button-danger15,
+.pginainicial-button-danger16,
+.pginainicial-button-danger17,
+.pginainicial-button-danger18,
+.pginainicial-button-danger19 {
+  display: flex;
+  overflow: hidden;
+  padding: 12px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius-md);
+}
+
+/* Botão do hero */
+.pginainicial-button-danger10 {
+  position: absolute;
+  top: 350px;
+  left: 524px; /* 48 (recuo) + 520 (barra CEP) + 16 (espaço) */
+  width: auto;
+  height: auto;
+  padding: 17px;
+}
+
+/* Botão de produtos em destaque */
+.pginainicial-button-danger11 {
+  position: absolute;
+  top: 483.5px;
+  left: 523.5px;
+  width: 379px;
+  padding: var(--space-5) 70px;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botões de adicionar ao carrinho */
+.pginainicial-button-danger12,
+.pginainicial-button-danger13,
+.pginainicial-button-danger14,
+.pginainicial-button-danger15 {
+  align-self: stretch;
+}
+
+/* Botão do carrinho inteligente */
+.pginainicial-button-danger16 {
+  position: absolute;
+  top: 506px;
+  left: 39px;
+  width: 297px;
+  height: 64px;
+  padding: var(--space-3) 4px;
+}
+
+/* Botões de produtos mais vendidos */
+.pginainicial-button-danger17,
+.pginainicial-button-danger18,
+.pginainicial-button-danger19 {
+  width: 224px;
+  height: 40px;
+}
+
+/* Textos dos botões */
+.pginainicial-text118,
+.pginainicial-text120,
+.pginainicial-text121,
+.pginainicial-text134,
+.pginainicial-text139,
+.pginainicial-text144,
+.pginainicial-text206,
+.pginainicial-text236,
+.pginainicial-text243,
+.pginainicial-text250 {
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+.pginainicial-text118 {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-black);
+}
+
+.pginainicial-text120 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  text-align: left;
+}
+
+.pginainicial-text206 {
+  position: absolute;
+  top: 22px;
+  left: 30px;
+  z-index: 1;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  color: rgb(253, 232, 231);
+}
+
+.pginainicial-text236,
+.pginainicial-text243 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  text-align: left;
+  color: rgb(253, 232, 231);
+}
+
+.pginainicial-text250 {
+  line-height: 100%;
+  text-align: left;
+  color: rgb(253, 232, 231);
+}
+
+/* Estados dos botões */
+.pginainicial-button-danger10:hover,
+.pginainicial-button-danger11:hover,
+.pginainicial-button-danger12:hover,
+.pginainicial-button-danger13:hover,
+.pginainicial-button-danger14:hover,
+.pginainicial-button-danger15:hover,
+.pginainicial-button-danger16:hover,
+.pginainicial-button-danger17:hover,
+.pginainicial-button-danger18:hover,
+.pginainicial-button-danger19:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  transition: all var(--transition-fast);
+}
+
+.pginainicial-button-danger10:active,
+.pginainicial-button-danger11:active,
+.pginainicial-button-danger12:active,
+.pginainicial-button-danger13:active,
+.pginainicial-button-danger14:active,
+.pginainicial-button-danger15:active,
+.pginainicial-button-danger16:active,
+.pginainicial-button-danger17:active,
+.pginainicial-button-danger18:active,
+.pginainicial-button-danger19:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
