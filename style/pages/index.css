@@ -1,0 +1,1568 @@
+/* ===== ESTILOS ESPECÃFICOS DA PÃGINA INICIAL ===== */
+
+/* SeÃ§Ãµes de produtos em destaque */
+.pginainicial-produtosemdestaque {
+  position: relative;
+  display: flex;
+  height: 142px;
+  padding: var(--space-16);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  background-color: var(--bg-primary);
+}
+
+.pginainicial-text119 {
+  position: absolute;
+  top: 55px;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-dark);
+  font-stretch: normal;
+}
+
+/* SeÃ§Ã£o de escolhas */
+.pginainicial-escolhas1 {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 614px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+}
+
+.pginainicial-group2 {
+  position: absolute;
+  top: 31px;
+  left: 89px;
+  display: flex;
+  width: 1227px;
+  height: 371px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+/* SeÃ§Ã£o de escolha por ocasiÃ£o */
+.pginainicial-escolhaporocasio {
+  position: relative;
+  display: flex;
+  height: 142px;
+  padding: var(--space-16);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  background-color: var(--bg-primary);
+}
+
+.pginainicial-text145 {
+  position: absolute;
+  top: 61px;
+  height: auto;
+  line-height: var(--line-height-tight);
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.pginainicial-escolhas2 {
+  position: relative;
+  display: flex;
+  height: 472px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+}
+
+/* Cards de ocasiÃµes */
+.pginainicial-churrasocasio,
+.pginainicial-almoo,
+.pginainicial-fitness {
+  position: relative;
+  display: flex;
+  width: 393px;
+  height: 343px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-fitness {
+  width: 396px;
+  height: 343.0000305175781px;
+}
+
+/* Imagens das ocasiÃµes */
+.pginainicial-image4,
+.pginainicial-imgalmocorapido,
+.pginainicial-imagem-fitness {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 393px;
+  height: 302px;
+  border-radius: var(--border-radius-2xl);
+}
+
+.pginainicial-imgalmocorapido {
+  height: 260px;
+}
+
+.pginainicial-imagem-fitness {
+  width: 396px;
+  height: 266px;
+}
+
+/* RetÃ¢ngulos de fundo das ocasiÃµes */
+.pginainicial-rectangle21,
+.pginainicial-rectangle3,
+.pginainicial-rectangle22 {
+  position: absolute;
+  top: 198px;
+  left: 0;
+  width: 393px;
+  height: 145px;
+  border-radius: 18px;
+}
+
+.pginainicial-rectangle22 {
+  top: 196.70919799804688px;
+  width: 396px;
+  height: 146px;
+}
+
+/* Ãcones das ocasiÃµes */
+.pginainicial-icon {
+  position: absolute;
+  top: 219px;
+  left: 19px;
+  width: 40px;
+  height: 43px;
+}
+
+.pginainicial-clock {
+  position: absolute;
+  top: 221px;
+  left: 23px;
+  width: 27px;
+  height: 27px;
+}
+
+.pginainicial-corao {
+  position: absolute;
+  top: 219.9139404296875px;
+  left: 21.186962127685547px;
+  width: 27px;
+  height: 27px;
+}
+
+/* Textos das ocasiÃµes */
+.pginainicial-text146,
+.pginainicial-text149,
+.pginainicial-text152 {
+  position: absolute;
+  top: 219px;
+  left: 62px;
+  height: auto;
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text152 {
+  top: 217.89614868164062px;
+  left: 62.55194854736328px;
+  width: 111px;
+}
+
+.pginainicial-text147,
+.pginainicial-text150,
+.pginainicial-text153 {
+  position: absolute;
+  top: 251px;
+  left: 62px;
+  width: 331px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-gray-450);
+  font-stretch: normal;
+}
+
+.pginainicial-text153 {
+  top: 250.18101501464844px;
+  left: 62.55194854736328px;
+  width: 334px;
+}
+
+/* Links das ocasiÃµes */
+.pginainicial-text148,
+.pginainicial-text151,
+.pginainicial-text154 {
+  position: absolute;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text148 {
+  top: 298px;
+  left: 21px;
+}
+
+.pginainicial-text151 {
+  top: 298px;
+  left: 21px;
+}
+
+.pginainicial-text154 {
+  top: 297.5993957519531px;
+  left: 21.186962127685547px;
+  width: 104px;
+}
+
+/* Grupos de links */
+.pginainicial-group7 {
+  position: absolute;
+  top: 298px;
+  left: 21px;
+  display: flex;
+  width: 122px;
+  height: 17px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+/* SeÃ§Ã£o de dicas e informaÃ§Ãµes */
+.pginainicial-dicaseinformaestitle {
+  position: relative;
+  display: flex;
+  height: 112px;
+  padding: var(--space-16);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 75px;
+}
+
+.pginainicial-text155 {
+  position: absolute;
+  top: 40px;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+.pginainicial-dicaseinformaes {
+  display: flex;
+  padding: var(--space-10) 62px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 57px;
+}
+
+/* Cards de informaÃ§Ãµes */
+.pginainicial-vdeodepreparo,
+.pginainicial-conservao,
+.pginainicial-infonutricional {
+  position: relative;
+  display: flex;
+  width: 400px;
+  height: 549px;
+  padding: var(--space-4);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-2xl) var(--border-radius-2xl) var(--border-radius-md) var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.pginainicial-infonutricional {
+  gap: 13px;
+}
+
+/* Imagens dos cards de informaÃ§Ã£o */
+.pginainicial-image15,
+.pginainicial-image16,
+.pginainicial-image17 {
+  display: flex;
+  overflow: hidden;
+  width: 400px;
+  height: 221px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-2xl) var(--border-radius-2xl) 0 0;
+}
+
+.pginainicial-image15 {
+  border-color: rgba(187, 40, 40, 0%);
+  border-style: solid;
+  border-width: 1px;
+}
+
+.pginainicial-image16 {
+  background-color: var(--color-gray-275);
+}
+
+/* Corpo dos cards de informaÃ§Ã£o */
+.pginainicial-body14,
+.pginainicial-body15,
+.pginainicial-body16 {
+  z-index: 1;
+  display: flex;
+  width: 368px;
+  height: 62px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pginainicial-body15,
+.pginainicial-body16 {
+  width: 169px;
+  height: 22px;
+}
+
+/* TÃ­tulos dos cards de informaÃ§Ã£o */
+.pginainicial-text156,
+.pginainicial-text170,
+.pginainicial-text182 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text182 {
+  width: 367px;
+}
+
+.pginainicial-text157,
+.pginainicial-text171,
+.pginainicial-text183 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* DescriÃ§Ãµes dos cards de informaÃ§Ã£o */
+.pginainicial-text158,
+.pginainicial-text172,
+.pginainicial-text184 {
+  display: flex;
+  width: 367px;
+  height: 47px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-text172,
+.pginainicial-text184 {
+  width: 361px;
+  height: 71px;
+}
+
+.pginainicial-text159,
+.pginainicial-text173,
+.pginainicial-text185 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* SeÃ§Ã£o do carrinho inteligente */
+.pginainicial-carrinhointeligente {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 619px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-image18 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  width: 1441px;
+  height: 653px;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  background-color: var(--color-gray-275);
+}
+
+.pginainicial-imagedesktopweb1 {
+  width: auto;
+  height: 972px;
+  align-self: stretch;
+}
+
+/* Frame do carrinho inteligente */
+.pginainicial-frame5 {
+  position: absolute;
+  top: 190px;
+  left: 39px;
+  display: flex;
+  width: 729px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.pginainicial-text194 {
+  position: absolute;
+  top: -108px;
+  width: 754px;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-6xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-primary);
+  font-stretch: normal;
+}
+
+/* Elementos do carrinho inteligente */
+.pginainicial-att,
+.pginainicial-suggest,
+.pginainicial-calculo,
+.pginainicial-check {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 655px;
+  height: 66px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-suggest {
+  z-index: 2;
+  width: 714px;
+  height: 47px;
+}
+
+.pginainicial-calculo {
+  z-index: 3;
+  width: 729px;
+  height: 47px;
+}
+
+.pginainicial-check {
+  z-index: 4;
+  width: 646px;
+  height: 47px;
+}
+
+/* Ãcones do carrinho inteligente */
+.pginainicial-tempo11,
+.pginainicial-tempo21,
+.pginainicial-caminhao11,
+.pginainicial-tempo31 {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 34px;
+  height: 34px;
+}
+
+.pginainicial-tempo21 {
+  top: 4px;
+  width: 32px;
+  height: 34px;
+}
+
+.pginainicial-caminhao11 {
+  top: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.pginainicial-tempo31 {
+  top: 0;
+  width: 36px;
+  height: 42px;
+}
+
+/* Textos do carrinho inteligente */
+.pginainicial-text195,
+.pginainicial-text201,
+.pginainicial-text203,
+.pginainicial-text205 {
+  position: absolute;
+  left: 52px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  font-style: semibold;
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text196,
+.pginainicial-text200,
+.pginainicial-text202,
+.pginainicial-text204 {
+  position: absolute;
+  top: 28px;
+  left: 52px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-stretch: normal;
+}
+
+.pginainicial-text200 {
+  left: 50px;
+}
+
+.pginainicial-text202 {
+  left: 50px;
+}
+
+.pginainicial-text204 {
+  left: 50px;
+}
+
+/* SeÃ§Ã£o de avaliaÃ§Ãµes */
+.pginainicial-avaliaes {
+  position: relative;
+  display: flex;
+  height: 620px;
+  padding: var(--space-12) var(--space-16) var(--space-16);
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-12);
+  align-self: stretch;
+}
+
+.pginainicial-text-heading1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pginainicial-rectangle10 {
+  position: absolute;
+  top: -8px;
+  left: -52px;
+  width: 751px;
+  height: 59px;
+  border-radius: 11px;
+}
+
+.pginainicial-text207 {
+  z-index: 1;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+/* Cards de avaliaÃ§Ã£o */
+.pginainicial-reviewcard1,
+.pginainicial-reviewcard2,
+.pginainicial-reviewcard3,
+.pginainicial-reviewcard4 {
+  display: flex;
+  width: 425px;
+  padding: 10px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pginainicial-reviewcard2 {
+  z-index: 1;
+}
+
+.pginainicial-reviewcard3 {
+  z-index: 2;
+}
+
+.pginainicial-reviewcard4 {
+  z-index: 3;
+}
+
+.pginainicial-review-card1,
+.pginainicial-review-card2,
+.pginainicial-review-card3,
+.pginainicial-review-card4 {
+  display: flex;
+  height: 305px;
+  padding: var(--space-6);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+  align-self: stretch;
+  background-color: var(--bg-primary);
+  border-color: var(--color-gray-200);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius-md);
+}
+
+/* AvaliaÃ§Ãµes com estrelas */
+.pginainicial-rating1,
+.pginainicial-rating2,
+.pginainicial-rating3,
+.pginainicial-rating4 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Estrelas das avaliaÃ§Ãµes */
+.pginainicial-star10,
+.pginainicial-star11,
+.pginainicial-star12,
+.pginainicial-star13,
+.pginainicial-star14,
+.pginainicial-star15,
+.pginainicial-star16,
+.pginainicial-star17,
+.pginainicial-star18,
+.pginainicial-star19,
+.pginainicial-star20,
+.pginainicial-star21,
+.pginainicial-star22,
+.pginainicial-star23,
+.pginainicial-star24,
+.pginainicial-star25 {
+  width: 20px;
+  height: 20px;
+}
+
+/* Corpo das avaliaÃ§Ãµes */
+.pginainicial-review-body1,
+.pginainicial-review-body2,
+.pginainicial-review-body3,
+.pginainicial-review-body4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+/* TÃ­tulos das avaliaÃ§Ãµes */
+.pginainicial-text-heading2,
+.pginainicial-text-heading3,
+.pginainicial-text-heading4,
+.pginainicial-text-heading5 {
+  display: flex;
+  align-items: flex-start;
+}
+
+.pginainicial-text208,
+.pginainicial-text213,
+.pginainicial-text218,
+.pginainicial-text223 {
+  height: auto;
+  line-height: var(--line-height-tight);
+  text-align: left;
+  color: var(--text-primary);
+}
+
+/* DescriÃ§Ãµes das avaliaÃ§Ãµes */
+.pginainicial-text209,
+.pginainicial-text214,
+.pginainicial-text219,
+.pginainicial-text224 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.pginainicial-text210,
+.pginainicial-text215,
+.pginainicial-text220,
+.pginainicial-text225 {
+  height: auto;
+  flex-grow: 1;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-primary);
+}
+
+/* Blocos de avatar das avaliaÃ§Ãµes */
+.pginainicial-avatar-block1,
+.pginainicial-avatar-block2,
+.pginainicial-avatar-block3,
+.pginainicial-avatar-block4 {
+  display: flex;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: var(--space-3);
+  align-self: stretch;
+}
+
+.pginainicial-avatar1,
+.pginainicial-avatar2,
+.pginainicial-avatar3,
+.pginainicial-avatar4 {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  border-radius: var(--border-radius-full);
+}
+
+.pginainicial-shape1,
+.pginainicial-shape2,
+.pginainicial-shape3,
+.pginainicial-shape4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+}
+
+/* InformaÃ§Ãµes dos usuÃ¡rios */
+.pginainicial-info1,
+.pginainicial-info2,
+.pginainicial-info3,
+.pginainicial-info4 {
+  display: flex;
+  width: 305px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.pginainicial-text211,
+.pginainicial-text216,
+.pginainicial-text221,
+.pginainicial-text226 {
+  height: auto;
+  align-self: stretch;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.pginainicial-text212,
+.pginainicial-text217,
+.pginainicial-text222,
+.pginainicial-text227 {
+  height: auto;
+  align-self: stretch;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-light);
+}
+
+/* SeÃ§Ã£o de produtos mais vendidos */
+.pginainicial-produtosmaisvendidos {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 1024px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  background-color: var(--bg-accent);
+}
+
+.pginainicial-ellipse81 {
+  position: absolute;
+  top: 191px;
+  left: 1156px;
+  width: 402px;
+  height: 366px;
+}
+
+.pginainicial-text228 {
+  position: absolute;
+  top: 73px;
+  left: 178px;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-9xl);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+.pginainicial-text229 {
+  position: absolute;
+  top: 177px;
+  left: 178px;
+  width: 1084px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: 30px;
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+.pginainicial-ellipse71 {
+  position: absolute;
+  top: 357px;
+  left: 590px;
+  width: 1209px;
+  height: 1085px;
+}
+
+/* SeÃ§Ã£o de download do app */
+.pginainicial-baixenossoapp {
+  position: relative;
+  display: flex;
+  height: 825px;
+  padding: var(--space-16);
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  background-color: var(--bg-accent);
+}
+
+.pginainicial-ellipse82 {
+  position: absolute;
+  top: 259px;
+  left: 828px;
+  width: 774px;
+  height: 705px;
+}
+
+.pginainicial-ellipse72 {
+  position: absolute;
+  top: -0.5004863739013672px;
+  left: 590px;
+  z-index: 1;
+  width: 1209px;
+  height: 542px;
+}
+
+.pginainicial-rectangle11 {
+  position: absolute;
+  top: 0;
+  left: 72px;
+  z-index: 2;
+  width: 1301px;
+  height: 761px;
+  border-radius: var(--border-radius-2xl);
+}
+
+/* BotÃµes de download */
+.pginainicial-ios,
+.pginainicial-android {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pginainicial-android {
+  z-index: 5;
+  align-items: flex-start;
+}
+
+.pginainicial-app-storei-o-ssvg1 {
+  position: absolute;
+  top: 46px;
+  left: 22px;
+  width: 122px;
+  height: 122px;
+}
+
+.pginainicial-googleplaystoremobileappslogofreepng1 {
+  position: absolute;
+  top: 42px;
+  left: 25px;
+  width: 126px;
+  height: 126px;
+}
+
+.pginainicial-text258,
+.pginainicial-text259 {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: normal;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+/* Textos do app */
+.pginainicial-text260 {
+  position: absolute;
+  top: 77px;
+  left: 503px;
+  z-index: 6;
+  display: flex;
+  width: 788px;
+  height: 361px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-text261 {
+  position: absolute;
+  top: 102px;
+  left: 2px;
+  width: 786px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: 22px;
+  font-weight: var(--font-weight-medium);
+  line-height: 169.0000057220459%;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+/* Pontos da lista */
+.pginainicial-ellipse2,
+.pginainicial-ellipse6,
+.pginainicial-ellipse3,
+.pginainicial-ellipse4 {
+  position: absolute;
+  top: 228px;
+  left: 2px;
+  z-index: 1;
+  width: 7px;
+  height: 8px;
+}
+
+.pginainicial-ellipse6 {
+  top: 264px;
+  z-index: 2;
+}
+
+.pginainicial-ellipse3 {
+  top: 300px;
+  z-index: 3;
+}
+
+.pginainicial-ellipse4 {
+  top: 338px;
+  z-index: 4;
+}
+
+.pginainicial-text262 {
+  position: absolute;
+  z-index: 5;
+  height: auto;
+  font-family: var(--font-display);
+  font-size: var(--font-size-7xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+/* Celular */
+.pginainicial-celphone {
+  position: absolute;
+  top: -45px;
+  left: -94px;
+  z-index: 7;
+  width: 690px;
+  height: 1029px;
+}
+
+/* RodapÃ© */
+.pginainicial-down {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 522px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  align-self: stretch;
+  background-color: var(--color-primary);
+}
+
+/* Ãcones sociais */
+.pginainicial-social-icons1,
+.pginainicial-social-icons2,
+.pginainicial-social-icons3,
+.pginainicial-social-icons4,
+.pginainicial-social-icons5 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.pginainicial-social-icons1 {
+  top: 21px;
+  left: 0;
+}
+
+.pginainicial-social-icons2 {
+  top: 21px;
+  left: 47px;
+}
+
+.pginainicial-social-icons3 {
+  top: 20px;
+  left: 94px;
+}
+
+.pginainicial-social-icons4 {
+  top: 20px;
+  left: 141px;
+}
+
+.pginainicial-social-icons5 {
+  top: 207px;
+  left: 7px;
+}
+
+/* Textos do rodapÃ© */
+.pginainicial-text263 {
+  position: absolute;
+  top: 60px;
+  left: 11px;
+  width: 239px;
+  height: auto;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-white);
+}
+
+.pginainicial-text264,
+.pginainicial-text282,
+.pginainicial-text301 {
+  height: auto;
+  line-height: var(--line-height-tight);
+  text-align: left;
+  color: var(--text-white);
+}
+
+.pginainicial-text265,
+.pginainicial-text283,
+.pginainicial-text302 {
+  position: absolute;
+  top: 58px;
+  left: 1px;
+  height: auto;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-white);
+}
+
+.pginainicial-text302 {
+  width: 233px;
+}
+
+.pginainicial-text300 {
+  position: absolute;
+  top: 428px;
+  left: 26px;
+  width: 496px;
+  height: auto;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  color: var(--text-white);
+}
+
+/* Ãcones de contato */
+.pginainicial-phone,
+.pginainicial-mail03 {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.pginainicial-phone {
+  top: 80px;
+  left: 7px;
+}
+
+.pginainicial-mail03 {
+  top: 143px;
+  left: 7px;
+}
+
+/* Logo do rodapÃ© */
+.pginainicial-unnamed212 {
+  position: absolute;
+  top: 65px;
+  left: 36.12543487548828px;
+  width: 203px;
+  height: 62px;
+}
+
+/* CartÃµes de pagamento */
+.pginainicial-master-card,
+.pginainicial-visa,
+.pginainicial-elo {
+  position: absolute;
+  display: flex;
+  width: 75px;
+  height: 50.483558654785156px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-master-card {
+  top: 413.25537109375px;
+  left: 1346.6759033203125px;
+}
+
+.pginainicial-visa {
+  top: 413.25537109375px;
+  left: 1261.3797607421875px;
+}
+
+.pginainicial-elo {
+  top: 414.25537109375px;
+  left: 1087.7666015625px;
+}
+
+.pginainicial-rectangle1,
+.pginainicial-rectangle4,
+.pginainicial-rectangle5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 50px;
+  border-color: var(--bg-soft);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius-sm);
+}
+
+.pginainicial-image6 {
+  position: absolute;
+  top: 414px;
+  left: 1175px;
+  width: 76px;
+  height: 50px;
+}
+
+.pginainicial-image7 {
+  position: absolute;
+  top: 426px;
+  left: 989px;
+  width: 86px;
+  height: 38px;
+}
+
+.pginainicial-text316 {
+  position: absolute;
+  top: 336px;
+  left: 978px;
+  width: 280px;
+  height: auto;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  font-style: semi bold;
+  line-height: var(--line-height-tight);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-white);
+  font-stretch: normal;
+}
+
+.pginainicial-text317 {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Estilos para elementos especÃ­ficos de conservaÃ§Ã£o */
+.pginainicial-refrigerao {
+  position: absolute;
+  top: 318px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  width: 368px;
+  height: 58px;
+  flex-shrink: 1;
+  align-items: flex-start;
+  background-color: var(--color-gray-200);
+}
+
+.pginainicial-congelamento {
+  position: absolute;
+  top: 386px;
+  left: 16px;
+  z-index: 3;
+  display: flex;
+  width: 368px;
+  height: 58px;
+  flex-shrink: 1;
+  align-items: flex-start;
+  background-color: var(--color-gray-200);
+}
+
+.pginainicial-descongelamento {
+  position: absolute;
+  top: 453px;
+  left: 16px;
+  z-index: 4;
+  display: flex;
+  width: 368px;
+  height: 56px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-rectangle6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 368px;
+  height: 54px;
+  border-radius: 9px;
+  opacity: 0.34;
+}
+
+.pginainicial-text174,
+.pginainicial-text176,
+.pginainicial-text178 {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 122px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text176 {
+  top: 6px;
+  width: 144px;
+}
+
+.pginainicial-text178 {
+  top: 6px;
+  width: 162px;
+}
+
+.pginainicial-text175,
+.pginainicial-text177,
+.pginainicial-text179 {
+  position: absolute;
+  top: 26px;
+  left: 10px;
+  width: 313px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-gray-600);
+  font-stretch: normal;
+}
+
+.pginainicial-text177 {
+  width: 348px;
+}
+
+.pginainicial-text179 {
+  top: 26px;
+  width: 358px;
+}
+
+/* Barras de progresso nutricional */
+.pginainicial-protenas1,
+.pginainicial-protenas2,
+.pginainicial-protenas3,
+.pginainicial-protenas4 {
+  position: absolute;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  width: 368px;
+  height: 20px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-protenas1 {
+  top: 327px;
+}
+
+.pginainicial-protenas2 {
+  top: 352px;
+  z-index: 3;
+}
+
+.pginainicial-protenas3 {
+  top: 377px;
+  z-index: 4;
+}
+
+.pginainicial-protenas4 {
+  top: 402px;
+  z-index: 5;
+}
+
+.pginainicial-barra1,
+.pginainicial-barra2,
+.pginainicial-barra3,
+.pginainicial-barra4 {
+  position: absolute;
+  top: 6px;
+  left: 73px;
+  display: flex;
+  width: 267px;
+  height: 9px;
+  flex-shrink: 1;
+  align-items: flex-start;
+  background-color: var(--text-secondary);
+}
+
+.pginainicial-laranja1,
+.pginainicial-laranja2,
+.pginainicial-laranja3,
+.pginainicial-laranja4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 9px;
+  border-radius: 90px;
+}
+
+.pginainicial-laranja1 {
+  width: 220px;
+}
+
+.pginainicial-laranja2 {
+  width: 87px;
+}
+
+.pginainicial-laranja3 {
+  width: 158px;
+}
+
+.pginainicial-laranja4 {
+  width: 129px;
+}
+
+.pginainicial-text186,
+.pginainicial-text188,
+.pginainicial-text190,
+.pginainicial-text192 {
+  position: absolute;
+  top: 3px;
+  left: 346px;
+  z-index: 1;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  font-style: semibold;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text188 {
+  left: 348px;
+}
+
+.pginainicial-text190,
+.pginainicial-text192 {
+  left: 344px;
+}
+
+.pginainicial-text187,
+.pginainicial-text189,
+.pginainicial-text191,
+.pginainicial-text193 {
+  position: absolute;
+  z-index: 2;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  font-style: semibold;
+  line-height: var(--line-height-normal);
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+/* Grupos de elementos */
+.pginainicial-group1 {
+  position: absolute;
+  top: 319px;
+  left: 16px;
+  z-index: 2;
+  display: flex;
+  width: 25px;
+  height: 108px;
+  flex-shrink: 1;
+  align-items: flex-start;
+}
+
+.pginainicial-play11,
+.pginainicial-play12,
+.pginainicial-play13 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+}
+
+.pginainicial-play12 {
+  top: 41px;
+  z-index: 1;
+}
+
+.pginainicial-play13 {
+  top: 83px;
+  z-index: 2;
+}
+
+.pginainicial-frame4 {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  overflow: hidden;
+  width: 360px;
+  height: 183px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-text160 {
+  position: absolute;
+  top: 22px;
+  left: 35px;
+  width: 325px;
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 86.00000143051147%;
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-gray-550);
+  font-stretch: normal;
+}
+
+/* Imagem de composiÃ§Ã£o de alimentos */
+.pginainicial-composicaodealimentoscrussaudaveisnageladeira1 {
+  width: 405px;
+  height: 270px;
+}
+
+/* Estilos para elementos de texto especÃ­ficos */
+.pginainicial-text303,
+.pginainicial-text305,
+.pginainicial-text308,
+.pginainicial-text310,
+.pginainicial-text313 {
+  font-weight: var(--font-weight-bold);
+}
+
+.pginainicial-text305,
+.pginainicial-text310 {
+  font-weight: var(--font-weight-normal);
+}
+

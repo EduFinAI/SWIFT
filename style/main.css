@@ -1,0 +1,29 @@
+/* ===== CSS MODULAR - ARQUIVO PRINCIPAL ===== */
+
+/* Este arquivo importa todos os módulos CSS organizados */
+
+/* 1. Variáveis CSS */
+@import url('./variables.css');
+
+/* 2. Estilos base */
+@import url('./base.css');
+
+/* 3. Layout e estrutura */
+@import url('./layout.css');
+
+/* 4. Componentes */
+@import url('./components/header.css');
+@import url('./components/navigation.css');
+@import url('./components/search.css');
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/forms.css');
+
+/* 5. Estilos responsivos */
+@import url('./responsive.css');
+
+/* 6. Estilos específicos da página (mantendo alguns do index.css original) */
+@import url('./pages/index.css');
+
+/* 7. Overrides específicos (se necessário) */
+@import url('./overrides.css');
