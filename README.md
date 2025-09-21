@@ -1,3 +1,1 @@
 # SWIFT
-
-Olá mundo
