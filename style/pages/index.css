@@ -265,19 +265,7 @@
   gap: 75px;
 }
 
-.pginainicial-text155 {
-  position: absolute;
-  top: 40px;
-  height: auto;
-  font-family: var(--font-display);
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-tight);
-  text-align: center;
-  text-decoration: none;
-  color: var(--text-white);
-  font-stretch: normal;
-}
+
 
 .pginainicial-dicaseinformaes {
   display: flex;

@@ -1489,26 +1489,13 @@ body {
   position: relative;
   display: flex;
   height: 112px;
-  padding: 64px;
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
-  gap: 75px;
+  background-color: #d14a1f;
 }
  
-.pginainicial-text155 {
-  position: absolute;
-  top: 40px;
-  height: auto;
-  font-family: "Passion One";
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 120.00000476837158%;
-  text-align: center;
-  text-decoration: none;
-  color: rgb(255 255 255 / 100%);
-  font-stretch: normal;
-}
+
  
 .pginainicial-dicaseinformaes {
   display: flex;
