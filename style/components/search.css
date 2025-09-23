@@ -1,0 +1,102 @@
+/* ===== COMPONENTE BUSCA ===== */
+
+/* Barra de busca principal */
+.pginainicial-search1 {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 640px;
+  margin-top: -6px;
+  padding: var(--space-3) var(--space-4);
+  flex: 1 1 360px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: rgba(74, 74, 74, 0.08);
+  border-color: var(--color-gray-200);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius-full);
+}
+
+/* Barra de busca do hero */
+.pginainicial-search2 {
+  position: absolute;
+  top: 350px;
+  left: 48px;
+  display: flex;
+  overflow: hidden;
+  width: 460px; /* reduz largura da barra de CEP */
+  padding: var(--space-3) var(--space-4);
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--bg-primary);
+  border-color: var(--color-gray-200);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: var(--border-radius-full);
+}
+
+/* Inputs dentro das barras de busca */
+.pginainicial-search1 .pginainicial-text106,
+.pginainicial-search2 .pginainicial-text115 {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+/* Texto do input da busca principal */
+.pginainicial-text106 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: var(--color-gray-400);
+  font-stretch: normal;
+}
+
+/* Texto do input da busca do hero */
+.pginainicial-text115 {
+  height: auto;
+  flex-grow: 1;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-stretch: normal;
+}
+
+/* Ícones de busca */
+.pginainicial-x1,
+.pginainicial-x2 {
+  width: 16px;
+  height: 16px;
+}
+
+.pginainicial-x2 {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/* Ícone de localização */
+.pginainicial-local21 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 17px;
+  height: 17px;
+}

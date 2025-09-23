@@ -1,0 +1,190 @@
+/* ===== LAYOUT E ESTRUTURA ===== */
+
+/* Container principal */
+.pginainicial-container {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Página principal */
+.pginainicial-pginainicial {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+}
+
+/* Área de scroll */
+.pginainicial-scroll {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Exemplo de página de detalhes do produto */
+.pginainicial-examples-product-detail-page {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Grid de cartões de avaliação */
+.pginainicial-card-grid {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 1535px;
+  height: 373px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+/* Frame para cartões */
+.pginainicial-frame6 {
+  position: absolute;
+  top: 30px;
+  left: -10px;
+  display: flex;
+  width: 1754px;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Frame para produtos */
+.pginainicial-frame27 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 33px;
+}
+
+/* Frame para ocasiões */
+.pginainicial-frame25 {
+  position: absolute;
+  top: 20px;
+  left: 91px;
+  display: flex;
+  width: 1256px;
+  align-items: center;
+  gap: 37px;
+}
+
+/* Frame para carrinho inteligente */
+.pginainicial-frame19 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  width: 1441px;
+  height: 619px;
+  flex-shrink: 0;
+  align-items: flex-start;
+  background-color: var(--bg-primary);
+}
+
+/* Frame para produtos mais vendidos */
+.pginainicial-frame22 {
+  position: absolute;
+  top: 353px;
+  left: 127px;
+  display: flex;
+  width: 1614px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 82px;
+}
+
+/* Frame para download do app */
+.pginainicial-frame8 {
+  position: absolute;
+  top: 250px;
+  left: 53px;
+  display: flex;
+  overflow: hidden;
+  width: 192px;
+  height: 76px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/* Frame para informações de contato */
+.pginainicial-frame9 {
+  position: absolute;
+  top: 86px;
+  left: 36px;
+  display: flex;
+  overflow: hidden;
+  width: 275px;
+  height: 159px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/* Frame para logo */
+.pginainicial-frame10 {
+  position: absolute;
+  top: 25px;
+  left: 39px;
+  display: flex;
+  overflow: hidden;
+  width: 232px;
+  height: 127px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/* Frame para links úteis */
+.pginainicial-frame11,
+.pginainicial-frame12,
+.pginainicial-frame13,
+.pginainicial-frame14 {
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  width: 191px;
+  height: 309px;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+.pginainicial-frame11 {
+  top: 71px;
+  left: 311px;
+}
+
+.pginainicial-frame12 {
+  top: 71px;
+  left: 671px;
+}
+
+.pginainicial-frame13 {
+  top: 18px;
+  left: 56px;
+}
+
+.pginainicial-frame14 {
+  top: 53px;
+  left: 996px;
+  width: 346px;
+  height: 347px;
+}

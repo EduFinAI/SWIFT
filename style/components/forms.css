@@ -1,0 +1,206 @@
+/* ===== COMPONENTE FORMULÃRIOS ===== */
+
+/* Campos de entrada base */
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 100%;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-full);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+.input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Campo de busca especÃ­fico */
+.search-input {
+  color: var(--color-gray-400);
+  background-color: color-mix(in srgb, var(--color-gray-500) 8%, transparent);
+}
+
+.search-input::placeholder {
+  color: var(--color-gray-400);
+}
+
+/* Campo de CEP */
+.cep-input {
+  color: var(--text-secondary);
+}
+
+.cep-input::placeholder {
+  color: var(--text-secondary);
+}
+
+/* Labels */
+.label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+/* Grupos de campos */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field-group--horizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Mensagens de erro */
+.error-message {
+  margin-top: var(--space-1);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-danger);
+}
+
+/* Mensagens de sucesso */
+.success-message {
+  margin-top: var(--space-1);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  color: var(--color-success-strong);
+}
+
+/* Campos desabilitados */
+.input:disabled {
+  color: var(--text-secondary);
+  background-color: var(--color-gray-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Campos obrigatÃ³rios */
+.input[required] {
+  border-left: 3px solid var(--color-primary);
+}
+
+/* ValidaÃ§Ã£o visual */
+.input.error {
+  border-color: var(--color-danger);
+}
+
+.input.success {
+  border-color: var(--color-success-strong);
+}
+
+/* Campos com Ã­cone */
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input {
+  padding-right: 40px;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+/* Ãrea de texto */
+.textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* Select */
+.select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-md);
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* Checkbox e Radio */
+.checkbox,
+.radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.checkbox input,
+.radio input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox label,
+.radio label {
+  margin: 0;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* Grupo de checkboxes/radios */
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.checkbox-group--horizontal,
+.radio-group--horizontal {
+  flex-flow: row wrap;
+}
+
+
+

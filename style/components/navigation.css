@@ -1,0 +1,102 @@
+/* ===== COMPONENTE NAVEGAÇÃO ===== */
+
+/* Lista de pílulas de navegação */
+.pginainicial-navigation-pill-list {
+  display: flex;
+  width: auto;
+  height: 32px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* Pílulas de navegação individuais */
+.pginainicial-navigation-pill1,
+.pginainicial-navigation-pill2,
+.pginainicial-navigation-pill3,
+.pginainicial-navigation-pill4,
+.pginainicial-navigation-pill5,
+.pginainicial-navigation-pill6 {
+  display: flex;
+  padding: var(--space-2);
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2);
+  border-radius: var(--border-radius-md);
+}
+
+/* Pílula ativa */
+.pginainicial-navigation-pill1 {
+  background-color: var(--color-gray-100);
+}
+
+/* Textos das pílulas */
+.pginainicial-text100,
+.pginainicial-text101,
+.pginainicial-text102,
+.pginainicial-text103,
+.pginainicial-text104,
+.pginainicial-text105 {
+  height: auto;
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 100%;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-stretch: normal;
+}
+
+.pginainicial-text105 {
+  line-height: 100%;
+  text-align: left;
+  color: var(--color-gray-700);
+}
+
+/* Setas de navegação */
+.pginainicial-arrowright1,
+.pginainicial-arrowright2,
+.pginainicial-arrowright3 {
+  width: 15px;
+  height: 15px;
+}
+
+.pginainicial-arrowright1 {
+  position: absolute;
+  top: 2px;
+  left: 107px;
+}
+
+.pginainicial-arrowright2 {
+  position: absolute;
+  top: 300px;
+  left: 128px;
+}
+
+.pginainicial-arrowright3 {
+  position: absolute;
+  top: 299.6172180175781px;
+  left: 129.1394805908203px;
+}
+
+/* Setas circulares */
+.pginainicial-arrowrightcircle1,
+.pginainicial-arrowrightcircle2 {
+  position: absolute;
+  z-index: 4;
+  width: 53px;
+  height: 53px;
+}
+
+.pginainicial-arrowrightcircle1 {
+  top: 126px;
+  left: 1317px;
+}
+
+.pginainicial-arrowrightcircle2 {
+  top: 224px;
+  left: 1257px;
+}
