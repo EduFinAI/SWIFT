@@ -1,6 +1,25 @@
-/* Visual overrides (align to reference mock) */
+/*
+  ====================================================================
+  == VISUAL OVERRIDES (AJUSTES FINOS PARA ALINHAR AO MOCK)
+  == Arquivo refatorado para remover duplicatas e melhorar a manutenibilidade.
+  ====================================================================
+*/
 
-/* Frete bar: centralizado, escuro, compacto */
+/* -- Tokens de Tipografia Responsiva -- */
+:root {
+  --pginainicial-title-hero-size: clamp(36px, calc(22px + 4.8vw), 92px);
+  --pginainicial-title-xxl-size: clamp(44px, calc(24px + 5.65vw), 96px);
+  --pginainicial-title-xl-size: clamp(38px, calc(19px + 5.3vw), 87px);
+  --pginainicial-title-lg-size: clamp(32px, calc(16px + 4.5vw), 73px);
+  --pginainicial-title-md-size: clamp(26px, calc(22px + 1.1vw), 40px);
+}
+
+/*
+  ====================================================================
+  == COMPONENTES E ELEMENTOS REUTILIZÁVEIS
+  ====================================================================
+*/
+/* -- Barra de Frete -- */
 .pginainicial-frete {
   display: flex;
   height: 56px;
@@ -10,20 +29,12 @@
   color: #fff;
 }
 
-.pginainicial-truck1 {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  width: auto;
-  height: 24px;
-}
-.pginainicial-text107 { position: static; font-weight: 500; }
-
-/* Hero: sem escurecer a imagem (sem overlay) */
+/* -- Seção Hero -- */
 .pginainicial-header21 { position: relative; }
 .pginainicial-header21::after { content: none; }
 .pginainicial-fundo1 { width: 100%; height: 100%; object-fit: cover; }
 
+/* Sombra no texto para melhor legibilidade sobre a imagem de fundo */
 .pginainicial-text114 {
   font-family: 'Passion One', Impact, system-ui;
   font-weight: 700;
@@ -32,7 +43,7 @@
 }
 .pginainicial-text110 { text-shadow: 0 1px 4px rgb(0 0 0 / 30%); }
 
-/* Barras de busca (header e hero) como pills brancas */
+/* -- Barras de Busca -- */
 .pginainicial-search1,
 .pginainicial-search2 {
   background: #fff;
@@ -47,7 +58,7 @@
   box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
 }
 
-/* Títulos de seção em caixa alta com espaçamento */
+/* TÃƒÆ’Ã‚Â­tulos de seÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o em caixa alta com espaÃƒÆ’Ã‚Â§amento */
 .pginainicial-text119,
 .pginainicial-text145 {
   font-family: 'Passion One', system-ui;
@@ -66,10 +77,11 @@
 
 /* Centraliza o título da seção "Escolha por ocasião" */
 .pginainicial-text145 {
-  position: static !important;
-  display: inline-block !important;
-  margin: 0 auto;
-  text-align: center !important;
+  /* A posição absoluta é definida no index.css, aqui apenas centralizamos */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important; /* Evita que o título ocupe 100% da largura */
+  white-space: nowrap; /* Impede quebra de linha no título */
 }
 
 /* Centraliza o título da seção Dicas e Informações */
@@ -106,7 +118,7 @@
   background-size: cover;
 }
 .pginainicial-image11 { background-image: url('../assets/carne.jpg'); }
-.pginainicial-image12 { background-image: url('../assets/ancho.webp'); }
+.pginainicial-image12 { background-image: url('../assets/ancho.webp');}
 .pginainicial-image13 { background-image: url("../assets/file de frang.png"); }
 .pginainicial-image14 { background-image: url('../assets/costela.png'); }
 
@@ -132,7 +144,7 @@
   border-top-right-radius: 12px !important;
 }
 
-/* Garante que a faixa de produtos não quebre ao somar gaps + larguras */
+/* Garante que a faixa de produtos nÃƒÆ’Ã‚Â£o quebre ao somar gaps + larguras */
 .pginainicial-group2 { max-width: 1227px; }
 
 .pginainicial-frame27 {
@@ -158,8 +170,8 @@
   border: none;
 }
 
-/* Sessão Carrinho Inteligente: fundo claro (sem escurecer) */
-.pginainicial-carrinhointeligente { color: inherit; background: transparent; }
+
+
 
 .pginainicial-button-danger16 {
   color: #fff;
@@ -167,9 +179,8 @@
   border: none;
 }
 
-/* Seções com largura fixa (1440px) tornadas fluidas/responsivas */
 
-/* Botões das ocasiões */
+
 .pginainicial-card-cta {
   position: absolute;
   top: 298px;
@@ -192,11 +203,12 @@
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgb(229 81 37 / 25%);
 }
+
 .pginainicial-card-cta > .pginainicial-text148,
 .pginainicial-card-cta > .pginainicial-text151,
 .pginainicial-card-cta > .pginainicial-text154 {
-  position: static !important;
-  display: inline-flex;
+  position: static; /* Override inline styles */
+  display: inline-flex; /* Garante alinhamento com o ícone */
   align-items: center;
   color: inherit !important;
   font-weight: 600;
@@ -206,88 +218,67 @@
 .pginainicial-card-cta > .pginainicial-arrowright1,
 .pginainicial-card-cta > .pginainicial-arrowright2,
 .pginainicial-card-cta > .pginainicial-arrowright3 {
-  position: static !important;
+  position: static; /* Override inline styles */
   width: 16px;
   height: 16px;
 }
 
+/*
+  ====================================================================
+  == LAYOUT DAS SEÇÕES
+  ====================================================================
+*/
 
-.pginainicial-escolhas2 .pginainicial-frame25 {
-  position: static;
-  top: auto;
-  left: auto;
-  display: flex;
-  width: min(100%, 1256px);
-  height: auto;
-  margin: 0 auto;
-  justify-content: center;
-  gap: 37px;
-  align-items: center;
-  z-index: auto;
-}
-
-
-.pginainicial-escolhas2 {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 48px;
-  padding: 24px 16px 100px;
-  height: auto !important;
-}
-
+/* -- Layout Padrão para Seções de Conteúdo -- */
 .pginainicial-produtosemdestaque,
 .pginainicial-escolhas1,
 .pginainicial-escolhaporocasio,
 .pginainicial-dicaseinformaestitle,
 .pginainicial-dicaseinformaes,
-.pginainicial-carrinhointeligente,
 .pginainicial-produtosmaisvendidos,
 .pginainicial-baixenossoapp,
 .pginainicial-down {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-  display: block;
-  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  box-sizing: border-box;
 }
+
+/* -- Seção: Escolha por Ocasião -- */
 .pginainicial-escolhaporocasio {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding: 56px 16px 24px;
-  height: auto !important;
-  box-sizing: border-box;
+  padding: 56px 16px 56px;
+  height: auto;
   text-align: center;
 }
 
+/* -- Seção: Dicas e Informações (Título) -- */
 .pginainicial-dicaseinformaestitle {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 26px 26px 26px;
-  height: auto !important;
-  box-sizing: border-box;
+  padding: 26px;
+  height: auto;
   text-align: center;
 }
 
+/* -- Seção: Dicas e Informações (Conteúdo) -- */
 .pginainicial-dicaseinformaes {
-  display: flex !important;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch;
+  align-items: stretch; /* Garante que os cards tenham a mesma altura */
   gap: 32px;
   padding: 32px 16px 96px;
-  height: auto !important;
   width: min(100%, 1260px);
   margin: 0 auto;
-  box-sizing: border-box;
   background-color: var(--pginainicial-dicaseinformaes-bg-color, transparent);
   background-image: var(--pginainicial-dicaseinformaes-bg-image, none);
   background-repeat: no-repeat;
@@ -296,111 +287,32 @@
 }
 
 .pginainicial-dicaseinformaes > div {
-  flex: 1 1 320px;
+  flex: 1 1 320px; /* Flex-grow, flex-shrink, flex-basis */
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
 }
 
-/* Centro e fluidez do grupo de cards */
-.pginainicial-escolhas1 { overflow: visible !important; }
-
-.pginainicial-group2 {
-  position: relative !important;
-  right: auto !important;
-  left: auto !important;
-  width: min(100%, 1227px) !important;
-  height: auto !important;
-  margin-right: auto !important;
-  margin-left: auto !important;
-  margin-inline: auto !important; /* garante centralização lógica */
-  align-self: center !important;  /* se o pai for flex/grid */
+/* -- Seção: Escolha por Ocasião (Correção de Layout) -- */
+/* O layout original usa position:absolute. A regra abaixo centraliza o container dos cards. */
+.pginainicial-escolhas2 .pginainicial-frame25 {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min-content !important; /* Ajusta a largura ao conteúdo para centralizar corretamente */
 }
 
-/* Garante centralização mesmo quando o pai define alinhamentos próprios */
-.pginainicial-escolhas1 .pginainicial-group2 {
-  justify-self: center !important; /* se o pai for grid */
-}
-
-/* Responsividade do grupo de cards (pginainicial-group2) */
-@media (width <= 1200px) {
-  .pginainicial-group2 { width: 100% !important; padding: 0 16px; }
-  .pginainicial-group2 .pginainicial-frame27 {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-    gap: 24px;
-    justify-content: center; /* centraliza as colunas */
-    justify-items: center;   /* centraliza os cards dentro das células */
-  }
-}
-
-@media (width <= 768px) {
-  .pginainicial-group2 {
-    padding: 0 8px;
-  }
-
-  .pginainicial-group2 .pginainicial-frame27 {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    justify-items: stretch;
-    align-items: stretch;
-  }
-
-  .pginainicial-escolhas1 .pginainicial-frame27 > div {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    justify-self: stretch;
-  }
-
-  .pginainicial-picanha-premium1,
-  .pginainicial-ancho-angus1,
-  .pginainicial-filde-frango1,
-  .pginainicial-costela-suna {
-    width: 100% !important;
-    min-height: 300px;
-  }
-
-  .pginainicial-picanha-premium1 .pginainicial-image11,
-  .pginainicial-ancho-angus1 .pginainicial-image12,
-  .pginainicial-filde-frango1 .pginainicial-image13,
-  .pginainicial-costela-suna .pginainicial-image14 {
-    width: 100% !important;
-    margin-top: 0;
-    transform: none;
-  }
-
-  .pginainicial-image11,
-  .pginainicial-image12,
-  .pginainicial-image13,
-  .pginainicial-image14 {
-    height: 150px !important;
-  }
-}
-
-
-/* Organização da seção de destaque: cards acima, botão abaixo e centralizado */
+/* -- Seção: Produtos em Destaque -- */
 .pginainicial-escolhas1 {
-  display: flex !important;
-  height: auto !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  align-items: center !important;
-  gap: 24px !important;
-}
-.pginainicial-escolhas1 .pginainicial-group2 { order: 1; }
-
-
-.pginainicial-escolhas1 .pginainicial-button-danger11 {
-  position: static !important;
-  margin: 75px auto !important;
-  order: 2;
-  align-self: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  padding: 31px 0;
+  overflow: visible;
 }
 
-/* Avaliações: barra de título destacada */
+/* -- Seção: Avaliações -- */
 .pginainicial-avaliaes .pginainicial-text207 {
   display: inline-block;
   padding: 10px 18px;
@@ -409,7 +321,7 @@
   border-radius: 9999px;
 }
 
-/* Produtos mais vendidos: fundo vermelho (sem preto) */
+/* -- Seção: Produtos mais vendidos -- */
 .pginainicial-produtosmaisvendidos {
   background: linear-gradient(180deg, #E65103 0%, #BF4408 100%);
 }
@@ -424,7 +336,7 @@
   box-shadow: 0 10px 28px rgb(0 0 0 / 18%);
 }
 
-/* Baixe nosso app: cartão destacado em laranja */
+/* -- Seção: Baixe nosso app -- */
 .pginainicial-baixenossoapp {
   padding: 32px;
   background: #E65103;
@@ -438,187 +350,52 @@
 .pginainicial-baixenossoapp .pginainicial-text260 span { color: #fff; }
 .pginainicial-baixenossoapp .pginainicial-text262 { font-weight: 800; color: #fff; }
 
-/* Footer: laranja vivo e tipografia consistente */
+/* -- Footer -- */
 .pginainicial-down { color: #fff; background: #E65103; }
 .pginainicial-down span { color: #fff; }
 
-/* Ensure delivery rectangle sits above hero image */
+/* -- Z-index e Overflows -- */
 .pginainicial-image10 { z-index: 0 !important; }
-
 .pginainicial-retanguloentrega {
   z-index: 5 !important;
 }
-
-/* Header: evitar corte de conteúdo no encolhimento */
 .pginainicial-header { overflow: visible !important; }
 
-/* Header: alinhar pills + busca ao centro e na mesma altura do logo/ícones */
-@media (width <= 1366px) {
-  /* Mantém ícones SEMPRE no topo à direita; logo à esquerda */
-  .pginainicial-header {
-    display: grid !important;
-    align-items: center;
-    gap: 8px 12px;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "logo . icons"
-      "search search search"
-      "nav nav nav";
-  }
-  .pginainicial-image1 { grid-area: logo !important; justify-self: start; }
-  .pginainicial-header-auth { display: flex; align-items: center; gap: 10px; grid-area: icons !important; justify-self: end; }
+/*
+  ====================================================================
+  == REGRAS DE LAYOUT E RESPONSIVIDADE (ESSENCIAIS)
+  ====================================================================
+*/
 
-  .pginainicial-search1 {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: clamp(300px, 36vw, 760px);
-    max-width: 760px;
-    margin-top: 0;
-    padding: 8px 12px;
-    grid-area: search !important;
-  }
-
-  .pginainicial-navigation-pill-list {
-    display: flex;
-    height: 36px;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    grid-area: nav !important;
-  }
+/* -- Layout da Seção de Destaque (Cards + Botão) -- */
+.pginainicial-escolhas1 .pginainicial-group2 { order: 1; }
+.pginainicial-escolhas1 .pginainicial-button-danger11 {
+  position: static;
+  margin: 40px auto;
+  order: 2;
+  align-self: center;
 }
 
-@media (width <= 1280px) {
-  .pginainicial-navigation-pill-list { height: 34px; gap: 8px; }
-
-  .pginainicial-navigation-pill1,
-  .pginainicial-navigation-pill2,
-  .pginainicial-navigation-pill3,
-  .pginainicial-navigation-pill4,
-  .pginainicial-navigation-pill5,
-  .pginainicial-navigation-pill6 { padding: 6px 8px; }
-
-  .pginainicial-text100,
-  .pginainicial-text101,
-  .pginainicial-text102,
-  .pginainicial-text103,
-  .pginainicial-text104,
-  .pginainicial-text105 { font-size: 14px; }
-  .pginainicial-search1 .pginainicial-text106 { font-size: 14px; }
+/* -- Grupo de Cards de Produtos -- */
+.pginainicial-group2 {
+  position: relative;
+  width: min(100%, 1227px);
+  height: auto;
+  margin-inline: auto;
+  align-self: center;
+  justify-self: center;
 }
 
-@media (width <= 1150px) {
-  /* Evita que a busca fique pequena priorizando sua largura SEM scroll nos pills */
-  .pginainicial-navigation-pill-list {
-    overflow: visible;
-    height: 34px;
-    flex: 0 1 30%;
-    gap: 6px;
-  }
-
-  .pginainicial-navigation-pill1,
-  .pginainicial-navigation-pill2,
-  .pginainicial-navigation-pill3,
-  .pginainicial-navigation-pill4,
-  .pginainicial-navigation-pill5,
-  .pginainicial-navigation-pill6 { padding: 5px 8px; }
-
-  .pginainicial-text100,
-  .pginainicial-text101,
-  .pginainicial-text102,
-  .pginainicial-text103,
-  .pginainicial-text104,
-  .pginainicial-text105 { font-size: 13px; }
-  .pginainicial-search1 { min-width: clamp(340px, 42vw, 680px); flex: 1 1 480px; }
-}
-
-@media (width <= 1024px) {
-  .pginainicial-image1 { height: 44px; }
-  .pginainicial-navigation-pill-list { height: 30px; flex: 0 1 28%; gap: 4px; }
-
-  .pginainicial-navigation-pill1,
-  .pginainicial-navigation-pill2,
-  .pginainicial-navigation-pill3,
-  .pginainicial-navigation-pill4,
-  .pginainicial-navigation-pill5,
-  .pginainicial-navigation-pill6 { padding: 3px 6px; }
-
-  .pginainicial-text100,
-  .pginainicial-text101,
-  .pginainicial-text102,
-  .pginainicial-text103,
-  .pginainicial-text104,
-  .pginainicial-text105 { font-size: 12px; }
-  .pginainicial-search1 { min-width: clamp(320px, 44vw, 640px); margin-top: 0; padding: 6px 10px; flex: 1 1 420px; }
-  .pginainicial-search1 .pginainicial-x1 { width: 14px; height: 14px; }
-}
-
-/* Mobile-first: logo + ícones na primeira linha, busca abaixo (sempre visível) */
-@media (width <= 768px) {
-  .pginainicial-header {
-    display: grid !important;
-    align-items: center;
-    gap: 8px 12px;
-    grid-template-columns: auto 1fr auto;
-    grid-template-areas:
-      "logo . icons"
-      "search search search"
-      "nav nav nav";
-  }
-  .pginainicial-image1 { grid-area: logo; justify-self: start; }
-  .pginainicial-header-auth { display: flex; align-items: center; gap: 10px; grid-area: icons; justify-self: end; }
-  .pginainicial-search1 { width: 100%; min-width: 0; margin-top: 0; grid-area: search; }
-  .pginainicial-navigation-pill-list { justify-content: center; gap: 6px; grid-area: nav; }
-
-  /* Compacidade extra no mobile para caber melhor */
-  .pginainicial-navigation-pill1,
-  .pginainicial-navigation-pill2,
-  .pginainicial-navigation-pill3,
-  .pginainicial-navigation-pill4,
-  .pginainicial-navigation-pill5,
-  .pginainicial-navigation-pill6 { padding: 3px 6px; }
-
-  .pginainicial-text100,
-  .pginainicial-text101,
-  .pginainicial-text102,
-  .pginainicial-text103,
-  .pginainicial-text104,
-  .pginainicial-text105 { font-size: 12px; }
-}
-
-@media (width <= 768px) {
-  .pginainicial-dicaseinformaestitle {
-
-  }
-
-  .pginainicial-dicaseinformaes {
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    padding: 24px 16px 72px;
-  }
-
-  .pginainicial-dicaseinformaes > div {
-    max-width: 360px;
-    width: 100%;
-  }
-}
-
-/* ===== Produtos em Destaque: normalização de layout dos cards ===== */
-
-/* Imagem em cima, informações no meio (ocupa o espaço), botão embaixo ocupando a largura toda */
+/* -- Normalização do Layout dos Cards de Produto (Flexbox) -- */
 .pginainicial-picanha-premium1,
 .pginainicial-ancho-angus1,
 .pginainicial-filde-frango1,
 .pginainicial-costela-suna {
-  display: flex !important;
-
-  /* Remove fixed card height so internal button doesn't overflow */
-  height: auto !important;
+  display: flex;
+  height: auto;
   min-height: 371px;
-  flex-direction: column !important;
-  align-items: stretch !important;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .pginainicial-picanha-premium1 .pginainicial-image11 { order: 1; }
@@ -637,37 +414,95 @@
 .pginainicial-costela-suna .pginainicial-body13  { flex: 1 1 auto; order: 2; }
 .pginainicial-costela-suna .pginainicial-adc4   { width: 100% !important; margin-top: auto; order: 3; }
 
-/* Zera larguras fixas herdadas dos wrappers de botão e expande os botões */
+/* Garante que os botões dentro dos cards ocupem toda a largura */
 .pginainicial-adc1,
 .pginainicial-adc2,
 .pginainicial-adc3,
-.pginainicial-adc4 { width: 100% !important; }
+.pginainicial-adc4 {
+  width: 100%;
+}
 
 .pginainicial-button-danger12,
 .pginainicial-button-danger13,
 .pginainicial-button-danger14,
-.pginainicial-button-danger15 { width: 100% !important; }
-
-/* Garante que a linha de cards estique os itens igualmente */
-.pginainicial-frame27 { align-items: stretch !important; }
-
-.pginainicial-group7.pginainicial-card-cta {
-  width: auto !important;
-  height: auto !important;
-  flex-shrink: 0 !important;
-  align-items: center !important;
+.pginainicial-button-danger15 {
+  width: 100%;
 }
 
+/* -- Container de Cards -- */
+.pginainicial-frame27 {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
+}
+
+/*
+  ====================================================================
+  == MEDIA QUERIES (CONSOLIDADAS)
+  ====================================================================
+*/
+
+/* -- Telas Maiores (até 1220px) -- */
+@media (width <= 1220px) {
+  .pginainicial-group2 {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  .pginainicial-group2 .pginainicial-frame27 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    justify-content: center;
+  }
+}
+
+/* -- Telas de Tablet (até 1100px) -- */
 @media (width <= 1100px) {
+  /* Para telas menores, abandonamos o posicionamento absoluto e usamos flexbox para a seção de ocasião */
   .pginainicial-escolhas2 .pginainicial-frame25 {
+    position: static !important;
+    transform: none !important;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100% !important;
     column-gap: 32px;
     row-gap: 48px;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  .pginainicial-escolhas2 {
+    height: auto !important; /* Permite que a altura se ajuste ao conteúdo flexível */
+  }
+}
+
+/* -- Telas de Tablet Menores e Celulares (até 768px) -- */
+@media (width <= 768px) {
+  .pginainicial-header {
+    display: grid;
+    align-items: center;
+    gap: 8px 12px;
+    grid-template-columns: auto 1fr auto;
   }
 
-  .pginainicial-dicaseinformaes {
-    gap: 28px;
-    padding: 28px 16px 88px;
+  .pginainicial-group2 .pginainicial-frame27 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .pginainicial-image11,
+  .pginainicial-image12,
+  .pginainicial-image13,
+  .pginainicial-image14 {
+    height: 150px;
+  }
+}
+
+/* -- Telas Pequenas (até 600px) -- */
+@media (width <= 600px) {
+  .pginainicial-group2 .pginainicial-frame27 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }

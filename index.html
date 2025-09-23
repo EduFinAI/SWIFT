@@ -12,10 +12,8 @@
     <link rel="stylesheet" href="./style/index.css" />
     <!-- visual overrides to match reference mock -->
     <link rel="stylesheet" href="./style/overrides.css" />
-
-    <!-- Keep animate.css and a single, combined Google Fonts import -->
     <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&family=Noto+Sans:wght@400;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&display=swap" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
@@ -28,7 +26,7 @@
           <div class="pginainicial-header" role="banner">
             <img
               src="./assets/image11269-6k6r-200h.png"
-              alt="image11269"
+              alt="Logo da Swift"
               class="pginainicial-image1"
             />
             <div class="pginainicial-navigation-pill-list">
@@ -92,7 +90,7 @@
               class="pginainicial-truck1"
             />
           </div>
-          <div class="pginainicial-scroll" role="main">
+          <main class="pginainicial-scroll" role="main">
             <div class="pginainicial-examples-product-detail-page">
               <div class="pginainicial-header21">
                 <div class="pginainicial-header22">
@@ -146,14 +144,14 @@
                 </div>
               </div>
             </div>
-            <div class="pginainicial-produtosemdestaque">
+            <section class="pginainicial-produtosemdestaque" aria-labelledby="produtos-destaque-titulo">
               <span class="pginainicial-text119">Produtos em Destaque</span>
-            </div>
-            <div class="pginainicial-escolhas1">
+            </section>
+            <section class="pginainicial-escolhas1" aria-label="Produtos em destaque">
               <button class="pginainicial-button-danger11">
                 <span class="pginainicial-text120">Ver Todos os Produtos</span>
               </button>
-              <div class="pginainicial-group2">
+              <div class="pginainicial-group2" role="list">
                 <div class="pginainicial-frame27">
                   <div class="pginainicial-picanha-premium1">
                     <div class="pginainicial-adc1">
@@ -283,12 +281,12 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="pginainicial-escolhaporocasio">
+            </section>
+            <section class="pginainicial-escolhaporocasio" aria-labelledby="ocasiao-titulo">
               <span class="pginainicial-text145 newtitle">
                 ESCOLHA POR OCASIÃO
               </span>
-            </div>
+            </section>
             <div class="pginainicial-escolhas2">
               <div class="pginainicial-frame25">
                 <div class="pginainicial-churrasocasio">
@@ -385,11 +383,11 @@
                 </div>
               </div>
             </div>
-            <div class="pginainicial-dicaseinformaestitle">
+            <section class="pginainicial-dicaseinformaestitle" aria-labelledby="dicas-titulo">
               <span class="pginainicial-text155">Dicas e Informações</span>
-            </div>
+            </section>
            <!-- imagem nova aqui -->
-            <div class="pginainicial-dicaseinformaes" style="--pginainicial-dicaseinformaes-bg-image: url('./assets/dicas-e-informacoes-bg.jpg');">
+            <section class="pginainicial-dicaseinformaes content-over-image" style="--pginainicial-dicaseinformaes-bg-image: url('./assets/dicas-e-informacoes-bg.jpg');" aria-label="Dicas e Informações">
               <div class="pginainicial-vdeodepreparo">
                 <div class="pginainicial-image15"></div>
                 <div class="pginainicial-body14">
@@ -437,9 +435,9 @@
               <div class="pginainicial-conservao">
                 <div class="pginainicial-image16">
                   <img
-                    src="./assets/composicaodealimentoscrussaudaveisnageladeira11393-jcma-300h.png"
-                    alt="composicaodealimentoscrussaudaveisnageladeira11393"
-                    class="pginainicial-composicaodealimentoscrussaudaveisnageladeira1"
+                    src="./assets/img-com-ovo.png"
+                    alt="img-com-ovo"
+                    class="img-com-ovo"
                   />
                 </div>
                 <div class="pginainicial-body15">
@@ -544,8 +542,8 @@
                   <span class="pginainicial-text193">Zinco</span>
                 </div>
               </div>
-            </div>
-            <div class="pginainicial-carrinhointeligente">
+            </section>
+            <section class="pginainicial-carrinhointeligente" aria-label="Funcionalidades do Carrinho Inteligente">
               <div class="pginainicial-frame19">
                 <div class="pginainicial-image18">
                   <img
@@ -619,8 +617,8 @@
                   <span class="pginainicial-text206">Experimente Agora</span>
                 </button>
               </div>
-            </div>
-            <div class="pginainicial-avaliaes">
+            </section>
+            <section class="pginainicial-avaliaes" aria-labelledby="avaliacoes-titulo">
               <div class="pginainicial-text-heading1">
                 <img
                   src="./assets/rectangle101985-49jg-200h.png"
@@ -628,7 +626,7 @@
                   class="pginainicial-rectangle10"
                 />
                 <span class="pginainicial-text207">
-                  O que Nossos Clientes Dizem
+                  O que Nossos Clientes Dizem?
                 </span>
               </div>
               <div class="pginainicial-card-grid">
@@ -866,16 +864,22 @@
                       </div>
                     </div>
                   </div>
-                  <img
-                    src="./assets/arrowrightcircle2045-s7g.svg"
-                    alt="Arrowrightcircle2045"
-                    class="pginainicial-arrowrightcircle1"
-                  />
                 </div>
+                <!-- Botões movidos para a posição correta, fora do frame que se move -->
+                <img
+                  src="./assets/arrowleftcircle.svg"
+                  alt="Avaliação Anterior"
+                  class="pginainicial-arrowleftcircle1"
+                />
+                <img
+                  src="./assets/arrowrightcircle2045-s7g.svg"
+                  alt="Próxima Avaliação"
+                  class="pginainicial-arrowrightcircle1"
+                />
               </div>
-            </div>
+            </section>
             <!-- Produtos mais vendidos (única ocorrência mantida) -->
-            <div class="pginainicial-produtosmaisvendidos">
+            <section class="pginainicial-produtosmaisvendidos" aria-label="Produtos mais vendidos">
               <img
                 src="./assets/ellipse82096-k5xm-500w.png"
                 alt="Ellipse82096"
@@ -1013,9 +1017,9 @@
                   class="pginainicial-arrowrightcircle2"
                 />
               </div>
-            </div>
+            </section>
             <!-- Baixe nosso app (única ocorrência mantida) -->
-            <div class="pginainicial-baixenossoapp">
+            <section class="pginainicial-baixenossoapp" aria-label="Baixe nosso aplicativo">
               <img
                 src="./assets/ellipse82214-y9vh-800w.png"
                 alt="Ellipse82214"
@@ -1083,8 +1087,8 @@
                 alt="celphone1471"
                 class="pginainicial-celphone"
               />
-            </div>
-            <div class="pginainicial-down" role="contentinfo">
+            </section>
+            <footer class="pginainicial-down" role="contentinfo">
               <div class="pginainicial-frame8">
                 <img
                   src="./assets/socialicons1407-wvm.svg"
@@ -1317,11 +1321,10 @@
                 <br />
                 <span>(apenas cartões de créditos)</span>
               </span>
-            </div>
-          </div>
+            </footer>
+          </main>
         </div>
       </div>
     </div>
   </body>
 </html>
-
