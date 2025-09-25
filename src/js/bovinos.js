@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		const valueDisplay = document.getElementById('price-slider-values');
 
 		noUiSlider.create(priceSlider, {
-			start: [56, 100],
+			start: [0, 200],
 			connect: true,
 			range: {
 				'min': 0,
