@@ -12,6 +12,22 @@
   --pginainicial-title-xl-size: clamp(38px, calc(19px + 5.3vw), 87px);
   --pginainicial-title-lg-size: clamp(32px, calc(16px + 4.5vw), 73px);
   --pginainicial-title-md-size: clamp(26px, calc(22px + 1.1vw), 40px);
+  /* Altura da seção Produtos mais vendidos (desktop) */
+  --pmv-height: 1849px;
+  /* Parametrização rápida da seção Produtos mais vendidos */
+  --pmv-card-width: 320px;
+  --pmv-card-height: 580px;          /* altura dos cards */
+  --pmv-card-img-height: 260px;      /* altura da imagem dentro do card */
+  --pmv-card-gap: 24px;              /* espaço entre cards */
+  --pmv-track-side-padding: clamp(56px, 5vw, 72px); /* espaço p/ setas */
+  --pmv-arrow-size: 42px;            /* tamanho das setas */
+  --pmv-arrow-offset: clamp(24px, 3.5vw, 56px); /* quão perto dos cantos */
+  --pmv-arrow-top-offset: 0px;       /* ajuste fino vertical das setas */
+  --pmv-fade-soft: 48px;             /* início/fim do fade suave */
+  --pmv-fade-hard: 96px;             /* faixa opaca após o fade suave */
+  --pmv-overlay-pt: 64px;            /* afastamento do topo para título */
+  --pmv-btn-glow-duration: 1.8s;     /* velocidade do brilho do botão */
+  --pmv-btn-shine-duration: 2.3s;    /* velocidade do efeito shine */
 }
 
 /*
@@ -269,6 +285,333 @@
   text-align: center;
 }
 
+/* ==========================================================
+   Seção: Produtos mais vendidos (carrossel corrigido)
+   - Remove posicionamentos absolutos e altura fixa
+   - Centraliza títulos
+   - Torna a faixa de produtos rolável horizontalmente
+   - Usa setas pginainicial-arrowrightcircle2/leftcircle2 como botões
+   ========================================================== */
+.pginainicial-produtosmaisvendidos {
+  position: relative !important;
+  display: block !important;
+  height: var(--pmv-height) !important; /* altura exata desejada */
+  padding: 0 !important; /* não adiciona altura extra */
+  overflow: hidden;
+  background: #BC2929; /* fallback */
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-text228,
+.pginainicial-produtosmaisvendidos .pginainicial-text229 {
+  position: static !important;
+  display: block !important;
+  margin: 0 auto 12px !important;
+  text-align: center !important;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-text228 {
+  font-family: 'Passion One', system-ui !important;
+  font-size: var(--pginainicial-title-xl-size) !important;
+  line-height: 1.1 !important;
+  color: #fff !important;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-text229 {
+  max-width: 980px;
+  font-family: Montserrat, system-ui !important;
+  font-size: 20px !important;
+  line-height: 1.4 !important;
+  color: #fff !important;
+}
+
+/* Faixa do carrossel */
+.pginainicial-produtosmaisvendidos .pginainicial-frame22 {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  display: flex !important;
+  flex-wrap: nowrap !important; /* mantém os cards lado a lado */
+  align-items: stretch !important;
+  gap: 24px !important;
+  padding: 8px clamp(56px, 5vw, 72px) !important; /* espaço p/ setas, responsivo */
+  width: 100% !important;       /* ocupa toda a largura da seção */
+  max-width: none !important;   /* sem limite de largura */
+  margin: 24px 0 0 !important;  /* sem centralização com auto */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  z-index: 2;
+  -ms-overflow-style: none;        
+  scrollbar-width: none;           
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) 48px,
+    #000 96px,
+    #000 calc(100% - 96px),
+    rgba(0,0,0,0.85) calc(100% - 48px),
+    rgba(0,0,0,0.15) 100%);
+  mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) 48px,
+    #000 96px,
+    #000 calc(100% - 96px),
+    rgba(0,0,0,0.85) calc(100% - 48px),
+    rgba(0,0,0,0.15) 100%);
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-produtos-bg {
+  position: absolute;
+  inset: 0;             
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    
+  object-position: center top;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+.pginainicial-produtos-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  padding-top: 64px; 
+}
+
+/* Esconde elementos decorativos antigos dentro da seção */
+.pginainicial-produtosmaisvendidos .pginainicial-ellipse71,
+.pginainicial-produtosmaisvendidos .pginainicial-ellipse81 {
+  display: none !important;
+}
+.pginainicial-produtosmaisvendidos .pginainicial-frame22::-webkit-scrollbar { display: none; }
+
+/* Cartões: largura fixa para formar slides e snap opcional */
+.pginainicial-produtosmaisvendidos .pginainicial-picanha-premium2,
+.pginainicial-produtosmaisvendidos .pginainicial-picanha-premium3,
+.pginainicial-produtosmaisvendidos .pginainicial-ancho-angus2,
+.pginainicial-produtosmaisvendidos .pginainicial-filde-frango2 {
+  flex: 0 0 320px;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  scroll-snap-align: start;
+  border-radius: 16px !important;
+  width: 320px !important;
+  height: 480px !important; /* altura maior dos cards */
+  padding: 0 !important; /* remove padding diferente entre cards */
+  overflow: hidden !important; /* garante cortes suaves do raio */
+}
+/* Imagens dos produtos (BG + corte) */
+.pginainicial-produtosmaisvendidos .pginainicial-image19,
+.pginainicial-produtosmaisvendidos .pginainicial-image20,
+.pginainicial-produtosmaisvendidos .pginainicial-image21,
+.pginainicial-produtosmaisvendidos .pginainicial-image22 {
+  width: 100% !important;
+  height: 260px !important; /* imagem mais alta para acompanhar o card */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.pginainicial-produtosmaisvendidos .pginainicial-image19 { background-image: url('../assets/carne.jpg'); }
+.pginainicial-produtosmaisvendidos .pginainicial-image20 { background-image: url('../assets/ancho.webp'); }
+.pginainicial-produtosmaisvendidos .pginainicial-image21 { background-image: url('../assets/costela.png'); }
+.pginainicial-produtosmaisvendidos .pginainicial-image22 { background-image: url('../assets/file de frang.png'); }
+
+/* Setas do carrossel */
+.pginainicial-arrowrightcircle2,
+.pginainicial-arrowleftcircle2 {
+  position: absolute;
+  top: 0; 
+  transform: none; 
+  width: 42px;
+  height: 42px;
+  z-index: 10; 
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  cursor: pointer;
+}
+.pginainicial-arrowrightcircle2 { right: clamp(24px, 5.5vw, 56px); }
+.pginainicial-arrowleftcircle2  { left: clamp(24px, 5.5vw, 56px); transform: scaleX(-1); }
+
+/* Estado desabilitado para setas (usado pelo JS) */
+.pginainicial-arrow--disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   Parametrizações fáceis (override final)
+   Ajuste os valores em :root acima; estas regras aplicam os vars.
+   ========================================================== */
+.pginainicial-produtosmaisvendidos .pginainicial-frame22 {
+  gap: var(--pmv-card-gap) !important;
+  padding: 8px var(--pmv-track-side-padding) !important;
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) var(--pmv-fade-soft),
+    #000 var(--pmv-fade-hard),
+    #000 calc(100% - var(--pmv-fade-hard)),
+    rgba(0,0,0,0.85) calc(100% - var(--pmv-fade-soft)),
+    rgba(0,0,0,0.15) 100%);
+  mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) var(--pmv-fade-soft),
+    #000 var(--pmv-fade-hard),
+    #000 calc(100% - var(--pmv-fade-hard)),
+    rgba(0,0,0,0.85) calc(100% - var(--pmv-fade-soft)),
+    rgba(0,0,0,0.15) 100%);
+}
+
+.pginainicial-arrowrightcircle2,
+.pginainicial-arrowleftcircle2 {
+  width: var(--pmv-arrow-size) !important;
+  height: var(--pmv-arrow-size) !important;
+}
+.pginainicial-arrowrightcircle2 { right: var(--pmv-arrow-offset) !important; }
+.pginainicial-arrowleftcircle2  { left: var(--pmv-arrow-offset) !important; }
+
+.pginainicial-produtosmaisvendidos .pginainicial-picanha-premium2,
+.pginainicial-produtosmaisvendidos .pginainicial-picanha-premium3,
+.pginainicial-produtosmaisvendidos .pginainicial-ancho-angus2,
+.pginainicial-produtosmaisvendidos .pginainicial-filde-frango2 {
+  flex: 0 0 var(--pmv-card-width) !important;
+  width: var(--pmv-card-width) !important;
+  height: var(--pmv-card-height) !important;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-image19,
+.pginainicial-produtosmaisvendidos .pginainicial-image20,
+.pginainicial-produtosmaisvendidos .pginainicial-image21,
+.pginainicial-produtosmaisvendidos .pginainicial-image22 {
+  height: var(--pmv-card-img-height) !important;
+}
+
+.pginainicial-produtos-overlay {
+  padding-top: var(--pmv-overlay-pt) !important;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger17,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger18,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger19,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger20 {
+  animation: pgi-btn-glow var(--pmv-btn-glow-duration) ease-in-out infinite !important;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger17::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger18::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger19::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger20::before {
+  animation: pgi-btn-shine var(--pmv-btn-shine-duration) infinite !important;
+}
+
+/* Conteúdo interno dos cards ocupando a largura total */
+.pginainicial-produtosmaisvendidos .pginainicial-body17,
+.pginainicial-produtosmaisvendidos .pginainicial-body18,
+.pginainicial-produtosmaisvendidos .pginainicial-body19,
+.pginainicial-produtosmaisvendidos .pginainicial-body20 {
+  width: 100% !important;
+  padding: 12px 16px 8px;
+  box-sizing: border-box;
+}
+
+/* Ajuste do rating para o card filde-frango2 (igual aos demais) */
+.pginainicial-produtosmaisvendidos .pginainicial-starfilled8 {
+  width: 120px !important;
+  height: 27px !important;
+}
+
+/* Tipografia dentro dos cards (tamanhos mais contidos) */
+.pginainicial-produtosmaisvendidos .pginainicial-text231,
+.pginainicial-produtosmaisvendidos .pginainicial-text238,
+.pginainicial-produtosmaisvendidos .pginainicial-text245,
+.pginainicial-produtosmaisvendidos .pginainicial-text251 {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+}
+.pginainicial-produtosmaisvendidos .pginainicial-text233,
+.pginainicial-produtosmaisvendidos .pginainicial-text240,
+.pginainicial-produtosmaisvendidos .pginainicial-text247,
+.pginainicial-produtosmaisvendidos .pginainicial-text254 {
+  font-size: 12px !important;
+}
+.pginainicial-produtosmaisvendidos .pginainicial-text241,
+.pginainicial-produtosmaisvendidos .pginainicial-text234,
+.pginainicial-produtosmaisvendidos .pginainicial-text248,
+.pginainicial-produtosmaisvendidos .pginainicial-text255 {
+  font-size: 12px !important;
+}
+.pginainicial-produtosmaisvendidos .pginainicial-text242,
+.pginainicial-produtosmaisvendidos .pginainicial-text235,
+.pginainicial-produtosmaisvendidos .pginainicial-text249,
+.pginainicial-produtosmaisvendidos .pginainicial-text256 {
+  font-size: 18px !important;
+}
+
+/* Botão Adicionar no rodapé do card, centralizado */
+.pginainicial-produtosmaisvendidos .pginainicial-adc5,
+.pginainicial-produtosmaisvendidos .pginainicial-adc6,
+.pginainicial-produtosmaisvendidos .pginainicial-adc7,
+.pginainicial-produtosmaisvendidos .pginainicial-adc8 {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: auto !important; /* empurra o botão para o rodapé do card */
+  padding: 16px 0 22px !important; /* mais embaixo e com respiro */
+}
+
+/* Botão brilhando (shine + glow) */
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger17,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger18,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger19,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger20 {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(229,81,37,0.35);
+  animation: pgi-btn-glow 1.8s ease-in-out infinite;
+}
+
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger17::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger18::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger19::before,
+.pginainicial-produtosmaisvendidos .pginainicial-button-danger20::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: pgi-btn-shine 2.3s infinite;
+}
+
+@keyframes pgi-btn-glow {
+  0%, 100% { box-shadow: 0 10px 22px rgba(229,81,37,0.35), 0 0 0 0 rgba(229,81,37,0.25); }
+  50% { box-shadow: 0 14px 28px rgba(229,81,37,0.45), 0 0 0 10px rgba(229,81,37,0.08); }
+}
+
+@keyframes pgi-btn-shine {
+  0%, 20% { left: -150%; }
+  60% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* Elipses de fundo não devem cobrir cards */
+.pginainicial-produtosmaisvendidos .pginainicial-ellipse71,
+.pginainicial-produtosmaisvendidos .pginainicial-ellipse81 {
+  z-index: 0 !important;
+  pointer-events: none;
+}
 /* -- Seção: Dicas e Informações (Conteúdo) -- */
 .pginainicial-dicaseinformaes {
   display: flex;
@@ -308,7 +651,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
-  padding: 31px 0;
+
   overflow: visible;
 }
 
@@ -323,7 +666,7 @@
 
 /* -- Seção: Produtos mais vendidos -- */
 .pginainicial-produtosmaisvendidos {
-  background: linear-gradient(180deg, #E65103 0%, #BF4408 100%);
+  background: #BC2929; /* cor solicitada */
 }
 
 .pginainicial-produtosmaisvendidos .pginainicial-text228,
@@ -332,8 +675,7 @@
 }
 
 .pginainicial-produtosmaisvendidos .pginainicial-frame22 > div {
-  border: 2px solid rgb(255 255 255 / 15%);
-  box-shadow: 0 10px 28px rgb(0 0 0 / 18%);
+  background-color: #ffffff;
 }
 
 /* -- Seção: Baixe nosso app -- */
@@ -361,13 +703,9 @@
 }
 .pginainicial-header { overflow: visible !important; }
 
-/*
-  ====================================================================
-  == REGRAS DE LAYOUT E RESPONSIVIDADE (ESSENCIAIS)
-  ====================================================================
-*/
 
-/* -- Layout da Seção de Destaque (Cards + Botão) -- */
+
+
 .pginainicial-escolhas1 .pginainicial-group2 { order: 1; }
 .pginainicial-escolhas1 .pginainicial-button-danger11 {
   position: static;
@@ -376,7 +714,7 @@
   align-self: center;
 }
 
-/* -- Grupo de Cards de Produtos -- */
+
 .pginainicial-group2 {
   position: relative;
   width: min(100%, 1227px);
@@ -386,7 +724,7 @@
   justify-self: center;
 }
 
-/* -- Normalização do Layout dos Cards de Produto (Flexbox) -- */
+
 .pginainicial-picanha-premium1,
 .pginainicial-ancho-angus1,
 .pginainicial-filde-frango1,
@@ -414,7 +752,7 @@
 .pginainicial-costela-suna .pginainicial-body13  { flex: 1 1 auto; order: 2; }
 .pginainicial-costela-suna .pginainicial-adc4   { width: 100% !important; margin-top: auto; order: 3; }
 
-/* Garante que os botões dentro dos cards ocupem toda a largura */
+
 .pginainicial-adc1,
 .pginainicial-adc2,
 .pginainicial-adc3,
@@ -429,80 +767,12 @@
   width: 100%;
 }
 
-/* -- Container de Cards -- */
+
 .pginainicial-frame27 {
   display: flex;
   width: 100%;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: stretch; /* Garante que os cards na mesma linha tenham a mesma altura */
+  align-items: stretch; 
 }
 
-/*
-  ====================================================================
-  == MEDIA QUERIES (CONSOLIDADAS)
-  ====================================================================
-*/
-
-/* -- Telas Maiores (até 1220px) -- */
-@media (width <= 1220px) {
-  .pginainicial-group2 {
-    width: 100%;
-    padding: 0 24px;
-    box-sizing: border-box;
-  }
-  .pginainicial-group2 .pginainicial-frame27 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    justify-content: center;
-  }
-}
-
-/* -- Telas de Tablet (até 1100px) -- */
-@media (width <= 1100px) {
-  /* Para telas menores, abandonamos o posicionamento absoluto e usamos flexbox para a seção de ocasião */
-  .pginainicial-escolhas2 .pginainicial-frame25 {
-    position: static !important;
-    transform: none !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100% !important;
-    column-gap: 32px;
-    row-gap: 48px;
-    padding: 0 16px;
-    box-sizing: border-box;
-  }
-  .pginainicial-escolhas2 {
-    height: auto !important; /* Permite que a altura se ajuste ao conteúdo flexível */
-  }
-}
-
-/* -- Telas de Tablet Menores e Celulares (até 768px) -- */
-@media (width <= 768px) {
-  .pginainicial-header {
-    display: grid;
-    align-items: center;
-    gap: 8px 12px;
-    grid-template-columns: auto 1fr auto;
-  }
-
-  .pginainicial-group2 .pginainicial-frame27 {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .pginainicial-image11,
-  .pginainicial-image12,
-  .pginainicial-image13,
-  .pginainicial-image14 {
-    height: 150px;
-  }
-}
-
-/* -- Telas Pequenas (até 600px) -- */
-@media (width <= 600px) {
-  .pginainicial-group2 .pginainicial-frame27 {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
