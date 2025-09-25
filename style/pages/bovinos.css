@@ -101,6 +101,7 @@
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
+
 .meat-types-scroller::-webkit-scrollbar {
     display: none;
 }
@@ -452,7 +453,9 @@
     .hero-banner-cards-overlay {
         display: none;
     }
+}
 
+@media (min-width: 705px) {
     .carousel-track {
         justify-content: center;
     }
