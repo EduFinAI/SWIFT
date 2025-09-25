@@ -1,40 +1,52 @@
 // Espera todo o HTML ser carregado antes de executar o script
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Seleciona todas as seções que são "páginas"
+    // --- Cache de Elementos do DOM ---
+    // Armazenar seleções em variáveis evita buscas repetidas na página, melhorando a performance.
     const pages = document.querySelectorAll('.page');
-    // Seleciona todos os links que têm o atributo 'data-page'
     const navLinks = document.querySelectorAll('.nav-link');
+    const loginForm = document.getElementById('login-form');
+    const addButtons = document.querySelectorAll('.btn-add');
+
+    // Mapeia IDs de página para seus elementos para acesso rápido.
+    const pageMap = new Map();
+    pages.forEach(page => {
+        pageMap.set(page.id, page);
+    });
 
     // Função para mostrar uma página e esconder as outras
     const showPage = (pageId) => {
-        // Esconde todas as páginas
-        pages.forEach(page => {
-            page.classList.add('hidden');
+        // Esconde todas as páginas de forma eficiente
+        pageMap.forEach((pageElement, id) => {
+            if (id !== pageId) {
+                pageElement.classList.add('hidden');
+            }
         });
 
-        // Mostra a página desejada
-        const pageToShow = document.getElementById(pageId);
+        // Mostra a página desejada usando o mapa cacheado
+        const pageToShow = pageMap.get(pageId);
         if (pageToShow) {
             pageToShow.classList.remove('hidden');
         }
     };
 
-    // Adiciona um "escutador" de clique para cada link de navegação
-    navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            // Previne o comportamento padrão do link (que seria recarregar a página)
-            event.preventDefault();
-            
-            // Pega o ID da página do atributo 'data-page' do link clicado
-            const targetPage = link.dataset.page;
-            
-            // Chama a função para mostrar a página correspondente
-            if (targetPage) {
-                showPage(targetPage);
-            }
+    // --- Navegação SPA (Single Page Application) Simulada ---
+    if (navLinks.length > 0) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                // Previne o comportamento padrão do link (que seria recarregar a página)
+                event.preventDefault();
+                
+                // Pega o ID da página do atributo 'data-page' do link clicado
+                const targetPage = link.dataset.page;
+                
+                // Chama a função para mostrar a página correspondente
+                if (targetPage) {
+                    showPage(targetPage);
+                }
+            });
         });
-    });
+    }
 
     // --- INTERATIVIDADE EXTRA ---
 
@@ -49,15 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Simulação de Adicionar ao Carrinho
-    const addButtons = document.querySelectorAll('.btn-add');
-    addButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            alert('Produto adicionado ao carrinho! (Simulação)');
-            // Aqui você poderia adicionar uma lógica para contar os itens do carrinho
+    if (addButtons.length > 0) {
+        addButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Produto adicionado ao carrinho! (Simulação)');
+                // Futuramente, aqui poderia ser implementada uma lógica
+                // para atualizar um contador de itens no carrinho.
+            });
         });
-    });
-
+    }
 
     // Define a página inicial a ser exibida quando o site carrega
-    showPage('home');
+    // Garante que a página 'home' exista antes de tentar mostrá-la.
+    if (pageMap.has('home')) {
+        showPage('home');
+    }
 });

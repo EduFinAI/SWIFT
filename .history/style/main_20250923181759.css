@@ -791,5 +791,566 @@ input::placeholder, .thq-input::placeholder {
 
 /* End acessibilidade */
 
+/* =============================================== */
+/* =========== REFACTORED STYLES START =========== */
+/* =============================================== */
 
+.page-container {
+  display: flex;
+  overflow: auto;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* Header */
+.main-header {
+  display: flex;
+  overflow: hidden;
+  width: auto;
+  padding: 24px 32px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background-color: #fff;
+  box-shadow: 0 4px 12px 1px rgb(0 0 0 / 25%);
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+}
+
+.header-logo {
+  /* No specific styles needed, it's an img */
+}
+
+.header-nav {
+  display: flex;
+  width: auto;
+  height: 32px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.nav-link {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  /* Text styles from pginainicial-text100, 101, etc. */
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  color: #231f20;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #f0f0f0; /* A sensible hover state */
+}
+
+.nav-link.active {
+  background-color: #f5f5f5; /* from .pginainicial-navigation-pill1 */
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 640px;
+  margin-top: -6px;
+  padding: 12px 16px;
+  flex: 1 1 360px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(74, 74, 74, 0.08);
+  border: 1px solid #d9d9d9;
+  border-radius: 9999px;
+}
+
+.search-bar-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.search-bar-input {
+  width: 100%;
+  height: auto;
+  flex-grow: 1;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #5a5a5a;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+/* Header Auth */
+.header-auth {
+  display: flex;
+  width: auto;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.auth-button .auth-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.auth-link, .auth-button {
+  display: flex;
+  padding: 8px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+/* Shipping Banner */
+.shipping-banner {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #231f20;
+  color: #fff;
+}
+
+.shipping-banner-icon {
+  width: auto;
+  height: 24px;
+}
+
+.shipping-banner-text {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  height: 451px;
+  width: 100%;
+  align-items: flex-start;
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 30%);
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  transform: scale(1.02);
+  transform-origin: center center;
+}
+
+.hero-title {
+  position: absolute;
+  top: 26px;
+  left: 48px;
+  width: auto;
+  max-width: 90vw;
+  height: auto;
+  font-family: "Passion One", sans-serif;
+  font-size: 92px;
+  font-weight: 700;
+  line-height: 63%;
+  color: #fff;
+  z-index: 2;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 82px;
+  left: 34px;
+  width: 323px;
+  height: 99px;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  position: absolute;
+  top: 183px;
+  left: 48px;
+  max-width: 90vw;
+  height: auto;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-delivery-box {
+  position: absolute;
+  top: 271px;
+  left: 48px;
+  display: flex;
+  width: 280px;
+  height: 64px;
+  align-items: center;
+  background-color: rgba(35, 31, 32, 0.6);
+  border-radius: 10px;
+  z-index: 1;
+  padding: 11px 14px;
+  gap: 13px;
+  color: #fff;
+}
+
+.hero-delivery-box .icon {
+  width: 41px;
+  height: auto;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+
+.hero-delivery-box .text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-delivery-box .text-content span:first-child {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.hero-delivery-box .text-content span:last-child {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.cep-search-form {
+  position: absolute;
+  top: 350px;
+  left: 48px;
+  display: flex;
+  overflow: hidden;
+  width: 460px;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 9999px;
+  z-index: 1;
+}
+
+.cep-search-form input {
+  height: auto;
+  flex-grow: 1;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  color: #757575;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.cep-search-form .icon-wrapper {
+  width: 17px;
+  height: 17px;
+}
+
+.hero-button {
+  position: absolute;
+  top: 350px;
+  left: 524px;
+  display: flex;
+  padding: 17px;
+  justify-content: center;
+  align-items: center;
+  background-color: #e55125;
+  border: 1px solid #e55125;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* --- Featured Products Section --- */
+.featured-products {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px;
+  background-color: #f5f5f5;
+  gap: 24px;
+}
+
+.featured-products-title {
+  font-family: "Passion One", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 120%;
+  color: #231f20;
+  text-align: center;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 33px;
+  width: 100%;
+  max-width: 1227px;
+  overflow-x: auto; /* For smaller screens */
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  width: 282px;
+  height: 371px;
+  padding: 16px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background-color: #fff;
+  border-radius: 12px 12px 8px 8px;
+  box-shadow: 0 4px 4.5px 1px rgba(0, 0, 0, 0.49);
+}
+
+.product-card-image {
+  display: flex;
+  overflow: hidden;
+  width: 282px;
+  height: 192px;
+  flex-shrink: 0;
+  border-radius: 12px 12px 0 0;
+  background-color: #c4c4c4; /* Placeholder */
+}
+
+.product-card-body {
+  display: flex;
+  width: 169px;
+  height: 93px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-card-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  color: #1e1e1e;
+}
+
+.product-card-subtitle {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #1e1e1e;
+}
+
+.product-card-rating {
+  width: 77px;
+  height: 19px;
+}
+
+.product-card-price--original {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 140%;
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.product-card-price--current {
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 140%;
+  color: #1e1e1e;
+}
+
+.product-card-button {
+  display: flex;
+  width: 240px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #e55125;
+  border: 1px solid #e55125;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.view-all-products-button {
+  display: flex;
+  padding: 20px 70px;
+  align-items: center;
+  gap: 10px;
+  background-color: #e55125;
+  border: 1px solid #e55125;
+  border-radius: 8px;
+  color: #fff;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 48px;
+}
+
+/* --- Occasion Section --- */
+.occasion-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+  background-color: #fff;
+}
+
+.occasion-title {
+  font-family: "Passion One", sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: center;
+  color: #231f20;
+  letter-spacing: 0.22em;
+}
+
+.occasion-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 37px;
+  width: 100%;
+  max-width: 1256px;
+  overflow-x: auto;
+}
+
+.occasion-card {
+  position: relative;
+  width: 393px;
+  height: 343px;
+  flex-shrink: 0;
+}
+
+.occasion-card-image {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 373px;
+  height: 302px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.occasion-card-overlay {
+  position: absolute;
+  top: 198px;
+  left: 0;
+  width: 393px;
+  height: 165px;
+  border-radius: 18px;
+}
+
+.occasion-card-icon {
+  position: absolute;
+  top: 219px;
+  left: 19px;
+  width: 40px;
+  height: 43px;
+}
+
+.occasion-card-title {
+  position: absolute;
+  top: 219px;
+  left: 62px;
+  font-family: "BC Sklonar", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #181716;
+}
+
+.occasion-card-description {
+  position: absolute;
+  top: 251px;
+  left: 62px;
+  max-width: 300px;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 120%;
+  color: #454341;
+}
+
+.occasion-card-cta {
+  position: absolute;
+  top: 298px;
+  left: 21px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Montserrat, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e55125;
+  text-decoration: none;
+}
+
+.occasion-card-cta img {
+  width: 15px;
+  height: 15px;
+}

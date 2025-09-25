@@ -791,5 +791,11 @@ input::placeholder, .thq-input::placeholder {
 
 /* End acessibilidade */
 
-
-
+/* -- Tokens de Tipografia Responsiva -- */
+:root {
+  --pginainicial-title-hero-size: clamp(36px, calc(22px + 4.8vw), 92px);
+  --pginainicial-title-xxl-size: clamp(44px, calc(24px + 5.65vw), 96px);
+  --pginainicial-title-xl-size: clamp(38px, calc(19px + 5.3vw), 87px);
+  --pginainicial-title-lg-size: clamp(32px, calc(16px + 4.5vw), 73px);
+  --pginainicial-title-md-size: clamp(26px, calc(22px + 1.1vw), 40px);
+}

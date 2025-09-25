@@ -49,6 +49,10 @@
   --bg-dark: #231f20;
   --bg-accent: #bb2828;
 
+  /* Section backgrounds */
+  --pginainicial-dicaseinformaes-bg-image: none;
+  --pginainicial-dicaseinformaes-bg-color: transparent;
+
   /* Border colors */
   --border-color-light: var(--color-gray-250);
   --border-color-subtle: var(--color-gray-275);
