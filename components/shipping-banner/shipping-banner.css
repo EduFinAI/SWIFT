@@ -1,0 +1,73 @@
+/* Shipping Banner Component Styles */
+.swift-shipping-banner {
+  background: var(--swift-text-primary);
+  color: #fff;
+  width: 100%;
+}
+
+.swift-shipping-banner__container {
+  max-width: var(--dl-layout-size-maxwidth, 1400px);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.swift-shipping-banner__content {
+  display: flex;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.swift-shipping-banner__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.swift-shipping-banner__text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swift-shipping-banner__container {
+    padding: 0 20px;
+  }
+
+  .swift-shipping-banner__content {
+    height: 48px;
+    gap: 8px;
+  }
+
+  .swift-shipping-banner__text {
+    font-size: 13px;
+  }
+
+  .swift-shipping-banner__icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-shipping-banner__container {
+    padding: 0 16px;
+  }
+
+  .swift-shipping-banner__content {
+    height: 44px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 0;
+  }
+
+  .swift-shipping-banner__text {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
