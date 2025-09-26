@@ -1,0 +1,363 @@
+/* Featured Products Component Styles - Updated */
+.swift-featured-products {
+  width: 100%;
+  padding: 60px 0; /* Reduzido para ficar mais próximo do hero */
+  background-color: var(--swift-neutral-white);
+}
+
+.swift-featured-products__container {
+  max-width: var(--swift-container-max-width);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Section Title */
+.swift-featured-products__title {
+  font-family: var(--swift-font-display);
+  font-size: clamp(28px, 5vw, 48px); /* Tamanho otimizado */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em; /* Conforme solicitado */
+  text-align: center;
+  color: var(--swift-text-primary); /* Nova cor #111827 */
+  margin: 0 0 40px 0; /* Reduzido para compactar */
+}
+
+/* Products Grid - Desktop: uma linha só */
+.swift-featured-products__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas fixas para desktop */
+  gap: 32px;
+  margin-bottom: 48px;
+  max-width: 1400px; /* Aumentado de 1200px para aproveitar monitores maiores */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Product Card */
+.swift-product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--swift-neutral-white); /* Branco #FFFFFF */
+  border: 1px solid var(--swift-neutral-light); /* Borda #E5E7EB */
+  border-radius: 12px; /* Bordas arredondadas conforme solicitado */
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra leve conforme solicitado */
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.swift-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Product Image */
+.swift-product-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.swift-product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.swift-product-card:hover .swift-product-card__img {
+  transform: scale(1.05);
+}
+
+/* Product Content */
+.swift-product-card__content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.swift-product-card__name {
+  font-family: var(--swift-font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--swift-text-primary); /* Nova cor #111827 */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.swift-product-card__weight {
+  font-family: var(--swift-font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--swift-text-secondary); /* Nova cor #6B7280 */
+  margin: 0;
+}
+
+.swift-product-card__rating {
+  margin: 8px 0;
+}
+
+.swift-product-card__stars {
+  width: 120px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.swift-product-card__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.swift-product-card__old-price {
+  font-family: var(--swift-font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--swift-text-muted);
+  text-decoration: line-through;
+}
+
+.swift-product-card__price {
+  font-family: var(--swift-font-primary);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--swift-primary-orange); /* Cor atualizada */
+}
+
+/* Product Actions */
+.swift-product-card__actions {
+  padding: 0 20px 20px;
+}
+
+.swift-product-card__add-btn {
+  /* Using mixin classes */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--swift-font-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--swift-radius-lg);
+  cursor: pointer;
+  transition: all var(--swift-transition-normal);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  
+  /* Primary gradient style */
+  background: linear-gradient(90deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(230, 81, 3, 0.3);
+  
+  /* Component specific */
+  width: 100%;
+  padding: 12px 24px;
+  font-size: var(--swift-text-base);
+}
+
+.swift-product-card__add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 81, 3, 0.4);
+}
+
+.swift-product-card__add-btn:active {
+  transform: translateY(0);
+}
+
+.swift-product-card__add-text {
+  display: block;
+}
+
+/* View All Button */
+.swift-featured-products__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.swift-featured-products__view-all-btn {
+  padding: 16px 32px;
+  background: linear-gradient(90deg, var(--swift-primary-orange-light), var(--swift-primary-orange-dark));
+  color: var(--swift-text-white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--swift-font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 12px rgba(229, 81, 37, 0.3);
+}
+
+.swift-featured-products__view-all-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(229, 81, 3, 0.4);
+}
+
+.swift-featured-products__view-all-text {
+  display: block;
+}
+
+/* Responsive Design */
+/* Monitores grandes - cards maiores */
+@media (min-width: 1400px) {
+  .swift-featured-products__grid {
+    max-width: 1600px; /* Ainda maior para monitores grandes */
+    gap: 40px; /* Gap maior também */
+  }
+  
+  .swift-product-card__image {
+    height: 240px; /* Imagem maior */
+  }
+  
+  .swift-product-card__content {
+    padding: 24px; /* Padding maior */
+  }
+  
+  .swift-product-card__name {
+    font-size: 22px; /* Fonte maior */
+  }
+  
+  .swift-product-card__price {
+    font-size: 26px; /* Preço maior */
+  }
+}
+
+/* Monitores extra grandes - aproveitamento máximo */
+@media (min-width: 1800px) {
+  .swift-featured-products__grid {
+    max-width: 1800px; /* Máximo para monitores 4K */
+    gap: 48px;
+  }
+  
+  .swift-product-card__image {
+    height: 260px;
+  }
+  
+  .swift-product-card__content {
+    padding: 28px;
+  }
+  
+  .swift-product-card__name {
+    font-size: 24px;
+  }
+  
+  .swift-product-card__price {
+    font-size: 28px;
+  }
+}
+
+/* Tablet - 2 colunas */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .swift-featured-products__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    gap: 28px;
+  }
+}
+
+/* Mobile - sempre 2 em 2 */
+@media (max-width: 768px) {
+  .swift-featured-products {
+    padding: 60px 0;
+  }
+
+  .swift-featured-products__container {
+    padding: 0 20px;
+  }
+
+  .swift-featured-products__title {
+    margin-bottom: 32px;
+  }
+
+  .swift-featured-products__grid {
+    grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas em mobile */
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .swift-product-card__content {
+    padding: 14px; /* Padding menor para 2 colunas */
+    gap: 8px;
+  }
+
+  .swift-product-card__name {
+    font-size: 16px; /* Fonte menor para caber melhor em 2 colunas */
+    line-height: 1.3;
+  }
+
+  .swift-product-card__weight {
+    font-size: 12px; /* Peso menor */
+  }
+
+  .swift-product-card__price {
+    font-size: 18px; /* Preço menor para 2 colunas */
+  }
+
+  .swift-product-card__actions {
+    padding: 0 14px 14px; /* Padding consistente */
+  }
+
+  .swift-featured-products__actions {
+    margin-top: 32px;
+  }
+}
+
+/* Mobile pequeno - ainda 2 em 2, mas mais compacto */
+@media (max-width: 480px) {
+  .swift-featured-products {
+    padding: 48px 0;
+  }
+
+  .swift-featured-products__container {
+    padding: 0 16px;
+  }
+
+  .swift-featured-products__grid {
+    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas mesmo em telas pequenas */
+    gap: 16px; /* Gap menor para telas pequenas */
+  }
+
+  .swift-product-card__image {
+    height: 150px; /* Altura menor para 2 colunas em mobile pequeno */
+  }
+
+  .swift-product-card__content {
+    padding: 12px; /* Padding ainda menor */
+    gap: 6px;
+  }
+
+  .swift-product-card__name {
+    font-size: 14px; /* Fonte ainda menor */
+  }
+
+  .swift-product-card__weight {
+    font-size: 11px;
+  }
+
+  .swift-product-card__price {
+    font-size: 16px;
+  }
+
+  .swift-product-card__actions {
+    padding: 0 12px 12px;
+  }
+
+  .swift-product-card__add-btn {
+    padding: 10px 16px; /* Botão menor */
+    font-size: 14px;
+  }
+
+  .swift-featured-products__view-all-btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
+}

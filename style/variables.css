@@ -1,171 +1,104 @@
-/* ===== CSS VARIABLES ===== */
-
-/* Color tokens */
+/* CSS Variables - Design System Tokens */
 :root {
-  /* Brand colors */
-  --color-primary: #e55125;
-  --color-primary-dark: #d14a1f;
-  --color-primary-light: #f6754a;
-
-  /* Accent colors */
-  --color-secondary: #faa61a;
-  --color-accent: #bb2828;
-  --color-success: #28a745;
-  --color-success-dark: #218838;
-  --color-success-strong: #059669;
-  --color-danger: #dc2626;
-
-  /* Neutral palette */
-  --color-white: #fff;
-  --color-black: #000;
-  --color-dark: #231f20;
-  --color-gray-50: #f8f9fa;
-  --color-gray-100: #f5f5f5;
-  --color-gray-150: #f3f3f3;
-  --color-gray-200: #d9d9d9;
-  --color-gray-250: #e0e0e0;
-  --color-gray-275: #c4c4c4;
-  --color-gray-300: #757575;
-  --color-gray-400: #5a5a5a;
-  --color-gray-450: #454341;
-  --color-gray-500: #4a4a4a;
-  --color-gray-550: #343434;
-  --color-gray-600: #3a3a3a;
-  --color-gray-700: #1e1e1e;
-
-  /* Text colors */
-  --text-primary: #181716;
-  --text-secondary: #757575;
-  --text-muted: #666;
-  --text-placeholder: #999;
-  --text-light: #b3b3b3;
-  --text-white: #fff;
-
-  /* Backgrounds */
-  --bg-primary: #fff;
-  --bg-secondary: #231f20;
-  --bg-soft: #f3f3f3;
-  --bg-muted: #f8f9fa;
-  --bg-dark: #231f20;
-  --bg-accent: #bb2828;
-
-  /* Section backgrounds */
-  --pginainicial-dicaseinformaes-bg-image: none;
-  --pginainicial-dicaseinformaes-bg-color: transparent;
-
-  /* Border colors */
-  --border-color-light: var(--color-gray-250);
-  --border-color-subtle: var(--color-gray-275);
-  --border-color-muted: var(--color-gray-200);
-
+  /* Colors - Updated to match design */
+  --swift-primary-orange: #E55125;
+  --swift-primary-orange-dark: #C81E1E;
+  --swift-primary-orange-light: #FF5A26;
+  --swift-secondary-red: #A61C1C;
+  
+  --swift-neutral-dark: #111827;
+  --swift-neutral-medium: #6B7280;
+  --swift-neutral-light: #E5E7EB;
+  --swift-neutral-white: #FFFFFF;
+  --swift-neutral-input: #333333;
+  
+  --swift-text-primary: #231F20;
+  --swift-text-secondary: #6B7280;
+  --swift-text-muted: rgba(107, 114, 128, 0.8);
+  --swift-text-white: #FFFFFF;
+  --swift-text-white-muted: rgba(255, 255, 255, 0.85);
+  
+  /* Delivery info specific color */
+  --swift-delivery-bg: #231F20;
+  
   /* Typography */
-  --font-primary: 'Montserrat', sans-serif;
-  --font-display: 'Passion One', cursive;
-  --font-secondary: 'BC Sklonar', serif;
-  --font-mono: 'Inter', monospace;
-
-  /* Font sizes */
-  --font-size-xs: 11px;
-  --font-size-sm: 12px;
-  --font-size-base: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 32px;
-  --font-size-4xl: 40px;
-  --font-size-5xl: 48px;
-  --font-size-6xl: 73px;
-  --font-size-7xl: 87px;
-  --font-size-8xl: 92px;
-  --font-size-9xl: 96px;
-
-  /* Font weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extrabold: 800;
-  --font-weight-black: 900;
-
-  /* Line heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.4;
-  --line-height-relaxed: 1.7;
-
-  /* Spacing scale */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-
-  /* Border radius */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-  --border-radius-xl: 18px;
-  --border-radius-2xl: 22px;
-  --border-radius-full: 9999px;
-
+  --swift-font-primary: 'Montserrat', sans-serif;
+  --swift-font-display: 'Passion One', Impact, system-ui;
+  --swift-font-body: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  
+  /* Font Sizes - Responsive */
+  --swift-text-xs: clamp(11px, 2.5vw, 12px);
+  --swift-text-sm: clamp(12px, 3vw, 14px);
+  --swift-text-base: clamp(14px, 3.5vw, 16px);
+  --swift-text-lg: clamp(16px, 4vw, 18px);
+  --swift-text-xl: clamp(18px, 4.5vw, 20px);
+  --swift-text-2xl: clamp(20px, 5vw, 24px);
+  --swift-text-3xl: clamp(24px, 6vw, 32px);
+  --swift-text-4xl: clamp(32px, 8vw, 48px);
+  --swift-text-5xl: clamp(36px, 10vw, 64px);
+  --swift-text-6xl: clamp(48px, 12vw, 96px);
+  
+  /* Spacing */
+  --swift-space-1: 4px;
+  --swift-space-2: 8px;
+  --swift-space-3: 12px;
+  --swift-space-4: 16px;
+  --swift-space-5: 20px;
+  --swift-space-6: 24px;
+  --swift-space-8: 32px;
+  --swift-space-10: 40px;
+  --swift-space-12: 48px;
+  --swift-space-16: 64px;
+  --swift-space-20: 80px;
+  
+  /* Layout */
+  --swift-container-max-width: 1400px;
+  --swift-container-padding: 32px;
+  --swift-container-padding-mobile: 16px;
+  
+  /* Border Radius */
+  --swift-radius-sm: 4px;
+  --swift-radius-md: 8px;
+  --swift-radius-lg: 12px;
+  --swift-radius-xl: 16px;
+  --swift-radius-2xl: 20px;
+  --swift-radius-full: 9999px;
+  
   /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 4px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 4px 4.5px 1px rgba(0, 0, 0, 0.49);
-  --shadow-header: 0 4px 11.8px 1px rgba(0, 0, 0, 0.25);
-  --shadow-focus-primary: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
-
+  --swift-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --swift-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --swift-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --swift-shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.2);
+  --swift-shadow-2xl: 0 16px 32px rgba(0, 0, 0, 0.25);
+  
   /* Transitions */
-  --transition-fast: 0.15s ease-in-out;
-  --transition-normal: 0.3s ease-in-out;
-  --transition-slow: 0.5s ease-in-out;
-
-  /* Z-index layers */
-  --z-dropdown: 1000;
-  --z-sticky: 1020;
-  --z-fixed: 1030;
-  --z-modal: 1040;
-  --z-popover: 1050;
-  --z-tooltip: 1060;
-
-  /* Breakpoints */
-  --breakpoint-xs: 480px;
-  --breakpoint-sm: 600px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1024px;
-  --breakpoint-2xl: 1200px;
-  --breakpoint-3xl: 1366px;
-  --breakpoint-4xl: 1400px;
-
-  /* Legacy aliases */
-  --dl-color-theme-primary1: var(--color-primary-dark);
-  --dl-color-theme-primary2: var(--color-primary);
-  --dl-color-theme-secondary1: var(--color-white);
-  --dl-color-theme-secondary2: var(--bg-secondary);
-  --dl-color-theme-neutral-dark: var(--color-dark);
-  --dl-color-theme-neutral-light: var(--bg-primary);
-  --dl-color-theme-accent1: var(--color-white);
-  --dl-color-theme-accent2: var(--bg-secondary);
-  --dl-color-default-radial: rgb(250 145 26 / 100%);
+  --swift-transition-fast: 0.15s ease;
+  --swift-transition-normal: 0.25s ease;
+  --swift-transition-slow: 0.35s ease;
+  
+  /* Z-index scale */
+  --swift-z-dropdown: 1000;
+  --swift-z-sticky: 1020;
+  --swift-z-fixed: 1030;
+  --swift-z-modal-backdrop: 1040;
+  --swift-z-modal: 1050;
+  --swift-z-popover: 1060;
+  --swift-z-tooltip: 1070;
+  --swift-z-toast: 1080;
+  
+  /* Breakpoints (for use in media queries) */
+  --swift-breakpoint-sm: 480px;
+  --swift-breakpoint-md: 768px;
+  --swift-breakpoint-lg: 1024px;
+  --swift-breakpoint-xl: 1280px;
+  --swift-breakpoint-2xl: 1536px;
 }
 
-/* Dark mode scaffold */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-white: #fff;
-    --color-black: #1a1a1a;
-    --color-dark: #231f20;
-    --text-primary: #fff;
-    --text-secondary: #b3b3b3;
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #2a2a2a;
-  }
+/* Legacy CSS variables support (for compatibility) */
+:root {
+  --dl-color-theme-primary1: var(--swift-primary-orange-dark);
+  --dl-color-theme-primary2: var(--swift-primary-orange);
+  --dl-color-theme-neutral-dark: var(--swift-neutral-dark);
+  --dl-color-theme-neutral-light: var(--swift-neutral-white);
+  --dl-layout-size-maxwidth: var(--swift-container-max-width);
 }
