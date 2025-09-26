@@ -1,0 +1,254 @@
+/* Smart Cart Component Styles - Updated v2.0 */
+/* Override any conflicting styles from legacy CSS */
+.swift-smart-cart,
+#swift-smart-cart-v2,
+section.swift-smart-cart {
+  position: relative !important;
+  width: 100% !important;
+  height: 619px !important; /* Altura fixa conforme solicitado */
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  background: transparent !important;
+  /* Reset any inherited styles */
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-sizing: border-box !important;
+}
+
+.swift-smart-cart__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background Image */
+.swift-smart-cart__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.swift-smart-cart__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Content Container */
+.swift-smart-cart__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--swift-container-max-width);
+  width: 100%;
+  padding: 0 var(--swift-container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Title */
+.swift-smart-cart__title {
+  font-family: var(--swift-font-display);
+  font-size: var(--swift-text-4xl);
+  font-weight: 700;
+  color: var(--swift-text-primary);
+  margin: 0 0 var(--swift-space-12) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Features Container */
+.swift-smart-cart__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--swift-space-8);
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: var(--swift-space-12);
+}
+
+/* Individual Feature */
+.swift-smart-cart__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--swift-space-4);
+  text-align: left;
+  background: rgba(255, 255, 255, 0.95);
+  padding: var(--swift-space-6);
+  border-radius: var(--swift-radius-xl);
+  box-shadow: var(--swift-shadow-md);
+  transition: all var(--swift-transition-normal);
+  backdrop-filter: blur(10px);
+}
+
+.swift-smart-cart__feature:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--swift-shadow-xl);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Feature Icon */
+.swift-smart-cart__feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--swift-primary-orange);
+  border-radius: var(--swift-radius-lg);
+  padding: var(--swift-space-2);
+}
+
+.swift-smart-cart__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Torna os ícones brancos */
+}
+
+/* Feature Content */
+.swift-smart-cart__feature-content {
+  flex: 1;
+}
+
+.swift-smart-cart__feature-title {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 600;
+  color: var(--swift-text-primary);
+  margin: 0 0 var(--swift-space-2) 0;
+  line-height: 1.3;
+}
+
+.swift-smart-cart__feature-description {
+  font-family: var(--swift-font-body);
+  font-size: var(--swift-text-sm);
+  color: var(--swift-text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Animated CTA Button - High Priority Override */
+.swift-smart-cart__cta-btn,
+#swift-smart-cart-v2 .swift-smart-cart__cta-btn,
+section.swift-smart-cart .swift-smart-cart__cta-btn {
+  /* Base button styles */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-4) var(--swift-space-8);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--swift-radius-full);
+  cursor: pointer;
+  transition: all var(--swift-transition-normal);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  
+  /* Primary gradient style */
+  background: linear-gradient(135deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(230, 81, 3, 0.4);
+  
+  /* Animation properties */
+  animation: swiftCtaPulse 2s ease-in-out infinite;
+}
+
+/* Shine effect overlay */
+.swift-smart-cart__cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: swiftCtaShine 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+.swift-smart-cart__cta-text {
+  position: relative;
+  z-index: 2;
+}
+
+.swift-smart-cart__cta-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(230, 81, 3, 0.5);
+  animation-play-state: paused; /* Pausa a animação no hover */
+}
+
+.swift-smart-cart__cta-btn:active {
+  transform: translateY(0) scale(1.02);
+}
+
+/* Keyframe Animations */
+@keyframes swiftCtaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(230, 81, 3, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(230, 81, 3, 0.6);
+  }
+}
+
+@keyframes swiftCtaShine {
+  0%, 20% {
+    left: -150%;
+  }
+  60% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Focus state for accessibility */
+.swift-smart-cart__cta-btn:focus {
+  outline: 3px solid rgba(230, 81, 3, 0.3);
+  outline-offset: 2px;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .swift-smart-cart__cta-btn {
+    animation: none;
+  }
+  
+  .swift-smart-cart__cta-btn::before {
+    animation: none;
+  }
+  
+  .swift-smart-cart__feature {
+    transition: none;
+  }
+  
+  .swift-smart-cart__feature:hover {
+    transform: none;
+  }
+}

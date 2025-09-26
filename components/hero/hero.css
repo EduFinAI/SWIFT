@@ -1,0 +1,338 @@
+/* Hero Section Component Styles - Updated */
+.swift-hero {
+  position: relative;
+  width: 100%;
+  min-height: 500px; /* Reduzido de 600px */
+  overflow: hidden;
+  background: var(--swift-primary-orange); /* Fundo laranja */
+}
+
+.swift-hero__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* Removido max-width para permitir que a imagem ocupe toda a tela */
+}
+
+/* Background */
+.swift-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100vw; /* Força largura total da viewport */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+.swift-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  transform: translateX(100px); 
+  object-fit: cover;
+  object-position: 75% center; /* Foco na carne do lado direito */
+  min-width: 100vw; /* Garante largura mínima da viewport */
+}
+
+/* Content */
+.swift-hero__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Grid 50/50 */
+  gap: 40px;
+  padding: 60px 32px; /* Padding reduzido conforme solicitado */
+  min-height: 500px;
+  align-items: center;
+  max-width: var(--swift-container-max-width); /* Limita apenas o conteúdo */
+  margin: 0 auto; /* Centraliza o conteúdo */
+  width: 100%;
+}
+
+/* Main Content - Lado Esquerdo - Agrupamento Coeso */
+.swift-hero__main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento consistente entre elementos */
+  max-width: 100%;
+  justify-content: center; /* Alinhamento vertical */
+  /* Propriedades para manter elementos juntos */
+  flex-shrink: 0; /* Não permite encolhimento */
+  min-width: 0; /* Evita overflow */
+  width: 100%; /* Ocupa espaço disponível */
+}
+
+/* Title Churrasco é na*/
+.swift-hero__title {
+  font-family: var(--swift-font-display);
+  font-size: 92px; 
+  font-weight: 700;
+  color: var(--swift-text-white); 
+  margin: -35px 0 -20px 0;
+  line-height: 1.1;
+  white-space: nowrap; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+
+.swift-hero__logo {
+  position: relative;
+  left: -180px;
+  top: 100;
+  height: 90px; 
+  width: auto;
+  object-fit: contain;
+  margin: -5px 0; 
+}
+
+/* Description */
+.swift-hero__description {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 400;
+  color: var(--swift-text-white-muted); /* Branco com 85% opacidade */
+  margin: 0;
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+/* CEP Form */
+.swift-hero__cep-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 8px 0; /* Espaçamento otimizado */
+}
+
+.swift-cep-form__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--swift-neutral-white);
+  border-radius: 8px; /* Conforme solicitado */
+  height: 44px; /* Altura específica */
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swift-cep-form__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--swift-font-primary);
+  font-size: 16px;
+  color: var(--swift-neutral-input); /* Cinza escuro #333333 */
+  padding: 0;
+  height: 100%;
+}
+
+.swift-cep-form__input::placeholder {
+  color: var(--swift-text-muted);
+}
+
+.swift-cep-form__icon {
+  margin-left: 8px;
+}
+
+.swift-cep-form__location-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+/* Delivery Info */
+.swift-hero__delivery-info {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Gap maior para acomodar ícone maior */
+  background: rgba(35, 31, 32, 0.2); /* Cor #231F20 com 20% opacidade */
+  padding: 12px 20px; /* Padding maior para acomodar duas linhas */
+  border-radius: 8px; /* Bordas mais arredondadas */
+  backdrop-filter: blur(4px); /* Mantém o blur */
+  width: fit-content;
+}
+
+.swift-hero__truck-icon {
+  width: 32px; /* Ícone maior para acompanhar duas linhas */
+  height: 32px;
+  filter: brightness(0) invert(1); /* Ícone branco */
+  flex-shrink: 0; /* Não encolhe */
+}
+
+.swift-hero__delivery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; /* Pequeno gap entre as linhas */
+  color: var(--swift-text-white);
+  font-family: var(--swift-font-primary);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.swift-hero__delivery-line1 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.swift-hero__delivery-line2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* CTA Button */
+.swift-hero__cta-btn {
+  background: linear-gradient(90deg, var(--swift-primary-orange-light), var(--swift-primary-orange-dark)); /* Gradiente FF5A26 para C81E1E */
+  color: var(--swift-text-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-family: var(--swift-font-primary);
+  font-size: 1rem; /* Tamanho específico */
+  font-weight: 700; /* Bold conforme solicitado */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  min-width: 200px;
+}
+
+.swift-hero__cta-btn:hover {
+  background: var(--swift-secondary-red); /* Hover #A61C1C */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.swift-hero__cta-btn:active {
+  transform: translateY(0);
+}
+
+.swift-hero__cta-text {
+  display: block;
+}
+
+/* Reviews removed - now only in testimonials carousel */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .swift-hero__content {
+    grid-template-columns: 1fr; /* Uma coluna - elementos ficam empilhados */
+    gap: 32px;
+    text-align: center;
+    padding: 50px 24px;
+  }
+
+  .swift-hero__main {
+    align-items: center; /* Centraliza os elementos */
+    width: 100%; /* Garante largura total */
+    max-width: 600px; /* Limita largura máxima para legibilidade */
+    margin: 0 auto; /* Centraliza o bloco */
+  }
+
+  .swift-hero__title {
+    white-space: normal; /* Permite quebra em tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .swift-hero {
+    min-height: 400px;
+  }
+
+  .swift-hero__content {
+    grid-template-columns: 1fr;
+    padding: 24px 20px; /* Padding reduzido conforme solicitado */
+    gap: 20px;
+    min-height: 400px;
+  }
+
+  .swift-hero__main {
+    align-items: center; /* Centraliza elementos */
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Remove limitação em mobile */
+    gap: 18px; /* Gap menor para mobile */
+  }
+
+  .swift-hero__title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    white-space: normal;
+    text-align: center;
+  }
+
+  .swift-hero__logo {
+    height: 48px;
+  }
+
+  .swift-hero__description {
+    font-size: 16px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .swift-cep-form__container {
+    max-width: 100%;
+  }
+
+  .swift-hero__cta-btn {
+    width: 100%; /* Largura total no mobile */
+    padding: 16px 24px;
+  }
+
+  /* Delivery info responsivo */
+  .swift-hero__delivery-info {
+    padding: 10px 16px; /* Padding menor em mobile */
+    gap: 10px;
+  }
+
+  .swift-hero__truck-icon {
+    width: 28px; /* Ícone menor em mobile */
+    height: 28px;
+  }
+
+  .swift-hero__delivery-line1,
+  .swift-hero__delivery-line2 {
+    font-size: 13px; /* Fonte menor em mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-hero__content {
+    padding: 24px 16px; /* Padding mínimo */
+  }
+
+  .swift-hero__main {
+    gap: 16px; /* Gap ainda menor para mobile pequeno */
+    width: 100%;
+  }
+
+  .swift-hero__delivery-info {
+    padding: 8px 12px; /* Padding ainda menor */
+    gap: 8px;
+  }
+
+  .swift-hero__truck-icon {
+    width: 24px; /* Ícone menor em mobile pequeno */
+    height: 24px;
+  }
+
+  .swift-hero__delivery-line1,
+  .swift-hero__delivery-line2 {
+    font-size: 12px; /* Fonte menor em mobile pequeno */
+  }
+
+  .swift-cep-form__container {
+    padding: 0 12px;
+    height: 44px; /* Mantém altura */
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1200px) {
+  .swift-hero__content {
+    padding: 60px 40px; /* Máximo conforme solicitado */
+  }
+
+  .swift-hero__title {
+    white-space: nowrap; /* Força uma linha em telas grandes */
+  }
+}

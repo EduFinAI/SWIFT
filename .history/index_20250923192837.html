@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Swift — Carnes selecionadas com entrega rápida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./style/main.css" />
+    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="main-header" role="banner">
+        <img
+          src="./assets/image11269-6k6r-200h.png"
+          alt="Swift"
+          class="header-logo"
+        />
+        <button class="header__hamburger-button" aria-label="Abrir menu de navegação">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <nav class="header-nav" aria-label="Navegação principal">
+          <a href="#" class="nav-link active">Carnes</a>
+          <a href="#" class="nav-link">Aves</a>
+          <a href="#" class="nav-link">Suínos</a>
+          <a href="#" class="nav-link">Ocasiões</a>
+          <a href="#" class="nav-link">Ofertas</a>
+          <a href="#" class="nav-link">Outros</a>
+        </nav>
+        <form class="search-bar" role="search" action="#" method="get" onsubmit="event.preventDefault();">
+          <label for="header-search-input" class="sr-only">Buscar produtos</label>
+          <img src="./assets/x5714-hcj.svg" alt="" aria-hidden="true" class="search-bar-icon" />
+          <input type="search" id="header-search-input" class="search-bar-input" name="q" placeholder="Buscar produtos..." />
+        </form>
+        <div class="header-auth">
+          <a href="#" class="auth-link" aria-label="Minha conta">
+            <img
+              src="./assets/user5673-doah.svg"
+              alt="Ícone de usuário"
+              class="auth-icon"
+            />
+          </a>
+          <button type="button" class="auth-button" aria-label="Abrir carrinho de compras">
+            <img
+              src="./assets/carrinho.png"
+              alt="Ícone de carrinho"
+              class="auth-icon"
+            />
+          </button>
+        </div>
+        <div class="mobile-nav">
+          <button class="mobile-nav__close-button" aria-label="Fechar menu de navegação">&times;</button>
+          <nav class="mobile-nav__links" aria-label="Navegação móvel">
+            <a href="#" class="mobile-nav__link">Carnes</a>
+            <a href="#" class="mobile-nav__link">Aves</a>
+            <a href="#" class="mobile-nav__link">Suínos</a>
+            <a href="#" class="mobile-nav__link">Ocasiões</a>
+            <a href="#" class="mobile-nav__link">Ofertas</a>
+
+          </nav>
+        </div>
+      </header>
+      <div class="shipping-banner">
+        <img src="./assets/truck8139-m5j.svg" alt="" aria-hidden="true" class="shipping-banner-icon" />
+        <span class="shipping-banner-text">
+          Frete grátis a partir de R$ 299,00 em são paulo em até entrega agendada e entrega em 1 dia útil
+        </span>
+      </div>
+      <main class="main-content" role="main">
+        <section class="hero-section">
+          <div class="hero-background">
+            <img src="./assets/fundo1i443-99u-1000h.png" alt="Churrasco em uma tábua de madeira." />
+          </div>
+          <h1 class="hero-title">Churrasco é na</h1>
+          <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift" class="hero-logo" />
+          <p class="hero-subtitle">
+            Descubra o sabor autêntico das melhores carnes selecionadas para sua mesa. Entrega rápida e qualidade garantida.
+          </p>
+          <div class="hero-delivery-box">
+            <img src="./assets/truck3145-33ms.svg" alt="" class="icon" />
+            <div class="text-content">
+              <span>Entrega em até</span>
+              <span>2 horas para São Paulo</span>
+            </div>
+          </div>
+          <form class="cep-search-form" action="#" method="get" onsubmit="event.preventDefault();">
+            <label for="cep-input" class="sr-only">Digite seu CEP</label>
+            <div class="icon-wrapper">
+              <img src="./assets/local212747-bexd-200h.png" alt="" />
+            </div>
+            <input type="text" id="cep-input" name="cep" placeholder="Digite seu CEP" inputmode="numeric" pattern="\d{5}-?\d{3}" />
+          </form>
+          <button type="button" class="cta-button hero-button">COMPRAR AGORA</button>
+        </section>
+        <section class="featured-products" aria-labelledby="featured-products-title">
+          <h2 id="featured-products-title" class="featured-products-title">Produtos em Destaque</h2>
+          <div class="product-grid" role="list">
+            <div class="product-card" role="listitem">
+              <div class="product-card-image"></div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">Picanha Premium</h3>
+                <p class="product-card-subtitle">1 kilo</p>
+                <img src="./assets/starfilled5739-1gb6d.svg" alt="5 de 5 estrelas" class="product-card-rating" />
+                <p class="product-card-price--original">R$ 109,90</p>
+                <p class="product-card-price--current">R$ 89,90</p>
+              </div>
+              <button type="button" class="product-card-button">Adicionar</button>
+            </div>
+            <div class="product-card" role="listitem">
+              <div class="product-card-image"></div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">Ancho Angus</h3>
+                <p class="product-card-subtitle">1 kilo</p>
+                <img src="./assets/starfilled2256-m9i.svg" alt="5 de 5 estrelas" class="product-card-rating" />
+                <p class="product-card-price--original">R$ 109,90</p>
+                <p class="product-card-price--current">R$ 89,90</p>
+              </div>
+              <button type="button" class="product-card-button">Adicionar</button>
+            </div>
+            <div class="product-card" role="listitem">
+              <div class="product-card-image"></div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">Filé de Frango</h3>
+                <img src="./assets/starfilled5742-ltaa.svg" alt="5 de 5 estrelas" class="product-card-rating" />
+                <p class="product-card-price--original">R$ 109,90</p>
+                <p class="product-card-price--current">R$ 24,90</p>
+              </div>
+              <button type="button" class="product-card-button">Adicionar</button>
+            </div>
+            <div class="product-card" role="listitem">
+              <div class="product-card-image"></div>
+              <div class="product-card-body">
+                <h3 class="product-card-title">Costela Suína</h3>
+                <img src="./assets/starfilled5744-r3b.svg" alt="5 de 5 estrelas" class="product-card-rating" />
+                <p class="product-card-price--original">R$ 109,90</p>
+                <p class="product-card-price--current">R$ 38,90</p>
+              </div>
+              <button type="button" class="product-card-button">Adicionar</button>
+            </div>
+          </div>
+          <button type="button" class="view-all-products-button">Ver Todos os Produtos</button>
+        </section>
+        <section class="occasion-section" aria-labelledby="occasion-title">
+          <h2 id="occasion-title" class="occasion-title">ESCOLHA POR OCASIÃO</h2>
+          <div class="occasion-grid">
+            <div class="occasion-card">
+              <img src="./assets/image43536-4puj-400h.png" alt="Churrasco" class="occasion-card-image" />
+              <img src="./assets/rectangle25035-shjg-200h.png" alt="" class="occasion-card-overlay" />
+              <img src="./assets/icon3536-v4ga-200w.png" alt="" class="occasion-card-icon" />
+              <h3 class="occasion-card-title">CHURRASCO</h3>
+              <p class="occasion-card-description">
+                Cortes selecionados para um churrasco perfeito com amigos e família.
+              </p>
+              <a href="#" class="occasion-card-cta">
+                <span>Ver produtos</span>
+                <img src="./assets/arrowright5037-1qf.svg" alt="" />
+              </a>
+            </div>
+            <div class="occasion-card">
+              <img src="./assets/retratodechefmasculinonacozinhapreparandocarne11393-s2fq-300h.png" alt="Almoço Rápido" class="occasion-card-image" />
+              <img src="./assets/rectangle35038-v7sk-200h.png" alt="" class="occasion-card-overlay" />
+              <img src="./assets/clock5243-cba.svg" alt="" class="occasion-card-icon" />
+              <h3 class="occasion-card-title">ALMOÇO RÁPIDO</h3>
+              <p class="occasion-card-description">
+                Opções práticas e saborosas para o dia a dia com preparo em até 30 minutos.
+              </p>
+              <a href="#" class="occasion-card-cta">
+                <span>Ver produtos</span>
+                <img src="./assets/arrowright5038-loo.svg" alt="" />
+              </a>
+            </div>
+            <div class="occasion-card">
+              <img src="./assets/imagemfitness5636-2mef-300h.png" alt="Fitness" class="occasion-card-image" />
+              <img src="./assets/rectangle25038-blij-200h.png" alt="" class="occasion-card-overlay" />
+              <img src="./assets/corao5739-z5h.svg" alt="" class="occasion-card-icon" />
+              <h3 class="occasion-card-title">FITNESS</h3>
+              <p class="occasion-card-description">
+                Cortes magros e ricos em proteínas para quem busca uma alimentação saudável.
+              </p>
+              <a href="#" class="occasion-card-cta">
+                <span>Ver produtos</span>
+                <img src="./assets/arrowright5039-chj.svg" alt="" />
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="info-section">
+          <h2 class="info-section-title">Dicas e Informações</h2>
+          <div class="info-grid">
+            <div class="info-card info-card--video">
+              <div class="info-card-image"></div>
+              <div class="info-card-body">
+                <h3 class="info-card-title">Vídeos de Preparo</h3>
+                <p class="info-card-description">
+                  Aprenda a preparar cortes perfeitos com nossos vídeos exclusivos feitos por chefs profissionais.
+                </p>
+                <ul class="video-list">
+                  <li class="video-list-item">
+                    <img src="./assets/play111204-cpgm-200h.png" alt="" />
+                    <span>Como preparar picanha</span>
+                  </li>
+                  <li class="video-list-item">
+                    <img src="./assets/play121204-uuj8-200h.png" alt="" />
+                    <span>Ponto perfeito para filé mignon</span>
+                  </li>
+                  <li class="video-list-item">
+                    <img src="./assets/play131204-13il-200h.png" alt="" />
+                    <span>Marinadas para churrasco</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="info-card info-card--storage">
+              <div class="info-card-image">
+                <img src="./assets/img-com-ovo.png" alt="Alimentos na geladeira" />
+              </div>
+              <div class="info-card-body">
+                <h3 class="info-card-title">Conservação</h3>
+                <p class="info-card-description">
+                  Saiba como conservar suas carnes por mais tempo e manter todo o sabor e qualidade.
+                </p>
+                <div class="storage-item">
+                  <p class="storage-item-title">Refrigeração</p>
+                  <p class="storage-item-description">Mantenha entre 0°C e 4°C por até 3 dias.</p>
+                </div>
+                <div class="storage-item">
+                  <p class="storage-item-title">Congelamento</p>
+                  <p class="storage-item-description">Embale a vácuo e congele a -18°C por até 6 meses.</p>
+                </div>
+                <div class="storage-item">
+                  <p class="storage-item-title">Descongelamento</p>
+                  <p class="storage-item-description">Sempre na geladeira, nunca em temperatura ambiente.</p>
+                </div>
+              </div>
+            </div>
+            <div class="info-card info-card--nutrition">
+              <div class="info-card-image"></div>
+              <div class="info-card-body">
+                <h3 class="info-card-title">Informações Nutricionais</h3>
+                <p class="info-card-description">
+                  Conheça os valores nutricionais das nossas carnes e faça escolhas conscientes.
+                </p>
+                <div class="nutrition-item">
+                  <span class="nutrition-label">Proteínas</span>
+                  <div class="nutrition-bar">
+                    <div class="nutrition-bar-fill" style="width: 85%;"></div>
+                  </div>
+                  <span class="nutrition-value">26g</span>
+                </div>
+                <div class="nutrition-item">
+                  <span class="nutrition-label">Gorduras</span>
+                  <div class="nutrition-bar">
+                    <div class="nutrition-bar-fill" style="width: 50%;"></div>
+                  </div>
+                  <span class="nutrition-value">14g</span>
+                </div>
+                <div class="nutrition-item">
+                  <span class="nutrition-label">Ferro</span>
+                  <div class="nutrition-bar">
+                    <div class="nutrition-bar-fill" style="width: 30%;"></div>
+                  </div>
+                  <span class="nutrition-value">3.5g</span>
+                </div>
+                <div class="nutrition-item">
+                  <span class="nutrition-label">Zinco</span>
+                  <div class="nutrition-bar">
+                    <div class="nutrition-bar-fill" style="width: 40%;"></div>
+                  </div>
+                  <span class="nutrition-value">5.2g</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="smart-cart-section" aria-label="Funcionalidades do Carrinho Inteligente">
+          <div class="smart-cart-background">
+            <img src="./assets/imagedesktopweb11965-9zx-1000h.png" alt="" />
+          </div>
+          <div class="smart-cart-container">
+            <h2 class="smart-cart-title">Carrinho Inteligente</h2>
+            <div class="smart-cart-features">
+              <div class="feature-item">
+                <img src="./assets/tempo111383-kn6ji-200h.png" alt="" class="feature-item-icon" />
+                <div class="feature-item-text">
+                  <h3 class="feature-item-title">Atualização em Tempo Real</h3>
+                  <p class="feature-item-description">
+                    Seu carrinho é atualizado instantaneamente, sem necessidade de recarregar a página.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <img src="./assets/tempo211384-xufn-200w.png" alt="" class="feature-item-icon" />
+                <div class="feature-item-text">
+                  <h3 class="feature-item-title">Sugestões Personalizadas</h3>
+                  <p class="feature-item-description">
+                    Receba sugestões de produtos complementares baseados nos itens do seu carrinho.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <img src="./assets/caminhao111384-w9mj-200h.png" alt="" class="feature-item-icon" />
+                <div class="feature-item-text">
+                  <h3 class="feature-item-title">Cálculo Automático de Frete</h3>
+                  <p class="feature-item-description">
+                    Veja o valor do frete em tempo real com base no seu CEP e nos produtos selecionados.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <img src="./assets/tempo311384-ddl-200w.png" alt="" class="feature-item-icon" />
+                <div class="feature-item-text">
+                  <h3 class="feature-item-title">Checkout Rápido</h3>
+                  <p class="feature-item-description">
+                    Finalize sua compra com apenas um clique se você já for cliente cadastrado.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="smart-cart-button">Experimente Agora</button>
+          </div>
+        </section>
+        <section class="reviews" aria-labelledby="reviews-title">
+          <div class="reviews__header">
+            <h2 id="reviews-title" class="reviews__title">O que Nossos Clientes Dizem?</h2>
+          </div>
+          <div class="reviews__grid-container">
+            <div class="reviews__grid">
+              <div class="review-card">
+                <div class="review-card__rating">
+                  <img src="./assets/stari138-airb.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-rvsi.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-mlu.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-v36y.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-ex0g.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                </div>
+                <div class="review-card__body">
+                  <h3 class="review-card__title">Eu amei</h3>
+                  <p class="review-card__text">
+                    "A qualidade das carnes é excepcional. Comprei para um churrasco em família e todos elogiaram. A entrega foi rápida e os produtos chegaram muito bem embalados e refrigerados."
+                  </p>
+                </div>
+                <div class="review-card__author">
+                  <img src="./assets/shapei138-l05i5-200h.png" alt="Avatar de Fernanda Santos" class="review-card__author-avatar" />
+                  <div class="review-card__author-info">
+                    <span class="review-card__author-name">Fernanda Santos</span>
+                    <span class="review-card__author-location">São Paulo, SP</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-card__rating">
+                  <img src="./assets/stari138-zcm.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-v3nh.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-0q7e.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-8gsj.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-rfcr.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                </div>
+                <div class="review-card__body">
+                  <h3 class="review-card__title">Muito bom</h3>
+                  <p class="review-card__text">
+                    "Sou cliente há mais de um ano e nunca me decepcionei. O site é muito fácil de navegar, as fotos dos produtos são fiéis e o processo de compra é super rápido. Recomendo!"
+                  </p>
+                </div>
+                <div class="review-card__author">
+                  <img src="./assets/shapei138-rvkg-200h.png" alt="Avatar de Ricardo Oliveira" class="review-card__author-avatar" />
+                  <div class="review-card__author-info">
+                    <span class="review-card__author-name">Ricardo Oliveira</span>
+                    <span class="review-card__author-location">Campinas, SP</span>
+                  </div>
+                </div>
+              </div>
+              <div class="review-card">
+                <div class="review-card__rating">
+                  <img src="./assets/stari138-dit6.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-ocg.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-kalf.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-s5ab.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                  <img src="./assets/stari138-55p.svg" alt="Estrela de avaliação" class="review-card__rating-star" />
+                </div>
+                <div class="review-card__body">
+                  <h3 class="review-card__title">Vou comprar mais</h3>
+                  <p class="review-card__text">
+                    "As dicas de preparo que vêm junto com os produtos são excelentes! Consegui fazer um filé mignon perfeito seguindo as instruções. O atendimento ao cliente também é muito bom."
+                  </p>
+                </div>
+                <div class="review-card__author">
+                  <img src="./assets/shapei138-8zvd-200h.png" alt="Avatar de Marcelo Almeida" class="review-card__author-avatar" />
+                  <div class="review-card__author-info">
+                    <span class="review-card__author-name">Marcelo Almeida</span>
+                    <span class="review-card__author-location">Rio de Janeiro, RJ</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="reviews__nav-button reviews__nav-button--prev" aria-label="Avaliação Anterior">
+              <img src="./assets/arrowrightcircle2045-s7g.svg" alt="" />
+            </button>
+            <button class="reviews__nav-button reviews__nav-button--next" aria-label="Próxima Avaliação">
+              <img src="./assets/arrowrightcircle2045-s7g.svg" alt="" />
+            </button>
+          </div>
+        </section>
+        <section class="download-app" aria-label="Baixe nosso aplicativo">
+          <div class="download-app__background-elements">
+            <img src="./assets/ellipse82214-y9vh-800w.png" alt="" style="top: 50%; left: 20%; transform: translate(-50%, -50%); width: 800px;" />
+            <img src="./assets/ellipse72214-osbj.svg" alt="" style="top: 10%; right: 10%;" />
+            <img src="./assets/rectangle112256-zpca-1400w.png" alt="" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;" />
+          </div>
+          <div class="download-app__content">
+            <div class="download-app__text-content">
+              <h2 class="download-app__title">Baixe nosso app</h2>
+              <p class="download-app__description">
+                O jeito Swift de comprar carne vai surpreender você, agora com uma experiência 100% mobile. Experimente! Receba mensagens da Swift diretamente no seu aplicativo; Encontre Receitas deliciosas e selecione as suas favoritas; Calcule a quantidade de carne para um churrasco perfeito; Consulte o endereço da loja Swift mais próxima de você;
+              </p>
+              <div class="download-app__stores">
+                <a href="#" class="download-app__store-link">
+                  <img src="./assets/appstoreiossvg11472-j4zqi-200h.png" alt="Baixar na App Store" />
+                  <span>Tem iphone?</span>
+                </a>
+                <a href="#" class="download-app__store-link">
+                  <img src="./assets/googleplaystoremobileappslogofreepng11472-nk-200h.png" alt="Baixar no Google Play" />
+                  <span>Tem android?</span>
+                </a>
+              </div>
+            </div>
+            <img src="./assets/celphone1471-g6jj-700w.png" alt="Celular mostrando o aplicativo Swift" class="download-app__phone-mockup" />
+          </div>
+        </section>
+        <footer class="site-footer" role="contentinfo">
+          <div class="site-footer__container">
+            <div class="site-footer__about">
+              <img src="./assets/unnamed211408-9sp-200h.png" alt="Swift Logo" class="site-footer__logo" />
+              <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros</p>
+              <div class="site-footer__social-links">
+                <a href="#" aria-label="Facebook"><img src="./assets/socialicons1407-wvm.svg" alt="Facebook" /></a>
+                <a href="#" aria-label="Instagram"><img src="./assets/socialicons1407-hf3.svg" alt="Instagram" /></a>
+                <a href="#" aria-label="Twitter"><img src="./assets/socialicons1407-pcxb.svg" alt="Twitter" /></a>
+                <a href="#" aria-label="Youtube"><img src="./assets/socialicons1408-nb0r.svg" alt="Youtube" /></a>
+              </div>
+            </div>
+            <div class="site-footer__nav">
+              <h3 class="site-footer__nav-title">Produtos</h3>
+              <ul>
+                <li><a href="#">Bovinos</a></li>
+                <li><a href="#">Aves</a></li>
+                <li><a href="#">Suínos</a></li>
+                <li><a href="#">Kits Especiais</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Lançamentos</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__nav">
+              <h3 class="site-footer__nav-title">Institucional</h3>
+              <ul>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Sustentabilidade</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Lojas Físicas</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Imprensa</a></li>
+              </ul>
+            </div>
+            <div class="site-footer__contact">
+              <h3 class="site-footer__contact-title">Atendimento</h3>
+              <address>
+                <div class="site-footer__contact-item">
+                  <img src="./assets/phone1462-ikrc.svg" alt="" />
+                  <div>
+                    <strong>0800 702 1234</strong>
+                    <span>Seg a Sex, 8h ás 20h</span>
+                  </div>
+                </div>
+                <div class="site-footer__contact-item">
+                  <img src="./assets/mail031462-j0qe.svg" alt="" />
+                  <div>
+                    <strong>atendimento@swift.com.br</strong>
+                    <span>Respondemos em até 24h</span>
+                  </div>
+                </div>
+                <div class="site-footer__contact-item">
+                  <img src="./assets/socialicons1442-u7kc.svg" alt="" />
+                  <div>
+                    <strong>(11) 99876-5432</strong>
+                    <span>Atendimento via WhatsApp</span>
+                  </div>
+                </div>
+              </address>
+            </div>
+          </div>
+          <div class="site-footer__bottom-bar">
+            <div class="site-footer__payment">
+              <span class="site-footer__payment-title">Formas de Pagamentos (apenas cartões de créditos)</span>
+              <div class="site-footer__payment-icons">
+                <img src="./assets/rectanglei146-l4kp-200h.png" alt="Mastercard" />
+                <img src="./assets/rectanglei146-0f4-200h.png" alt="Visa" />
+                <img src="./assets/rectangle1465-a8tdm-200h.png" alt="Elo" />
+                <img src="./assets/image61465-z60g-200h.png" alt="Hipercard" />
+                <img src="./assets/image71465-jf8v-200h.png" alt="American Express" />
+              </div>
+            </div>
+            <p class="site-footer__copyright">© 2025 Swift. Todos os direitos reservados.</p>
+          </div>
+        </footer>
+      </main>
+    </div>
+  <script src="./src/js/responsive.js" defer></script>
+  </body>
+</html>

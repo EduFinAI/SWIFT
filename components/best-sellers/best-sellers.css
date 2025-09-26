@@ -1,0 +1,419 @@
+/* Best Sellers Component Styles */
+.swift-best-sellers {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  background: #BC2929;
+}
+
+.swift-best-sellers__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.swift-best-sellers__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  padding-top: 64px;
+}
+
+.swift-best-sellers__container {
+  max-width: var(--dl-layout-size-maxwidth, 1400px);
+  margin: 0 auto;
+  padding: 0 32px;
+  width: 100%;
+}
+
+/* Section Titles */
+.swift-best-sellers__title {
+  font-family: 'Passion One', system-ui;
+  font-size: clamp(38px, calc(19px + 5.3vw), 87px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: #fff;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.swift-best-sellers__subtitle {
+  max-width: 980px;
+  margin: 0 auto 24px;
+  font-family: 'Montserrat', system-ui;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Carousel */
+.swift-best-sellers__carousel {
+  position: relative;
+  margin-top: 24px;
+}
+
+.swift-best-sellers__track {
+  display: flex;
+  gap: 24px;
+  padding: 8px 72px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+  /* Fade effect on edges */
+  -webkit-mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) 48px,
+    #000 96px,
+    #000 calc(100% - 96px),
+    rgba(0,0,0,0.85) calc(100% - 48px),
+    rgba(0,0,0,0.15) 100%);
+  mask-image: linear-gradient(to right,
+    rgba(0,0,0,0.15) 0,
+    rgba(0,0,0,0.85) 48px,
+    #000 96px,
+    #000 calc(100% - 96px),
+    rgba(0,0,0,0.85) calc(100% - 48px),
+    rgba(0,0,0,0.15) 100%);
+}
+
+.swift-best-sellers__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card */
+.swift-bestseller-card {
+  flex: 0 0 320px;
+  width: 320px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.swift-bestseller-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Image */
+.swift-bestseller-card__image {
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.swift-bestseller-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.swift-bestseller-card:hover .swift-bestseller-card__img {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.swift-bestseller-card__content {
+  padding: 16px 20px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.swift-bestseller-card__name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dl-color-theme-neutral-dark, #191818);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.swift-bestseller-card__weight {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(25, 24, 24, 0.7);
+  margin: 0;
+}
+
+.swift-bestseller-card__rating {
+  margin: 4px 0;
+}
+
+.swift-bestseller-card__stars {
+  width: 120px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.swift-bestseller-card__pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.swift-bestseller-card__old-price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(25, 24, 24, 0.5);
+  text-decoration: line-through;
+}
+
+.swift-bestseller-card__price {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dl-color-theme-primary2, #E65103);
+}
+
+/* Card Actions */
+.swift-bestseller-card__actions {
+  padding: 16px 20px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.swift-bestseller-card__add-btn {
+  position: relative;
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, var(--dl-color-theme-primary2, #E65103), var(--dl-color-theme-primary1, #BF4408));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(229, 81, 3, 0.35);
+  
+  /* Glowing animation */
+  animation: swift-btn-glow 1.8s ease-in-out infinite;
+}
+
+.swift-bestseller-card__add-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: swift-btn-shine 2.3s infinite;
+}
+
+.swift-bestseller-card__add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(229, 81, 3, 0.45);
+}
+
+.swift-bestseller-card__add-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* Button Animations */
+@keyframes swift-btn-glow {
+  0%, 100% { 
+    box-shadow: 0 8px 20px rgba(229,81,3,0.35), 0 0 0 0 rgba(229,81,3,0.25); 
+  }
+  50% { 
+    box-shadow: 0 12px 28px rgba(229,81,3,0.45), 0 0 0 8px rgba(229,81,3,0.08); 
+  }
+}
+
+@keyframes swift-btn-shine {
+  0%, 20% { left: -150%; }
+  60% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* Navigation */
+.swift-best-sellers__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swift-best-sellers__nav:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.swift-best-sellers__nav--prev {
+  left: 24px;
+}
+
+.swift-best-sellers__nav--next {
+  right: 24px;
+}
+
+.swift-best-sellers__nav-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.swift-best-sellers__nav--prev .swift-best-sellers__nav-icon {
+  transform: scaleX(-1);
+}
+
+.swift-best-sellers__nav:hover .swift-best-sellers__nav-icon {
+  transform: scaleX(-1) translateX(2px);
+}
+
+.swift-best-sellers__nav--next:hover .swift-best-sellers__nav-icon {
+  transform: translateX(2px);
+}
+
+/* Navigation States */
+.swift-best-sellers__nav--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swift-best-sellers {
+    height: 700px;
+  }
+
+  .swift-best-sellers__overlay {
+    padding-top: 48px;
+  }
+
+  .swift-best-sellers__container {
+    padding: 0 20px;
+  }
+
+  .swift-best-sellers__track {
+    padding: 8px 60px;
+    gap: 20px;
+  }
+
+  .swift-bestseller-card {
+    flex: 0 0 280px;
+    width: 280px;
+    height: 420px;
+  }
+
+  .swift-bestseller-card__image {
+    height: 220px;
+  }
+
+  .swift-bestseller-card__name {
+    font-size: 20px;
+  }
+
+  .swift-bestseller-card__price {
+    font-size: 18px;
+  }
+
+  .swift-best-sellers__nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swift-best-sellers__nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-best-sellers {
+    height: 600px;
+  }
+
+  .swift-best-sellers__overlay {
+    padding-top: 32px;
+  }
+
+  .swift-best-sellers__container {
+    padding: 0 16px;
+  }
+
+  .swift-best-sellers__track {
+    padding: 8px 48px;
+    gap: 16px;
+  }
+
+  .swift-bestseller-card {
+    flex: 0 0 240px;
+    width: 240px;
+    height: 360px;
+  }
+
+  .swift-bestseller-card__image {
+    height: 180px;
+  }
+
+  .swift-bestseller-card__content {
+    padding: 12px 16px 6px;
+    gap: 6px;
+  }
+
+  .swift-bestseller-card__name {
+    font-size: 18px;
+  }
+
+  .swift-bestseller-card__actions {
+    padding: 12px 16px 20px;
+  }
+
+  .swift-best-sellers__nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .swift-best-sellers__nav-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

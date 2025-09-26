@@ -1,0 +1,362 @@
+/* CSS Mixins - Padrões reutilizáveis para componentes */
+
+/* === BUTTON MIXINS === */
+.swift-btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--swift-font-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--swift-radius-lg);
+  cursor: pointer;
+  transition: all var(--swift-transition-normal);
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-btn-primary-gradient {
+  background: linear-gradient(90deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(230, 81, 3, 0.3);
+}
+
+.swift-btn-hover-lift {
+  transition: all var(--swift-transition-normal);
+}
+
+.swift-btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 81, 3, 0.4);
+}
+
+.swift-btn-shine-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.45) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-20deg);
+  animation: swiftBtnShine 2.3s infinite;
+}
+
+@keyframes swiftBtnShine {
+  0%, 20% { left: -150%; }
+  60% { left: 150%; }
+  100% { left: 150%; }
+}
+
+/* === CARD MIXINS === */
+.swift-card-base {
+  background: #fff;
+  border-radius: var(--swift-radius-xl);
+  overflow: hidden;
+  transition: all var(--swift-transition-normal);
+}
+
+.swift-card-shadow {
+  box-shadow: var(--swift-shadow-md);
+}
+
+.swift-card-hover-lift {
+  transition: all var(--swift-transition-normal);
+}
+
+.swift-card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--swift-shadow-xl);
+}
+
+.swift-card-image-full {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.swift-card-image-hover-zoom {
+  transition: transform var(--swift-transition-normal);
+}
+
+.swift-card-image-hover-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* === SECTION MIXINS === */
+.swift-section-base {
+  width: 100%;
+  padding: var(--swift-space-20) 0;
+}
+
+.swift-section-container {
+  max-width: var(--swift-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--swift-container-padding);
+}
+
+@media (max-width: 768px) {
+  .swift-section-container {
+    padding: 0 var(--swift-container-padding-mobile);
+  }
+}
+
+.swift-section-title {
+  font-family: var(--swift-font-display);
+  font-size: var(--swift-text-5xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--swift-text-primary);
+  margin: 0 0 var(--swift-space-12) 0;
+}
+
+.swift-section-subtitle {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 500;
+  text-align: center;
+  color: var(--swift-text-secondary);
+  margin: 0 auto var(--swift-space-12) auto;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* === GRID MIXINS === */
+.swift-grid-responsive {
+  display: grid;
+  gap: var(--swift-space-8);
+}
+
+.swift-grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.swift-grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* === CAROUSEL MIXINS === */
+.swift-carousel-base {
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-carousel-track {
+  display: flex;
+  gap: var(--swift-space-6);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.swift-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.swift-carousel-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.swift-carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: var(--swift-shadow-lg);
+  cursor: pointer;
+  transition: all var(--swift-transition-normal);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swift-carousel-nav:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--swift-shadow-xl);
+}
+
+.swift-carousel-nav--prev {
+  left: var(--swift-space-6);
+}
+
+.swift-carousel-nav--next {
+  right: var(--swift-space-6);
+}
+
+.swift-carousel-nav--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* === FORM MIXINS === */
+.swift-input-base {
+  width: 100%;
+  padding: var(--swift-space-3) var(--swift-space-4);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-base);
+  color: var(--swift-text-primary);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--swift-radius-lg);
+  outline: none;
+  transition: all var(--swift-transition-fast);
+}
+
+.swift-input-base:focus {
+  border-color: var(--swift-primary-orange);
+  box-shadow: 0 0 0 3px rgba(230, 81, 3, 0.1);
+}
+
+.swift-input-base::placeholder {
+  color: var(--swift-text-muted);
+}
+
+/* === RATING MIXINS === */
+.swift-rating-base {
+  display: flex;
+  align-items: center;
+  gap: var(--swift-space-1);
+}
+
+.swift-rating-star {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* === AVATAR MIXINS === */
+.swift-avatar-base {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.swift-avatar-sm {
+  width: 32px;
+  height: 32px;
+}
+
+.swift-avatar-md {
+  width: 48px;
+  height: 48px;
+}
+
+.swift-avatar-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.swift-avatar-border {
+  border: 3px solid var(--swift-primary-orange);
+}
+
+/* === OVERLAY MIXINS === */
+.swift-overlay-base {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swift-overlay-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+/* === ICON MIXINS === */
+.swift-icon-base {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.swift-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.swift-icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.swift-icon-interactive {
+  cursor: pointer;
+  transition: all var(--swift-transition-fast);
+}
+
+.swift-icon-interactive:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+/* === BADGE MIXINS === */
+.swift-badge-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-1) var(--swift-space-3);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  font-weight: 600;
+  border-radius: var(--swift-radius-full);
+}
+
+.swift-badge-primary {
+  background: var(--swift-primary-orange);
+  color: #fff;
+}
+
+.swift-badge-secondary {
+  background: var(--swift-neutral-light);
+  color: var(--swift-text-primary);
+}
+
+/* === SKELETON MIXINS === */
+.swift-skeleton-base {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: swiftSkeleton 1.5s infinite;
+}
+
+@keyframes swiftSkeleton {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.swift-skeleton-text {
+  height: 1em;
+  border-radius: var(--swift-radius-sm);
+  margin-bottom: var(--swift-space-2);
+}
+
+.swift-skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.swift-skeleton-card {
+  height: 200px;
+  border-radius: var(--swift-radius-xl);
+}

@@ -4,1323 +4,1201 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Swift — Carnes selecionadas com entrega rápida</title>
+  
+  <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- global/reset styles moved to external stylesheet -->
-    <link rel="stylesheet" href="./style/style.css" />
-    <!-- page specific styles -->
-    <link rel="stylesheet" href="./style/index.css" />
-    <!-- visual overrides to match reference mock -->
-    <link rel="stylesheet" href="./style/overrides.css" />
-
-    <!-- Keep animate.css and a single, combined Google Fonts import -->
-    <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&family=Noto+Sans:wght@400;700&display=swap" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
+  
+  <!-- Base styles -->
+  <link rel="stylesheet" href="./style/variables.css" />
+  <link rel="stylesheet" href="./style/base.css" />
+  <link rel="stylesheet" href="./style/utilities.css" />
+  <link rel="stylesheet" href="./style/mixins.css" />
+  
+  <!-- Component styles -->
+  <link rel="stylesheet" href="./components/header/header.css" />
+  <link rel="stylesheet" href="./components/shipping-banner/shipping-banner.css" />
+  <link rel="stylesheet" href="./components/hero/hero.css" />
+  <link rel="stylesheet" href="./components/featured-products/featured-products.css" />
+  <link rel="stylesheet" href="./components/occasions/occasions.css" />
+  <link rel="stylesheet" href="./components/tips-info/tips-info.css" />
+  <link rel="stylesheet" href="./components/smart-cart/smart-cart.css?v=2.0" />
+  <link rel="stylesheet" href="./components/testimonials/testimonials.css" />
+  <link rel="stylesheet" href="./components/best-sellers/best-sellers.css" />
+  <link rel="stylesheet" href="./components/app-download/app-download.css" />
+  <link rel="stylesheet" href="./components/footer/footer.css" />
+  
+  <!-- External fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&display=swap" />
+  
+  <!-- Animation library -->
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  
+  <!-- Responsive styles -->
+  <link rel="stylesheet" href="./style/responsive.css" />
   </head>
+
   <body>
-    <div>
-      <div class="pginainicial-container">
-        <div class="pginainicial-pginainicial">
-          <div class="pginainicial-header" role="banner">
+  <div class="swift-app">
+    <!-- Header Component -->
+    <header class="swift-header" role="banner">
+      <div class="swift-header__container">
+        <!-- Logo -->
+        <div class="swift-header__logo">
             <img
               src="./assets/image11269-6k6r-200h.png"
-              alt="image11269"
-              class="pginainicial-image1"
+              alt="Logo da Swift"
+            class="swift-header__logo-img"
             />
-            <div class="pginainicial-navigation-pill-list">
-              <div class="pginainicial-navigation-pill1">
-                <span class="pginainicial-text100">Carnes</span>
               </div>
-              <div class="pginainicial-navigation-pill2">
-                <span class="pginainicial-text101">Aves</span>
-              </div>
-              <div class="pginainicial-navigation-pill3">
-                <span class="pginainicial-text102">Suínos</span>
-              </div>
-              <div class="pginainicial-navigation-pill4">
-                <span class="pginainicial-text103">Ocasiões</span>
-              </div>
-              <div class="pginainicial-navigation-pill5">
-                <span class="pginainicial-text104">Ofertas</span>
-              </div>
-              <div class="pginainicial-navigation-pill6">
-                <span class="pginainicial-text105 SingleLineBodyBase">
-                  Outros
-                </span>
-              </div>
-            </div>
-            <form class="pginainicial-search1" role="search" aria-label="Buscar produtos" action="#" method="get" onsubmit="return false;">
+
+        <!-- Navigation Menu -->
+        <nav class="swift-header__nav" role="navigation">
+          <ul class="swift-nav__list">
+            <li class="swift-nav__item swift-nav__item--active">
+              <a href="#carnes" class="swift-nav__link">Carnes</a>
+            </li>
+            <li class="swift-nav__item">
+              <a href="#aves" class="swift-nav__link">Aves</a>
+            </li>
+            <li class="swift-nav__item">
+              <a href="#suinos" class="swift-nav__link">Suínos</a>
+            </li>
+            <li class="swift-nav__item">
+              <a href="#ocasioes" class="swift-nav__link">Ocasiões</a>
+            </li>
+            <li class="swift-nav__item">
+              <a href="#ofertas" class="swift-nav__link">Ofertas</a>
+            </li>
+            <li class="swift-nav__item">
+              <a href="#outros" class="swift-nav__link">Outros</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Search Bar -->
+        <form class="swift-header__search" role="search" aria-label="Buscar produtos" action="#" method="get">
+          <div class="swift-search__container">
               <img
                 src="./assets/x5714-hcj.svg"
                 alt=""
                 aria-hidden="true"
-                class="pginainicial-x1"
-              />
-              <input type="search" class="pginainicial-text106" name="q" placeholder="Buscar produtos..." />
-            </form>
-            <div class="pginainicial-header-auth">
-              <img
-                src="./assets/user5673-doah.svg"
-                alt="User5673"
-                class="pginainicial-user"
-              />
-              <button class="pginainicial-button" aria-label="Abrir carrinho de compras">
-                <img
-                src="./assets/carrinho.png"
-                alt="Car5673"
-                class="pginainicial-car"
-              />
-              </button>
-              
-            </div>
-          </div>
-          <div class="pginainicial-frete">
-            <span class="pginainicial-text107">
-              <br />
-              <span>
-                Frete grátis a partir de R$ 299,00 em são paulo em até entrega
-                agendada e entrega em 1 dia útil
-              </span>
-            </span>
-            <img
-              src="./assets/truck8139-m5j.svg"
-              alt="Truck8139"
-              class="pginainicial-truck1"
+              class="swift-search__icon"
+            />
+            <input 
+              type="search" 
+              class="swift-search__input" 
+              name="q" 
+              placeholder="Buscar produtos..." 
             />
           </div>
-          <div class="pginainicial-scroll" role="main">
-            <div class="pginainicial-examples-product-detail-page">
-              <div class="pginainicial-header21">
-                <div class="pginainicial-header22">
-                  <div class="pginainicial-image10">
+            </form>
+
+        <!-- User Actions -->
+        <div class="swift-header__actions">
+          <button class="swift-header__user-btn" aria-label="Conta do usuário">
+              <img
+                src="./assets/user5673-doah.svg"
+              alt=""
+              aria-hidden="true"
+              class="swift-header__user-icon"
+              />
+          </button>
+          
+          <button class="swift-header__cart-btn" aria-label="Abrir carrinho de compras">
+                <img
+                src="./assets/carrinho.png"
+              alt=""
+              aria-hidden="true"
+              class="swift-header__cart-icon"
+              />
+              </button>
+            </div>
+          </div>
+    </header>
+
+    <!-- Shipping Banner Component -->
+    <div class="swift-shipping-banner">
+      <div class="swift-shipping-banner__container">
+        <div class="swift-shipping-banner__content">
+            <img
+              src="./assets/truck8139-m5j.svg"
+            alt=""
+            aria-hidden="true"
+            class="swift-shipping-banner__icon"
+            />
+          <span class="swift-shipping-banner__text">
+            Frete grátis a partir de R$ 299,00 em São Paulo com entrega agendada e entrega em 1 dia útil
+          </span>
+          </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="swift-main" role="main">
+      <!-- Hero Section Component -->
+      <section class="swift-hero">
+        <div class="swift-hero__container">
+          <!-- Background Image -->
+          <div class="swift-hero__background">
                     <img
                       src="./assets/fundo1i443-99u-1000h.png"
-                      alt="fundo1I443"
-                      class="pginainicial-fundo1"
+              alt=""
+              aria-hidden="true"
+              class="swift-hero__bg-img"
                     />
                   </div>
-                  <span class="pginainicial-text110">
-                    <span>
-                      Descubra o sabor autêntico das melhores carnes
-                      selecionadas
-                    </span>
-                    <br />
-                    <span>
+
+          <!-- Content -->
+          <div class="swift-hero__content">
+            <!-- Main Content -->
+            <div class="swift-hero__main">
+              <h1 class="swift-hero__title">Churrasco é na</h1>
+              <img
+                src="./assets/unnamed214135-zlqw-200h.png"
+                alt="Swift"
+                class="swift-hero__logo"
+              />
+              
+              <p class="swift-hero__description">
+                Descubra o sabor autêntico das melhores carnes selecionadas
                       para sua mesa. Entrega rápida e qualidade garantida.
-                    </span>
-                  </span>
-                  <span class="pginainicial-text114">Churrasco é na</span>
-                  <form class="pginainicial-search2" role="search" aria-label="Consulta de CEP" action="#" method="get" onsubmit="return false;">
-                    <input type="text" class="pginainicial-text115" name="cep" placeholder="Digite seu CEP" inputmode="numeric" pattern="\d{5}-?\d{3}" aria-label="CEP" />
-                    <div class="pginainicial-x2" aria-hidden="true">
+              </p>
+
+              <!-- CEP Form -->
+              <form class="swift-hero__cep-form" role="search" aria-label="Consulta de CEP" action="#" method="get">
+                <div class="swift-cep-form__container">
+                  <input 
+                    type="text" 
+                    class="swift-cep-form__input" 
+                    name="cep" 
+                    placeholder="Digite seu CEP" 
+                    inputmode="numeric" 
+                    pattern="\d{5}-?\d{3}" 
+                    aria-label="CEP" 
+                  />
+                  <div class="swift-cep-form__icon">
                       <img
                         src="./assets/local212747-bexd-200h.png"
                         alt=""
-                        class="pginainicial-local21"
+                      aria-hidden="true"
+                      class="swift-cep-form__location-icon"
                       />
+                  </div>
                     </div>
                   </form>
-                  <div class="pginainicial-retanguloentrega">
-                    <span class="pginainicial-text116">Entrega em até</span>
+
+              <!-- Delivery Info -->
+              <div class="swift-hero__delivery-info">
                     <img
                       src="./assets/truck3145-33ms.svg"
-                      alt="Truck3145"
-                      class="pginainicial-truck2"
+                  alt=""
+                  aria-hidden="true"
+                  class="swift-hero__truck-icon"
                     />
-                    <span class="pginainicial-text117">
-                      2 horas para São Paulo
+                <span class="swift-hero__delivery-text">
+                  <strong>Entrega em até</strong> 2 horas para São Paulo
                     </span>
                   </div>
-                  <button class="pginainicial-button-danger10">
-                    <span class="pginainicial-text118">COMPRAR AGORA</span>
+
+              <!-- CTA Button -->
+              <button class="swift-hero__cta-btn">
+                <span class="swift-hero__cta-text">COMPRAR AGORA</span>
                   </button>
-                  <img
-                    src="./assets/unnamed214135-zlqw-200h.png"
-                    alt="logo214135"
-                    class="pginainicial-logo211"
-                  />
                 </div>
-              </div>
-            </div>
-            <div class="pginainicial-produtosemdestaque">
-              <span class="pginainicial-text119">Produtos em Destaque</span>
-            </div>
-            <div class="pginainicial-escolhas1">
-              <button class="pginainicial-button-danger11">
-                <span class="pginainicial-text120">Ver Todos os Produtos</span>
-              </button>
-              <div class="pginainicial-group2">
-                <div class="pginainicial-frame27">
-                  <div class="pginainicial-picanha-premium1">
-                    <div class="pginainicial-adc1">
-                      <button class="pginainicial-button-danger12">
-                        <span class="pginainicial-text121">Adicionar</span>
+                      </div>
+                        </div>
+      </section>
+
+      <!-- Featured Products Component -->
+      <section class="swift-featured-products" aria-labelledby="featured-products-title">
+        <div class="swift-featured-products__container">
+          <!-- Section Title -->
+          <h2 id="featured-products-title" class="swift-featured-products__title">
+            Produtos em Destaque
+          </h2>
+
+          <!-- Products Grid -->
+          <div class="swift-featured-products__grid" role="list">
+            <!-- Product Card 1 -->
+            <article class="swift-product-card" role="listitem">
+              <div class="swift-product-card__image">
+                <img src="./assets/carne.jpg" alt="Picanha Premium" class="swift-product-card__img" />
+                        </div>
+              <div class="swift-product-card__content">
+                <h3 class="swift-product-card__name">Picanha Premium</h3>
+                <p class="swift-product-card__weight">1 kilo</p>
+                <div class="swift-product-card__rating">
+                  <img src="./assets/starfilled5739-1gb6d.svg" alt="5 estrelas" class="swift-product-card__stars" />
+                      </div>
+                <div class="swift-product-card__pricing">
+                  <span class="swift-product-card__old-price">R$ 109,90</span>
+                  <span class="swift-product-card__price">R$ 89,90</span>
+                        </div>
+                        </div>
+              <div class="swift-product-card__actions">
+                <button class="swift-product-card__add-btn">
+                  <span class="swift-product-card__add-text">Adicionar</span>
+                </button>
+                      </div>
+            </article>
+
+            <!-- Product Card 2 -->
+            <article class="swift-product-card" role="listitem">
+              <div class="swift-product-card__image">
+                <img src="./assets/ancho.webp" alt="Ancho Angus" class="swift-product-card__img" />
+                    </div>
+              <div class="swift-product-card__content">
+                <h3 class="swift-product-card__name">Ancho Angus</h3>
+                <p class="swift-product-card__weight">1 kilo</p>
+                <div class="swift-product-card__rating">
+                  <img src="./assets/starfilled2256-m9i.svg" alt="5 estrelas" class="swift-product-card__stars" />
+                  </div>
+                <div class="swift-product-card__pricing">
+                  <span class="swift-product-card__old-price">R$ 109,90</span>
+                  <span class="swift-product-card__price">R$ 89,90</span>
+                      </div>
+                        </div>
+              <div class="swift-product-card__actions">
+                <button class="swift-product-card__add-btn">
+                  <span class="swift-product-card__add-text">Adicionar</span>
+                </button>
+                        </div>
+            </article>
+
+            <!-- Product Card 3 -->
+            <article class="swift-product-card" role="listitem">
+              <div class="swift-product-card__image">
+                <img src="./assets/file de frang.png" alt="Filé de Frango" class="swift-product-card__img" />
+                      </div>
+              <div class="swift-product-card__content">
+                <h3 class="swift-product-card__name">Filé de Frango</h3>
+                <p class="swift-product-card__weight">1 kilo</p>
+                <div class="swift-product-card__rating">
+                  <img src="./assets/starfilled5742-ltaa.svg" alt="5 estrelas" class="swift-product-card__stars" />
+                        </div>
+                <div class="swift-product-card__pricing">
+                  <span class="swift-product-card__old-price">R$ 29,90</span>
+                  <span class="swift-product-card__price">R$ 24,90</span>
+                        </div>
+                      </div>
+              <div class="swift-product-card__actions">
+                <button class="swift-product-card__add-btn">
+                  <span class="swift-product-card__add-text">Adicionar</span>
+                </button>
+                    </div>
+            </article>
+
+            <!-- Product Card 4 -->
+            <article class="swift-product-card" role="listitem">
+              <div class="swift-product-card__image">
+                <img src="./assets/costela.png" alt="Costela Suína" class="swift-product-card__img" />
+                  </div>
+              <div class="swift-product-card__content">
+                <h3 class="swift-product-card__name">Costela Suína</h3>
+                <p class="swift-product-card__weight">1 kilo</p>
+                <div class="swift-product-card__rating">
+                  <img src="./assets/starfilled5744-r3b.svg" alt="5 estrelas" class="swift-product-card__stars" />
+                      </div>
+                <div class="swift-product-card__pricing">
+                  <span class="swift-product-card__old-price">R$ 49,90</span>
+                  <span class="swift-product-card__price">R$ 38,90</span>
+                        </div>
+                        </div>
+              <div class="swift-product-card__actions">
+                <button class="swift-product-card__add-btn">
+                  <span class="swift-product-card__add-text">Adicionar</span>
+                </button>
+                      </div>
+            </article>
+                        </div>
+
+          <!-- View All Button -->
+          <div class="swift-featured-products__actions">
+            <button class="swift-featured-products__view-all-btn">
+              <span class="swift-featured-products__view-all-text">Ver Todos os Produtos</span>
                       </button>
                     </div>
-                    <div class="pginainicial-image11"></div>
-                    <div class="pginainicial-body10">
-                      <div class="pginainicial-text122">
-                        <span class="pginainicial-text123">
-                          Picanha Premium
-                        </span>
                       </div>
-                      <div class="pginainicial-text124">
-                        <span class="pginainicial-text125">1 kilo</span>
+      </section>
+
+      <!-- Occasions Component -->
+      <section class="swift-occasions" aria-labelledby="occasions-title">
+        <div class="swift-occasions__container">
+          <!-- Section Title -->
+          <h2 id="occasions-title" class="swift-occasions__title">
+            Escolha por Ocasião
+          </h2>
+
+          <!-- Occasions Grid -->
+          <div class="swift-occasions__grid">
+            <!-- Churrasco Card -->
+            <article class="swift-occasion-card">
+              <div class="swift-occasion-card__image">
+                <img
+                  src="./assets/image43536-4puj-400h.png"
+                  alt="Churrasco"
+                  class="swift-occasion-card__img"
+                />
+                <div class="swift-occasion-card__overlay"></div>
                       </div>
-                      <img
-                        src="./assets/starfilled5739-1gb6d.svg"
-                        alt=""
-                        aria-hidden="true"
-                        class="pginainicial-starfilled1"
-                      />
-                      <div class="pginainicial-text-small1">
-                        <span class="pginainicial-text126 BodySmall">
-                          R$ 109,90
-                        </span>
-                      </div>
-                      <div class="pginainicial-text-strong1">
-                        <span class="pginainicial-text127 BodyStrong">
-                          R$ 89,90
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pginainicial-ancho-angus1">
-                    <div class="pginainicial-body11">
-                      <div class="pginainicial-text128">
-                        <span class="pginainicial-text129">
-                          Picanha Premium
-                        </span>
-                      </div>
-                      <div class="pginainicial-text130">
-                        <span class="pginainicial-text131">1 kilo</span>
-                      </div>
-                      <img
-                        src="./assets/starfilled2256-m9i.svg"
-                        alt=""
-                        aria-hidden="true"
-                        class="pginainicial-starfilled2"
-                      />
-                      <div class="pginainicial-text-small2">
-                        <span class="pginainicial-text132 BodySmall">
-                          R$ 109,90
-                        </span>
-                      </div>
-                      <div class="pginainicial-text-strong2">
-                        <span class="pginainicial-text133 BodyStrong">
-                          R$ 89,90
-                        </span>
-                      </div>
-                    </div>
-                    <div class="pginainicial-image12"></div>
-                    <div class="pginainicial-adc2">
-                      <button class="pginainicial-button-danger13">
-                        <span class="pginainicial-text134">Adicionar</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="pginainicial-filde-frango1">
-                    <div class="pginainicial-body12">
-                      <div class="pginainicial-text135">
-                        <span class="pginainicial-text136">Filé de Frango</span>
-                      </div>
-                      <img
-                        src="./assets/starfilled5742-ltaa.svg"
-                        alt=""
-                        aria-hidden="true"
-                        class="pginainicial-starfilled3"
-                      />
-                      <div class="pginainicial-text-small3">
-                        <span class="pginainicial-text137 BodySmall">
-                          R$ 109,90
-                        </span>
-                      </div>
-                      <div class="pginainicial-text-strong3">
-                        <span class="pginainicial-text138 BodyStrong">
-                          R$ 24,90
-                        </span>
-                      </div>
-                    </div>
-                    <div class="pginainicial-adc3">
-                      <button class="pginainicial-button-danger14">
-                        <span class="pginainicial-text139">Adicionar</span>
-                      </button>
-                    </div>
-                    <div class="pginainicial-image13"></div>
-                  </div>
-                  <div class="pginainicial-costela-suna">
-                    <div class="pginainicial-body13">
-                      <div class="pginainicial-text140">
-                        <span class="pginainicial-text141">Costela Suína</span>
-                      </div>
-                      <img
-                        src="./assets/starfilled5744-r3b.svg"
-                        alt=""
-                        aria-hidden="true"
-                        class="pginainicial-starfilled4"
-                      />
-                      <div class="pginainicial-text-small4">
-                        <span class="pginainicial-text142 BodySmall">
-                          R$ 109,90
-                        </span>
-                      </div>
-                      <div class="pginainicial-text-strong4">
-                        <span class="pginainicial-text143 BodyStrong">
-                          R$ 38,90
-                        </span>
-                      </div>
-                    </div>
-                    <div class="pginainicial-image14"></div>
-                    <div class="pginainicial-adc4">
-                      <button class="pginainicial-button-danger15">
-                        <span class="pginainicial-text144">Adicionar</span>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="pginainicial-escolhaporocasio">
-              <span class="pginainicial-text145 newtitle">
-                ESCOLHA POR OCASIÃO
-              </span>
-            </div>
-            <div class="pginainicial-escolhas2">
-              <div class="pginainicial-frame25">
-                <div class="pginainicial-churrasocasio">
-                  <img
-                    src="./assets/image43536-4puj-400h.png"
-                    alt="image43536"
-                    class="pginainicial-image4"
-                  />
-                  <img
-                    src="./assets/rectangle25035-shjg-200h.png"
-                    alt="Rectangle25035"
-                    class="pginainicial-rectangle21"
-                  />
+              
+              <div class="swift-occasion-card__content">
+                <div class="swift-occasion-card__icon">
                   <img
                     src="./assets/icon3536-v4ga-200w.png"
-                    alt="ICON3536"
-                    class="pginainicial-icon"
-                  />
-                  <span class="pginainicial-text146">CHURRASCO</span>
-                  <span class="pginainicial-text147">
-                    Cortes selecionados para um churrasco perfeito com amigos e
-                    família.
-                  </span>
-                  <div class="pginainicial-group7 pginainicial-card-cta">
-                    <span class="pginainicial-text148">Ver produtos</span>
-                    <img
-                      src="./assets/arrowright5037-1qf.svg"
+                        alt=""
+                        aria-hidden="true"
+                    class="swift-occasion-card__icon-img"
+                      />
+                      </div>
+                
+                <h3 class="swift-occasion-card__name">Churrasco</h3>
+                <p class="swift-occasion-card__description">
+                  Cortes selecionados para um churrasco perfeito com amigos e família.
+                </p>
+                
+                <a href="#churrasco" class="swift-occasion-card__cta">
+                  <span class="swift-occasion-card__cta-text">Ver produtos</span>
+                  <img
+                    src="./assets/arrowright5037-1qf.svg"
+                        alt=""
+                        aria-hidden="true"
+                    class="swift-occasion-card__cta-icon"
+                      />
+                </a>
+                      </div>
+            </article>
+
+            <!-- Almoço Rápido Card -->
+            <article class="swift-occasion-card">
+              <div class="swift-occasion-card__image">
+                <img
+                  src="./assets/retratodechefmasculinonacozinhapreparandocarne11393-s2fq-300h.png"
+                  alt="Almoço Rápido"
+                  class="swift-occasion-card__img"
+                />
+                <div class="swift-occasion-card__overlay"></div>
+                      </div>
+              
+              <div class="swift-occasion-card__content">
+                <div class="swift-occasion-card__icon">
+                  <img
+                    src="./assets/clock5243-cba.svg"
                       alt=""
                       aria-hidden="true"
-                      class="pginainicial-arrowright1"
+                    class="swift-occasion-card__icon-img"
                     />
                   </div>
-                </div>
-                <div class="pginainicial-almoo">
-                  <img
-                    src="./assets/retratodechefmasculinonacozinhapreparandocarne11393-s2fq-300h.png"
-                    alt="imgalmocorapido"
-                    class="pginainicial-imgalmocorapido"
-                  />
-                  <img
-                    src="./assets/rectangle35038-v7sk-200h.png"
-                    alt="Rectangle35038"
-                    class="pginainicial-rectangle3"
-                  />
-                  <span class="pginainicial-text149">ALMOÇO RÁPIDO</span>
-                  <span class="pginainicial-text150">
-                    Opções práticas e saborosas para o dia a dia com preparo em
-                    até 30 minutos.
-                  </span>
-                  <div class="pginainicial-card-cta">
-                    <span class="pginainicial-text151">Ver produtos</span>
+                
+                <h3 class="swift-occasion-card__name">Almoço Rápido</h3>
+                <p class="swift-occasion-card__description">
+                  Opções práticas e saborosas para o dia a dia com preparo em até 30 minutos.
+                </p>
+                
+                <a href="#almoco-rapido" class="swift-occasion-card__cta">
+                  <span class="swift-occasion-card__cta-text">Ver produtos</span>
                     <img
                       src="./assets/arrowright5038-loo.svg"
                       alt=""
                       aria-hidden="true"
-                      class="pginainicial-arrowright2"
+                    class="swift-occasion-card__cta-icon"
                     />
+                </a>
                   </div>
-                  <img
-                    src="./assets/clock5243-cba.svg"
-                    alt="Clock5243"
-                    class="pginainicial-clock"
-                  />
+            </article>
+
+            <!-- Fitness Card -->
+            <article class="swift-occasion-card">
+              <div class="swift-occasion-card__image">
+                <img
+                  src="./assets/imagemfitness5636-2mef-300h.png"
+                  alt="Fitness"
+                  class="swift-occasion-card__img"
+                />
+                <div class="swift-occasion-card__overlay"></div>
                 </div>
-                <div class="pginainicial-fitness">
-                  <img
-                    src="./assets/imagemfitness5636-2mef-300h.png"
-                    alt="ImagemFitness5636"
-                    class="pginainicial-imagem-fitness"
-                  />
-                  <img
-                    src="./assets/rectangle25038-blij-200h.png"
-                    alt="Rectangle25038"
-                    class="pginainicial-rectangle22"
-                  />
+              
+              <div class="swift-occasion-card__content">
+                <div class="swift-occasion-card__icon">
                   <img
                     src="./assets/corao5739-z5h.svg"
-                    alt="Corao5739"
-                    class="pginainicial-corao"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-occasion-card__icon-img"
                   />
-                  <span class="pginainicial-text152">FITNESS</span>
-                  <span class="pginainicial-text153">
-                    Cortes magros e ricos em proteínas para quem busca uma
-                    alimentação saudável.
-                  </span>
-                  <div class="pginainicial-card-cta">
-                    <span class="pginainicial-text154">Ver produtos</span>
+                </div>
+                
+                <h3 class="swift-occasion-card__name">Fitness</h3>
+                <p class="swift-occasion-card__description">
+                  Cortes magros e ricos em proteínas para quem busca uma alimentação saudável.
+                </p>
+                
+                <a href="#fitness" class="swift-occasion-card__cta">
+                  <span class="swift-occasion-card__cta-text">Ver produtos</span>
                     <img
                       src="./assets/arrowright5039-chj.svg"
-                      alt="Arrowright5039"
-                      class="pginainicial-arrowright3"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-occasion-card__cta-icon"
                     />
+                </a>
                   </div>
+            </article>
                 </div>
               </div>
-            </div>
-            <div class="pginainicial-dicaseinformaestitle">
-              <span class="pginainicial-text155">Dicas e Informações</span>
-            </div>
-            <div class="pginainicial-dicaseinformaes">
-              <div class="pginainicial-vdeodepreparo">
-                <div class="pginainicial-image15"></div>
-                <div class="pginainicial-body14">
-                  <div class="pginainicial-text156">
-                    <span class="pginainicial-text157">Vídeos de Preparo</span>
+            </section>
+
+      <!-- Tips and Information Component -->
+      <section class="swift-tips-info" aria-labelledby="tips-info-title">
+        <div class="swift-tips-info__container">
+          <!-- Section Title -->
+          <h2 id="tips-info-title" class="swift-tips-info__title">
+            Dicas e Informações
+          </h2>
+
+          <!-- Tips Grid -->
+          <div class="swift-tips-info__grid">
+            <!-- Video Tips Card -->
+            <article class="swift-tips-card swift-tips-card--video">
+              <div class="swift-tips-card__image">
+                <div class="swift-tips-card__video-placeholder"></div>
                   </div>
-                  <div class="pginainicial-text158">
-                    <span class="pginainicial-text159">
-                      Aprenda a preparar cortes perfeitos com nossos vídeos
-                      exclusivos feitos por chefs profissionais.
-                    </span>
+              
+              <div class="swift-tips-card__content">
+                <h3 class="swift-tips-card__title">Vídeos de Preparo</h3>
+                <p class="swift-tips-card__description">
+                  Aprenda a preparar cortes perfeitos com nossos vídeos exclusivos feitos por chefs profissionais.
+                </p>
                   </div>
+
+              <div class="swift-tips-card__video-list">
+                <div class="swift-video-item">
+                  <img src="./assets/play111204-cpgm-200h.png" alt="Play" class="swift-video-item__play" />
+                  <span class="swift-video-item__title">Como preparar picanha</span>
                 </div>
-                <div class="pginainicial-group1">
-                  <img
-                    src="./assets/play111204-cpgm-200h.png"
-                    alt="play111204"
-                    class="pginainicial-play11"
-                  />
-                  <img
-                    src="./assets/play121204-uuj8-200h.png"
-                    alt="play121204"
-                    class="pginainicial-play12"
-                  />
-                  <img
-                    src="./assets/play131204-13il-200h.png"
-                    alt="play131204"
-                    class="pginainicial-play13"
-                  />
+                
+                <div class="swift-video-item">
+                  <img src="./assets/play121204-uuj8-200h.png" alt="Play" class="swift-video-item__play" />
+                  <span class="swift-video-item__title">Ponto perfeito para filé mignon</span>
                 </div>
-                <div class="pginainicial-frame4">
-                  <span class="pginainicial-text160">
-                    <span>Como preparar picanha</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span>Ponto perfeito para filé mignon</span>
-                    <br />
-                    <br />
-                    <br />
-                    <span>Marinadas para churrasco</span>
-                  </span>
+                
+                <div class="swift-video-item">
+                  <img src="./assets/play131204-13il-200h.png" alt="Play" class="swift-video-item__play" />
+                  <span class="swift-video-item__title">Marinadas para churrasco</span>
                 </div>
               </div>
-              <div class="pginainicial-conservao">
-                <div class="pginainicial-image16">
-                  <img
-                    src="./assets/composicaodealimentoscrussaudaveisnageladeira11393-jcma-300h.png"
-                    alt="composicaodealimentoscrussaudaveisnageladeira11393"
-                    class="pginainicial-composicaodealimentoscrussaudaveisnageladeira1"
-                  />
+            </article>
+
+            <!-- Conservation Tips Card -->
+            <article class="swift-tips-card swift-tips-card--conservation">
+              <div class="swift-tips-card__image">
+                <img src="./assets/img-com-ovo.png" alt="Conservação" class="swift-tips-card__img" />
                 </div>
-                <div class="pginainicial-body15">
-                  <div class="pginainicial-text170">
-                    <span class="pginainicial-text171">Conservação</span>
+              
+              <div class="swift-tips-card__content">
+                <h3 class="swift-tips-card__title">Conservação</h3>
+                <p class="swift-tips-card__description">
+                  Saiba como conservar suas carnes por mais tempo e manter todo o sabor e qualidade.
+                </p>
                   </div>
-                  <div class="pginainicial-text172">
-                    <span class="pginainicial-text173">
-                      Saiba como conservar suas carnes por mais tempo e manter
-                      todo o sabor e qualidade.
-                    </span>
+
+              <div class="swift-tips-card__conservation-list">
+                <div class="swift-conservation-item">
+                  <h4 class="swift-conservation-item__title">Refrigeração</h4>
+                  <p class="swift-conservation-item__text">Mantenha entre 0°C e 4°C por até 3 dias.</p>
+                  </div>
+                
+                <div class="swift-conservation-item">
+                  <h4 class="swift-conservation-item__title">Congelamento</h4>
+                  <p class="swift-conservation-item__text">Embale a vácuo e congele a -18°C por até 6 meses.</p>
+                </div>
+                
+                <div class="swift-conservation-item">
+                  <h4 class="swift-conservation-item__title">Descongelamento</h4>
+                  <p class="swift-conservation-item__text">Sempre na geladeira, nunca em temperatura ambiente.</p>
+                </div>
+                </div>
+            </article>
+
+            <!-- Nutritional Information Card -->
+            <article class="swift-tips-card swift-tips-card--nutrition">
+              <div class="swift-tips-card__image">
+                <div class="swift-tips-card__nutrition-placeholder"></div>
+                </div>
+              
+              <div class="swift-tips-card__content">
+                <h3 class="swift-tips-card__title">Informações Nutricionais</h3>
+                <p class="swift-tips-card__description">
+                  Conheça os valores nutricionais das nossas carnes e faça escolhas conscientes.
+                </p>
+              </div>
+
+              <div class="swift-tips-card__nutrition-list">
+                <div class="swift-nutrition-item">
+                  <div class="swift-nutrition-item__bar">
+                    <div class="swift-nutrition-item__fill" style="width: 85%"></div>
+                  </div>
+                  <span class="swift-nutrition-item__value">26g</span>
+                  <span class="swift-nutrition-item__label">Proteínas</span>
+                  </div>
+                
+                <div class="swift-nutrition-item">
+                  <div class="swift-nutrition-item__bar">
+                    <div class="swift-nutrition-item__fill" style="width: 60%"></div>
+                </div>
+                  <span class="swift-nutrition-item__value">14g</span>
+                  <span class="swift-nutrition-item__label">Gorduras</span>
+                  </div>
+                
+                <div class="swift-nutrition-item">
+                  <div class="swift-nutrition-item__bar">
+                    <div class="swift-nutrition-item__fill" style="width: 40%"></div>
+                </div>
+                  <span class="swift-nutrition-item__value">3.5g</span>
+                  <span class="swift-nutrition-item__label">Ferro</span>
+                  </div>
+                
+                <div class="swift-nutrition-item">
+                  <div class="swift-nutrition-item__bar">
+                    <div class="swift-nutrition-item__fill" style="width: 50%"></div>
+                </div>
+                  <span class="swift-nutrition-item__value">5.2g</span>
+                  <span class="swift-nutrition-item__label">Zinco</span>
                   </div>
                 </div>
-                <div class="pginainicial-refrigerao">
-                  <span class="pginainicial-text174">Refrigeração</span>
-                  <span class="pginainicial-text175">
-                    Mantenha entre 0°C e 4°C por até 3 dias.
-                  </span>
-                </div>
-                <div class="pginainicial-congelamento">
-                  <span class="pginainicial-text176">Congelamento</span>
-                  <span class="pginainicial-text177">
-                    Embale a vácuo e congele a -18°C por até 6 meses.
-                  </span>
-                </div>
-                <div class="pginainicial-descongelamento">
-                  <img
-                    src="./assets/rectangle61204-195-200h.png"
-                    alt="Rectangle61204"
-                    class="pginainicial-rectangle6"
-                  />
-                  <span class="pginainicial-text178">Descongelamento</span>
-                  <span class="pginainicial-text179">
-                    <span>
-                      Sempre na geladeira, nunca em temperatura ambiente.
-                    </span>
-                    <br />
-                  </span>
+            </article>
                 </div>
               </div>
-              <div class="pginainicial-infonutricional">
-                <div class="pginainicial-image17"></div>
-                <div class="pginainicial-body16">
-                  <div class="pginainicial-text182">
-                    <span class="pginainicial-text183">
-                      Informações Nutricionais
-                    </span>
-                  </div>
-                  <div class="pginainicial-text184">
-                    <span class="pginainicial-text185">
-                      Conheça os valores nutricionais das nossas carnes e faça
-                      escolhas conscientes.
-                    </span>
-                  </div>
-                </div>
-                <div class="pginainicial-protenas1">
-                  <div class="pginainicial-barra1">
-                    <img
-                      src="./assets/laranja2318-zzq4-200h.png"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-laranja1"
-                    />
-                  </div>
-                  <span class="pginainicial-text186">26g</span>
-                  <span class="pginainicial-text187">Proteínas</span>
-                </div>
-                <div class="pginainicial-protenas2">
-                  <div class="pginainicial-barra2">
-                    <img
-                      src="./assets/laranja2318-q4yw-200h.png"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-laranja2"
-                    />
-                  </div>
-                  <span class="pginainicial-text188">14g</span>
-                  <span class="pginainicial-text189">Gorduras</span>
-                </div>
-                <div class="pginainicial-protenas3">
-                  <div class="pginainicial-barra3">
-                    <img
-                      src="./assets/laranja2318-2yao-200h.png"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-laranja3"
-                    />
-                  </div>
-                  <span class="pginainicial-text190">3.5g</span>
-                  <span class="pginainicial-text191">Ferro</span>
-                </div>
-                <div class="pginainicial-protenas4">
-                  <div class="pginainicial-barra4">
-                    <img
-                      src="./assets/laranja2318-an5t-200h.png"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-laranja4"
-                    />
-                  </div>
-                  <span class="pginainicial-text192">5.2g</span>
-                  <span class="pginainicial-text193">Zinco</span>
-                </div>
-              </div>
-            </div>
-            <div class="pginainicial-carrinhointeligente">
-              <div class="pginainicial-frame19">
-                <div class="pginainicial-image18">
+            </section>
+
+      <!-- Smart Cart Component v2.0 -->
+      <section id="swift-smart-cart-v2" class="swift-smart-cart" aria-label="Funcionalidades do Carrinho Inteligente">
+        <div class="swift-smart-cart__container">
+          <!-- Background Image -->
+          <div class="swift-smart-cart__background">
                   <img
                     src="./assets/imagedesktopweb11965-9zx-1000h.png"
-                    alt="imagedesktopweb11965"
-                    class="pginainicial-imagedesktopweb1"
+              alt=""
+              aria-hidden="true"
+              class="swift-smart-cart__bg-img"
                   />
                 </div>
-                <div class="pginainicial-frame5">
-                  <span class="pginainicial-text194">Carrinho Inteligente</span>
-                  <div class="pginainicial-att">
+
+          <!-- Content -->
+          <div class="swift-smart-cart__content">
+            <h2 class="swift-smart-cart__title">Carrinho Inteligente</h2>
+            
+            <!-- Features List -->
+            <div class="swift-smart-cart__features">
+              <!-- Real-time Updates -->
+              <div class="swift-smart-cart__feature">
+                <div class="swift-smart-cart__feature-icon">
                     <img
                       src="./assets/tempo111383-kn6ji-200h.png"
-                      alt="tempo111383"
-                      class="pginainicial-tempo11"
-                    />
-                    <span class="pginainicial-text195">
-                      Atualização em Tempo Real
-                    </span>
-                    <span class="pginainicial-text196">
-                      <span>
-                        Seu carrinho é atualizado instantaneamente, sem
-                        necessidade de recarregar
-                      </span>
-                      <br />
-                      <span>a página.</span>
-                    </span>
-                  </div>
-                  <div class="pginainicial-suggest">
-                    <img
-                      src="./assets/tempo211384-xufn-200w.png"
-                      alt="tempo211384"
-                      class="pginainicial-tempo21"
-                    />
-                    <span class="pginainicial-text200">
-                      Receba sugestões de produtos complementares baseados nos
-                      itens do seu carrinho.
-                    </span>
-                    <span class="pginainicial-text201">
-                      Sugestões Personalizadas
-                    </span>
-                  </div>
-                  <div class="pginainicial-calculo">
-                    <img
-                      src="./assets/caminhao111384-w9mj-200h.png"
-                      alt="caminhao111384"
-                      class="pginainicial-caminhao11"
-                    />
-                    <span class="pginainicial-text202">
-                      Veja o valor do frete em tempo real com base no seu CEP e
-                      nos produtos selecionados.
-                    </span>
-                    <span class="pginainicial-text203">
-                      Cálculo Automático de Frete
-                    </span>
-                  </div>
-                  <div class="pginainicial-check">
-                    <span class="pginainicial-text204">
-                      Finalize sua compra com apenas um clique se você já for
-                      cliente cadastrado.
-                    </span>
-                    <span class="pginainicial-text205">Checkout Rápido</span>
-                    <img
-                      src="./assets/tempo311384-ddl-200w.png"
-                      alt="tempo311384"
-                      class="pginainicial-tempo31"
-                    />
-                  </div>
-                </div>
-                <button class="pginainicial-button-danger16">
-                  <span class="pginainicial-text206">Experimente Agora</span>
-                </button>
-              </div>
-            </div>
-            <div class="pginainicial-avaliaes">
-              <div class="pginainicial-text-heading1">
-                <img
-                  src="./assets/rectangle101985-49jg-200h.png"
-                  alt="Rectangle101985"
-                  class="pginainicial-rectangle10"
-                />
-                <span class="pginainicial-text207">
-                  O que Nossos Clientes Dizem
-                </span>
-              </div>
-              <div class="pginainicial-card-grid">
-                <div class="pginainicial-frame6">
-                  <div class="pginainicial-reviewcard1">
-                    <div class="pginainicial-review-card1">
-                      <div class="pginainicial-rating1">
-                        <img
-                          src="./assets/stari138-airb.svg"
-                          alt="StarI138"
-                          class="pginainicial-star10"
-                        />
-                        <img
-                          src="./assets/stari138-rvsi.svg"
-                          alt="StarI138"
-                          class="pginainicial-star11"
-                        />
-                        <img
-                          src="./assets/stari138-mlu.svg"
-                          alt="StarI138"
-                          class="pginainicial-star12"
-                        />
-                        <img
-                          src="./assets/stari138-v36y.svg"
-                          alt="StarI138"
-                          class="pginainicial-star13"
-                        />
-                        <img
-                          src="./assets/stari138-ex0g.svg"
-                          alt="StarI138"
-                          class="pginainicial-star14"
-                        />
-                      </div>
-                      <div class="pginainicial-review-body1">
-                        <div class="pginainicial-text-heading2">
-                          <span class="pginainicial-text208 Heading">
-                            Eu amei
-                          </span>
-                        </div>
-                        <div class="pginainicial-text209">
-                          <span class="pginainicial-text210 BodyBase">
-                            "A qualidade das carnes é excepcional. Comprei para
-                            um churrasco em família e todos elogiaram. A entrega
-                            foi rápida e os produtos chegaram muito bem
-                            embalados e refrigerados."
-                          </span>
-                        </div>
-                      </div>
-                      <div class="pginainicial-avatar-block1">
-                        <div class="pginainicial-avatar1">
-                          <img
-                            src="./assets/shapei138-l05i5-200h.png"
-                            alt="ShapeI138"
-                            class="pginainicial-shape1"
-                          />
-                        </div>
-                        <div class="pginainicial-info1">
-                          <span class="pginainicial-text211 BodyStrong">
-                            Fernanda Santos
-                          </span>
-                          <span class="pginainicial-text212 BodyBase">
-                            São Paulo, SP
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pginainicial-reviewcard2">
-                    <div class="pginainicial-review-card2">
-                      <div class="pginainicial-rating2">
-                        <img
-                          src="./assets/stari138-zcm.svg"
-                          alt="StarI138"
-                          class="pginainicial-star15"
-                        />
-                        <img
-                          src="./assets/stari138-v3nh.svg"
-                          alt="StarI138"
-                          class="pginainicial-star16"
-                        />
-                        <img
-                          src="./assets/stari138-0q7e.svg"
-                          alt="StarI138"
-                          class="pginainicial-star17"
-                        />
-                        <img
-                          src="./assets/stari138-8gsj.svg"
-                          alt="StarI138"
-                          class="pginainicial-star18"
-                        />
-                        <img
-                          src="./assets/stari138-rfcr.svg"
-                          alt="StarI138"
-                          class="pginainicial-star19"
-                        />
-                      </div>
-                      <div class="pginainicial-review-body2">
-                        <div class="pginainicial-text-heading3">
-                          <span class="pginainicial-text213 Heading">
-                            Muito bom
-                          </span>
-                        </div>
-                        <div class="pginainicial-text214">
-                          <span class="pginainicial-text215 BodyBase">
-                            "Sou cliente há mais de um ano e nunca me
-                            decepcionei. O site é muito fácil de navegar, as
-                            fotos dos produtos são fiéis e o processo de compra
-                            é super rápido. Recomendo!"
-                          </span>
-                        </div>
-                      </div>
-                      <div class="pginainicial-avatar-block2">
-                        <div class="pginainicial-avatar2">
-                          <img
-                            src="./assets/shapei138-rvkg-200h.png"
-                            alt="ShapeI138"
-                            class="pginainicial-shape2"
-                          />
-                        </div>
-                        <div class="pginainicial-info2">
-                          <span class="pginainicial-text216 BodyStrong">
-                            Ricardo Oliveira
-                          </span>
-                          <span class="pginainicial-text217 BodyBase">
-                            Campinas, SP
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pginainicial-reviewcard3">
-                    <div class="pginainicial-review-card3">
-                      <div class="pginainicial-rating3">
-                        <img
-                          src="./assets/stari138-dit6.svg"
-                          alt="StarI138"
-                          class="pginainicial-star20"
-                        />
-                        <img
-                          src="./assets/stari138-ocg.svg"
-                          alt="StarI138"
-                          class="pginainicial-star21"
-                        />
-                        <img
-                          src="./assets/stari138-kalf.svg"
-                          alt="StarI138"
-                          class="pginainicial-star22"
-                        />
-                        <img
-                          src="./assets/stari138-s5ab.svg"
-                          alt="StarI138"
-                          class="pginainicial-star23"
-                        />
-                        <img
-                          src="./assets/stari138-55p.svg"
-                          alt="StarI138"
-                          class="pginainicial-star24"
-                        />
-                      </div>
-                      <div class="pginainicial-review-body3">
-                        <div class="pginainicial-text-heading4">
-                          <span class="pginainicial-text218 Heading">
-                            Vou comprar mais
-                          </span>
-                        </div>
-                        <div class="pginainicial-text219">
-                          <span class="pginainicial-text220 BodyBase">
-                            "As dicas de preparo que vêm junto com os produtos
-                            são excelentes! Consegui fazer um filé mignon
-                            perfeito seguindo as instruções. O atendimento ao
-                            cliente também é muito bom."
-                          </span>
-                        </div>
-                      </div>
-                      <div class="pginainicial-avatar-block3">
-                        <div class="pginainicial-avatar3">
-                          <img
-                            src="./assets/shapei138-8zvd-200h.png"
-                            alt="ShapeI138"
-                            class="pginainicial-shape3"
-                          />
-                        </div>
-                        <div class="pginainicial-info3">
-                          <span class="pginainicial-text221 BodyStrong">
-                            Marcelo Almeida
-                          </span>
-                          <span class="pginainicial-text222 BodyBase">
-                            Rio de Janeiro, RJ
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="pginainicial-reviewcard4">
-                    <div class="pginainicial-review-card4">
-                      <div class="pginainicial-rating4">
-                        <img
-                          src="./assets/stari138-9ut.svg"
-                          alt="StarI138"
-                          class="pginainicial-star25"
-                        />
-                      </div>
-                      <div class="pginainicial-review-body4">
-                        <div class="pginainicial-text-heading5">
-                          <span class="pginainicial-text223 Heading">
-                            Eu amei
-                          </span>
-                        </div>
-                        <div class="pginainicial-text224">
-                          <span class="pginainicial-text225 BodyBase">
-                            "A qualidade das carnes é excepcional. Comprei para
-                            um churrasco em família e todos elogiaram. A entrega
-                            foi rápida e os produtos chegaram muito bem
-                            embalados e refrigerados."
-                          </span>
-                        </div>
-                      </div>
-                      <div class="pginainicial-avatar-block4">
-                        <div class="pginainicial-avatar4">
-                          <img
-                        src="./assets/shapei138-jf-200w.png"
-                        alt=""
-                        aria-hidden="true"
-                        class="pginainicial-shape4"
-                      />
-                        </div>
-                        <div class="pginainicial-info4">
-                          <span class="pginainicial-text226 BodyStrong">
-                            Fernanda Santos
-                          </span>
-                          <span class="pginainicial-text227 BodyBase">
-                            São Paulo, SP
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <img
-                    src="./assets/arrowrightcircle2045-s7g.svg"
-                    alt="Arrowrightcircle2045"
-                    class="pginainicial-arrowrightcircle1"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-smart-cart__icon"
                   />
+                  </div>
+                <div class="swift-smart-cart__feature-content">
+                  <h3 class="swift-smart-cart__feature-title">Atualização em Tempo Real</h3>
+                  <p class="swift-smart-cart__feature-description">
+                    Seu carrinho é atualizado instantaneamente, sem necessidade de recarregar a página.
+                  </p>
+                  </div>
+                  </div>
+
+              <!-- Personalized Suggestions -->
+              <div class="swift-smart-cart__feature">
+                <div class="swift-smart-cart__feature-icon">
+                  <img
+                    src="./assets/tempo211384-xufn-200w.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-smart-cart__icon"
+                    />
+                  </div>
+                <div class="swift-smart-cart__feature-content">
+                  <h3 class="swift-smart-cart__feature-title">Sugestões Personalizadas</h3>
+                  <p class="swift-smart-cart__feature-description">
+                    Receba sugestões de produtos complementares baseados nos itens do seu carrinho.
+                  </p>
                 </div>
               </div>
-            </div>
-            <!-- Produtos mais vendidos (única ocorrência mantida) -->
-            <div class="pginainicial-produtosmaisvendidos">
-              <img
-                src="./assets/ellipse82096-k5xm-500w.png"
-                alt="Ellipse82096"
-                class="pginainicial-ellipse81"
-              />
-              <span class="pginainicial-text228">Produtos mais vendidos</span>
-              <span class="pginainicial-text229">
-                Os melhores produtos para preparar receitas incríveis na sua
-                casa. Variedade e sabor na medida!
-              </span>
-              <img
-                src="./assets/ellipse72096-yygq-1100h.png"
-                alt="Ellipse72096"
-                class="pginainicial-ellipse71"
-              />
-              <div class="pginainicial-frame22">
-                <div class="pginainicial-picanha-premium2">
-                  <div class="pginainicial-image19"></div>
-                  <div class="pginainicial-body17">
-                    <div class="pginainicial-text230">
-                      <span class="pginainicial-text231">Picanha Premium</span>
+
+              <!-- Automatic Shipping Calculation -->
+              <div class="swift-smart-cart__feature">
+                <div class="swift-smart-cart__feature-icon">
+                  <img
+                    src="./assets/caminhao111384-w9mj-200h.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-smart-cart__icon"
+                  />
+              </div>
+                <div class="swift-smart-cart__feature-content">
+                  <h3 class="swift-smart-cart__feature-title">Cálculo Automático de Frete</h3>
+                  <p class="swift-smart-cart__feature-description">
+                    Veja o valor do frete em tempo real com base no seu CEP e nos produtos selecionados.
+                  </p>
+                      </div>
+                        </div>
+
+              <!-- Quick Checkout -->
+              <div class="swift-smart-cart__feature">
+                <div class="swift-smart-cart__feature-icon">
+                  <img
+                    src="./assets/tempo311384-ddl-200w.png"
+                    alt=""
+                    aria-hidden="true"
+                    class="swift-smart-cart__icon"
+                          />
+                        </div>
+                <div class="swift-smart-cart__feature-content">
+                  <h3 class="swift-smart-cart__feature-title">Checkout Rápido</h3>
+                  <p class="swift-smart-cart__feature-description">
+                    Finalize sua compra com apenas um clique se você já for cliente cadastrado.
+                  </p>
+                        </div>
+                      </div>
                     </div>
-                    <div class="pginainicial-text232">
-                      <span class="pginainicial-text233">1 kilo</span>
+
+            <!-- Call-to-Action Button -->
+            <button class="swift-smart-cart__cta-btn swift-btn--animated">
+              <span class="swift-smart-cart__cta-text">Experimente Agora</span>
+            </button>
+                  </div>
+                      </div>
+      </section>
+
+      <!-- Testimonials Component -->
+      <section class="swift-testimonials" aria-labelledby="testimonials-title">
+        <div class="swift-testimonials__container">
+          <!-- Section Title -->
+          <div class="swift-testimonials__header">
+            <h2 id="testimonials-title" class="swift-testimonials__title">
+              O que Nossos Clientes Dizem?
+            </h2>
+                        </div>
+
+          <!-- Testimonials Carousel -->
+          <div class="swift-testimonials__carousel" data-carousel="testimonials">
+            <div class="swift-testimonials__track">
+              <!-- Testimonial 1 -->
+              <article class="swift-testimonial-card">
+                <div class="swift-testimonial-card__rating">
+                  <img src="./assets/stari138-airb.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-rvsi.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-mlu.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-v36y.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-ex0g.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                        </div>
+                <div class="swift-testimonial-card__content">
+                  <h3 class="swift-testimonial-card__title">Eu amei</h3>
+                  <blockquote class="swift-testimonial-card__quote">
+                    "A qualidade das carnes é excepcional. Comprei para um churrasco em família e todos elogiaram. A entrega foi rápida e os produtos chegaram muito bem embalados e refrigerados."
+                  </blockquote>
+                      </div>
+                <div class="swift-testimonial-card__author">
+                  <img src="./assets/shapei138-l05i5-200h.png" alt="Fernanda Santos" class="swift-testimonial-card__avatar" />
+                  <div class="swift-testimonial-card__author-info">
+                    <span class="swift-testimonial-card__author-name">Fernanda Santos</span>
+                    <span class="swift-testimonial-card__author-location">São Paulo, SP</span>
+                        </div>
+                        </div>
+              </article>
+
+              <!-- Testimonial 2 -->
+              <article class="swift-testimonial-card">
+                <div class="swift-testimonial-card__rating">
+                  <img src="./assets/stari138-zcm.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-v3nh.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-0q7e.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-8gsj.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-rfcr.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                      </div>
+                <div class="swift-testimonial-card__content">
+                  <h3 class="swift-testimonial-card__title">Muito bom</h3>
+                  <blockquote class="swift-testimonial-card__quote">
+                    "Sou cliente há mais de um ano e nunca me decepcionei. O site é muito fácil de navegar, as fotos dos produtos são fiéis e o processo de compra é super rápido. Recomendo!"
+                  </blockquote>
                     </div>
-                    <img
-                      src="./assets/starfilled2144-l479.svg"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-starfilled5"
-                    />
-                    <div class="pginainicial-text-small5">
-                      <span class="pginainicial-text234">R$ 109,90</span>
-                    </div>
-                    <div class="pginainicial-text-strong5">
-                      <span class="pginainicial-text235">R$ 89,90</span>
+                <div class="swift-testimonial-card__author">
+                  <img src="./assets/shapei138-rvkg-200h.png" alt="Ricardo Oliveira" class="swift-testimonial-card__avatar" />
+                  <div class="swift-testimonial-card__author-info">
+                    <span class="swift-testimonial-card__author-name">Ricardo Oliveira</span>
+                    <span class="swift-testimonial-card__author-location">Campinas, SP</span>
+                  </div>
+                      </div>
+              </article>
+
+              <!-- Testimonial 3 -->
+              <article class="swift-testimonial-card">
+                <div class="swift-testimonial-card__rating">
+                  <img src="./assets/stari138-dit6.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-ocg.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-kalf.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-s5ab.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-55p.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                        </div>
+                <div class="swift-testimonial-card__content">
+                  <h3 class="swift-testimonial-card__title">Vou comprar mais</h3>
+                  <blockquote class="swift-testimonial-card__quote">
+                    "As dicas de preparo que vêm junto com os produtos são excelentes! Consegui fazer um filé mignon perfeito seguindo as instruções. O atendimento ao cliente também é muito bom."
+                  </blockquote>
+                        </div>
+                <div class="swift-testimonial-card__author">
+                  <img src="./assets/shapei138-8zvd-200h.png" alt="Marcelo Almeida" class="swift-testimonial-card__avatar" />
+                  <div class="swift-testimonial-card__author-info">
+                    <span class="swift-testimonial-card__author-name">Marcelo Almeida</span>
+                    <span class="swift-testimonial-card__author-location">Rio de Janeiro, RJ</span>
+                      </div>
+                        </div>
+              </article>
+
+              <!-- Testimonial 4 -->
+              <article class="swift-testimonial-card">
+                <div class="swift-testimonial-card__rating">
+                  <img src="./assets/stari138-9ut.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-9ut.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-9ut.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-9ut.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                  <img src="./assets/stari138-9ut.svg" alt="" aria-hidden="true" class="swift-testimonial-card__star" />
+                        </div>
+                <div class="swift-testimonial-card__content">
+                  <h3 class="swift-testimonial-card__title">Excelente qualidade</h3>
+                  <blockquote class="swift-testimonial-card__quote">
+                    "A qualidade das carnes é excepcional. Comprei para um churrasco em família e todos elogiaram. A entrega foi rápida e os produtos chegaram muito bem embalados e refrigerados."
+                  </blockquote>
+                      </div>
+                <div class="swift-testimonial-card__author">
+                  <img src="./assets/shapei138-jf-200w.png" alt="Ana Paula" class="swift-testimonial-card__avatar" />
+                  <div class="swift-testimonial-card__author-info">
+                    <span class="swift-testimonial-card__author-name">Ana Paula</span>
+                    <span class="swift-testimonial-card__author-location">Brasília, DF</span>
                     </div>
                   </div>
-                  <div class="pginainicial-adc5">
-                    <button class="pginainicial-button-danger17">
-                      <span class="pginainicial-text236">Adicionar</span>
+              </article>
+                      </div>
+
+            <!-- Navigation Arrows -->
+            <button class="swift-testimonials__nav swift-testimonials__nav--prev" aria-label="Depoimento anterior" data-carousel-prev="testimonials">
+              <img src="./assets/arrowrightcircle2045-s7g.svg" alt="" aria-hidden="true" class="swift-testimonials__nav-icon" />
+            </button>
+            
+            <button class="swift-testimonials__nav swift-testimonials__nav--next" aria-label="Próximo depoimento" data-carousel-next="testimonials">
+              <img src="./assets/arrowrightcircle2045-s7g.svg" alt="" aria-hidden="true" class="swift-testimonials__nav-icon" />
+            </button>
+                        </div>
+              </div>
+            </section>
+
+      <!-- Best Sellers Component -->
+      <section class="swift-best-sellers" aria-label="Produtos mais vendidos">
+        <!-- Background Image -->
+              <img
+                src="./assets/seção_calma.png"
+                alt=""
+                aria-hidden="true"
+          class="swift-best-sellers__bg"
+        />
+
+        <!-- Content Overlay -->
+        <div class="swift-best-sellers__overlay">
+          <div class="swift-best-sellers__container">
+            <!-- Section Title -->
+            <h2 class="swift-best-sellers__title">Produtos mais vendidos</h2>
+            <p class="swift-best-sellers__subtitle">
+              Os melhores produtos para preparar receitas incríveis na sua casa. Variedade e sabor na medida!
+            </p>
+
+            <!-- Products Carousel -->
+            <div class="swift-best-sellers__carousel" data-carousel="best-sellers">
+              <div class="swift-best-sellers__track">
+                <!-- Product 1 -->
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/carne.jpg" alt="Picanha Premium" class="swift-bestseller-card__img" />
+                    </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Picanha Premium</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2144-l479.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 109,90</span>
+                      <span class="swift-bestseller-card__price">R$ 89,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/ancho.webp" alt="Ancho Angus" class="swift-bestseller-card__img" />
+                </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Ancho Angus</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2315-6kbv.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 109,90</span>
+                      <span class="swift-bestseller-card__price">R$ 89,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/costela.png" alt="Costela Suína" class="swift-bestseller-card__img" />
+                </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Costela Suína</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2214-6ljo.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 49,90</span>
+                      <span class="swift-bestseller-card__price">R$ 38,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/file de frang.png" alt="Filé de Frango" class="swift-bestseller-card__img" />
+                </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Filé de Frango</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2214-xpy.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 29,90</span>
+                      <span class="swift-bestseller-card__price">R$ 24,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+
+                <!-- Duplicate items for carousel effect -->
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/carne.jpg" alt="Picanha Premium" class="swift-bestseller-card__img" />
+                </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Picanha Premium</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2144-l479.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 109,90</span>
+                      <span class="swift-bestseller-card__price">R$ 89,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="swift-bestseller-card">
+                  <div class="swift-bestseller-card__image">
+                    <img src="./assets/ancho.webp" alt="Ancho Angus" class="swift-bestseller-card__img" />
+                </div>
+                  <div class="swift-bestseller-card__content">
+                    <h3 class="swift-bestseller-card__name">Ancho Angus</h3>
+                    <p class="swift-bestseller-card__weight">1 kilo</p>
+                    <div class="swift-bestseller-card__rating">
+                      <img src="./assets/starfilled2315-6kbv.svg" alt="5 estrelas" class="swift-bestseller-card__stars" />
+                    </div>
+                    <div class="swift-bestseller-card__pricing">
+                      <span class="swift-bestseller-card__old-price">R$ 109,90</span>
+                      <span class="swift-bestseller-card__price">R$ 89,90</span>
+                    </div>
+                    </div>
+                  <div class="swift-bestseller-card__actions">
+                    <button class="swift-bestseller-card__add-btn">
+                      <span class="swift-bestseller-card__add-text">Adicionar</span>
+                    </button>
+                  </div>
+                </article>
+                </div>
+
+              <!-- Navigation Arrows -->
+              <button class="swift-best-sellers__nav swift-best-sellers__nav--prev" aria-label="Produtos anteriores" data-carousel-prev="best-sellers">
+                <img src="./assets/arrowrightcircle2316-nmg5.svg" alt="" aria-hidden="true" class="swift-best-sellers__nav-icon" />
+              </button>
+              
+              <button class="swift-best-sellers__nav swift-best-sellers__nav--next" aria-label="Próximos produtos" data-carousel-next="best-sellers">
+                <img src="./assets/arrowrightcircle2316-nmg5.svg" alt="" aria-hidden="true" class="swift-best-sellers__nav-icon" />
                     </button>
                   </div>
                 </div>
-                <div class="pginainicial-picanha-premium3">
-                  <div class="pginainicial-image20"></div>
-                  <div class="pginainicial-body18">
-                    <div class="pginainicial-text237">
-                      <span class="pginainicial-text238">Picanha Premium</span>
                     </div>
-                    <div class="pginainicial-text239">
-                      <span class="pginainicial-text240">1 kilo</span>
+      </section>
+
+      <!-- App Download Component -->
+      <section class="swift-app-download" aria-label="Baixe nosso aplicativo">
+        <div class="swift-app-download__container">
+          <!-- Background Elements -->
+          <div class="swift-app-download__background">
+            <div class="swift-app-download__circle swift-app-download__circle--1"></div>
+            <div class="swift-app-download__circle swift-app-download__circle--2"></div>
+            <div class="swift-app-download__circle swift-app-download__circle--3"></div>
+            <div class="swift-app-download__circle swift-app-download__circle--4"></div>
                     </div>
-                    <img
-                      src="./assets/starfilled2315-6kbv.svg"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-starfilled6"
-                    />
-                    <div class="pginainicial-text-small6">
-                      <span class="pginainicial-text241">R$ 109,90</span>
+
+          <!-- Content -->
+          <div class="swift-app-download__content">
+            <!-- Text Content -->
+            <div class="swift-app-download__text-content">
+              <h2 class="swift-app-download__title">Baixe nosso app</h2>
+              <p class="swift-app-download__description">
+                O jeito Swift de comprar carne vai surpreender você, agora com uma experiência 100% mobile. Experimente!
+              </p>
+              
+              <div class="swift-app-download__features">
+                <ul class="swift-app-download__features-list">
+                  <li class="swift-app-download__feature">Receba mensagens da Swift diretamente no seu aplicativo</li>
+                  <li class="swift-app-download__feature">Encontre receitas deliciosas e selecione as suas favoritas</li>
+                  <li class="swift-app-download__feature">Calcule a quantidade de carne para um churrasco perfeito</li>
+                  <li class="swift-app-download__feature">Consulte o endereço da loja Swift mais próxima de você</li>
+                </ul>
                     </div>
-                    <div class="pginainicial-text-strong6">
-                      <span class="pginainicial-text242">R$ 89,90</span>
-                    </div>
-                  </div>
-                  <div class="pginainicial-adc6">
-                    <button class="pginainicial-button-danger18">
-                      <span class="pginainicial-text243">Adicionar</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="pginainicial-ancho-angus2">
-                  <div class="pginainicial-image21"></div>
-                  <div class="pginainicial-body19">
-                    <div class="pginainicial-text244">
-                      <span class="pginainicial-text245">Ancho Angus</span>
-                    </div>
-                    <div class="pginainicial-text246">
-                      <span class="pginainicial-text247">1 kilo</span>
-                    </div>
-                    <img
-                      src="./assets/starfilled2214-6ljo.svg"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-starfilled7"
-                    />
-                    <div class="pginainicial-text-small7">
-                      <span class="pginainicial-text248">R$ 109,90</span>
-                    </div>
-                    <div class="pginainicial-text-strong7">
-                      <span class="pginainicial-text249">R$ 89,90</span>
+
+              <!-- Download Buttons -->
+              <div class="swift-app-download__buttons">
+                <a href="#ios" class="swift-app-download__button swift-app-download__button--ios">
+                  <img src="./assets/appstoreiossvg11472-j4zqi-200h.png" alt="Download na App Store" class="swift-app-download__button-img" />
+                  <span class="swift-app-download__button-text">Tem iPhone?</span>
+                </a>
+                
+                <a href="#android" class="swift-app-download__button swift-app-download__button--android">
+                  <img src="./assets/googleplaystoremobileappslogofreepng11472-nk-200h.png" alt="Download no Google Play" class="swift-app-download__button-img" />
+                  <span class="swift-app-download__button-text">Tem Android?</span>
+                </a>
                     </div>
                   </div>
-                  <div class="pginainicial-adc7">
-                    <button class="pginainicial-button-danger19">
-                      <span class="pginainicial-text250">Adicionar</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="pginainicial-filde-frango2">
-                  <div class="pginainicial-image22"></div>
-                  <div class="pginainicial-body20">
-                    <div class="pginainicial-text251">
-                      <span class="pginainicial-text252">Picanha Premium</span>
-                    </div>
-                    <div class="pginainicial-text253">
-                      <span class="pginainicial-text254">1 kilo</span>
-                    </div>
-                    <img
-                      src="./assets/starfilled2214-xpy.svg"
-                      alt=""
-                      aria-hidden="true"
-                      class="pginainicial-starfilled8"
-                    />
-                    <div class="pginainicial-text-small8">
-                      <span class="pginainicial-text255">R$ 109,90</span>
-                    </div>
-                    <div class="pginainicial-text-strong8">
-                      <span class="pginainicial-text256">R$ 89,90</span>
-                    </div>
-                  </div>
-                  <div class="pginainicial-adc8">
-                    <button class="pginainicial-button-danger20">
-                      <span class="pginainicial-text257 SingleLineBodyBase">
-                        Adicionar
-                      </span>
-                    </button>
-                  </div>
-                </div>
-                <img
-                  src="./assets/arrowrightcircle2316-nmg5.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="pginainicial-arrowrightcircle2"
-                />
-              </div>
-            </div>
-            <!-- Baixe nosso app (única ocorrência mantida) -->
-            <div class="pginainicial-baixenossoapp">
-              <img
-                src="./assets/ellipse82214-y9vh-800w.png"
-                alt="Ellipse82214"
-                class="pginainicial-ellipse82"
-              />
-              <img
-                src="./assets/ellipse72214-osbj.svg"
-                alt="Ellipse72214"
-                class="pginainicial-ellipse72"
-              />
-              <img
-                src="./assets/rectangle112256-zpca-1400w.png"
-                alt="Rectangle112256"
-                class="pginainicial-rectangle11"
-              />
-              <div class="pginainicial-ios">
-                <img
-                  src="./assets/appstoreiossvg11472-j4zqi-200h.png"
-                  alt="AppStoreiOSsvg11472"
-                  class="pginainicial-app-storei-o-ssvg1"
-                />
-                <span class="pginainicial-text258">Tem iphone?</span>
-              </div>
-              <div class="pginainicial-android">
-                <img
-                  src="./assets/googleplaystoremobileappslogofreepng11472-nk-200h.png"
-                  alt="googleplaystoremobileappslogofreepng11472"
-                  class="pginainicial-googleplaystoremobileappslogofreepng1"
-                />
-                <span class="pginainicial-text259">Tem android?</span>
-              </div>
-              <div class="pginainicial-text260">
-                <span class="pginainicial-text261">
-                  O jeito Swift de comprar carne vai surpreender você, agora com
-                  uma experiência 100% mobile. Experimente! Receba mensagens
-                  da Swift diretamente no seu aplicativo; Encontre Receitas
-                  deliciosas e selecione as suas favoritas; Calcule a
-                  quantidade de carne para um churrasco perfeito; Consulte o
-                  endereço da loja Swift mais próxima de você;
-                </span>
-                <img
-                  src="./assets/ellipse22076-byuk-200w.png"
-                  alt="Ellipse22076"
-                  class="pginainicial-ellipse2"
-                />
-                <img
-                  src="./assets/ellipse62076-ob-200w.png"
-                  alt="Ellipse62076"
-                  class="pginainicial-ellipse6"
-                />
-                <img
-                  src="./assets/ellipse32076-wlr-200w.png"
-                  alt="Ellipse32076"
-                  class="pginainicial-ellipse3"
-                />
-                <img
-                  src="./assets/ellipse42076-289f-200w.png"
-                  alt="Ellipse42076"
-                  class="pginainicial-ellipse4"
-                />
-                <span class="pginainicial-text262">Baixe nosso app</span>
-              </div>
+
+            <!-- Phone Image -->
+            <div class="swift-app-download__phone">
               <img
                 src="./assets/celphone1471-g6jj-700w.png"
-                alt="celphone1471"
-                class="pginainicial-celphone"
+                alt="Aplicativo Swift no celular"
+                class="swift-app-download__phone-img"
               />
-            </div>
-            <div class="pginainicial-down" role="contentinfo">
-              <div class="pginainicial-frame8">
-                <img
-                  src="./assets/socialicons1407-wvm.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="pginainicial-social-icons1"
-                />
-                <img
-                  src="./assets/socialicons1407-hf3.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="pginainicial-social-icons2"
-                />
-                <img
-                  src="./assets/socialicons1407-pcxb.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="pginainicial-social-icons3"
-                />
-                <img
-                  src="./assets/socialicons1408-nb0r.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="pginainicial-social-icons4"
-                />
-              </div>
-              <div class="pginainicial-frame9">
-                <span class="pginainicial-text263 BodyBase">
-                  Há mais de 60 anos levando qualidade e sabor para a mesa dos
-                  brasileiros
-                </span>
-              </div>
-              <div class="pginainicial-frame10"></div>
-              <img
-                src="./assets/unnamed211408-9sp-200h.png"
-                alt="unnamed211408"
-                class="pginainicial-unnamed212"
-              />
-              <div class="pginainicial-frame11">
-                <div class="pginainicial-text-heading6">
-                  <span class="pginainicial-text264 Heading">Produtos</span>
-                </div>
-                <span class="pginainicial-text265 BodyBase">
-                  <span>Bovinos</span>
-                  <br />
-                  <br />
-                  <span>Aves</span>
-                  <br />
-                  <br />
-                  <span>Suínos</span>
-                  <br />
-                  <br />
-                  <span>Kits Especiais</span>
-                  <br />
-                  <br />
-                  <span>Ofertas</span>
-                  <br />
-                  <br />
-                  <span>Lançamentos</span>
-                </span>
-              </div>
-              <div class="pginainicial-frame12">
-                <div class="pginainicial-text-heading7">
-                  <span class="pginainicial-text282 Heading">
-                    Institucional
-                  </span>
-                </div>
-                <span class="pginainicial-text283 BodyBase">
-                  <span>Sobre Nós</span>
-                  <br />
-                  <br />
-                  <span>Sustentablilidade</span>
-                  <br />
-                  <br />
-                  <span>Trabalhe Conosco</span>
-                  <br />
-                  <br />
-                  <span>Lojas Físicas</span>
-                  <br />
-                  <br />
-                  <span>Blog</span>
-                  <br />
-                  <br />
-                  <span>Imprensa</span>
-                </span>
-              </div>
-              <span class="pginainicial-text300 BodyBase">
-                © 2025 Swift. Todos os direitos reservados.
-              </span>
-              <div class="pginainicial-frame14">
-                <div class="pginainicial-frame13">
-                  <div class="pginainicial-text-heading8">
-                    <span class="pginainicial-text301 Heading">
-                      Atendimento
-                    </span>
-                  </div>
-                  <span class="pginainicial-text302 BodyBase">
-                    <span class="pginainicial-text303">0800 702 1234</span>
-                    <br />
-                    <span class="pginainicial-text305">
-                      Seg a Sex, 8h ás 20h
-                    </span>
-                    <br />
-                    <br />
-                    <span class="pginainicial-text308">
-                      atendimento@swift.com.br
-                    </span>
-                    <br />
-                    <span class="pginainicial-text310">
-                      Respondemos em até 24h
-                    </span>
-                    <br />
-                    <br />
-                    <span class="pginainicial-text313">(11) 99876-5432</span>
-                    <br />
-                    <span>Atendimento via WhatsApp</span>
-                  </span>
-                </div>
-                <img
-                  src="./assets/socialicons1442-u7kc.svg"
-                  alt="SocialIcons1442"
-                  class="pginainicial-social-icons5"
-                />
-                <img
-                  src="./assets/phone1462-ikrc.svg"
-                  alt="phone1462"
-                  class="pginainicial-phone"
-                />
-                <img
-                  src="./assets/mail031462-j0qe.svg"
-                  alt="mail031462"
-                  class="pginainicial-mail03"
-                />
-              </div>
-              <div class="pginainicial-master-card">
-                <img
-                  src="./assets/rectanglei146-l4kp-200h.png"
-                  alt="RectangleI146"
-                  class="pginainicial-rectangle1"
-                />
-                <div class="pginainicial-group">
-                  <img
-                    src="./assets/path3808i146-sg5e.svg"
-                    alt="path3808I146"
-                    class="pginainicial-path3808"
-                  />
-                  <img
-                    src="./assets/path3810i146-4a1e.svg"
-                    alt="path3810I146"
-                    class="pginainicial-path3810"
-                  />
-                  <img
-                    src="./assets/path3814i146-7rww.svg"
-                    alt="path3814I146"
-                    class="pginainicial-path3814"
-                  />
-                  <img
-                    src="./assets/path3822i146-0u0d.svg"
-                    alt="path3822I146"
-                    class="pginainicial-path3822"
-                  />
-                </div>
-              </div>
-              <div class="pginainicial-visa">
-                <img
-                  src="./assets/rectanglei146-0f4-200h.png"
-                  alt="RectangleI146"
-                  class="pginainicial-rectangle4"
-                />
-                <img
-                  src="./assets/polygon9i146-y49p.svg"
-                  alt="polygon9I146"
-                  class="pginainicial-polygon9"
-                />
-                <img
-                  src="./assets/path11i146-xuzn.svg"
-                  alt="path11I146"
-                  class="pginainicial-path11"
-                />
-                <img
-                  src="./assets/path13i146-yh6.svg"
-                  alt="path13I146"
-                  class="pginainicial-path13"
-                />
-                <img
-                  src="./assets/combinedshapei146-4mz.svg"
-                  alt="CombinedShapeI146"
-                  class="pginainicial-combined-shape"
-                />
-              </div>
-              <div class="pginainicial-elo">
-                <img
-                  src="./assets/rectangle1465-a8tdm-200h.png"
-                  alt="Rectangle1465"
-                  class="pginainicial-rectangle5"
-                />
-                <img
-                  src="./assets/path1465-n4eb.svg"
-                  alt="Path1465"
-                  class="pginainicial-path1"
-                />
-                <img
-                  src="./assets/path1465-5ui.svg"
-                  alt="Path1465"
-                  class="pginainicial-path2"
-                />
-                <img
-                  src="./assets/path1465-y836.svg"
-                  alt="Path1465"
-                  class="pginainicial-path3"
-                />
-                <img
-                  src="./assets/shape1465-w3z.svg"
-                  alt="Shape1465"
-                  class="pginainicial-shape5"
-                />
-              </div>
-              <img
-                src="./assets/image61465-z60g-200h.png"
-                alt="image61465"
-                class="pginainicial-image6"
-              />
-              <img
-                src="./assets/image71465-jf8v-200h.png"
-                alt="image71465"
-                class="pginainicial-image7"
-              />
-              <span class="pginainicial-text316">
-                <span class="pginainicial-text317">Formas de Pagamentos</span>
-                <br />
-                <span>(apenas cartões de créditos)</span>
-              </span>
             </div>
           </div>
+              </div>
+            </section>
+    </main>
+
+    <!-- Footer Component -->
+    <footer class="swift-footer" role="contentinfo">
+      <div class="swift-footer__container">
+        <!-- Main Footer Content -->
+        <div class="swift-footer__content">
+          <!-- Company Info -->
+          <div class="swift-footer__company">
+            <img
+              src="./assets/unnamed211408-9sp-200h.png"
+              alt="Swift Logo"
+              class="swift-footer__logo"
+            />
+            <p class="swift-footer__tagline">
+              Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros
+            </p>
+            
+            <!-- Social Media -->
+            <div class="swift-footer__social">
+              <a href="#facebook" class="swift-footer__social-link" aria-label="Facebook">
+                <img src="./assets/socialicons1407-wvm.svg" alt="Facebook" class="swift-footer__social-icon" />
+              </a>
+              <a href="#instagram" class="swift-footer__social-link" aria-label="Instagram">
+                <img src="./assets/socialicons1407-hf3.svg" alt="Instagram" class="swift-footer__social-icon" />
+              </a>
+              <a href="#twitter" class="swift-footer__social-link" aria-label="Twitter">
+                <img src="./assets/socialicons1407-pcxb.svg" alt="Twitter" class="swift-footer__social-icon" />
+              </a>
+              <a href="#linkedin" class="swift-footer__social-link" aria-label="LinkedIn">
+                <img src="./assets/socialicons1408-nb0r.svg" alt="LinkedIn" class="swift-footer__social-icon" />
+              </a>
+              </div>
+              </div>
+
+          <!-- Products Links -->
+          <div class="swift-footer__section">
+            <h3 class="swift-footer__section-title">Produtos</h3>
+            <nav class="swift-footer__nav">
+              <ul class="swift-footer__nav-list">
+                <li class="swift-footer__nav-item">
+                  <a href="#bovinos" class="swift-footer__nav-link">Bovinos</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#aves" class="swift-footer__nav-link">Aves</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#suinos" class="swift-footer__nav-link">Suínos</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#kits-especiais" class="swift-footer__nav-link">Kits Especiais</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#ofertas" class="swift-footer__nav-link">Ofertas</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#lancamentos" class="swift-footer__nav-link">Lançamentos</a>
+                </li>
+              </ul>
+            </nav>
+              </div>
+
+          <!-- Company Links -->
+          <div class="swift-footer__section">
+            <h3 class="swift-footer__section-title">Institucional</h3>
+            <nav class="swift-footer__nav">
+              <ul class="swift-footer__nav-list">
+                <li class="swift-footer__nav-item">
+                  <a href="#sobre-nos" class="swift-footer__nav-link">Sobre Nós</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#sustentabilidade" class="swift-footer__nav-link">Sustentabilidade</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#trabalhe-conosco" class="swift-footer__nav-link">Trabalhe Conosco</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#lojas-fisicas" class="swift-footer__nav-link">Lojas Físicas</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#blog" class="swift-footer__nav-link">Blog</a>
+                </li>
+                <li class="swift-footer__nav-item">
+                  <a href="#imprensa" class="swift-footer__nav-link">Imprensa</a>
+                </li>
+              </ul>
+            </nav>
+              </div>
+
+          <!-- Contact Info -->
+          <div class="swift-footer__section swift-footer__section--contact">
+            <h3 class="swift-footer__section-title">Atendimento</h3>
+            
+            <div class="swift-footer__contact-info">
+              <!-- Phone -->
+              <div class="swift-footer__contact-item">
+                <img src="./assets/phone1462-ikrc.svg" alt="" aria-hidden="true" class="swift-footer__contact-icon" />
+                <div class="swift-footer__contact-details">
+                  <span class="swift-footer__contact-main">0800 702 1234</span>
+                  <span class="swift-footer__contact-sub">Seg a Sex, 8h às 20h</span>
+              </div>
+                </div>
+
+              <!-- Email -->
+              <div class="swift-footer__contact-item">
+                <img src="./assets/mail031462-j0qe.svg" alt="" aria-hidden="true" class="swift-footer__contact-icon" />
+                <div class="swift-footer__contact-details">
+                  <span class="swift-footer__contact-main">atendimento@swift.com.br</span>
+                  <span class="swift-footer__contact-sub">Respondemos em até 24h</span>
+              </div>
+                </div>
+
+              <!-- WhatsApp -->
+              <div class="swift-footer__contact-item">
+                <img src="./assets/socialicons1442-u7kc.svg" alt="" aria-hidden="true" class="swift-footer__contact-icon" />
+                <div class="swift-footer__contact-details">
+                  <span class="swift-footer__contact-main">(11) 99876-5432</span>
+                  <span class="swift-footer__contact-sub">Atendimento via WhatsApp</span>
+              </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+
+        <!-- Payment Methods -->
+        <div class="swift-footer__payments">
+          <h4 class="swift-footer__payments-title">
+            <span class="swift-footer__payments-main">Formas de Pagamento</span>
+            <span class="swift-footer__payments-sub">(apenas cartões de crédito)</span>
+          </h4>
+          
+          <div class="swift-footer__payment-methods">
+            <!-- Visa -->
+            <div class="swift-footer__payment-card swift-footer__payment-card--visa">
+              <img src="./assets/rectanglei146-0f4-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
+              <img src="./assets/polygon9i146-y49p.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path11i146-xuzn.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path13i146-yh6.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/combinedshapei146-4mz.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              </div>
+
+            <!-- Mastercard -->
+            <div class="swift-footer__payment-card swift-footer__payment-card--mastercard">
+              <img src="./assets/rectanglei146-l4kp-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
+              <img src="./assets/path3808i146-sg5e.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path3810i146-4a1e.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path3814i146-7rww.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path3822i146-0u0d.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              </div>
+
+            <!-- Elo -->
+            <div class="swift-footer__payment-card swift-footer__payment-card--elo">
+              <img src="./assets/rectangle1465-a8tdm-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
+              <img src="./assets/path1465-n4eb.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path1465-5ui.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/path1465-y836.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              <img src="./assets/shape1465-w3z.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
+              </div>
+
+            <!-- Additional Cards -->
+            <img src="./assets/image61465-z60g-200h.png" alt="Cartão de crédito aceito" class="swift-footer__payment-extra" />
+            <img src="./assets/image71465-jf8v-200h.png" alt="Cartão de crédito aceito" class="swift-footer__payment-extra" />
         </div>
       </div>
+
+        <!-- Copyright -->
+        <div class="swift-footer__bottom">
+          <p class="swift-footer__copyright">
+            © 2025 Swift. Todos os direitos reservados.
+          </p>
     </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./swift-config.js"></script>
+  <script src="./swift-app.js"></script>
+  <script src="./components/carousel/carousel.js"></script>
   </body>
 </html>
-
