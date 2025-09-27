@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Aves</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Passion+One:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" />
+
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/pages/aves.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="./index.html" class="site-header__logo">
+                <img src="./assets/logo-swift-principal.png" alt="Logo Swift">
+            </a>
+
+            <nav class="site-header__nav--desktop">
+                <a href="#" class="nav-link">Bovinos</a>
+                <a href="#" class="nav-link active">Aves</a>
+                <a href="#" class="nav-link">Suínos</a>
+                <a href="#" class="nav-link">Ocasiões</a>
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Outros</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <div class="search-bar">
+                    <img src="./assets/icone-busca.png" alt="Ícone de busca">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <a href="#" class="action-icon user-icon" aria-label="Minha Conta">
+                    <img src="./assets/icone-usuario.svg" alt="Ícone de usuário">
+                </a>
+                <a href="#" class="action-icon cart-icon" aria-label="Carrinho de Compras">
+                    <img src="./assets/icone-carrinho.png" alt="Ícone do carrinho">
+                </a>
+            </div>
+
+            <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav"></nav>
+
+    <div class="top-bar">
+        <div class="container">
+            <img src="./assets/icone-caminhao-frete.svg" alt="Ícone de caminhão">
+            <p>Frete grátis a partir de R$ 299,00 em são paulo em até entrega agendada e entrega em 1 dia útil</p>
+        </div>
+    </div>
+    <main>
+
+        <div class="hero-banner-wrapper">
+            <div class="container">
+                <section class="hero-banner-contained">
+                    <div class="hero-banner-text-container">
+                        <nav class="breadcrumbs">
+                            <a href="./index.html">Swift</a> &gt; <span>Aves</span>
+                        </nav>
+                        <h1>Aves</h1>
+                        <p>Aqui você vai encontrar todos os tipos de cortes de aves para criar desde as receitas simples
+                            até as mais sofisticadas. Tudo com muito sabor e praticidade, além de produtos selecionados
+                            exclusivamente para você.</p>
+                    </div>
+
+                    <div class="hero-banner-cards-overlay">
+                        <div class="overlay-card-list">
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-pecas-frango.png" alt="Ícone Peças">
+                                <span>Peças</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-fatiados.png" alt="Ícone Fatiados">
+                                <span>Fatiados</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-espetos.png" alt="Ícone Espetos">
+                                <span>Espetos</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-desfiados.png" alt="Ícone Desfiados">
+                                <span>Desfiados</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-cubos.png" alt="Ícone Cubos">
+                                <span>Cubos</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="meat-types-nav">
+            <div class="carousel-container">
+
+                <button class="carousel-arrow prev" aria-label="Anterior" disabled>&lt;</button>
+
+                <div class="meat-types-scroller">
+                    <div class="carousel-track">
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-pecas-frango.png" alt="Ícone Peças">
+                            <span>Peças</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-fatiados.png" alt="Ícone Bifes">
+                            <span>Fatiados</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-espetos.png" alt="Ícone Tiras">
+                            <span>Espetos</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-desfiados.png" alt="Ícone Burgers">
+                            <span>Desfiados</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-cubos.png" alt="Ícone Com osso">
+                            <span>Cubos</span>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
+
+            </div>
+        </section>
+
+        <div class="container page-layout">
+
+            <aside class="sidebar" id="page-sidebar">
+
+                <div class="filter-group">
+                    <h2 class="filter-group__title">Faixa de preço</h2>
+                    <div id="price-slider"></div>
+                    <div id="price-slider-values" class="price-slider__values">
+                    </div>
+                </div>
+
+                <div class="filter-group shipping-promo">
+                    <div class="shipping-promo__text">
+                        <h3>Frete grátis</h3>
+                        <p>Acima de <strong>R$200</strong></p>
+                        <p>pagando no <strong>pix</strong></p>
+                    </div>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="shipping-toggle" class="toggle-switch__input">
+                        <label for="shipping-toggle" class="toggle-switch__label"></label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h2 class="filter-group__title">Categorias</h2>
+                    <ul class="category-list">
+                        <li><a href="#">Asas <span>(11)</span></a></li>
+                        <li><a href="#">Coração <span>(6)</span></a></li>
+                        <li><a href="#">Coxa e Sobrecoxa <span>(30)</span></a></li>
+                        <li><a href="#">Inteiro <span>(10)</span></a></li>
+                        <li><a href="#">Meio da Asa - Tulipa <span>(12)</span></a></li>
+                        <li><a href="#">Moela <span>(2)</span></a></li>
+                        <li><a href="#">Ostrinha <span>(2)</span></a></li>
+                        <li><a href="#">Peito <span>(39)</span></a>
+                        <li><a href="#">Variados <span>(43)</span></a></li>
+                    </ul>
+                </div>
+
+                <button class="button--primary filter-apply-button" id="filter-apply-btn">Aplicar</button>
+
+                <a href="#" class="sidebar-ad">
+                    <img src="./assets/anuncio-sidebar-mercearia.png" alt="Anúncio Swift Mercearia">
+                </a>
+            </aside>
+
+            <section class="product-listing">
+                <button class="filter-toggle-button" aria-expanded="false" aria-controls="page-sidebar">
+                    Filtros e Categorias
+                </button>
+                <div class="product-grid">
+
+                    <article class="product-card">
+                        <img src="./assets/produto-coracao-de-frango.png" alt="Coração de Frango"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Coração de Frango</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 42,90</span>
+                                <span class="product-card__price--sale">R$ 32,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button>
+                            </div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-peito-de-frango-desfiado.jpg" alt="Peito de Frango Desfiado"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Peito de Frango Desfiado</h3>
+                            <p class="product-card__description">Embalagem de 400g</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 21,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-coxinha-da-asa-temperada.png" alt="Coxinha da Asa Temperada"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Coxinha da Asa Temperada</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 27,90</span>
+                                <span class="product-card__price--sale">R$ 18,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-meio-da-asa-tulipa.jpg" alt="Meio da Asa (Tulipa)"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Meio da Asa (Tulipa)</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 32,90</span>
+                                <span class="product-card__price--sale">R$ 26,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button>
+                            </div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-file-coxa-e-sobrecoxa.jpg" alt="Filé de Coxa e Sobrecoxa sem Pele"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Filé de Coxa e Sobrecoxa sem Pele</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 20,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-isca-de-frango.jpg" alt="Isca de Frango" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Isca de Frango</h3>
+                            <p class="product-card__description">Embalagem de 300g</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 11,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-filezinho-sassami-temperado.jpg" alt="Filezinho Sassami Temperado"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Filezinho Sassami Temperado</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 27,90</span>
+                                <span class="product-card__price--sale">R$ 23,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button>
+                            </div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-ostrinha-da-sobrecoxa.png" alt="Ostrinha da Sobrecoxa"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Ostrinha da Sobrecoxa</h3>
+                            <p class="product-card__description">Embalagem de 700g</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 14,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-moela-de-frango.jpg" alt="Moela de Frango"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Moela de Frango</h3>
+                            <p class="product-card__description">Embalagem de 1Kg</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 14,90</span>
+                                <span class="product-card__price--sale">R$ 11,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="load-more-container">
+                    <button class="button--primary">Ver mais produtos</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-column footer-col-about">
+                    <img src="./assets/logo-swift-branco.png" alt="Logo Swift Branco" class="footer-logo">
+                    <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lojaswift" aria-label="Facebook"><img
+                                src="./assets/icone-social-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/lojaswift" aria-label="Instagram"><img
+                                src="./assets/icone-social-instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/channel/UCx_DnTAyLKfvLj5r788zXng" aria-label="YouTube"><img
+                                src="./assets/icone-social-youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-col-products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#">Bovinos</a></li>
+                        <li><a href="#">Aves</a></li>
+                        <li><a href="#">Suínos</a></li>
+                        <li><a href="#">Kits Especiais</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-institutional">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Lojas Físicas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-contact">
+                    <h4>Atendimento</h4>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-telefone.svg" alt="Ícone de Telefone">
+                        <div>
+                            <strong>0800 702 1234</strong>
+                            <span>Seg a Sex, 8h às 20h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-email.svg" alt="Ícone de E-mail">
+                        <div>
+                            <strong>atendimento@swift.com.br</strong>
+                            <span>Respondemos em até 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-whatsapp.svg" alt="Ícone do WhatsApp">
+                        <div>
+                            <strong>(11) 99876-5432</strong>
+                            <span>Atendimento via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <h4 class="payment-title">Formas de Pagamentos</h4>
+                    <p class="payment-subtitle">(apenas cartões de créditos)</p>
+                    <div class="payment-icons">
+                        <img src="./assets/pagamento-pix.png" alt="Pix">
+                        <img src="./assets/pagamento-logo-elo.png" alt="Elo"> <img
+                            src="./assets/pagamento-logo-amex.png" alt="American Express">
+                        <img src="./assets/pagamento-logo-visa.png" alt="Visa"> <img
+                            src="./assets/pagamento-logo-mastercard.png" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swift. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+
+    <script src="./src/js/bovinos.js" defer></script>
+
+</body>
+
+</html>
