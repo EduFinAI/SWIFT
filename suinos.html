@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Suínos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Passion+One:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css" />
+
+    <link rel="stylesheet" href="./style/global.css">
+    <link rel="stylesheet" href="./style/pages/suinos.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="./index.html" class="site-header__logo">
+                <img src="./assets/logo-swift-principal.png" alt="Logo Swift">
+            </a>
+
+            <nav class="site-header__nav--desktop">
+                <a href="./bovinos.html" class="nav-link">Bovinos</a>
+                <a href="./aves.html" class="nav-link">Aves</a>
+                <a href="#" class="nav-link active">Suínos</a>
+                <a href="#" class="nav-link">Ocasiões</a>
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Outros</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <div class="search-bar">
+                    <img src="./assets/icone-busca.png" alt="Ícone de busca">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <a href="#" class="action-icon user-icon" aria-label="Minha Conta">
+                    <img src="./assets/icone-usuario.svg" alt="Ícone de usuário">
+                </a>
+                <a href="#" class="action-icon cart-icon" aria-label="Carrinho de Compras">
+                    <img src="./assets/icone-carrinho.png" alt="Ícone do carrinho">
+                </a>
+            </div>
+
+            <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav"></nav>
+
+    <div class="top-bar">
+        <div class="container">
+            <img src="./assets/icone-caminhao-frete.svg" alt="Ícone de caminhão">
+            <p>Frete grátis a partir de R$ 299,00 em são paulo em até entrega agendada e entrega em 1 dia útil</p>
+        </div>
+    </div>
+    <main>
+
+        <div class="hero-banner-wrapper">
+            <div class="container">
+                <section class="hero-banner-contained">
+                    <div class="hero-banner-text-container">
+                        <nav class="breadcrumbs">
+                            <a href="./index.html">Swift</a> &gt; <span>Suínos</span>
+                        </nav>
+                        <h1>Suínos</h1>
+                        <p>A linha de suínos da Swift oferece sabores marcantes e deliciosos. Combinam com qualquer
+                            ocasião: do jantar romântico ao encontro gourmet, você vai ter uma experiência gastronômica
+                            sem igual.</p>
+                    </div>
+
+                    <div class="hero-banner-cards-overlay">
+                        <div class="overlay-card-list">
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-pecas-suinos.png" alt="Ícone Peças">
+                                <span>Peças</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-bifes-suinos.png" alt="Ícone Bifes">
+                                <span>Bifes</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-costela-suinos.png" alt="Ícone Costela">
+                                <span>Costela</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-linguicas-suinos.png" alt="Ícone Linguiças">
+                                <span>Linguiças</span>
+                            </a>
+                            <a href="#" class="meat-type-item">
+                                <img src="./assets/categoria-lombo-suinos.png" alt="Ícone Lombo">
+                                <span>Lombo</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <section class="meat-types-nav">
+            <div class="carousel-container">
+
+                <button class="carousel-arrow prev" aria-label="Anterior" disabled>&lt;</button>
+
+                <div class="meat-types-scroller">
+                    <div class="carousel-track">
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-pecas-suinos.png" alt="Ícone Peças">
+                            <span>Peças</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-bifes-suinos.png" alt="Ícone Bifes">
+                            <span>Bifes</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-costela-suinos.png" alt="Ícone Costela">
+                            <span>Costela</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-linguicas-suinos.png" alt="Ícone Linguiças">
+                            <span>Linguiças</span>
+                        </a>
+                        <a href="#" class="meat-type-item">
+                            <img src="./assets/categoria-lombo-suinos.png" alt="Ícone Lombo">
+                            <span>Lombo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
+
+            </div>
+        </section>
+
+        <div class="container page-layout">
+
+            <aside class="sidebar" id="page-sidebar">
+
+                <div class="filter-group">
+                    <h2 class="filter-group__title">Faixa de preço</h2>
+                    <div id="price-slider"></div>
+                    <div id="price-slider-values" class="price-slider__values">
+                    </div>
+                </div>
+
+                <div class="filter-group shipping-promo">
+                    <div class="shipping-promo__text">
+                        <h3>Frete grátis</h3>
+                        <p>Acima de <strong>R$200</strong></p>
+                        <p>pagando no <strong>pix</strong></p>
+                    </div>
+                    <div class="toggle-switch">
+                        <input type="checkbox" id="shipping-toggle" class="toggle-switch__input">
+                        <label for="shipping-toggle" class="toggle-switch__label"></label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h2 class="filter-group__title">Categorias</h2>
+                    <ul class="category-list">
+                        <li><a href="#">Ancho <span>(1)</span></a></li>
+                        <li><a href="#">Bacon <span>(6)</span></a></li>
+                        <li><a href="#">Costela <span>(14)</span></a></li>
+                        <li><a href="#">Filé Mignon Suíno <span>(8)</span></a></li>
+                        <li><a href="#">Lombo <span>(12)</span></a></li>
+                        <li><a href="#">Panceta <span>(10)</span></a></li>
+                        <li><a href="#">Pernil <span>(4)</span></a></li>
+                        <li><a href="#">Picanha <span>(4)</span></a></li>
+                        <li><a href="#">Variados <span>(12)</span></a></li>
+                    </ul>
+                </div>
+
+                <button class="button--primary filter-apply-button" id="filter-apply-btn">Aplicar</button>
+
+                <a href="#" class="sidebar-ad">
+                    <img src="./assets/anuncio-sidebar-mercearia.png" alt="Anúncio Swift Mercearia">
+                </a>
+            </aside>
+
+            <section class="product-listing">
+                <button class="filter-toggle-button" aria-expanded="false" aria-controls="page-sidebar">
+                    Filtros e Categorias
+                </button>
+                <div class="product-grid">
+
+                    <article class="product-card">
+                        <img src="./assets/produto-linguica-toscana.png" alt="Linguiça Toscana"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Linguiça Toscana</h3>
+                            <p class="product-card__description">700g a Embalagem</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 26,90</span>
+                                <span class="product-card__price--sale">R$ 18,50</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-costela-suina.png"
+                            alt="Costela Suína" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Costela Suína</h3>
+                            <p class="product-card__description">1 Kg Peso Variável</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 34,10</span>
+                                <span class="product-card__price--sale">R$ 27,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-picanha-suina.jpg" alt="Picanha Suína" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Picanha Suína</h3>
+                            <p class="product-card__description">1 Kg Peso Variável</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 29,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-file-mignon-suino.png" alt="Filé Mignon Suíno"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Filé Mignon Suíno</h3>
+                            <p class="product-card__description">700g a Embalagem</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 26,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-lombo-suino.jpg" alt="Lombo Suíno" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Lombo Suíno</h3>
+                            <p class="product-card__description">1 Kg Peso Variável</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 34,10</span>
+                                <span class="product-card__price--sale">R$ 29,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-bisteca-suina.png" alt="Bisteca Suína" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Bisteca Suína</h3>
+                            <p class="product-card__description">800g Peso Variável</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 18,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-bacon-em-cubos.jpg"
+                            alt="Bacon em Cubos" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Bacon em Cubos</h3>
+                            <p class="product-card__description">250g a Embalagem</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 18,90</span>
+                                <span class="product-card__price--sale">R$ 15,50</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-linguica-de-pernil.jpg" alt="Linguiça de Pernil"
+                            class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Linguiça de Pernil</h3>
+                            <p class="product-card__description">500g a Embalagem</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--original">R$ 26,90</span>
+                                <span class="product-card__price--sale">R$ 20,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <img src="./assets/produto-copa-lombo-suina.jpg" alt="Copa Lombo Suíno" class="product-card__image">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Copa Lombo Suína</h3>
+                            <p class="product-card__description">1 Kg a Embalagem</p>
+                            <div class="product-card__rating"><span>⭐⭐⭐⭐⭐</span></div>
+                            <div class="product-card__pricing">
+                                <span class="product-card__price--sale">R$ 29,90</span>
+                            </div>
+                        </div>
+                        <div class="product-card__actions">
+                            <div class="quantity-stepper"><button>-</button><input type="text"
+                                    value="1"><button>+</button></div>
+                            <button class="button--primary">Adicionar</button>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="load-more-container">
+                    <button class="button--primary">Ver mais produtos</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-column footer-col-about">
+                    <img src="./assets/logo-swift-branco.png" alt="Logo Swift Branco" class="footer-logo">
+                    <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lojaswift" aria-label="Facebook"><img
+                                src="./assets/icone-social-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/lojaswift" aria-label="Instagram"><img
+                                src="./assets/icone-social-instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/channel/UCx_DnTAyLKfvLj5r788zXng" aria-label="YouTube"><img
+                                src="./assets/icone-social-youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-col-products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="#">Bovinos</a></li>
+                        <li><a href="#">Aves</a></li>
+                        <li><a href="#">Suínos</a></li>
+                        <li><a href="#">Kits Especiais</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-institutional">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Lojas Físicas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-contact">
+                    <h4>Atendimento</h4>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-telefone.svg" alt="Ícone de Telefone">
+                        <div>
+                            <strong>0800 702 1234</strong>
+                            <span>Seg a Sex, 8h às 20h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-email.svg" alt="Ícone de E-mail">
+                        <div>
+                            <strong>atendimento@swift.com.br</strong>
+                            <span>Respondemos em até 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-whatsapp.svg" alt="Ícone do WhatsApp">
+                        <div>
+                            <strong>(11) 99876-5432</strong>
+                            <span>Atendimento via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <h4 class="payment-title">Formas de Pagamentos</h4>
+                    <p class="payment-subtitle">(apenas cartões de créditos)</p>
+                    <div class="payment-icons">
+                        <img src="./assets/pagamento-pix.png" alt="Pix">
+                        <img src="./assets/pagamento-logo-elo.png" alt="Elo"> <img
+                            src="./assets/pagamento-logo-amex.png" alt="American Express">
+                        <img src="./assets/pagamento-logo-visa.png" alt="Visa"> <img
+                            src="./assets/pagamento-logo-mastercard.png" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swift. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+
+    <script src="./src/js/suinos.js" defer></script>
+
+</body>
+
+</html>
