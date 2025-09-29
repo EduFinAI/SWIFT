@@ -52,20 +52,22 @@ section.swift-smart-cart {
   padding: 0 var(--swift-container-padding);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* Title */
 .swift-smart-cart__title {
   font-family: var(--swift-font-display);
   font-size: var(--swift-text-4xl);
-  font-weight: 700;
-  color: var(--swift-text-primary);
+  font-weight: 600;
+  color: var(--swift-primary-orange);
   margin: 0 0 var(--swift-space-12) 0;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.22em;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  align-self: flex-start;
 }
 
 /* Features Container */
@@ -76,6 +78,8 @@ section.swift-smart-cart {
   width: 100%;
   max-width: 800px;
   margin-bottom: var(--swift-space-12);
+  justify-self: flex-start;
+  align-self: flex-start;
 }
 
 /* Individual Feature */
@@ -160,6 +164,7 @@ section.swift-smart-cart .swift-smart-cart__cta-btn {
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  align-self: flex-start;
   
   /* Primary gradient style */
   background: linear-gradient(135deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));

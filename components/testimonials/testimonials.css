@@ -2,7 +2,9 @@
 .swift-testimonials {
   width: 100%;
   padding: 80px 0;
-  background-color: #fff;
+  background-color: var(--swift-neutral-white, #FFFFFF) !important;
+  /* Debug: Teste da variável */
+  border: 2px solid var(--swift-primary-orange, red) !important;
 }
 
 .swift-testimonials__container {

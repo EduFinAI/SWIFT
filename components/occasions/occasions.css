@@ -1,8 +1,8 @@
 /* Occasions Component Styles */
 .swift-occasions {
   width: 100%;
-  padding: 80px 0;
-  background-color: #fff;
+  padding: 10px 0 80px 0;
+  background-color: var(--swift-neutral-light, #f8f9fa);
 }
 
 .swift-occasions__container {
@@ -14,7 +14,7 @@
 /* Section Title */
 .swift-occasions__title {
   font-family: 'Passion One', Impact, system-ui;
-  font-size: clamp(32px, calc(16px + 4.5vw), 73px);
+  font-size: 48px; /* Mesmo tamanho do "Produtos em Destaque" */
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -180,6 +180,7 @@
   }
 
   .swift-occasions__title {
+    font-size: 36px; /* Mesmo tamanho do "Produtos em Destaque" em tablet */
     margin-bottom: 32px;
   }
 
@@ -214,6 +215,10 @@
 
   .swift-occasions__container {
     padding: 0 16px;
+  }
+
+  .swift-occasions__title {
+    font-size: 28px; /* Mesmo tamanho do "Produtos em Destaque" em mobile */
   }
 
   .swift-occasions__grid {

@@ -152,23 +152,39 @@ class SwiftCarousel {
   }
 
   /**
-   * Scroll by specified amount
+   * Scroll by specified amount - Simplified version without infinite loop
    * @param {number} direction - 1 for next, -1 for previous
    */
   scrollByAmount(direction = 1) {
-    const scrollAmount = this.track.clientWidth * this.options.scrollAmount * direction;
-    this.track.scrollBy({ 
-      left: scrollAmount, 
+    const cardWidth = this.track.querySelector('.swift-bestseller-card, .swift-testimonial-card')?.offsetWidth || 320;
+    const gap = 24; // Gap between cards
+    const scrollAmount = (cardWidth + gap) * direction;
+    
+    const currentScroll = this.track.scrollLeft;
+    const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+    
+    let nextScroll = currentScroll + scrollAmount;
+    
+    // Simple boundary check - no infinite loop
+    if (nextScroll < 0) {
+      nextScroll = 0;
+    } else if (nextScroll > maxScroll) {
+      nextScroll = maxScroll;
+    }
+    
+    this.track.scrollTo({ 
+      left: nextScroll, 
       behavior: 'smooth' 
     });
   }
 
   /**
-   * Update arrow states based on scroll position
+   * Update arrow states based on scroll position - Simplified
    */
   updateArrows() {
     if (!this.track || !this.prevBtn || !this.nextBtn) return;
 
+    // Simple boundary check
     const isAtStart = this.track.scrollLeft <= 2;
     const isAtEnd = Math.ceil(this.track.scrollLeft + this.track.clientWidth) >= this.track.scrollWidth - 2;
     
@@ -186,21 +202,40 @@ class SwiftCarousel {
   }
 
   /**
-   * Start auto-scroll
+   * Start auto-scroll - Simplified version
    */
   startAutoScroll() {
     if (!this.options.autoScroll) return;
     
     this.autoScrollTimer = setInterval(() => {
-      const isAtEnd = Math.ceil(this.track.scrollLeft + this.track.clientWidth) >= this.track.scrollWidth - 2;
-      
-      if (isAtEnd) {
-        this.track.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        this.scrollNext();
-      }
+      this.scrollNextSimple();
     }, this.options.autoScrollInterval);
   }
+
+  /**
+   * Scroll to next item - Simple version without infinite loop
+   */
+  scrollNextSimple() {
+    const cardWidth = this.track.querySelector('.swift-bestseller-card, .swift-testimonial-card')?.offsetWidth || 320;
+    const gap = 24;
+    const scrollAmount = cardWidth + gap;
+    
+    const currentScroll = this.track.scrollLeft;
+    const maxScroll = this.track.scrollWidth - this.track.clientWidth;
+    
+    let nextScroll = currentScroll + scrollAmount;
+    
+    // If we reach the end, go back to start
+    if (nextScroll >= maxScroll) {
+      nextScroll = 0;
+    }
+    
+    this.track.scrollTo({ 
+      left: nextScroll, 
+      behavior: 'smooth' 
+    });
+  }
+
 
   /**
    * Pause auto-scroll
@@ -279,19 +314,20 @@ class SwiftCarouselManager {
   }
 
   /**
-   * Initialize all carousels found in the DOM
+   * Initialize all carousels found in the DOM - Simplified version
    */
   initializeCarousels() {
-    // Testimonials carousels
+    // Testimonials carousels - Simple auto-scroll
     const testimonialsCarousels = document.querySelectorAll('.swift-testimonials__carousel');
     testimonialsCarousels.forEach((element, index) => {
       const carousel = new SwiftCarousel(element, {
-        autoScroll: false
+        autoScroll: true,
+        autoScrollInterval: 6000 // Slower for testimonials
       });
       this.carousels.set(`testimonials-${index}`, carousel);
     });
 
-    // Best sellers carousels
+    // Best sellers carousels - Simple auto-scroll
     const bestSellersCarousels = document.querySelectorAll('.swift-best-sellers__carousel');
     bestSellersCarousels.forEach((element, index) => {
       const carousel = new SwiftCarousel(element, {
@@ -301,10 +337,10 @@ class SwiftCarouselManager {
       this.carousels.set(`best-sellers-${index}`, carousel);
     });
 
-    // Generic carousels
+    // Generic carousels - Simple auto-scroll
     const genericCarousels = document.querySelectorAll('[data-carousel]:not(.swift-testimonials__carousel):not(.swift-best-sellers__carousel)');
     genericCarousels.forEach((element, index) => {
-      const autoScroll = element.dataset.autoScroll === 'true';
+      const autoScroll = element.dataset.autoScroll !== 'false'; // Default to true
       const interval = parseInt(element.dataset.autoScrollInterval) || 5000;
       
       const carousel = new SwiftCarousel(element, {

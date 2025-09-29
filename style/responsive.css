@@ -818,13 +818,13 @@
   
   .swift-smart-cart__feature {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     padding: var(--swift-space-4);
     gap: var(--swift-space-3);
   }
   
   .swift-smart-cart__feature-content {
-    text-align: center;
+    text-align: left;
   }
   
   .swift-smart-cart__feature-title {
@@ -911,7 +911,7 @@
   }
   
   .swift-hero__content {
-    padding: 60px 40px; /* Máximo conforme solicitado */
+    padding: 20px 30px 85px 0; /* Máximo conforme solicitado */
   }
   
   .swift-hero__title {
@@ -926,7 +926,7 @@
   }
   
   .swift-hero__content {
-    padding: 50px 32px;
+    padding: 25px 0 45px 0;
   }
   
   .swift-hero__title {
@@ -960,7 +960,13 @@
     text-align: center;
   }
   
-  .swift-hero__cta-btn,
+  .swift-hero__cta-btn {
+    width: 260px !important;
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    min-width: 120px !important;
+  }
+  
   .swift-cep-form__container {
     width: 100% !important;
   }

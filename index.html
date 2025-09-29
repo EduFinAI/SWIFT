@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Swift — Carnes selecionadas com entrega rápida</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/unnamed214135-zlqw-200h.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/aba-nav.png" />
   
   <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +27,7 @@
   <link rel="stylesheet" href="./components/occasions/occasions.css" />
   <link rel="stylesheet" href="./components/tips-info/tips-info.css" />
   <link rel="stylesheet" href="./components/smart-cart/smart-cart.css?v=2.0" />
-  <link rel="stylesheet" href="./components/testimonials/testimonials.css" />
+  <link rel="stylesheet" href="./components/testimonials/testimonials.css?v=2.1" />
   <link rel="stylesheet" href="./components/best-sellers/best-sellers.css" />
   <link rel="stylesheet" href="./components/app-download/app-download.css" />
   <link rel="stylesheet" href="./components/footer/footer.css" />
@@ -70,8 +74,33 @@
             <li class="swift-nav__item">
               <a href="#ofertas" class="swift-nav__link">Ofertas</a>
             </li>
-            <li class="swift-nav__item">
-              <a href="#outros" class="swift-nav__link">Outros</a>
+            <li class="swift-nav__item swift-nav__item--dropdown">
+              <a href="#outros" class="swift-nav__link swift-nav__link--dropdown">
+                Outros
+                <svg class="swift-nav__dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <ul class="swift-nav__dropdown">
+                <li class="swift-nav__dropdown-item">
+                  <a href="#embutidos" class="swift-nav__dropdown-link">Embutidos</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#temperos" class="swift-nav__dropdown-link">Temperos</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#acompanhamentos" class="swift-nav__dropdown-link">Acompanhamentos</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#bebidas" class="swift-nav__dropdown-link">Bebidas</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#utensilios" class="swift-nav__dropdown-link">Utensílios</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#acessorios" class="swift-nav__dropdown-link">Acessórios</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
@@ -165,7 +194,20 @@
                       para sua mesa. Entrega rápida e qualidade garantida.
               </p>
 
-              <!-- CEP Form -->
+              <!-- Delivery Info -->
+              <div class="swift-hero__delivery-info">
+                    <img
+                      src="./assets/truck3145-33ms.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="swift-hero__truck-icon"
+                    />
+                <span class="swift-hero__delivery-text">
+                  <strong>Entrega em até</strong> 2 horas para São Paulo
+                    </span>
+                  </div>
+
+                  <!-- CEP Form -->
               <form class="swift-hero__cep-form" role="search" aria-label="Consulta de CEP" action="#" method="get">
                 <div class="swift-cep-form__container">
                   <input 
@@ -187,19 +229,6 @@
                   </div>
                     </div>
                   </form>
-
-              <!-- Delivery Info -->
-              <div class="swift-hero__delivery-info">
-                    <img
-                      src="./assets/truck3145-33ms.svg"
-                  alt=""
-                  aria-hidden="true"
-                  class="swift-hero__truck-icon"
-                    />
-                <span class="swift-hero__delivery-text">
-                  <strong>Entrega em até</strong> 2 horas para São Paulo
-                    </span>
-                  </div>
 
               <!-- CTA Button -->
               <button class="swift-hero__cta-btn">
