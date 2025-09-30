@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// ==========================================================================
 	// MENU HAMBÚRGUER E NAVEGAÇÃO MÓVEL
 	// ==========================================================================
-
 	const hamburgerButton = document.querySelector('.hamburger-button');
 	const mobileNav = document.getElementById('mobile-nav');
-
 	if (hamburgerButton && mobileNav) {
 		const populateMobileNav = () => {
 			mobileNav.innerHTML = '';
@@ -55,11 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	// ==========================================================================
-	// CARROSSEL DE CATEGORIAS
+	// CARROSSEL DE CATEGORIAS (PÁGINAS DE LISTAGEM)
 	// ==========================================================================
-
 	const carouselContainer = document.querySelector('.carousel-container');
-
 	if (carouselContainer) {
 		const track = carouselContainer.querySelector('.carousel-track');
 		const prevButton = carouselContainer.querySelector('.carousel-arrow.prev');
@@ -93,114 +89,142 @@ document.addEventListener('DOMContentLoaded', () => {
 			updateCarouselState();
 		};
 
-		nextButton.addEventListener('click', () => {
-			currentIndex++;
-			moveToCurrentIndex();
-		});
-
-		prevButton.addEventListener('click', () => {
-			currentIndex--;
-			moveToCurrentIndex();
-		});
-
-		const observer = new ResizeObserver(() => {
-			updateCarouselState();
-		});
+		nextButton.addEventListener('click', () => { currentIndex++; moveToCurrentIndex(); });
+		prevButton.addEventListener('click', () => { currentIndex--; moveToCurrentIndex(); });
+		const observer = new ResizeObserver(() => { updateCarouselState(); });
 		observer.observe(track.parentElement);
-
 		updateCarouselState();
 	}
 
 	// ==========================================================================
-	// FILTROS RESPONSIVOS (SIDEBAR)
+	// FILTROS RESPONSIVOS E SIDEBAR (PÁGINAS DE LISTAGEM)
 	// ==========================================================================
-
 	const filterToggleButton = document.querySelector('.filter-toggle-button');
-	const sidebar = document.getElementById('page-sidebar');
-	const applyFiltersButton = document.getElementById('filter-apply-btn');
-
-	if (filterToggleButton && sidebar) {
+	if (filterToggleButton) {
+		const sidebar = document.getElementById('page-sidebar');
+		const applyFiltersButton = document.getElementById('filter-apply-btn');
 		const closeFilters = () => {
 			document.body.classList.remove('filters-are-open');
 			filterToggleButton.setAttribute('aria-expanded', 'false');
 		};
-
 		filterToggleButton.addEventListener('click', () => {
 			document.body.classList.toggle('filters-are-open');
 			const isExpanded = document.body.classList.contains('filters-are-open');
 			filterToggleButton.setAttribute('aria-expanded', isExpanded);
 		});
-
 		if (applyFiltersButton) {
 			applyFiltersButton.addEventListener('click', closeFilters);
 		}
 	}
 
 	// ==========================================================================
-	// SLIDER DE PREÇO
+	// SLIDER DE PREÇO (PÁGINAS DE LISTAGEM)
 	// ==========================================================================
-
 	const priceSlider = document.getElementById('price-slider');
-
 	if (priceSlider) {
 		const valueDisplay = document.getElementById('price-slider-values');
-
 		noUiSlider.create(priceSlider, {
 			start: [0, 200],
 			connect: true,
-			range: {
-				'min': 0,
-				'max': 200
-			},
+			range: { 'min': 0, 'max': 200 },
 			format: {
-				to: function(value) {
-					return 'R$ ' + value.toFixed(2).replace('.', ',');
-				},
-				from: function(value) {
-					return Number(value.replace('R$ ', '').replace(',', '.'));
-				}
+				to: function (value) { return 'R$ ' + value.toFixed(2).replace('.', ','); },
+				from: function (value) { return Number(value.replace('R$ ', '').replace(',', '.')); }
 			}
 		});
-
-		priceSlider.noUiSlider.on('update', function(values) {
+		priceSlider.noUiSlider.on('update', function (values) {
 			valueDisplay.textContent = values.join(' - ');
 		});
 	}
 
 	// ==========================================================================
-	// CONTROLE DE QUANTIDADE DE PRODUTOS
+	// CONTROLE DE QUANTIDADE DE PRODUTOS (GLOBAL)
 	// ==========================================================================
-
-	const productGrid = document.querySelector('.product-grid');
-
-	if (!productGrid) {
-		return;
-	}
-
-	productGrid.addEventListener('click', (event) => {
-		const target = event.target;
-
-		if (target.tagName === 'BUTTON' && target.closest('.quantity-stepper')) {
-			const stepper = target.closest('.quantity-stepper');
+	document.addEventListener('click', (event) => {
+		if (event.target.matches('.quantity-stepper button')) {
+			const stepper = event.target.closest('.quantity-stepper');
+			if (!stepper) return;
 			const input = stepper.querySelector('input[type="text"]');
-			let currentValue = parseInt(input.value, 10);
-
-			if (isNaN(currentValue)) {
-				currentValue = 1;
-			}
-
-			if (target.textContent === '+') {
+			let currentValue = parseInt(input.value, 10) || 1;
+			if (event.target.textContent === '+') {
 				currentValue++;
+			} else if (currentValue > 1) {
+				currentValue--;
 			}
-
-			if (target.textContent === '-') {
-				if (currentValue > 1) {
-					currentValue--;
-				}
-			}
-
 			input.value = currentValue;
 		}
 	});
 
+	// ==========================================================================
+	// FUNÇÕES DA PÁGINA DE PRODUTO
+	// ==========================================================================
+	function setupProductPage() {
+		const carousel = document.querySelector('.product-gallery-carousel');
+		if (carousel) {
+			const slides = carousel.querySelectorAll('.carousel-slide');
+			const prevButton = carousel.querySelector('.carousel-arrow.prev');
+			const nextButton = carousel.querySelector('.carousel-arrow.next');
+			const dots = carousel.querySelectorAll('.carousel-dots .dot');
+			const videoPlayer = carousel.querySelector('.product-video-player');
+			let currentIndex = 0;
+
+			function goToSlide(index) {
+				if (slides[currentIndex] && slides[currentIndex].dataset.type === 'video' && videoPlayer) {
+					// Para o vídeo para não tocar em segundo plano
+					videoPlayer.src = "";
+				}
+
+				slides[currentIndex].classList.remove('active');
+				dots[currentIndex].classList.remove('active');
+
+				currentIndex = (index + slides.length) % slides.length;
+
+				slides[currentIndex].classList.add('active');
+				dots[currentIndex].classList.add('active');
+
+				// ==========================================================
+				// >> A CORREÇÃO ESTÁ AQUI <<
+				// Agora, garantimos que o vídeo seja carregado sem verificações extras.
+				// ==========================================================
+				if (slides[currentIndex].dataset.type === 'video' && videoPlayer) {
+					videoPlayer.src = videoPlayer.dataset.src;
+				}
+			}
+
+			prevButton.addEventListener('click', () => {
+				goToSlide(currentIndex - 1);
+			});
+
+			nextButton.addEventListener('click', () => {
+				goToSlide(currentIndex + 1);
+			});
+
+			dots.forEach(dot => {
+				dot.addEventListener('click', () => {
+					const slideIndex = parseInt(dot.dataset.slide, 10);
+					goToSlide(slideIndex);
+				});
+			});
+		}
+
+		// --- Lógica das Abas de Conteúdo ---
+		const tabLinks = document.querySelectorAll('.tab-navigation .tab-link');
+		const tabContents = document.querySelectorAll('.tab-content-wrapper .tab-content');
+		if (tabLinks.length > 0 && tabContents.length > 0) {
+			tabLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					const tabId = link.getAttribute('data-tab');
+					tabContents.forEach(content => content.classList.remove('active'));
+					tabLinks.forEach(l => l.classList.remove('active'));
+					document.getElementById(tabId).classList.add('active');
+					link.classList.add('active');
+				});
+			});
+		}
+	}
+
+	// Executa a configuração da página de produto APENAS se encontrar seus elementos
+	if (document.querySelector('.product-details-layout')) {
+		setupProductPage();
+	}
 });
