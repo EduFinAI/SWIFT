@@ -1,0 +1,516 @@
+/* Hero Section Component Styles - Updated */
+.swift-hero {
+  position: relative;
+  width: 100%;
+  min-height: 500px; /* Reduzido de 600px */
+  overflow: hidden;
+  background: var(--swift-primary-orange); /* Fundo laranja */
+}
+
+.swift-hero__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: none; /* Remove limitação de largura */
+}
+
+/* Background */
+.swift-hero__background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  max-width: 100vw; /* Evita scroll horizontal */
+}
+
+.swift-hero__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* Centraliza a imagem */
+  min-width: 100vw; /* Garante largura mínima da viewport */
+}
+
+/* Content */
+.swift-hero__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Grid 50/50 */
+  gap: 0;
+  padding-left: 80px !important; /* SEMPRE 26px da borda esquerda */
+  padding-right: 26px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  min-height: 500px;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px; /* Largura máxima que cresce */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Desktop Large - Conteúdo sempre à direita e cresce com a tela */
+@media (min-width: 1200px) {
+  .swift-hero__content {
+    padding-left: 26px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 26px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 1600px; /* Largura máxima maior */
+  }
+}
+
+@media (min-width: 1400px) {
+  .swift-hero__content {
+    padding-left: 26px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 26px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-width: 1800px; /* Largura máxima ainda maior */
+  }
+}
+
+@media (min-width: 1600px) {
+  .swift-hero__content {
+    padding-left: 80px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 26px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    max-width: 2000px; /* Largura máxima grande */
+  }
+}
+
+@media (min-width: 1920px) {
+  .swift-hero__content {
+    padding-left: 80px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 26px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    max-width: 2200px; /* Largura máxima máxima */
+  }
+}
+
+/* Mobile e Tablet - Garantir 26px da borda esquerda */
+@media (max-width: 768px) {
+  .swift-hero__content {
+    padding-left: 80px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    grid-template-columns: 1fr; /* Uma coluna em mobile */
+  }
+  
+  .swift-hero__main {
+    grid-column: 1; /* Ocupa a única coluna */
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-hero__content {
+    padding-left: 80px !important; /* SEMPRE 26px da borda esquerda */
+    padding-right: 12px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+/* Aumentar tamanhos dos elementos conforme a tela cresce */
+@media (min-width: 1200px) {
+  .swift-hero__title {
+    font-size: 110px;
+  }
+  
+  .swift-hero__logo {
+    height: 140px;
+  }
+  
+  .swift-hero__main {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .swift-hero__title {
+    font-size: 130px;
+  }
+  
+  .swift-hero__logo {
+    height: 160px;
+  }
+  
+  .swift-hero__main {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .swift-hero__title {
+    font-size: 150px;
+  }
+  
+  .swift-hero__logo {
+    height: 180px;
+  }
+  
+  .swift-hero__main {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .swift-hero__title {
+    font-size: 170px;
+  }
+  
+  .swift-hero__logo {
+    height: 200px;
+  }
+  
+  .swift-hero__main {
+    gap: 28px;
+  }
+}
+
+/* Main Content - Segunda coluna do grid */
+.swift-hero__main {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 12px; /* Espaçamento reduzido entre elementos */
+  max-width: 100%;
+  justify-content: center; /* Alinhamento vertical */
+  flex-shrink: 0; /* Não permite encolhimento */
+  width: 100%; /* Ocupa espaço disponível */
+}
+
+/* Title Churrasco é na*/
+.swift-hero__title {
+  font-family: var(--swift-font-display);
+  font-size: 92px; 
+  font-weight: 700;
+  color: var(--swift-text-white); 
+  margin: 0 0 8px 0; /* Margem reduzida */
+  line-height: 1.1;
+  white-space: nowrap; 
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+
+.swift-hero__logo {
+  height: 120px; /* Logo maior */
+  width: auto;
+  object-fit: contain;
+  margin: -30px 0 0 -10px; /* Margem reduzida */
+  align-self: flex-start; /* Alinha à esquerda */
+}
+
+/* Description */
+.swift-hero__description {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 400;
+  color: var(--swift-text-white-muted); /* Branco com 85% opacidade */
+  margin: 0 0 25px 0;
+  line-height: 1.5;
+  max-width: 80%;
+}
+
+/* CEP Form */
+.swift-hero__cep-form {
+  flex: 1;
+  width: 100%;
+  max-width: 350px; /* Reduzido de 400px */
+  margin: 12px 0 0 0;
+}
+
+.swift-cep-form__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--swift-neutral-white);
+  border-radius: 8px;
+  height: 40px; 
+  width: 550px;
+  padding: 0 14px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swift-cep-form__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--swift-font-primary);
+  font-size: 15px; /* Reduzido de 16px */
+  color: var(--swift-neutral-input);
+  padding: 0;
+  height: 100%;
+}
+
+.swift-cep-form__input::placeholder {
+  color: var(--swift-text-muted);
+}
+
+.swift-cep-form__icon {
+  margin-left: 6px; /* Reduzido de 8px */
+}
+
+.swift-cep-form__location-icon {
+  width: 18px; /* Reduzido de 20px */
+  height: 18px; /* Reduzido de 20px */
+  opacity: 0.6;
+}
+
+/* Delivery Info */
+.swift-hero__delivery-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(35, 31, 32, 0.2);
+  padding: 12px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  width: fit-content;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.swift-hero__truck-icon {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+  order: 1;
+}
+
+.swift-hero__delivery-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--swift-text-white);
+  font-family: var(--swift-font-primary);
+  font-weight: 500;
+  line-height: 1.2;
+  order: 2;
+  flex: 1;
+  min-width: 0;
+}
+
+.swift-hero__delivery-line1 {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.swift-hero__delivery-line2 {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* CTA Button */
+.swift-hero__cta-btn {
+  background: linear-gradient(90deg, var(--swift-primary-orange-light), var(--swift-primary-orange-dark)); /* Gradiente FF5A26 para C81E1E */
+  color: var(--swift-text-white);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px !important; /* Força com !important */
+  font-family: var(--swift-font-primary);
+  font-size: 0.85rem !important; /* Força com !important */
+  font-weight: 700; /* Bold conforme solicitado */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: fit-content !important; /* Força com !important */
+  min-width: 120px !important; /* Força com !important */
+}
+
+.swift-hero__cta-btn:hover {
+  background: var(--swift-secondary-red); /* Hover #A61C1C */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.swift-hero__cta-btn:active {
+  transform: translateY(0);
+}
+
+.swift-hero__cta-text {
+  display: block;
+}
+
+.container-lado-a-lado {
+  display: flex;
+  gap: 12px; /* Reduzido de 16px */
+  align-items: center;
+}
+
+/* Reviews removed - now only in testimonials carousel */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .swift-hero__content {
+    grid-template-columns: 1fr; /* Uma coluna - elementos ficam empilhados */
+    gap: 20px;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .swift-hero__main {
+    align-items: center; /* Centraliza os elementos */
+    width: 100%; /* Garante largura total */
+    max-width: 600px; /* Limita largura máxima para legibilidade */
+    margin: 0 auto; /* Centraliza o bloco */
+  }
+
+  .swift-hero__title {
+    white-space: normal; /* Permite quebra em tablets */
+  }
+
+  .swift-hero__bg-img {
+    object-position: 25% center; /* Mostra mais o lado esquerdo da imagem */
+  }
+
+  .swift-hero__logo {
+    height: 90px; /* Logo maior em tablet */
+    align-self: center; /* Centraliza no tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .swift-hero {
+    min-height: 400px;
+  }
+
+  .swift-hero__content {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+    gap: 16px;
+    min-height: 400px;
+  }
+
+  .swift-hero__main {
+    align-items: center; /* Centraliza elementos */
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Remove limitação em mobile */
+    gap: 12px; /* Gap menor para mobile */
+  }
+
+  .swift-hero__title {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    white-space: normal;
+    text-align: center;
+  }
+
+  .swift-hero__logo {
+    height: 60px; /* Logo maior em mobile */
+    align-self: center; /* Centraliza no mobile */
+  }
+
+  .swift-hero__description {
+    font-size: 16px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .swift-cep-form__container {
+    max-width: 100%;
+  }
+
+  .swift-hero__cta-btn {
+    width: 100%; /* Largura total no mobile */
+    padding: 12px 18px; /* Reduzido de 14px 20px */
+    font-size: 0.85rem; /* Reduzido de 0.9rem */
+  }
+
+  /* Delivery info responsivo */
+  .swift-hero__delivery-info {
+    padding: 10px 16px;
+    gap: 10px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .swift-hero__truck-icon {
+    width: 28px;
+    height: 28px;
+    order: 1;
+  }
+
+  .swift-hero__delivery-text {
+    order: 2;
+    flex: 1;
+  }
+
+  .swift-hero__delivery-line1,
+  .swift-hero__delivery-line2 {
+    font-size: 13px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-hero__content {
+    padding: 24px 16px; /* Padding mínimo */
+  }
+
+  .swift-hero__main {
+    gap: 10px; /* Gap ainda menor para mobile pequeno */
+    width: 100%;
+  }
+
+  .swift-hero__delivery-info {
+    padding: 8px 12px;
+    gap: 8px;
+    max-width: calc(100% - 16px);
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .swift-hero__truck-icon {
+    width: 24px;
+    height: 24px;
+    order: 1;
+  }
+
+  .swift-hero__delivery-text {
+    order: 2;
+    flex: 1;
+  }
+
+  .swift-hero__delivery-line1,
+  .swift-hero__delivery-line2 {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .swift-cep-form__container {
+    padding: 0 10px; /* Reduzido de 12px */
+    height: 38px; /* Reduzido de 44px */
+  }
+
+  .swift-cep-form__input {
+    font-size: 14px; /* Reduzido para mobile pequeno */
+  }
+
+  .swift-cep-form__location-icon {
+    width: 16px; /* Reduzido para mobile pequeno */
+    height: 16px;
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1200px) {
+  .swift-hero__content {
+    padding: 50px 40px; /* Padding ajustado */
+    gap: 20px; /* Gap reduzido para telas grandes */
+  }
+
+  .swift-hero__title {
+    white-space: nowrap; /* Força uma linha em telas grandes */
+  }
+}

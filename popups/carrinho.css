@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #231F20;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 375px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-box {
+    width: 100%;
+    background-color: #dcdcdc;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 24px;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 16px;
+}
+
+.cart-header h2 {
+    color: #E86127;
+    font-size: 1.25rem;
+}
+
+.cart-header a {
+    color: #757575;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+.cart-empty-content {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.cart-empty-content svg {
+    stroke: #757575;
+    margin-bottom: 16px;
+}
+
+.cart-empty-content p {
+    color: #555;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.welcome-section {
+    background-color: #383331;
+    padding: 24px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-text {
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.swift-logo {
+    width: 120px;
+    margin: 12px 0;
+    align-self: center;
+}
+
+.login-prompt {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+#login-btn {
+    background-color: #E86127;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 24px;
+    transition: background-color 0.2s;
+}

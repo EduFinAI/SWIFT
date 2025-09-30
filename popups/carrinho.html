@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carrinho</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="carrinho.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="cart-box">
+            <header class="cart-header">
+                <h2>Meu Carrinho</h2>
+                <a href="#" id="clear-cart-btn">Limpar Carrinho</a>
+            </header>
+            <main class="cart-empty-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                <p>Seu Carrinho está vazio</p>
+            </main>
+        </div>
+
+        <div class="welcome-section">
+            <p class="welcome-text">Bem-vindo(a) a</p>
+            <img src="imagens/logo-swift.png" alt="Logo Swift" class="swift-logo">
+            <p class="login-prompt">Entre para continuar sua compra!</p>
+            <a id="login-btn" href="login.html">Entrar</a>
+        </div>
+    </div>
+
+    <script src="carrinho.js"></script>
+</body>
+</html>
