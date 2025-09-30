@@ -1,0 +1,361 @@
+/* Utility Classes - Sistema de classes utilitárias para escalabilidade */
+
+/* === LAYOUT UTILITIES === */
+.swift-container {
+  max-width: var(--swift-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--swift-container-padding);
+}
+
+@media (max-width: 768px) {
+  .swift-container {
+    padding: 0 var(--swift-container-padding-mobile);
+  }
+}
+
+.swift-section {
+  width: 100%;
+  padding: var(--swift-space-20) 0;
+}
+
+.swift-section--sm {
+  padding: var(--swift-space-16) 0;
+}
+
+.swift-section--lg {
+  padding: 120px 0;
+}
+
+/* === FLEXBOX UTILITIES === */
+.swift-flex {
+  display: flex;
+}
+
+.swift-flex--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swift-flex--between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.swift-flex--column {
+  display: flex;
+  flex-direction: column;
+}
+
+.swift-flex--wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* === GRID UTILITIES === */
+.swift-grid {
+  display: grid;
+}
+
+.swift-grid--2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--swift-space-8);
+}
+
+.swift-grid--3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--swift-space-8);
+}
+
+.swift-grid--4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--swift-space-8);
+}
+
+.swift-grid--auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--swift-space-8);
+}
+
+/* === SPACING UTILITIES === */
+.swift-mt-0 { margin-top: 0; }
+.swift-mt-1 { margin-top: var(--swift-space-1); }
+.swift-mt-2 { margin-top: var(--swift-space-2); }
+.swift-mt-3 { margin-top: var(--swift-space-3); }
+.swift-mt-4 { margin-top: var(--swift-space-4); }
+.swift-mt-6 { margin-top: var(--swift-space-6); }
+.swift-mt-8 { margin-top: var(--swift-space-8); }
+.swift-mt-12 { margin-top: var(--swift-space-12); }
+.swift-mt-16 { margin-top: var(--swift-space-16); }
+.swift-mt-20 { margin-top: var(--swift-space-20); }
+
+.swift-mb-0 { margin-bottom: 0; }
+.swift-mb-1 { margin-bottom: var(--swift-space-1); }
+.swift-mb-2 { margin-bottom: var(--swift-space-2); }
+.swift-mb-3 { margin-bottom: var(--swift-space-3); }
+.swift-mb-4 { margin-bottom: var(--swift-space-4); }
+.swift-mb-6 { margin-bottom: var(--swift-space-6); }
+.swift-mb-8 { margin-bottom: var(--swift-space-8); }
+.swift-mb-12 { margin-bottom: var(--swift-space-12); }
+.swift-mb-16 { margin-bottom: var(--swift-space-16); }
+.swift-mb-20 { margin-bottom: var(--swift-space-20); }
+
+.swift-p-0 { padding: 0; }
+.swift-p-1 { padding: var(--swift-space-1); }
+.swift-p-2 { padding: var(--swift-space-2); }
+.swift-p-3 { padding: var(--swift-space-3); }
+.swift-p-4 { padding: var(--swift-space-4); }
+.swift-p-6 { padding: var(--swift-space-6); }
+.swift-p-8 { padding: var(--swift-space-8); }
+
+/* === TEXT UTILITIES === */
+.swift-text--center { text-align: center; }
+.swift-text--left { text-align: left; }
+.swift-text--right { text-align: right; }
+
+.swift-text--xs { font-size: var(--swift-text-xs); }
+.swift-text--sm { font-size: var(--swift-text-sm); }
+.swift-text--base { font-size: var(--swift-text-base); }
+.swift-text--lg { font-size: var(--swift-text-lg); }
+.swift-text--xl { font-size: var(--swift-text-xl); }
+.swift-text--2xl { font-size: var(--swift-text-2xl); }
+
+.swift-text--normal { font-weight: 400; }
+.swift-text--medium { font-weight: 500; }
+.swift-text--semibold { font-weight: 600; }
+.swift-text--bold { font-weight: 700; }
+
+.swift-text--primary { color: var(--swift-text-primary); }
+.swift-text--secondary { color: var(--swift-text-secondary); }
+.swift-text--muted { color: var(--swift-text-muted); }
+.swift-text--white { color: #fff; }
+.swift-text--orange { color: var(--swift-primary-orange); }
+
+/* === BUTTON UTILITIES === */
+.swift-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-3) var(--swift-space-6);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-base);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--swift-radius-lg);
+  cursor: pointer;
+  transition: all var(--swift-transition-normal);
+  box-sizing: border-box;
+}
+
+.swift-btn--primary {
+  background: linear-gradient(90deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  color: #fff;
+  box-shadow: var(--swift-shadow-lg);
+}
+
+.swift-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--swift-shadow-xl);
+}
+
+.swift-btn--secondary {
+  background: transparent;
+  color: var(--swift-primary-orange);
+  border: 2px solid var(--swift-primary-orange);
+}
+
+.swift-btn--secondary:hover {
+  background: var(--swift-primary-orange);
+  color: #fff;
+}
+
+.swift-btn--outline {
+  background: transparent;
+  color: var(--swift-text-primary);
+  border: 1px solid var(--swift-neutral-medium);
+}
+
+.swift-btn--outline:hover {
+  border-color: var(--swift-primary-orange);
+  color: var(--swift-primary-orange);
+}
+
+.swift-btn--sm {
+  padding: var(--swift-space-2) var(--swift-space-4);
+  font-size: var(--swift-text-sm);
+}
+
+.swift-btn--lg {
+  padding: var(--swift-space-4) var(--swift-space-8);
+  font-size: var(--swift-text-lg);
+}
+
+.swift-btn--full {
+  width: 100%;
+}
+
+/* === CARD UTILITIES === */
+.swift-card {
+  background: #fff;
+  border-radius: var(--swift-radius-xl);
+  box-shadow: var(--swift-shadow-md);
+  overflow: hidden;
+  transition: all var(--swift-transition-normal);
+}
+
+.swift-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--swift-shadow-xl);
+}
+
+.swift-card__header {
+  padding: var(--swift-space-6);
+  border-bottom: 1px solid var(--swift-neutral-light);
+}
+
+.swift-card__body {
+  padding: var(--swift-space-6);
+}
+
+.swift-card__footer {
+  padding: var(--swift-space-6);
+  border-top: 1px solid var(--swift-neutral-light);
+}
+
+/* === VISIBILITY UTILITIES === */
+.swift-hidden {
+  display: none;
+}
+
+.swift-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* === RESPONSIVE UTILITIES === */
+@media (max-width: 480px) {
+  .swift-hidden-mobile {
+    display: none;
+  }
+  
+  .swift-grid--2,
+  .swift-grid--3,
+  .swift-grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .swift-hidden-tablet {
+    display: none;
+  }
+  
+  .swift-grid--3,
+  .swift-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 769px) {
+  .swift-hidden-desktop {
+    display: none;
+  }
+}
+
+/* === ANIMATION UTILITIES === */
+.swift-fade-in {
+  animation: swiftFadeIn 0.5s ease forwards;
+}
+
+.swift-slide-up {
+  animation: swiftSlideUp 0.6s ease forwards;
+}
+
+.swift-scale-in {
+  animation: swiftScaleIn 0.4s ease forwards;
+}
+
+@keyframes swiftFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes swiftSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes swiftScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === INTERACTION UTILITIES === */
+.swift-interactive {
+  cursor: pointer;
+  transition: all var(--swift-transition-fast);
+}
+
+.swift-interactive:hover {
+  opacity: 0.8;
+}
+
+.swift-focus-visible {
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}
+
+/* === LOADING UTILITIES === */
+.swift-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: swiftShimmer 1.5s infinite;
+}
+
+@keyframes swiftShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
