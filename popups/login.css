@@ -1,0 +1,229 @@
+:root {
+    --bg-dark: #231F20;
+    --box-bg: #2D292A;
+    --border-color: #383838;
+    --text-inactive: #595959;
+    --text-light: #F0F0F0;
+    --text-hint: #757575;
+    --primary-orange: #E55125;
+    --input-bg: #EFEFEF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.cadastro-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.cadastro-box {
+    background-color: var(--box-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 1.5rem 2.5rem;
+    position: relative;
+}
+
+.cadastro-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.header-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #757575;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 0.5rem;
+    flex: 1;
+    text-align: center;
+    transition: color 0.2s;
+}
+
+.header-link:hover {
+    color: var(--text-light);
+}
+
+.header-link.active {
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+.cadastro-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    background-color: var(--primary-orange);
+}
+
+.cadastro-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 1px;
+    background-color: var(--text-inactive);
+}
+
+.close-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-inactive);
+    padding: 0;
+}
+
+.close-button svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--primary-orange);
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.welcome-section h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    color: var(--text-light);
+}
+
+.logo-swift-image {
+    width: 180px;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--primary-orange);
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.form-group input {
+    background-color: var(--input-bg);
+    border: none;
+    border-radius: 8px;
+    height: 48px;
+    padding: 0 1rem;
+    font-size: 1rem;
+    width: 100%;
+    color: #333;
+}
+
+.welcome-section .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-inactive);
+    padding: 5px;
+}
+
+.submit-button {
+    background-color: var(--primary-orange);
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 200px;
+    align-self: center;
+    margin-top: 1.5rem;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #c9441e;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login-links a {
+    color: var(--primary-orange);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-links a:hover {
+    text-decoration: underline;
+}
+
+.login-links p {
+    color: var(--text-hint);
+}
+
+@media (max-width: 480px) {
+    .submit-button {
+        width: 100%;
+    }
+}
