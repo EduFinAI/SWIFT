@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Meio da Asa (Tulipa)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Passion+One:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../style/main.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="../../index.html" class="site-header__logo">
+                <img src="../../assets/logo-swift-principal.png" alt="Logo Swift">
+            </a>
+            <nav class="site-header__nav--desktop">
+                <a href="../../bovinos.html" class="nav-link">Bovinos</a>
+                <a href="../../aves.html" class="nav-link">Aves</a>
+                <a href="../../suinos.html" class="nav-link">Suínos</a>
+                <a href="#" class="nav-link">Ocasiões</a>
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Outros</a>
+            </nav>
+            <div class="site-header__actions">
+                <div class="search-bar">
+                    <img src="../../assets/icone-busca.png" alt="Ícone de busca">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <a href="#" class="action-icon user-icon" aria-label="Minha Conta">
+                    <img src="../../assets/icone-usuario.svg" alt="Ícone de usuário">
+                </a>
+                <a href="#" class="action-icon cart-icon" aria-label="Carrinho de Compras">
+                    <img src="../../assets/icone-carrinho.png" alt="Ícone do carrinho">
+                </a>
+            </div>
+            <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+    <nav class="mobile-nav" id="mobile-nav"></nav>
+    <div class="top-bar">
+        <div class="container">
+            <img src="../../assets/icone-caminhao-frete.svg" alt="Ícone de caminhão">
+            <p>Frete grátis a partir de R$ 299,00 em são paulo em até entrega agendada e entrega em 1 dia útil</p>
+        </div>
+    </div>
+    <main class="container">
+        <nav class="breadcrumbs product-breadcrumbs">
+            <a href="../../index.html">Início</a> &gt;
+            <a href="../../aves.html">Aves</a> &gt;
+            <span>Meio da Asa (Tulipa)</span>
+        </nav>
+
+        <section class="product-details-layout">
+
+            <div class="product-gallery-carousel">
+                <div class="carousel-viewer">
+                    <div class="carousel-slide active" data-type="image">
+                        <img src="../../assets/produto-meio-da-asa-tulipa.jpg" alt="Meio da Asa (Tulipa)">
+                    </div>
+
+                    <div class="carousel-slide" data-type="video">
+                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                            data-src="https://www.youtube.com/embed/iN0iZd4ae40?rel=0&mute=1">
+                        </iframe>
+                    </div>
+                </div>
+
+                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
+                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
+
+                <div class="carousel-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-info__title">Meio da Asa (Tulipa)</h1>
+                <div class="product-info__rating">
+                    <span>⭐⭐⭐⭐⭐</span> (125 avaliações)
+                </div>
+                <div id="descricao" class="product-info__description">
+                    <h3>Detalhes do Produto</h3>
+                    <p>Também conhecido como Tulipa, o meio da asa fica entre a coxinha e a ponta. É uma peça pequena, de carne bem macia e saborosa e já está temperada com ervas finas para mais praticidade, além de ser congelado individualmente em embalagem abre e fácil.</p>
+                </div>
+                <div class="product-info__pricing">
+                    <span class="product-info__price--original">R$ 32,90</span>
+                    <span class="product-info__price--sale">R$ 26,90</span>
+                    <span class="product-info__price-unit">/ Embalagem de 1 Kg</span>
+                </div>
+                <div class="product-info__actions">
+                    <div class="quantity-stepper">
+                        <button>-</button>
+                        <input type="text" value="1">
+                        <button>+</button>
+                    </div>
+                    <button class="button--primary add-to-cart-button">
+                        <img src="../../assets/icone-carrinho-branco.svg" alt="">
+                        Adicionar
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-content-tabs">
+            <div class="tab-navigation">
+                <button class="tab-link active" data-tab="preparo">Modo de Preparo</button>
+                <button class="tab-link" data-tab="ingredientes">Ingredientes</button>
+                <button class="tab-link" data-tab="nutricional">Informação Nutricional</button>
+            </div>
+            <div class="tab-content-wrapper">
+                <div id="preparo" class="tab-content active">
+                    <h3>Sugestão de Preparo</h3>
+                    <p>Para uma refeição bem prática e saborosa, além do churrasco, no seu dia a dia, asse as tulipas em airfryer enquanto faz um creme de milho para acompanhar.</p>
+                </div>
+                <div id="ingredientes" class="tab-content">
+                    <h3>Ingredientes</h3>
+                    <p>Meio da asa, água (13,9%), sal, açúcar, salsa, alho, cebola, cominho, pimenta-branca, sálvia, cebolinha verde, estragão, tomilho, estabilizante tripolifosfato de sódio, espessante alga euchema, realçador de sabor glutamato monossódico, aroma natural (alecrim).</p>
+                    <p>Informações Adicionais:</p>
+                    <ul>
+                        <li>Produto resfriado.</li>
+                        <li>Conservar em refrigeração entre 0°C e 4°C.</li>
+                        <li>Após aberto, consumir em até 2 dias.</li>
+                        <li>Validade: vide embalagem.</li>
+                    </ul>
+                </div>
+                <div id="nutricional" class="tab-content">
+                    <h3>Tabela Nutricional</h3>
+                    <p>Porção de 100g (valores aproximados)</p>
+                    <table class="nutrition-table">
+                        <tr>
+                            <td>Valor Energético</td>
+                            <td>236 kcal</td>
+                        </tr>
+                        <tr>
+                            <td>Carboidratos</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Proteínas</td>
+                            <td>18.5 g</td>
+                        </tr>
+                        <tr>
+                            <td>Gorduras Totais</td>
+                            <td>18 g</td>
+                        </tr>
+                        <tr>
+                            <td>Sódio</td>
+                            <td>-</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-column footer-col-about">
+                    <img src="../../assets/logo-swift-branco.png" alt="Logo Swift Branco" class="footer-logo">
+                    <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lojaswift" aria-label="Facebook"><img
+                                src="../../assets/icone-social-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/lojaswift" aria-label="Instagram"><img
+                                src="../../assets/icone-social-instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/channel/UCx_DnTAyLKfvLj5r788zXng" aria-label="YouTube"><img
+                                src="../../assets/icone-social-youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-col-products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="../../bovinos.html">Bovinos</a></li>
+                        <li><a href="../../aves.html">Aves</a></li>
+                        <li><a href="../../suinos.html">Suínos</a></li>
+                        <li><a href="#">Kits Especiais</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-institutional">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Lojas Físicas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-contact">
+                    <h4>Atendimento</h4>
+                    <div class="contact-item">
+                        <img src="../../assets/icone-contato-telefone.svg" alt="Ícone de Telefone">
+                        <div>
+                            <strong>0800 702 1234</strong>
+                            <span>Seg a Sex, 8h às 20h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../../assets/icone-contato-email.svg" alt="Ícone de E-mail">
+                        <div>
+                            <strong>atendimento@swift.com.br</strong>
+                            <span>Respondemos em até 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../../assets/icone-contato-whatsapp.svg" alt="Ícone do WhatsApp">
+                        <div>
+                            <strong>(11) 99876-5432</strong>
+                            <span>Atendimento via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <h4 class="payment-title">Formas de Pagamentos</h4>
+                    <p class="payment-subtitle">(apenas cartões de créditos)</p>
+                    <div class="payment-icons">
+                        <img src="../../assets/pagamento-pix.png" alt="Pix">
+                        <img src="../../assets/pagamento-logo-elo.png" alt="Elo"> <img
+                            src="../../assets/pagamento-logo-amex.png" alt="American Express">
+                        <img src="../../assets/pagamento-logo-visa.png" alt="Visa"> <img
+                            src="../../assets/pagamento-logo-mastercard.png" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swift. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+
+    <script src="../../src/js/main.js" defer></script>
+</body>
+
+</html>
