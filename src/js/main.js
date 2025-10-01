@@ -159,50 +159,34 @@ document.addEventListener('DOMContentLoaded', () => {
 	// FUNÇÕES DA PÁGINA DE PRODUTO
 	// ==========================================================================
 	function setupProductPage() {
-		const carousel = document.querySelector('.product-gallery-carousel');
-		if (carousel) {
-			const slides = carousel.querySelectorAll('.carousel-slide');
-			const prevButton = carousel.querySelector('.carousel-arrow.prev');
-			const nextButton = carousel.querySelector('.carousel-arrow.next');
-			const dots = carousel.querySelectorAll('.carousel-dots .dot');
-			const videoPlayer = carousel.querySelector('.product-video-player');
-			let currentIndex = 0;
+		// --- Lógica da Galeria de Miniaturas ---
+		const gallery = document.querySelector('.product-media-gallery');
+		if (gallery) {
+			const thumbnails = gallery.querySelectorAll('.thumbnail');
+			const mainPhoto = gallery.querySelector('.main-photo');
+			const videoPlayer = gallery.querySelector('.main-video');
 
-			function goToSlide(index) {
-				if (slides[currentIndex] && slides[currentIndex].dataset.type === 'video' && videoPlayer) {
-					// Para o vídeo para não tocar em segundo plano
-					videoPlayer.src = "";
-				}
+			thumbnails.forEach(thumb => {
+				thumb.addEventListener('click', () => {
+					gallery.querySelector('.thumbnail.active').classList.remove('active');
+					thumb.classList.add('active');
 
-				slides[currentIndex].classList.remove('active');
-				dots[currentIndex].classList.remove('active');
+					const type = thumb.dataset.type;
 
-				currentIndex = (index + slides.length) % slides.length;
+					if (type === 'image') {
+						mainPhoto.src = thumb.dataset.src;
+						mainPhoto.classList.remove('hidden');
+						videoPlayer.classList.add('hidden');
+						videoPlayer.src = "";
 
-				slides[currentIndex].classList.add('active');
-				dots[currentIndex].classList.add('active');
+					} else if (type === 'video') {
+						mainPhoto.classList.add('hidden');
+						videoPlayer.classList.remove('hidden');
 
-				// ==========================================================
-				// >> A CORREÇÃO ESTÁ AQUI <<
-				// Agora, garantimos que o vídeo seja carregado sem verificações extras.
-				// ==========================================================
-				if (slides[currentIndex].dataset.type === 'video' && videoPlayer) {
-					videoPlayer.src = videoPlayer.dataset.src;
-				}
-			}
-
-			prevButton.addEventListener('click', () => {
-				goToSlide(currentIndex - 1);
-			});
-
-			nextButton.addEventListener('click', () => {
-				goToSlide(currentIndex + 1);
-			});
-
-			dots.forEach(dot => {
-				dot.addEventListener('click', () => {
-					const slideIndex = parseInt(dot.dataset.slide, 10);
-					goToSlide(slideIndex);
+						if (videoPlayer.src !== videoPlayer.dataset.src) {
+							videoPlayer.src = videoPlayer.dataset.src;
+						}
+					}
 				});
 			});
 		}
