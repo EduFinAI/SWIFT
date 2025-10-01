@@ -64,26 +64,34 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-file-mignon-suino.png" alt="Filé Mignon Suíno">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/mn9PC_-JJdI?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image"
+                        data-src="../../assets/produto-file-mignon-suino.png">
+                        <img src="../../assets/produto-file-mignon-suino.png" alt="Filé Mignon Suíno - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-file-mignon-suino.jpg"
+                            alt="Vídeo de preparo do Filé Mignon Suíno">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-file-mignon-suino.png" alt="Filé Mignon Suíno" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/mn9PC_-JJdI?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +102,9 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>O Filé Mignon Suíno tem garantia de origem e passa por um rigoroso controle de qualidade. É uma carne magra e muito saudável, que agrada a todos os paladares. Versátil, pode ser preparado grelhado ou no forno e fica sempre uma delícia.</p>
+                    <p>O Filé Mignon Suíno tem garantia de origem e passa por um rigoroso controle de qualidade. É uma
+                        carne magra e muito saudável, que agrada a todos os paladares. Versátil, pode ser preparado
+                        grelhado ou no forno e fica sempre uma delícia.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--sale">R$ 26,90</span>
@@ -122,7 +132,9 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Doure bem o Filé Mignon Suíno para que durante a selagem além de caramelizar o fundo da panela, deixe bem selado e mantenha a suculência desse corte. Adicione vinho para deglacear o fundo da panela e adicionar sabor ao molho com cebola, alho e ervas de provance.</p>
+                    <p>Doure bem o Filé Mignon Suíno para que durante a selagem além de caramelizar o fundo da panela,
+                        deixe bem selado e mantenha a suculência desse corte. Adicione vinho para deglacear o fundo da
+                        panela e adicionar sabor ao molho com cebola, alho e ervas de provance.</p>
                 </div>
                 <div id="nutricional" class="tab-content">
                     <h3>Tabela Nutricional</h3>

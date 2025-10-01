@@ -64,26 +64,33 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-bacon-em-cubos.jpg" alt="Bacon em Cubos">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/E7cOjrST5HU?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image"
+                        data-src="../../assets/produto-bacon-em-cubos.jpg">
+                        <img src="../../assets/produto-bacon-em-cubos.jpg" alt="Bacon em Cubos - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-bacon-em-cubos.jpg" alt="Vídeo de preparo do Bacon em Cubos">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-bacon-em-cubos.jpg" alt="Bacon em Cubos" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/E7cOjrST5HU?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +101,10 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>De excelente qualidade e sabor inconfundível, o Bacon em Cubos Swift é tudo o que você precisa para deixar seus pratos ainda mais saborosos. Cortado em cubos uniformes, combina com uma grande variedade de receitas enriquecendo, por exemplo, o preparo do feijão ou de qualquer caldo ou sopa.</p>
+                    <p>De excelente qualidade e sabor inconfundível, o Bacon em Cubos Swift é tudo o que você precisa
+                        para deixar seus pratos ainda mais saborosos. Cortado em cubos uniformes, combina com uma grande
+                        variedade de receitas enriquecendo, por exemplo, o preparo do feijão ou de qualquer caldo ou
+                        sopa.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--original">R$ 18,90</span>
@@ -123,7 +133,11 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Existe uma razão para querer colocar bacon em qualquer receita e deixar o prato mais saboroso. O bacon se popularizou no Brasil como um ingrediente chave na hora de dar sabor a um prato. Experimente fazer um gratinado de batata fácil com batata rústica Swift, bacon em cubos, cubra com creme de leite temperado com sal e pimenta do reino e leve ao forno para gratinar com queijo parmesão. Um acompanhamento rápido e delicioso para qualquer momento.</p>
+                    <p>Existe uma razão para querer colocar bacon em qualquer receita e deixar o prato mais saboroso. O
+                        bacon se popularizou no Brasil como um ingrediente chave na hora de dar sabor a um prato.
+                        Experimente fazer um gratinado de batata fácil com batata rústica Swift, bacon em cubos, cubra
+                        com creme de leite temperado com sal e pimenta do reino e leve ao forno para gratinar com queijo
+                        parmesão. Um acompanhamento rápido e delicioso para qualquer momento.</p>
                 </div>
                 <div id="nutricional" class="tab-content">
                     <h3>Tabela Nutricional</h3>
