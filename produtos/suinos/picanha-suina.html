@@ -64,26 +64,33 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-picanha-suina.jpg" alt="Picanha Suína">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/EnUpr1GJNTI?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image"
+                        data-src="../../assets/produto-picanha-suina.jpg">
+                        <img src="../../assets/produto-picanha-suina.jpg" alt="Picanha Suína - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-picanha-suina.jpg" alt="Vídeo de preparo da Picanha Suína">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-picanha-suina.jpg" alt="Picanha Suína" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/EnUpr1GJNTI?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +101,9 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>Proveniente de animais com garantia de origem, a Picanha Suína Temperada é um corte muito macio e delicioso. Fácil de preparar, vem com temperos naturais e pronta para ser assada ou preparada no churrasco para a família e amigos.</p>
+                    <p>Proveniente de animais com garantia de origem, a Picanha Suína Temperada é um corte muito macio e
+                        delicioso. Fácil de preparar, vem com temperos naturais e pronta para ser assada ou preparada no
+                        churrasco para a família e amigos.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--sale">R$ 29,90</span>
@@ -122,7 +131,10 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Sucesso garantido em qualquer churrasco, a Picanha nunca deixa a desejar. Não esqueça de selar a peça em fogo alto, primeiro com a parte da gordura virada para cima, para reter a suculência e depois virada para baixo, deixando bem douradinha, com um sabor delicioso. Depois de selada, reduzir o calor para finalizar o cozimento ou fazer steaks para agilizar o processo.</p>
+                    <p>Sucesso garantido em qualquer churrasco, a Picanha nunca deixa a desejar. Não esqueça de selar a
+                        peça em fogo alto, primeiro com a parte da gordura virada para cima, para reter a suculência e
+                        depois virada para baixo, deixando bem douradinha, com um sabor delicioso. Depois de selada,
+                        reduzir o calor para finalizar o cozimento ou fazer steaks para agilizar o processo.</p>
                 </div>
                 <div id="nutricional" class="tab-content">
                     <h3>Tabela Nutricional</h3>

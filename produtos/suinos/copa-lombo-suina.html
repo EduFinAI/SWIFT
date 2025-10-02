@@ -64,26 +64,34 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-copa-lombo-suina.jpg" alt="Copa Lombo Suína">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/7x--M4_YNPc?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image"
+                        data-src="../../assets/produto-copa-lombo-suina.jpg">
+                        <img src="../../assets/produto-copa-lombo-suina.jpg" alt="Copa Lombo Suína - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-copa-lombo-suina.jpg"
+                            alt="Vídeo de preparo da Copa Lombo Suína">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-copa-lombo-suina.jpg" alt="Copa Lombo Suína" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/7x--M4_YNPc?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +102,10 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>O Bife de Copa Lombo Suíno Swift vem em fatias, ideal para o dia a dia. De sabor e suculência inigualável, tem altíssima qualidade e garantia de origem. A Copa Lombo em Bifes oferece mais praticidade no preparo e fica uma delícia em diferentes receitas. Coloque o seu tempero e bom apetite.</p>
+                    <p>O Bife de Copa Lombo Suíno Swift vem em fatias, ideal para o dia a dia. De sabor e suculência
+                        inigualável, tem altíssima qualidade e garantia de origem. A Copa Lombo em Bifes oferece mais
+                        praticidade no preparo e fica uma delícia em diferentes receitas. Coloque o seu tempero e bom
+                        apetite.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--sale">R$ 29,90</span>
@@ -123,7 +134,9 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Para os amantes da carne suína, esse corte entrega todo o sabor com muito mais suculência. De textura extremamente suculenta e macia, pode ser usado grelhado ao acompanhar um tutu de feijão tipicamente brasileiro ou fazer um prato japonês quando empanada e frita, o tonkatsu.</p>
+                    <p>Para os amantes da carne suína, esse corte entrega todo o sabor com muito mais suculência. De
+                        textura extremamente suculenta e macia, pode ser usado grelhado ao acompanhar um tutu de feijão
+                        tipicamente brasileiro ou fazer um prato japonês quando empanada e frita, o tonkatsu.</p>
                 </div>
                 <div id="ingredientes" class="tab-content">
                     <h3>Ingredientes</h3>

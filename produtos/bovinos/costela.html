@@ -64,26 +64,33 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-costela-bovina.jpg" alt="Costela">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/iNcxb8yZrvk?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image"
+                        data-src="../../assets/produto-costela-bovina.jpg">
+                        <img src="../../assets/produto-costela-bovina.jpg" alt="Costela - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-costela.jpg" alt="Vídeo de preparo da Costela">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-costela-bovina.jpg" alt="Costela" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/iNcxb8yZrvk?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +101,10 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>Experimente uma nova forma e consumir um dos cortes mais saborosos do boi. A Costela Corte Inglês Swift é proveniente da parte inferior da costela, que concentra uma quantidade maior de carne e de gordura. Conta com o inovador processo de reposição de sucos da Swift, e é ideal para o preparo na grelha, air fryer ou chapa.</p>
+                    <p>Experimente uma nova forma e consumir um dos cortes mais saborosos do boi. A Costela Corte Inglês
+                        Swift é proveniente da parte inferior da costela, que concentra uma quantidade maior de carne e
+                        de gordura. Conta com o inovador processo de reposição de sucos da Swift, e é ideal para o
+                        preparo na grelha, air fryer ou chapa.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--original">R$ 42,90</span>
@@ -123,7 +133,10 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Pode ser preparada ainda congelada. Para isso, envolta a peça temperada como deseja em algumas camadas de papel alumínio para selar bem e preservar os líquidos. Leve ao forno ou churrasqueira com temperatura média/baixa e cozinhe por algumas horas. Com ela macia, retire o papel alumínio e retorne ao forno ou brasa com temperatura mais alta para que possa dourar.</p>
+                    <p>Pode ser preparada ainda congelada. Para isso, envolta a peça temperada como deseja em algumas
+                        camadas de papel alumínio para selar bem e preservar os líquidos. Leve ao forno ou churrasqueira
+                        com temperatura média/baixa e cozinhe por algumas horas. Com ela macia, retire o papel alumínio
+                        e retorne ao forno ou brasa com temperatura mais alta para que possa dourar.</p>
                 </div>
                 <div id="nutricional" class="tab-content">
                     <h3>Tabela Nutricional</h3>

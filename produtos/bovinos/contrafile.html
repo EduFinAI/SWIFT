@@ -64,26 +64,32 @@
 
         <section class="product-details-layout">
 
-            <div class="product-gallery-carousel">
-                <div class="carousel-viewer">
-                    <div class="carousel-slide active" data-type="image">
-                        <img src="../../assets/produto-contrafile.jpg" alt="Contrafilé">
-                    </div>
+            <div class="product-media-gallery">
 
-                    <div class="carousel-slide" data-type="video">
-                        <iframe class="product-video-player" title="YouTube video player" frameborder="0"
-                            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                            data-src="https://www.youtube.com/embed/CYbvRXxqJZE?rel=0&mute=1">
-                        </iframe>
-                    </div>
+                <div class="thumbnails-container">
+
+                    <button class="thumbnail active" data-type="image" data-src="../../assets/produto-contrafile.jpg">
+                        <img src="../../assets/produto-contrafile.jpg" alt="Contrafilé - Foto Principal">
+                    </button>
+
+                    <button class="thumbnail" data-type="video">
+                        <img src="../../assets/thumb-video-contrafile.jpg" alt="Vídeo de preparo do Contrafilé">
+                        <div class="play-icon-overlay">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px"
+                                height="24px">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </button>
+
                 </div>
 
-                <button class="carousel-arrow prev" aria-label="Anterior">&lt;</button>
-                <button class="carousel-arrow next" aria-label="Próximo">&gt;</button>
-
-                <div class="carousel-dots">
-                    <button class="dot active" data-slide="0"></button>
-                    <button class="dot" data-slide="1"></button>
+                <div class="main-media-viewer">
+                    <img src="../../assets/produto-contrafile.jpg" alt="Contrafilé" class="main-photo">
+                    <iframe class="main-video hidden" title="Vídeo do Produto" frameborder="0"
+                        allow="fullscreen; picture-in-picture" allowfullscreen
+                        data-src="https://www.youtube.com/embed/CYbvRXxqJZE?rel=0">
+                    </iframe>
                 </div>
             </div>
 
@@ -94,7 +100,11 @@
                 </div>
                 <div id="descricao" class="product-info__description">
                     <h3>Detalhes do Produto</h3>
-                    <p>Presença garantida nos tradicionais churrascos brasileiros, o Contra Filé é uma peça muito versátil e macia. Além do churrasco, pode ser servida no dia a dia grelhado ou assado e sua capa de gordura externa característica proporciona um sabor especial e ainda auxilia na manutenção da suculência. O Contra Filé Swift Mais é uma ótima escolha para todas as refeições e preparos. A linha Swift Mais oferece qualidade com muito mais suculência e maciez.</p>
+                    <p>Presença garantida nos tradicionais churrascos brasileiros, o Contra Filé é uma peça muito
+                        versátil e macia. Além do churrasco, pode ser servida no dia a dia grelhado ou assado e sua capa
+                        de gordura externa característica proporciona um sabor especial e ainda auxilia na manutenção da
+                        suculência. O Contra Filé Swift Mais é uma ótima escolha para todas as refeições e preparos. A
+                        linha Swift Mais oferece qualidade com muito mais suculência e maciez.</p>
                 </div>
                 <div class="product-info__pricing">
                     <span class="product-info__price--sale">R$ 49,90</span>
@@ -122,7 +132,8 @@
             <div class="tab-content-wrapper">
                 <div id="preparo" class="tab-content active">
                     <h3>Sugestão de Preparo</h3>
-                    <p>Contrafilé no espeto com manteiga e chimichurri, uma maneira simples de preparar que proporciona muito mais sabor ao contrafilé. Confira!</p>
+                    <p>Contrafilé no espeto com manteiga e chimichurri, uma maneira simples de preparar que proporciona
+                        muito mais sabor ao contrafilé. Confira!</p>
                 </div>
                 <div id="nutricional" class="tab-content">
                     <h3>Tabela Nutricional</h3>
