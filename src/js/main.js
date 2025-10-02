@@ -159,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// FUNÇÕES DA PÁGINA DE PRODUTO
 	// ==========================================================================
 	function setupProductPage() {
-		// --- Lógica da Galeria de Miniaturas ---
 		const gallery = document.querySelector('.product-media-gallery');
 		if (gallery) {
 			const thumbnails = gallery.querySelectorAll('.thumbnail');
@@ -191,7 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 		}
 
-		// --- Lógica das Abas de Conteúdo ---
 		const tabLinks = document.querySelectorAll('.tab-navigation .tab-link');
 		const tabContents = document.querySelectorAll('.tab-content-wrapper .tab-content');
 		if (tabLinks.length > 0 && tabContents.length > 0) {
@@ -207,8 +205,146 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	// Executa a configuração da página de produto APENAS se encontrar seus elementos
 	if (document.querySelector('.product-details-layout')) {
 		setupProductPage();
+	}
+
+	// ==========================================================================
+	// NAVEGAÇÃO E VALIDAÇÃO DO CHECKOUT
+	// ==========================================================================
+	const checkoutBlocks = document.querySelectorAll('.checkout-block[data-step]');
+	const stepperItems = document.querySelectorAll('.checkout-stepper li[data-step]');
+
+	if (checkoutBlocks.length > 0 && stepperItems.length > 0) {
+
+		const showError = (fieldId, message) => {
+			const field = document.getElementById(fieldId);
+			if (!field) return;
+			const formGroup = field.closest('.form-group');
+			const errorSpan = formGroup.querySelector('.error-message');
+			formGroup.classList.add('has-error');
+			errorSpan.textContent = message;
+		};
+
+		const clearErrors = () => {
+			document.querySelectorAll('.form-group.has-error').forEach(formGroup => {
+				formGroup.classList.remove('has-error');
+				const errorSpan = formGroup.querySelector('.error-message');
+				if (errorSpan) errorSpan.textContent = '';
+			});
+		};
+
+		const validateEmail = (email) => {
+			const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(String(email).toLowerCase());
+		};
+
+		const isDeliveryFormValid = () => {
+			clearErrors();
+			let isFormValid = true;
+			const requiredFields = {
+				'fullname': 'Nome Completo', 'phone': 'Telefone', 'email': 'E-mail',
+				'address': 'Endereço', 'number': 'Número', 'city': 'Cidade', 'cep': 'CEP'
+			};
+
+			for (const fieldId in requiredFields) {
+				const field = document.getElementById(fieldId);
+				if (field && field.value.trim() === '') {
+					showError(fieldId, `O campo "${requiredFields[fieldId]}" é obrigatório.`);
+					isFormValid = false;
+				}
+			}
+
+			const emailField = document.getElementById('email');
+			if (emailField && emailField.value.trim() !== '' && !validateEmail(emailField.value)) {
+				showError('email', 'Por favor, insira um e-mail válido.');
+				isFormValid = false;
+			}
+
+			return isFormValid;
+		};
+
+		const navigateToStep = (stepNumber) => {
+			checkoutBlocks.forEach(block => {
+				block.classList.toggle('is-collapsed', block.dataset.step != stepNumber);
+			});
+			stepperItems.forEach(item => {
+				item.classList.toggle('active', item.dataset.step == stepNumber);
+			});
+			const activeBlock = document.querySelector(`.checkout-block[data-step="${stepNumber}"]`);
+			if (activeBlock) {
+				setTimeout(() => {
+					activeBlock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+				}, 410);
+			}
+		};
+
+		const continueToPaymentBtn = document.getElementById('btn-continue-to-payment');
+		const backToDeliveryBtn = document.getElementById('btn-back-to-delivery');
+		const continueToSummaryBtn = document.getElementById('btn-continue-to-summary');
+		const backToPaymentBtn = document.getElementById('btn-back-to-payment');
+
+		if (backToDeliveryBtn) backToDeliveryBtn.addEventListener('click', () => navigateToStep(1));
+		if (continueToSummaryBtn) continueToSummaryBtn.addEventListener('click', () => navigateToStep(3));
+		if (backToPaymentBtn) backToPaymentBtn.addEventListener('click', () => navigateToStep(2));
+
+		if (continueToPaymentBtn) {
+			continueToPaymentBtn.addEventListener('click', () => {
+				if (isDeliveryFormValid()) {
+					navigateToStep(2);
+				}
+			});
+		}
+
+		checkoutBlocks.forEach(block => {
+			const header = block.querySelector('.checkout-block__header');
+			if (header) {
+				header.addEventListener('click', () => {
+					const targetStep = parseInt(block.dataset.step);
+
+					if (!block.classList.contains('is-collapsed')) {
+						return;
+					}
+
+					if (targetStep === 1) {
+						navigateToStep(1);
+					} else if (targetStep === 2) {
+						if (isDeliveryFormValid()) {
+							navigateToStep(2);
+						}
+					} else if (targetStep === 3) {
+						if (isDeliveryFormValid()) {
+							navigateToStep(3);
+						}
+					}
+				});
+			}
+		});
+	}
+
+	// ==========================================================================
+	// LÓGICA DAS FORMAS DE PAGAMENTO
+	// ==========================================================================
+	const paymentRadios = document.querySelectorAll('input[name="payment-method"]');
+
+	function updatePaymentView() {
+		paymentRadios.forEach(radio => {
+			const group = radio.closest('.payment-option-group');
+			const details = group.querySelector('.payment-details');
+
+			if (radio.checked) {
+				details.classList.add('active');
+			} else {
+				details.classList.remove('active');
+			}
+		});
+	}
+
+	paymentRadios.forEach(radio => {
+		radio.addEventListener('change', updatePaymentView);
+	});
+
+	if (paymentRadios.length > 0) {
+		updatePaymentView();
 	}
 });
