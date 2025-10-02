@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Finalizar Compra</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Passion+One:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="./index.html" class="site-header__logo">
+                <img src="./assets/logo-swift-principal.png" alt="Logo Swift">
+            </a>
+
+            <nav class="site-header__nav--desktop">
+                <a href="./bovinos.html" class="nav-link active">Bovinos</a>
+                <a href="./aves.html" class="nav-link">Aves</a>
+                <a href="./suinos.html" class="nav-link">Suínos</a>
+                <a href="#" class="nav-link">Ocasiões</a>
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Outros</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <div class="search-bar">
+                    <img src="./assets/icone-busca.png" alt="Ícone de busca">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <a href="#" class="action-icon user-icon" aria-label="Minha Conta">
+                    <img src="./assets/icone-usuario.svg" alt="Ícone de usuário">
+                </a>
+                <a href="#" class="action-icon cart-icon" aria-label="Carrinho de Compras">
+                    <img src="./assets/icone-carrinho.png" alt="Ícone do carrinho">
+                </a>
+            </div>
+
+            <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container checkout-page">
+
+        <nav class="checkout-stepper">
+            <ol>
+                <li class="active" data-step="1"><span>1</span> Dados de Entrega</li>
+                <li data-step="2"><span>2</span> Pagamento</li>
+                <li data-step="3"><span>3</span> Confirmação</li>
+            </ol>
+        </nav>
+
+        <div class="checkout-layout">
+
+            <div class="checkout-main">
+
+                <section class="checkout-block" data-step="1">
+                    <div class="checkout-block__header">
+                        <img src="./assets/icone-localizacao.svg" alt="">
+                        <h2>Dados de Entrega</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+                        <form class="checkout-form">
+                            <div class="form-group">
+                                <label for="fullname">Nome Completo</label>
+                                <input type="text" id="fullname" value="Fernanda Silva">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" value="(11) 99876-5432">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" value="maria.silva@email.com">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group form-group--grow">
+                                    <label for="address">Endereço</label>
+                                    <input type="text" id="address" value="Rua, Avenida...">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="number">Número</label>
+                                    <input type="text" id="number" value="123" class="input-small">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="complement">Complemento (Opcional)</label>
+                                <input type="text" id="complement" placeholder="Apartamento, bloco, etc.">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group form-group--grow">
+                                    <label for="city">Cidade</label>
+                                    <input type="text" id="city" value="São Paulo">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cep">CEP</label>
+                                    <input type="text" id="cep" value="00000-000">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="instructions">Instruções de Entrega (Opcional)</label>
+                                <textarea id="instructions" rows="3"
+                                    placeholder="Observações para o entregador..."></textarea>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="save-address">
+                                <label for="save-address">Salvar este endereço para futuras compras</label>
+                            </div>
+                            <div class="checkout-actions">
+                                <button type="button" id="btn-continue-to-payment" class="button--primary"
+                                    style="margin-top: 16px;">
+                                    Continuar para Pagamento
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="checkout-block is-collapsed" data-step="2">
+                    <div class="checkout-block__header">
+                        <img src="./assets/icone-pagamento.svg" alt="">
+                        <h2>Forma de Pagamento</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" checked>
+                                <div class="payment-option__content">
+                                    <img src="./assets/icone-cartao-credito.svg" alt="">
+                                    <div>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span>Visa, Mastercard, Elo</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details active">
+                                <div class="form-group">
+                                    <label for="card-number">Número do Cartão</label>
+                                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Nome no Cartão</label>
+                                    <input type="text" id="card-name" placeholder="Como está escrito no cartão">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Validade (MM/AA)</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/AA">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" id="card-cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-installments">Parcelas</label>
+                                    <select id="card-installments" class="form-select">
+                                        <option>1x de R$ 121,60 sem juros</option>
+                                        <option>2x de R$ 60,80 sem juros</option>
+                                        <option>3x de R$ 40,53 sem juros</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="./assets/icone-cartao-debito.svg" alt="">
+                                    <div>
+                                        <strong>Cartão de Débito</strong>
+                                        <span>Débito à vista</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Você será redirecionado para o ambiente seguro do seu banco para concluir o
+                                    pagamento.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="./assets/icone-pix.svg" alt="">
+                                    <div>
+                                        <strong>PIX</strong>
+                                        <span>Aprovação instantânea</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Pague com o QR Code ou use a chave "copia e cola". O pagamento é aprovado em
+                                    segundos.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="./assets/icone-transferencia.svg" alt="">
+                                    <div>
+                                        <strong>Transferência Bancária</strong>
+                                        <span>1-2 dias úteis para aprovação</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Por favor, realize a transferência para os dados abaixo e envie o comprovante para
+                                    nosso e-mail.</p>
+                                <ul>
+                                    <li><strong>Banco:</strong> Banco Exemplo S.A. (001)</li>
+                                    <li><strong>Agência:</strong> 1234</li>
+                                    <li><strong>Conta Corrente:</strong> 56789-0</li>
+                                    <li><strong>CNPJ:</strong> 00.000.000/0001-00</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form class="coupon-form">
+                            <label for="coupon-input" class="coupon-label">Cupom de Desconto</label>
+                            <div class="coupon-input-group">
+                                <input type="text" id="coupon-input" placeholder="Digite seu cupom">
+                                <button type="submit" class="button--primary">Aplicar</button>
+                            </div>
+                        </form>
+
+                        <div class="checkout-actions">
+                            <button type="button" id="btn-back-to-delivery" class="button--secondary">Voltar</button>
+                            <button type="button" id="btn-continue-to-summary" class="button--primary">
+                                Continuar para Resumo
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-block is-collapsed" data-step="3">
+                    <div class="checkout-block__header">
+                        <!-- <img src="./assets/icone-carrinho.png" alt=""> -->
+                        <h2>Resumo do Pedido</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+                        <ul class="summary-products">
+                            <li class="summary-product">
+                                <img src="./assets/produto-file-de-frango-thumb.png" alt="Filé de Frango">
+                                <div class="summary-product__info">
+                                    <span>Filé de Frango Premium</span>
+                                    <strong>R$ 49,80</strong>
+                                    <small>2x R$ 24,90</small>
+                                </div>
+                            </li>
+                            <li class="summary-product">
+                                <img src="./assets/produto-coracao-de-frango-thumb.png" alt="Coração de Frango">
+                                <div class="summary-product__info">
+                                    <span>Coração de Frango</span>
+                                    <strong>R$ 32,90</strong>
+                                    <small>1x R$ 32,90</small>
+                                </div>
+                            </li>
+                            <li class="summary-product">
+                                <img src="./assets/produto-asas-de-frango-thumb.png" alt="Asas de Frango">
+                                <div class="summary-product__info">
+                                    <span>Asas de Frango Temperadas</span>
+                                    <strong>R$ 38,90</strong>
+                                    <small>1x R$ 38,90</small>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="summary-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span>R$ 121,60</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Frete</span>
+                                <span class="free-shipping">Grátis</span>
+                            </div>
+                            <div class="total-row total-row--bold">
+                                <span>Total</span>
+                                <span>R$ 121,60</span>
+                            </div>
+                        </div>
+                        <div class="checkout-actions">
+                            <button type="button" id="btn-back-to-payment" class="button--secondary">Voltar</button>
+                            <button class="button--primary button--large">Finalizar Compra</button>
+                        </div>
+                        <ul class="summary-info">
+                            <li><img src="./assets/icone-check.svg" alt=""> Entrega em até 2 horas</li>
+                            <li><img src="./assets/icone-check.svg" alt=""> Pagamento 100% seguro</li>
+                            <li><img src="./assets/icone-check.svg" alt=""> Política de troca garantida</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-column footer-col-about">
+                    <img src="./assets/logo-swift-branco.png" alt="Logo Swift Branco" class="footer-logo">
+                    <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lojaswift" aria-label="Facebook"><img
+                                src="./assets/icone-social-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/lojaswift" aria-label="Instagram"><img
+                                src="./assets/icone-social-instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/channel/UCx_DnTAyLKfvLj5r788zXng" aria-label="YouTube"><img
+                                src="./assets/icone-social-youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-col-products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="./bovinos.html">Bovinos</a></li>
+                        <li><a href="./aves.html">Aves</a></li>
+                        <li><a href="./suinos.html">Suínos</a></li>
+                        <li><a href="#">Kits Especiais</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-institutional">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Lojas Físicas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-contact">
+                    <h4>Atendimento</h4>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-telefone.svg" alt="Ícone de Telefone">
+                        <div>
+                            <strong>0800 702 1234</strong>
+                            <span>Seg a Sex, 8h às 20h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-email.svg" alt="Ícone de E-mail">
+                        <div>
+                            <strong>atendimento@swift.com.br</strong>
+                            <span>Respondemos em até 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="./assets/icone-contato-whatsapp.svg" alt="Ícone do WhatsApp">
+                        <div>
+                            <strong>(11) 99876-5432</strong>
+                            <span>Atendimento via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <h4 class="payment-title">Formas de Pagamentos</h4>
+                    <p class="payment-subtitle">(apenas cartões de créditos)</p>
+                    <div class="payment-icons">
+                        <img src="./assets/pagamento-pix.png" alt="Pix">
+                        <img src="./assets/pagamento-logo-elo.png" alt="Elo"> <img
+                            src="./assets/pagamento-logo-amex.png" alt="American Express">
+                        <img src="./assets/pagamento-logo-visa.png" alt="Visa"> <img
+                            src="./assets/pagamento-logo-mastercard.png" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swift. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./src/js/main.js" defer></script>
+</body>
+
+</html>
