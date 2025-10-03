@@ -1,0 +1,266 @@
+/* Shared Component Styles - Base styles for common components */
+
+/* Base Dropdown Styles */
+.swift-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--swift-neutral-white);
+  border: 1px solid var(--swift-neutral-light);
+  border-radius: var(--swift-radius-lg);
+  box-shadow: var(--swift-shadow-lg);
+  z-index: var(--swift-z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--swift-transition-normal);
+  min-width: 280px;
+}
+
+.swift-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Base Modal Styles */
+.swift-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--swift-z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--swift-transition-normal);
+}
+
+.swift-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.swift-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.swift-modal__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-4);
+}
+
+.swift-modal__content {
+  background: var(--swift-neutral-white);
+  border-radius: var(--swift-radius-xl);
+  box-shadow: var(--swift-shadow-2xl);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.9);
+  transition: transform var(--swift-transition-normal);
+}
+
+.swift-modal.is-open .swift-modal__content {
+  transform: scale(1);
+}
+
+/* Base Button Styles */
+.swift-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--swift-font-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--swift-radius-lg);
+  cursor: pointer;
+  transition: all var(--swift-transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-btn--primary {
+  background: linear-gradient(90deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  color: var(--swift-text-white);
+  box-shadow: 0 4px 12px rgba(230, 81, 3, 0.3);
+}
+
+.swift-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 81, 3, 0.4);
+}
+
+.swift-btn--secondary {
+  background: var(--swift-neutral-white);
+  color: var(--swift-text-primary);
+  border: 1px solid var(--swift-neutral-light);
+}
+
+.swift-btn--secondary:hover {
+  background: var(--swift-neutral-light);
+}
+
+.swift-btn--animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-btn--animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.swift-btn--animated:hover::before {
+  left: 100%;
+}
+
+/* Base Form Styles */
+.swift-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-4);
+}
+
+.swift-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-2);
+}
+
+.swift-form__label {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  font-weight: 600;
+  color: var(--swift-text-primary);
+}
+
+.swift-form__input {
+  padding: var(--swift-space-3) var(--swift-space-4);
+  border: 1px solid var(--swift-neutral-light);
+  border-radius: var(--swift-radius-md);
+  font-family: var(--swift-font-body);
+  font-size: var(--swift-text-base);
+  background: var(--swift-neutral-white);
+  transition: border-color var(--swift-transition-fast);
+}
+
+.swift-form__input:focus {
+  border-color: var(--swift-primary-orange);
+  outline: none;
+}
+
+.swift-form__input.invalid {
+  border-color: var(--swift-secondary-red);
+}
+
+.swift-form__error {
+  font-size: var(--swift-text-xs);
+  color: var(--swift-secondary-red);
+  margin-top: var(--swift-space-1);
+}
+
+/* Base Card Styles */
+.swift-card {
+  background: var(--swift-neutral-white);
+  border: 1px solid var(--swift-neutral-light);
+  border-radius: var(--swift-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--swift-shadow-sm);
+  transition: all var(--swift-transition-fast);
+}
+
+.swift-card:hover {
+  box-shadow: var(--swift-shadow-md);
+  transform: translateY(-2px);
+}
+
+.swift-card__header {
+  padding: var(--swift-space-4);
+  border-bottom: 1px solid var(--swift-neutral-light);
+}
+
+.swift-card__content {
+  padding: var(--swift-space-4);
+}
+
+.swift-card__footer {
+  padding: var(--swift-space-4);
+  border-top: 1px solid var(--swift-neutral-light);
+  background: var(--swift-neutral-light);
+}
+
+/* Base Message Styles */
+.swift-message {
+  position: fixed;
+  top: var(--swift-space-4);
+  right: var(--swift-space-4);
+  padding: var(--swift-space-3) var(--swift-space-4);
+  border-radius: var(--swift-radius-md);
+  color: var(--swift-text-white);
+  font-weight: 600;
+  z-index: var(--swift-z-toast);
+  transform: translateX(100%);
+  transition: transform var(--swift-transition-normal);
+}
+
+.swift-message.show {
+  transform: translateX(0);
+}
+
+.swift-message--success {
+  background: #10b981;
+}
+
+.swift-message--error {
+  background: var(--swift-secondary-red);
+}
+
+.swift-message--info {
+  background: var(--swift-primary-orange);
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .swift-dropdown {
+    min-width: 240px;
+  }
+  
+  .swift-modal__container {
+    padding: var(--swift-space-2);
+  }
+  
+  .swift-modal__content {
+    max-height: 95vh;
+  }
+  
+  .swift-message {
+    top: var(--swift-space-2);
+    right: var(--swift-space-2);
+    left: var(--swift-space-2);
+    transform: translateY(-100%);
+  }
+  
+  .swift-message.show {
+    transform: translateY(0);
+  }
+}

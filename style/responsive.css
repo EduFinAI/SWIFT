@@ -979,7 +979,9 @@
   }
   
   .swift-hero__title {
-    font-size: clamp(1.3rem, 7vw, 1.8rem) !important;
+    font-size: 55px !important;
+    margin-top: 10px;
+    margin-bottom: -25px;
   }
   
   .swift-hero__description {

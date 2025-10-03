@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swift - Finalizar Compra</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Passion+One:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../shared/css/base.css">
+    <link rel="stylesheet" href="../shared/css/components.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="site-header__logo">
+                <img src="../assets/logo-swift-principal.png" alt="Logo Swift">
+            </a>
+
+            <nav class="site-header__nav--desktop">
+                <a href="./bovinos.html" class="nav-link active">Bovinos</a>
+                <a href="./aves.html" class="nav-link">Aves</a>
+                <a href="./suinos.html" class="nav-link">Suínos</a>
+                <a href="#" class="nav-link">Ocasiões</a>
+                <a href="#" class="nav-link">Ofertas</a>
+                <a href="#" class="nav-link">Outros</a>
+            </nav>
+
+            <div class="site-header__actions">
+                <div class="search-bar">
+                    <img src="../assets/icone-busca.png" alt="Ícone de busca">
+                    <input type="text" placeholder="Buscar produtos...">
+                </div>
+                <a href="#" class="action-icon user-icon" aria-label="Minha Conta">
+                    <img src="../assets/icone-usuario.svg" alt="Ícone de usuário">
+                </a>
+                <a href="#" class="action-icon cart-icon" aria-label="Carrinho de Compras">
+                    <img src="../assets/icone-carrinho.png" alt="Ícone do carrinho">
+                </a>
+            </div>
+
+            <button class="hamburger-button" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container checkout-page">
+
+        <nav class="checkout-stepper">
+            <ol>
+                <li class="active" data-step="1"><span>1</span> Dados de Entrega</li>
+                <li data-step="2"><span>2</span> Pagamento</li>
+                <li data-step="3"><span>3</span> Confirmação</li>
+            </ol>
+        </nav>
+
+        <div class="checkout-layout">
+
+            <div class="checkout-main">
+
+                <section class="checkout-block" data-step="1">
+                    <div class="checkout-block__header">
+                        <img src="../assets/icone-checkout-entrega.png" alt="">
+                        <h2>Dados de Entrega</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+                        <form class="checkout-form">
+                            <div class="form-group">
+                                <label for="fullname">Nome Completo</label>
+                                <input type="text" id="fullname" placeholder="Digite seu nome completo">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" placeholder="(11) 99999-9999">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" placeholder="seuemail@exemplo.com">
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cep">CEP</label>
+                                <div class="input-with-button">
+                                    <input type="text" id="cep" placeholder="00000-000">
+                                    <button type="button" id="btn-get-location" class="location-btn"
+                                        title="Usar minha localização">
+                                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                            <circle cx="12" cy="10" r="3"></circle>
+                                        </svg>
+                                        <div class="spinner"></div>
+                                    </button>
+                                </div>
+                                <span class="error-message"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group form-group--grow">
+                                    <label for="address">Endereço</label>
+                                    <input type="text" id="address" placeholder="Rua, Avenida...">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="number">Número</label>
+                                    <input type="text" id="number" placeholder="123" class="input-small">
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="complement">Complemento (Opcional)</label>
+                                <input type="text" id="complement" placeholder="Apartamento, bloco, etc.">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group form-group--grow">
+                                    <label for="city">Cidade</label>
+                                    <input type="text" id="city" placeholder="Sua cidade">
+                                    <span class="error-message"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">Estado</label>
+                                    <select id="state" class="form-select">
+                                        <option value="" disabled selected>UF</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="instructions">Instruções de Entrega (Opcional)</label>
+                                <textarea id="instructions" rows="3"
+                                    placeholder="Observações para o entregador..."></textarea>
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="save-address">
+                                <label for="save-address">Salvar este endereço para futuras compras</label>
+                            </div>
+                            <div class="checkout-actions">
+                                <button type="button" id="btn-continue-to-payment" class="button--primary"
+                                    style="margin-top: 16px;">
+                                    Continuar para Pagamento
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section class="checkout-block is-collapsed" data-step="2">
+                    <div class="checkout-block__header">
+                        <img src="../assets/icone-checkout-pagamento.png" alt="">
+                        <h2>Forma de Pagamento</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method" checked>
+                                <div class="payment-option__content">
+                                    <img src="../assets/icone-cartao-credito.svg" alt="">
+                                    <div>
+                                        <strong>Cartão de Crédito</strong>
+                                        <span>Visa, Mastercard, Elo</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details active">
+                                <div class="form-group">
+                                    <label for="card-number">Número do Cartão</label>
+                                    <input type="text" id="card-number" placeholder="0000 0000 0000 0000">
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Nome no Cartão</label>
+                                    <input type="text" id="card-name" placeholder="Como está escrito no cartão">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="card-expiry">Validade (MM/AA)</label>
+                                        <input type="text" id="card-expiry" placeholder="MM/AA">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="card-cvv">CVV</label>
+                                        <input type="text" id="card-cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-installments">Parcelas</label>
+                                    <select id="card-installments" class="form-select">
+                                        <option>1x de R$ 0,00 sem juros</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="../assets/icone-cartao-debito.svg" alt="">
+                                    <div>
+                                        <strong>Cartão de Débito</strong>
+                                        <span>Débito à vista</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Você será redirecionado para o ambiente seguro do seu banco para concluir o
+                                    pagamento.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="../assets/icone-pix.svg" alt="">
+                                    <div>
+                                        <strong>PIX</strong>
+                                        <span>Aprovação instantânea</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Pague com o QR Code ou use a chave "copia e cola". O pagamento é aprovado em
+                                    segundos.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-option-group">
+                            <label class="payment-option">
+                                <input type="radio" name="payment-method">
+                                <div class="payment-option__content">
+                                    <img src="../assets/icone-transferencia.svg" alt="">
+                                    <div>
+                                        <strong>Transferência Bancária</strong>
+                                        <span>1-2 dias úteis para aprovação</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="payment-details">
+                                <p>Por favor, realize a transferência para os dados abaixo e envie o comprovante para
+                                    nosso e-mail.</p>
+                                <ul>
+                                    <li><strong>Banco:</strong> Banco Exemplo S.A. (001)</li>
+                                    <li><strong>Agência:</strong> 1234</li>
+                                    <li><strong>Conta Corrente:</strong> 56789-0</li>
+                                    <li><strong>CNPJ:</strong> 00.000.000/0001-00</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <form class="coupon-form">
+                            <label for="coupon-input" class="coupon-label">Cupom de Desconto</label>
+                            <div class="coupon-input-group">
+                                <input type="text" id="coupon-input" placeholder="Digite seu cupom">
+                                <button type="submit" class="button--primary">Aplicar</button>
+                            </div>
+                        </form>
+
+                        <div class="checkout-actions">
+                            <button type="button" id="btn-back-to-delivery" class="button--secondary">Voltar</button>
+                            <button type="button" id="btn-continue-to-summary" class="button--primary">
+                                Continuar para Resumo
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-block is-collapsed" data-step="3">
+                    <div class="checkout-block__header">
+                        <img src="../assets/icone-checkout-resumo.png" alt="">
+                        <h2>Resumo do Pedido</h2>
+                        <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="checkout-block__body">
+                        <ul class="summary-products">
+
+                        </ul>
+                        <div class="summary-totals">
+                            <div class="total-row">
+                                <span>Subtotal</span>
+                                <span>R$ 0,00</span>
+                            </div>
+                            <div class="total-row">
+                                <span>Frete</span>
+                                <span class="free-shipping">Grátis</span>
+                            </div>
+                            <div class="total-row total-row--bold">
+                                <span>Total</span>
+                                <span>R$ 0,00</span>
+                            </div>
+                        </div>
+                        <div class="checkout-actions">
+                            <button type="button" id="btn-back-to-payment" class="button--secondary">Voltar</button>
+                            <button class="button--primary button--large">Finalizar Compra</button>
+                        </div>
+                        <ul class="summary-info">
+                            <li><img src="../assets/icone-info-entrega.png" alt=""> Entrega em até 2 horas</li>
+                            <li><img src="../assets/icone-info-seguranca.png" alt=""> Pagamento 100% seguro</li>
+                            <li><img src="../assets/icone-info-troca.png" alt=""> Política de troca garantida</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <div class="footer-column footer-col-about">
+                    <img src="../assets/logo-swift-branco.png" alt="Logo Swift Branco" class="footer-logo">
+                    <p>Há mais de 60 anos levando qualidade e sabor para a mesa dos brasileiros.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lojaswift" aria-label="Facebook"><img
+                                src="../assets/icone-social-facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/lojaswift" aria-label="Instagram"><img
+                                src="../assets/icone-social-instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.youtube.com/channel/UCx_DnTAyLKfvLj5r788zXng" aria-label="YouTube"><img
+                                src="../assets/icone-social-youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+
+                <div class="footer-column footer-col-products">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="./bovinos.html">Bovinos</a></li>
+                        <li><a href="./aves.html">Aves</a></li>
+                        <li><a href="./suinos.html">Suínos</a></li>
+                        <li><a href="#">Kits Especiais</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Lançamentos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-institutional">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Sustentabilidade</a></li>
+                        <li><a href="#">Trabalhe Conosco</a></li>
+                        <li><a href="#">Lojas Físicas</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-col-contact">
+                    <h4>Atendimento</h4>
+                    <div class="contact-item">
+                        <img src="../assets/icone-contato-telefone.svg" alt="Ícone de Telefone">
+                        <div>
+                            <strong>0800 702 1234</strong>
+                            <span>Seg a Sex, 8h às 20h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../assets/icone-contato-email.svg" alt="Ícone de E-mail">
+                        <div>
+                            <strong>atendimento@swift.com.br</strong>
+                            <span>Respondemos em até 24h</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <img src="../assets/icone-contato-whatsapp.svg" alt="Ícone do WhatsApp">
+                        <div>
+                            <strong>(11) 99876-5432</strong>
+                            <span>Atendimento via WhatsApp</span>
+                        </div>
+                    </div>
+
+                    <h4 class="payment-title">Formas de Pagamentos</h4>
+                    <p class="payment-subtitle">(apenas cartões de créditos)</p>
+                    <div class="payment-icons">
+                        <img src="../assets/pagamento-pix.png" alt="Pix">
+                        <img src="../assets/pagamento-logo-elo.png" alt="Elo"> <img
+                            src="../assets/pagamento-logo-amex.png" alt="American Express">
+                        <img src="../assets/pagamento-logo-visa.png" alt="Visa"> <img
+                            src="../assets/pagamento-logo-mastercard.png" alt="Mastercard">
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Swift. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/js/core.js" defer></script>
+    <script src="../shared/js/components.js" defer></script>
+</body>
+
+</html>

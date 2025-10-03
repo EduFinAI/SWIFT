@@ -5,9 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node dev-server.js",
-    "serve": "node server.js",
-    "dev-watch": "nodemon dev-server.js"
+    "dev": "node server.js",
+    "serve": "node server.js"
   },
   "keywords": ["swift", "ecommerce", "carnes", "website"],
   "author": "Swift Team",

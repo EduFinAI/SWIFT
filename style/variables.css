@@ -52,6 +52,7 @@
   --swift-space-20: 80px;
   
   /* Layout */
+  --swift-layout-max-width: 1400px;
   --swift-container-max-width: 1400px;
   --swift-container-padding: 22px;
   --swift-container-padding-mobile: 16px;

@@ -1,0 +1,315 @@
+/* ==========================================================================
+   COMPONENTES ESPECÍFICOS - SWIFT COMPONENTS
+   ========================================================================== */
+
+/* ==========================================================================
+   CABEÇALHO (HEADER)
+   ========================================================================== */
+
+.site-header {
+    background-color: var(--color-white);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.site-header .container {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.site-header__logo {
+    height: 50px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.site-header__nav--desktop {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 24px;
+}
+
+.site-header__nav--desktop .nav-link {
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.site-header__nav--desktop .nav-link:hover {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+
+.site-header__nav--desktop .nav-link.active {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.site-header__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 16px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-background);
+    border-radius: 99px;
+    padding: 8px 16px;
+    width: 350px;
+    border: 1px solid #eee;
+}
+
+.search-bar img {
+    height: 16px;
+    width: 16px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-family: var(--font-primary);
+    font-size: 16px;
+}
+
+.action-icon img {
+    height: 28px;
+    width: 28px;
+}
+
+/* ==========================================================================
+   TOP BAR
+   ========================================================================== */
+
+.top-bar {
+    background-color: var(--color-dark);
+    padding: 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-white);
+    padding: 8px 16px;
+}
+
+/* ==========================================================================
+   HERO BANNER (PÁGINAS DE CATEGORIA)
+   ========================================================================== */
+
+.hero-banner-wrapper {
+    background-color: var(--color-primary);
+}
+
+.hero-banner-wrapper>.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hero-banner-contained {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+    overflow: hidden;
+}
+
+/* Imagens de fundo específicas por página */
+.page-bovinos .hero-banner-contained {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/banner-bovinos-churrasco.png');
+}
+
+.page-aves .hero-banner-contained {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/banner-aves-frango-assado.png');
+}
+
+.page-suinos .hero-banner-contained {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../assets/banner-suinos-lombo-assado.png');
+}
+
+.hero-banner-contained::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--color-primary);
+    z-index: 1;
+    width: clamp(0%, 120vw - 800px, 33%);
+}
+
+.hero-banner-text-container {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 40px 32px;
+}
+
+.hero-banner-text-container h1 {
+    font-family: var(--font-secondary);
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.hero-banner-text-container p {
+    font-size: 18px;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   CARROSSEL DE CATEGORIAS
+   ========================================================================== */
+
+.meat-types-nav {
+    background-color: var(--color-white);
+    padding: 24px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.carousel-arrow {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--color-primary);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.carousel-arrow:hover:not(:disabled) {
+    background-color: var(--color-background);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-arrow.is-hidden {
+    display: none;
+}
+
+.meat-types-scroller {
+    flex: 1;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.3s ease;
+}
+
+.meat-type-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 12px;
+    background-color: var(--color-background);
+    transition: all 0.2s ease;
+    text-align: center;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.meat-type-item:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.meat-type-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.meat-type-item span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .site-header .container {
+        gap: 16px;
+    }
+    
+    .site-header__nav--desktop {
+        display: none;
+    }
+    
+    .search-bar {
+        width: 250px;
+    }
+    
+    .hero-banner-text-container {
+        padding: 24px 20px;
+    }
+    
+    .hero-banner-text-container h1 {
+        font-size: 36px;
+    }
+    
+    .hero-banner-text-container p {
+        font-size: 16px;
+    }
+    
+    .meat-type-item {
+        min-width: 100px;
+        padding: 12px;
+    }
+    
+    .meat-type-item img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        width: 200px;
+    }
+    
+    .hero-banner-text-container h1 {
+        font-size: 28px;
+    }
+    
+    .hero-banner-text-container p {
+        font-size: 14px;
+    }
+}

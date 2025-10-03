@@ -1,7 +1,7 @@
 /* Tips and Information Component Styles */
 .swift-tips-info {
   width: 100%;
-  padding: 80px 0;
+  padding: 40px 0 80px 0;
   background: linear-gradient(135deg, #E65103, #E97223);
   background-size: cover;
   background-position: center;
@@ -70,27 +70,67 @@
   object-position: center;
 }
 
-.swift-tips-card__video-placeholder,
+/* Video Container */
+.swift-tips-card__video-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Video Thumbnail */
+.swift-tips-card__video-thumbnail {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.swift-tips-card__thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+
+/* Video Iframe */
+.swift-tips-card__video-iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  display: none;
+}
+
+/* Hover Effects */
+.swift-tips-card__video-container:hover .swift-tips-card__thumbnail-img {
+  transform: scale(1.05);
+}
+
+/* Video Playing State */
+.swift-tips-card__video-container.playing .swift-tips-card__video-thumbnail {
+  display: none;
+}
+
+.swift-tips-card__video-container.playing .swift-tips-card__video-iframe {
+  display: block;
+}
+
 .swift-tips-card__nutrition-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #E65103, #BF4408);
+  background-image: url('../../assets/tabela-nutri.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-}
-
-.swift-tips-card__video-placeholder::after {
-  content: '▶';
-  font-size: 48px;
-  color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.swift-tips-card__nutrition-placeholder::after {
-  content: '📊';
-  font-size: 48px;
 }
 
 /* Card Content */

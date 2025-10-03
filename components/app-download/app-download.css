@@ -75,26 +75,28 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  min-height: 600px;
 }
 
 /* Text Content */
 .swift-app-download__text-content {
-  max-width: 600px;
+  max-width: 620px;
 }
 
 .swift-app-download__title {
   font-family: 'Passion One', Impact, system-ui;
-  font-size: clamp(36px, calc(20px + 4vw), 64px);
+  font-size: clamp(100px, calc(20px + 4vw), 64px);
   font-weight: 700;
   line-height: 1.1;
   color: #fff;
   margin: 0 0 20px 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .swift-app-download__description {
   font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 1.5;
   color: #fff;
@@ -118,7 +120,7 @@
 
 .swift-app-download__feature {
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.4;
   color: #fff;
@@ -146,55 +148,56 @@
 /* Download Buttons */
 .swift-app-download__buttons {
   display: flex;
-  gap: 20px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 .swift-app-download__button {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
   text-decoration: none;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  min-width: 180px;
+  min-width: auto;
 }
 
 .swift-app-download__button:hover {
-  background: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px) scale(1.05);
 }
 
 .swift-app-download__button-img {
-  width: 32px;
-  height: 32px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
 .swift-app-download__button-text {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--dl-color-theme-neutral-dark, #191818);
+  display: none;
 }
 
 /* Phone Image */
 .swift-app-download__phone {
-  position: relative;
-  flex-shrink: 0;
+  position: absolute;
+  right: -180px;
+  bottom: -470px;
+  width: 800px;
+  height: 1120px;
+  z-index: 1;
+  pointer-events: none;
+  background-image: url('./../../assets/celphone1471-g6jj-700w.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  animation: swift-phone-float 4s ease-in-out infinite;
+  transform-origin: center bottom;
 }
 
 .swift-app-download__phone-img {
-  width: auto;
-  height: 400px;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-  animation: swift-phone-float 4s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes swift-phone-float {
@@ -216,18 +219,19 @@
   }
 
   .swift-app-download__phone {
+    position: relative;
     order: 1;
-    justify-self: center;
-  }
-
-  .swift-app-download__phone-img {
-    height: 320px;
+    width: 100%;
+    height: 400px;
+    right: auto;
+    bottom: auto;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .swift-app-download {
-    padding: 60px 0;
+    padding: 50px 0;
   }
 
   .swift-app-download__container {
@@ -235,65 +239,75 @@
   }
 
   .swift-app-download__content {
-    gap: 32px;
+    gap: 28px;
+    min-height: auto;
+  }
+
+  .swift-app-download__title {
+    font-size: clamp(40px, 10vw, 56px);
+    margin-bottom: 18px;
+    white-space: normal;
+    text-align: center;
   }
 
   .swift-app-download__description {
-    font-size: 16px;
-    margin-bottom: 24px;
+    font-size: 18px;
+    margin-bottom: 22px;
+    text-align: center;
   }
 
   .swift-app-download__features {
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .swift-app-download__feature {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .swift-app-download__buttons {
     justify-content: center;
-    gap: 16px;
+    gap: 28px;
   }
 
   .swift-app-download__button {
-    min-width: 160px;
-    padding: 14px 20px;
+    min-width: auto;
+    padding: 0;
   }
 
-  .swift-app-download__button-text {
-    font-size: 15px;
+  .swift-app-download__button-img {
+    width: 60px;
+    height: 60px;
   }
 
-  .swift-app-download__phone-img {
-    height: 280px;
+  .swift-app-download__phone {
+    height: 320px;
   }
 
   /* Adjust circles for mobile */
   .swift-app-download__circle--1 {
-    width: 120px;
-    height: 120px;
-  }
-
-  .swift-app-download__circle--2 {
     width: 100px;
     height: 100px;
   }
 
-  .swift-app-download__circle--3 {
+  .swift-app-download__circle--2 {
     width: 80px;
     height: 80px;
   }
 
+  .swift-app-download__circle--3 {
+    width: 60px;
+    height: 60px;
+  }
+
   .swift-app-download__circle--4 {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
   }
 }
 
 @media (max-width: 480px) {
   .swift-app-download {
-    padding: 48px 0;
+    padding: 40px 0;
   }
 
   .swift-app-download__container {
@@ -301,36 +315,123 @@
   }
 
   .swift-app-download__content {
-    gap: 24px;
+    gap: 20px;
+    min-height: auto;
+  }
+
+  .swift-app-download__title {
+    font-size: clamp(32px, 8vw, 48px);
+    margin-bottom: 16px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .swift-app-download__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .swift-app-download__features {
+    margin-bottom: 24px;
   }
 
   .swift-app-download__features-list {
-    gap: 10px;
+    gap: 8px;
   }
 
   .swift-app-download__feature {
     font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .swift-app-download__feature::before {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
   }
 
   .swift-app-download__buttons {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
   }
 
   .swift-app-download__button {
-    width: 100%;
-    max-width: 280px;
+    width: auto;
+    max-width: none;
     justify-content: center;
   }
 
-  .swift-app-download__phone-img {
-    height: 240px;
+  .swift-app-download__button-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .swift-app-download__phone {
+    height: 250px;
   }
 
   /* Hide some circles on very small screens */
   .swift-app-download__circle--3,
   .swift-app-download__circle--4 {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .swift-app-download {
+    padding: 32px 0;
+  }
+
+  .swift-app-download__container {
+    padding: 0 12px;
+  }
+
+  .swift-app-download__content {
+    gap: 16px;
+  }
+
+  .swift-app-download__title {
+    font-size: clamp(28px, 7vw, 40px);
+    margin-bottom: 12px;
+  }
+
+  .swift-app-download__description {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .swift-app-download__features {
+    margin-bottom: 20px;
+  }
+
+  .swift-app-download__feature {
+    font-size: 13px;
+    padding-left: 18px;
+  }
+
+  .swift-app-download__feature::before {
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+
+  .swift-app-download__buttons {
+    gap: 12px;
+  }
+
+  .swift-app-download__button-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .swift-app-download__phone {
+    height: 200px;
+  }
+
+  /* Hide more circles on very small screens */
+  .swift-app-download__circle--2 {
     display: none;
   }
 }

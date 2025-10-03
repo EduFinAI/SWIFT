@@ -1,0 +1,165 @@
+<!-- Cart Dropdown Component -->
+<div class="swift-cart-dropdown" id="swift-cart-dropdown">
+  <!-- Overlay -->
+  <div class="swift-cart-dropdown__overlay"></div>
+  
+  <!-- Dropdown Content -->
+  <div class="swift-cart-dropdown__content">
+    <!-- Not Logged In State -->
+    <div class="swift-cart-dropdown__guest" id="swift-cart-dropdown__guest">
+      <div class="swift-cart-dropdown__header">
+        <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+        <div class="swift-cart-dropdown__header-actions">
+          <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+            <span class="swift-cart-dropdown__back-text">Voltar</span>
+          </button>
+          <button class="swift-cart-dropdown__close-btn" data-action="close" aria-label="Fechar carrinho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Area -->
+      <div class="swift-cart-dropdown__products-area">
+        <!-- Empty State -->
+        <div class="swift-cart-dropdown__empty" id="swift-cart-dropdown__empty-guest">
+          <div class="swift-cart-dropdown__empty-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <p class="swift-cart-dropdown__empty-text">Seu carrinho está vazio</p>
+        </div>
+
+        <!-- Products List -->
+        <div class="swift-cart-dropdown__items-list" id="swift-cart-dropdown__items-list-guest" style="display: none;">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="swift-cart-dropdown__summary" id="swift-cart-dropdown__summary-guest" style="display: none;">
+          <div class="swift-cart-dropdown__total">
+            <span class="swift-cart-dropdown__total-label">Total:</span>
+            <span class="swift-cart-dropdown__total-value" id="swift-cart-dropdown__total-value-guest">R$ 0,00</span>
+          </div>
+          <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+            <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+          </button>
+          <button class="swift-cart-dropdown__checkout-btn" data-action="checkout">
+            <span class="swift-cart-dropdown__checkout-text">Finalizar Compra</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Login Prompt at Bottom -->
+      <div class="swift-cart-dropdown__login-prompt">
+        <div class="swift-cart-dropdown__login-content">
+          <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-cart-dropdown__logo">
+          <p class="swift-cart-dropdown__login-text">Entre para continuar sua compra!</p>
+          <button class="swift-cart-dropdown__login-btn" data-action="login">
+            <span class="swift-cart-dropdown__login-btn-text">Entrar</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logged In State -->
+    <div class="swift-cart-dropdown__logged" id="swift-cart-dropdown__logged" style="display: none;">
+      <div class="swift-cart-dropdown__header">
+        <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+        <div class="swift-cart-dropdown__header-actions">
+          <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+            <span class="swift-cart-dropdown__back-text">Voltar</span>
+          </button>
+          <button class="swift-cart-dropdown__close-btn" data-action="close" aria-label="Fechar carrinho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Area -->
+      <div class="swift-cart-dropdown__products-area">
+        <!-- Empty State -->
+        <div class="swift-cart-dropdown__empty" id="swift-cart-dropdown__empty-logged">
+          <div class="swift-cart-dropdown__empty-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <p class="swift-cart-dropdown__empty-text">Seu carrinho está vazio</p>
+        </div>
+
+        <!-- Products List -->
+        <div class="swift-cart-dropdown__items-list" id="swift-cart-dropdown__items-list-logged" style="display: none;">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="swift-cart-dropdown__summary" id="swift-cart-dropdown__summary-logged" style="display: none;">
+          <div class="swift-cart-dropdown__total">
+            <span class="swift-cart-dropdown__total-label">Total:</span>
+            <span class="swift-cart-dropdown__total-value" id="swift-cart-dropdown__total-value-logged">R$ 0,00</span>
+          </div>
+          <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+            <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+          </button>
+          <button class="swift-cart-dropdown__checkout-btn" data-action="checkout">
+            <span class="swift-cart-dropdown__checkout-text">Finalizar Compra</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="swift-cart-dropdown__footer">
+        <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-cart-dropdown__footer-logo">
+      </div>
+    </div>
+
+    <!-- Cart with Items (Future Implementation) -->
+    <div class="swift-cart-dropdown__items" id="swift-cart-dropdown__items" style="display: none;">
+      <div class="swift-cart-dropdown__header">
+        <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+        <div class="swift-cart-dropdown__header-actions">
+          <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+            <span class="swift-cart-dropdown__back-text">Voltar</span>
+          </button>
+          <button class="swift-cart-dropdown__close-btn" data-action="close" aria-label="Fechar carrinho">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Area -->
+      <div class="swift-cart-dropdown__products-area">
+        <div class="swift-cart-dropdown__items-list">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+      </div>
+
+      <div class="swift-cart-dropdown__summary">
+        <div class="swift-cart-dropdown__total">
+          <span class="swift-cart-dropdown__total-label">Total:</span>
+          <span class="swift-cart-dropdown__total-value">R$ 0,00</span>
+        </div>
+        <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+          <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+        </button>
+        <button class="swift-cart-dropdown__checkout-btn" data-action="checkout">
+          <span class="swift-cart-dropdown__checkout-text">Finalizar Compra</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

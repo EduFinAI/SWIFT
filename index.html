@@ -20,7 +20,11 @@
   <link rel="stylesheet" href="./style/mixins.css" />
   
   <!-- Component styles -->
+  <link rel="stylesheet" href="./style/components/shared.css" />
   <link rel="stylesheet" href="./components/header/header.css" />
+  <link rel="stylesheet" href="./components/user-dropdown/user-dropdown.css" />
+  <link rel="stylesheet" href="./components/cart-dropdown/cart-dropdown.css" />
+  <link rel="stylesheet" href="./components/modals/login-modal/login-modal.css" />
   <link rel="stylesheet" href="./components/shipping-banner/shipping-banner.css" />
   <link rel="stylesheet" href="./components/hero/hero.css" />
   <link rel="stylesheet" href="./components/featured-products/featured-products.css" />
@@ -31,6 +35,8 @@
   <link rel="stylesheet" href="./components/best-sellers/best-sellers.css" />
   <link rel="stylesheet" href="./components/app-download/app-download.css" />
   <link rel="stylesheet" href="./components/footer/footer.css" />
+  <link rel="stylesheet" href="./components/chatbot/chatbot.css" />
+  <link rel="stylesheet" href="./components/region-modal/region-modal.css" />
   
   <!-- External fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;500;700&family=Noto+Sans:wght@400;700&family=Passion+One:wght@400;700;900&family=STIX+Two+Text:wght@400;600;700&display=swap" />
@@ -49,24 +55,26 @@
       <div class="swift-header__container">
         <!-- Logo -->
         <div class="swift-header__logo">
+      <a href="#top">
             <img
               src="./assets/image11269-6k6r-200h.png"
               alt="Logo da Swift"
             class="swift-header__logo-img"
             />
+      </a>
               </div>
 
         <!-- Navigation Menu -->
         <nav class="swift-header__nav" role="navigation">
           <ul class="swift-nav__list">
-            <li class="swift-nav__item swift-nav__item--active">
-              <a href="#carnes" class="swift-nav__link">Carnes</a>
+            <li class="swift-nav__item">
+              <a href="categories/aves.html" class="swift-nav__link">Aves</a>
             </li>
             <li class="swift-nav__item">
-              <a href="#aves" class="swift-nav__link">Aves</a>
+              <a href="categories/bovinos.html" class="swift-nav__link">Bovinos</a>
             </li>
             <li class="swift-nav__item">
-              <a href="#suinos" class="swift-nav__link">Suínos</a>
+              <a href="categories/suinos.html" class="swift-nav__link">Suínos</a>
             </li>
             <li class="swift-nav__item">
               <a href="#ocasioes" class="swift-nav__link">Ocasiões</a>
@@ -83,22 +91,43 @@
               </a>
               <ul class="swift-nav__dropdown">
                 <li class="swift-nav__dropdown-item">
-                  <a href="#embutidos" class="swift-nav__dropdown-link">Embutidos</a>
+                  <a href="#prontos-para-comer" class="swift-nav__dropdown-link">Prontos para Comer</a>
                 </li>
                 <li class="swift-nav__dropdown-item">
-                  <a href="#temperos" class="swift-nav__dropdown-link">Temperos</a>
+                  <a href="#bovinos" class="swift-nav__dropdown-link">Bovinos</a>
                 </li>
                 <li class="swift-nav__dropdown-item">
-                  <a href="#acompanhamentos" class="swift-nav__dropdown-link">Acompanhamentos</a>
+                  <a href="#aves" class="swift-nav__dropdown-link">Aves</a>
                 </li>
                 <li class="swift-nav__dropdown-item">
-                  <a href="#bebidas" class="swift-nav__dropdown-link">Bebidas</a>
+                  <a href="#peixaria" class="swift-nav__dropdown-link">Peixaria</a>
                 </li>
                 <li class="swift-nav__dropdown-item">
-                  <a href="#utensilios" class="swift-nav__dropdown-link">Utensílios</a>
+                  <a href="#suinos" class="swift-nav__dropdown-link">Suínos</a>
                 </li>
                 <li class="swift-nav__dropdown-item">
-                  <a href="#acessorios" class="swift-nav__dropdown-link">Acessórios</a>
+                  <a href="#churrasco" class="swift-nav__dropdown-link">Churrasco</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#linguicas" class="swift-nav__dropdown-link">Linguiças</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#cortes-especiais" class="swift-nav__dropdown-link">Cortes Especiais</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#frutas-vegetais" class="swift-nav__dropdown-link">Frutas e Vegetais</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#vegetal" class="swift-nav__dropdown-link">100% Vegetal</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#snacks" class="swift-nav__dropdown-link">Snacks</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#mercearia" class="swift-nav__dropdown-link">Mercearia</a>
+                </li>
+                <li class="swift-nav__dropdown-item">
+                  <a href="#padaria" class="swift-nav__dropdown-link">Padaria</a>
                 </li>
               </ul>
             </li>
@@ -125,24 +154,232 @@
 
         <!-- User Actions -->
         <div class="swift-header__actions">
-          <button class="swift-header__user-btn" aria-label="Conta do usuário">
+          <!-- User Dropdown -->
+          <div class="swift-header__user-container">
+            <button class="swift-header__user-btn" aria-label="Conta do usuário" title="Fazer login ou cadastro">
               <img
                 src="./assets/user5673-doah.svg"
-              alt=""
-              aria-hidden="true"
-              class="swift-header__user-icon"
+                alt=""
+                aria-hidden="true"
+                class="swift-header__user-icon"
               />
-          </button>
-          
-          <button class="swift-header__cart-btn" aria-label="Abrir carrinho de compras">
-                <img
-                src="./assets/carrinho.png"
-              alt=""
-              aria-hidden="true"
-              class="swift-header__cart-icon"
-              />
-              </button>
+            </button>
+            <!-- User Dropdown Component -->
+            <div class="swift-user-dropdown" id="swift-user-dropdown">
+              <!-- Dropdown Content -->
+              <div class="swift-user-dropdown__content">
+                <!-- Not Logged In State -->
+                <div class="swift-user-dropdown__guest" id="swift-user-dropdown__guest">
+                  <div class="swift-user-dropdown__header">
+                    <h3 class="swift-user-dropdown__title">Fazer login ou cadastro</h3>
+                    <p class="swift-user-dropdown__subtitle">Entre para continuar sua compra</p>
+                  </div>
+                  
+                  <div class="swift-user-dropdown__actions">
+                    <button class="swift-user-dropdown__btn swift-user-dropdown__btn--login" data-action="login">
+                      <span class="swift-user-dropdown__btn-text">Fazer Login</span>
+                    </button>
+                    <button class="swift-user-dropdown__btn swift-user-dropdown__btn--register" data-action="register">
+                      <span class="swift-user-dropdown__btn-text">Cadastrar</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Logged In State -->
+                <div class="swift-user-dropdown__logged" id="swift-user-dropdown__logged" style="display: none;">
+                  <div class="swift-user-dropdown__header">
+                    <div class="swift-user-dropdown__user-info">
+                      <div class="swift-user-dropdown__avatar">
+                        <img src="./assets/user5673-doah.svg" alt="Avatar" class="swift-user-dropdown__avatar-img">
+                      </div>
+                      <div class="swift-user-dropdown__user-details">
+                        <h3 class="swift-user-dropdown__user-name">Nome do Usuário</h3>
+                        <p class="swift-user-dropdown__user-email">usuario@email.com</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <nav class="swift-user-dropdown__nav">
+                    <ul class="swift-user-dropdown__nav-list">
+                      <li class="swift-user-dropdown__nav-item">
+                        <a href="#perfil" class="swift-user-dropdown__nav-link">
+                          <img src="./assets/user5673-doah.svg" alt="" class="swift-user-dropdown__nav-icon">
+                          <span class="swift-user-dropdown__nav-text">Meu Perfil</span>
+                        </a>
+                      </li>
+                      <li class="swift-user-dropdown__nav-item">
+                        <a href="#pedidos" class="swift-user-dropdown__nav-link">
+                          <img src="./assets/icone-carrinho.png" alt="" class="swift-user-dropdown__nav-icon">
+                          <span class="swift-user-dropdown__nav-text">Meus Pedidos</span>
+                        </a>
+                      </li>
+                      <li class="swift-user-dropdown__nav-item">
+                        <a href="#seguranca" class="swift-user-dropdown__nav-link">
+                          <img src="./assets/icone-busca.png" alt="" class="swift-user-dropdown__nav-icon">
+                          <span class="swift-user-dropdown__nav-text">Segurança</span>
+                        </a>
+                      </li>
+                      <li class="swift-user-dropdown__nav-item">
+                        <a href="#pagamentos" class="swift-user-dropdown__nav-link">
+                          <img src="./assets/payment_icon.png" alt="" class="swift-user-dropdown__nav-icon">
+                          <span class="swift-user-dropdown__nav-text">Formas de Pagamento</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+
+                  <div class="swift-user-dropdown__footer">
+                    <button class="swift-user-dropdown__btn swift-user-dropdown__btn--logout" data-action="logout">
+                      <span class="swift-user-dropdown__btn-text">Sair</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          
+          <!-- Cart Dropdown -->
+          <div class="swift-header__cart-container">
+            <button class="swift-header__cart-btn" aria-label="Abrir carrinho de compras">
+              <img
+                src="./assets/carrinho.png"
+                alt=""
+                aria-hidden="true"
+                class="swift-header__cart-icon"
+              />
+              <span class="swift-header__cart-count" id="swift-header__cart-count" style="display: none;">0</span>
+            </button>
+            <!-- Cart Dropdown Component -->
+            <div class="swift-cart-dropdown" id="swift-cart-dropdown">
+              <!-- Dropdown Content -->
+              <div class="swift-cart-dropdown__content">
+                <!-- Not Logged In State -->
+                <div class="swift-cart-dropdown__guest" id="swift-cart-dropdown__guest">
+                  <div class="swift-cart-dropdown__header">
+                    <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+                    <div class="swift-cart-dropdown__header-actions">
+                      <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+                        <span class="swift-cart-dropdown__back-text">Voltar</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="swift-cart-dropdown__empty" id="swift-cart-dropdown__empty-guest">
+                    <div class="swift-cart-dropdown__empty-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                      </svg>
+                    </div>
+                    <p class="swift-cart-dropdown__empty-text">Seu carrinho está vazio</p>
+                  </div>
+
+                  <!-- Products List -->
+                  <div class="swift-cart-dropdown__items-list" id="swift-cart-dropdown__items-list-guest" style="display: none;">
+                    <!-- Cart items will be dynamically inserted here -->
+                  </div>
+
+                  <!-- Cart Summary -->
+                  <div class="swift-cart-dropdown__summary" id="swift-cart-dropdown__summary-guest" style="display: none;">
+                    <div class="swift-cart-dropdown__total">
+                      <span class="swift-cart-dropdown__total-label">Total:</span>
+                      <span class="swift-cart-dropdown__total-value" id="swift-cart-dropdown__total-value-guest">R$ 0,00</span>
+                    </div>
+                    <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+                      <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+                    </button>
+                  </div>
+
+                  <div class="swift-cart-dropdown__login-prompt">
+                    <div class="swift-cart-dropdown__login-content">
+                      <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-cart-dropdown__logo">
+                      <p class="swift-cart-dropdown__login-text">Entre para continuar sua compra!</p>
+                      <button class="swift-cart-dropdown__login-btn" data-action="login">
+                        <span class="swift-cart-dropdown__login-btn-text">Entrar</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Logged In State -->
+                <div class="swift-cart-dropdown__logged" id="swift-cart-dropdown__logged" style="display: none;">
+                  <div class="swift-cart-dropdown__header">
+                    <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+                    <div class="swift-cart-dropdown__header-actions">
+                      <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+                        <span class="swift-cart-dropdown__back-text">Voltar</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="swift-cart-dropdown__empty" id="swift-cart-dropdown__empty-logged">
+                    <div class="swift-cart-dropdown__empty-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                      </svg>
+                    </div>
+                    <p class="swift-cart-dropdown__empty-text">Seu carrinho está vazio</p>
+                  </div>
+
+                  <!-- Products List -->
+                  <div class="swift-cart-dropdown__items-list" id="swift-cart-dropdown__items-list-logged" style="display: none;">
+                    <!-- Cart items will be dynamically inserted here -->
+                  </div>
+
+                  <!-- Cart Summary -->
+                  <div class="swift-cart-dropdown__summary" id="swift-cart-dropdown__summary-logged" style="display: none;">
+                    <div class="swift-cart-dropdown__total">
+                      <span class="swift-cart-dropdown__total-label">Total:</span>
+                      <span class="swift-cart-dropdown__total-value" id="swift-cart-dropdown__total-value-logged">R$ 0,00</span>
+                    </div>
+                    <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+                      <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+                    </button>
+                    <button class="swift-cart-dropdown__checkout-btn" data-action="checkout">
+                      <span class="swift-cart-dropdown__checkout-text">Finalizar Compra</span>
+                    </button>
+                  </div>
+
+                  <div class="swift-cart-dropdown__footer">
+                    <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-cart-dropdown__footer-logo">
+                  </div>
+                </div>
+
+                <!-- Cart with Items (Future Implementation) -->
+                <div class="swift-cart-dropdown__items" id="swift-cart-dropdown__items" style="display: none;">
+                  <div class="swift-cart-dropdown__header">
+                    <h3 class="swift-cart-dropdown__title">Meu Carrinho</h3>
+                    <div class="swift-cart-dropdown__header-actions">
+                      <button class="swift-cart-dropdown__back-btn" data-action="back" aria-label="Voltar">
+                        <span class="swift-cart-dropdown__back-text">Voltar</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="swift-cart-dropdown__items-list">
+                    <!-- Cart items will be dynamically inserted here -->
+                  </div>
+
+                  <div class="swift-cart-dropdown__summary">
+                    <div class="swift-cart-dropdown__total">
+                      <span class="swift-cart-dropdown__total-label">Total:</span>
+                      <span class="swift-cart-dropdown__total-value">R$ 0,00</span>
+                    </div>
+                    <button class="swift-cart-dropdown__clear-btn" data-action="clear-cart" aria-label="Limpar carrinho">
+                      <span class="swift-cart-dropdown__clear-text">Limpar Carrinho</span>
+                    </button>
+                    <button class="swift-cart-dropdown__checkout-btn" data-action="checkout">
+                      <span class="swift-cart-dropdown__checkout-text">Finalizar Compra</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
           </div>
     </header>
 
@@ -150,16 +387,29 @@
     <div class="swift-shipping-banner">
       <div class="swift-shipping-banner__container">
         <div class="swift-shipping-banner__content">
+          <!-- Frete Section -->
+          <div class="swift-shipping-banner__section">
             <img
               src="./assets/truck8139-m5j.svg"
-            alt=""
-            aria-hidden="true"
-            class="swift-shipping-banner__icon"
+              alt=""
+              aria-hidden="true"
+              class="swift-shipping-banner__icon"
             />
-          <span class="swift-shipping-banner__text">
-            Frete grátis a partir de R$ 299,00 em São Paulo com entrega agendada e entrega em 1 dia útil
-          </span>
+            <span class="swift-shipping-banner__text">
+              Frete grátis a partir de R$ 299,00 em São Paulo com entrega agendada e em 1 dia útil.
+            </span>
           </div>
+          
+          <!-- Region Section -->
+          <div class="swift-shipping-banner__section">
+            <button class="swift-shipping-banner__region-link" id="swift-region-selector">
+              <span class="swift-shipping-banner__region-text">Confira sua região</span>
+              <svg class="swift-shipping-banner__region-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6,9 12,15 18,9"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -167,76 +417,211 @@
     <main class="swift-main" role="main">
       <!-- Hero Section Component -->
       <section class="swift-hero">
-        <div class="swift-hero__container">
-          <!-- Background Image -->
-          <div class="swift-hero__background">
-                    <img
-                      src="./assets/fundo1i443-99u-1000h.png"
-              alt=""
-              aria-hidden="true"
-              class="swift-hero__bg-img"
-                    />
-                  </div>
-
-          <!-- Content -->
-          <div class="swift-hero__content">
-            <!-- Main Content -->
-            <div class="swift-hero__main">
-              <h1 class="swift-hero__title">Churrasco é na</h1>
-              <img
-                src="./assets/unnamed214135-zlqw-200h.png"
-                alt="Swift"
-                class="swift-hero__logo"
-              />
-              
-              <p class="swift-hero__description">
-                Descubra o sabor autêntico das melhores carnes selecionadas
-                      para sua mesa. Entrega rápida e qualidade garantida.
-              </p>
-
-              <!-- Delivery Info -->
-              <div class="swift-hero__delivery-info">
-                    <img
-                      src="./assets/truck3145-33ms.svg"
+        <div class="swift-hero__carousel">
+          <!-- Slide 1: Churrasco -->
+          <div class="swift-hero__slide active" data-slide="0">
+            <div class="swift-hero__container">
+              <!-- Background Image -->
+              <div class="swift-hero__background">
+                <img
+                  src="./assets/fundo1i443-99u-1000h.png"
                   alt=""
                   aria-hidden="true"
-                  class="swift-hero__truck-icon"
+                  class="swift-hero__bg-img"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="swift-hero__content">
+                <!-- Main Content -->
+                <div class="swift-hero__main">
+                  <h1 class="swift-hero__title">Churrasco é na</h1>
+                  <img
+                    src="./assets/unnamed214135-zlqw-200h.png"
+                    alt="Swift"
+                    class="swift-hero__logo"
+                  />
+                  
+                  <p class="swift-hero__description">
+                    Descubra o sabor autêntico das melhores carnes selecionadas
+                    para sua mesa. Entrega rápida e qualidade garantida.
+                  </p>
+
+                  <!-- Delivery Info -->
+                  <div class="swift-hero__delivery-info">
+                    <img
+                      src="./assets/truck3145-33ms.svg"
+                      alt=""
+                      aria-hidden="true"
+                      class="swift-hero__truck-icon"
                     />
-                <span class="swift-hero__delivery-text">
-                  <strong>Entrega em até</strong> 2 horas para São Paulo
+                    <span class="swift-hero__delivery-text">
+                      <strong>Entrega em até</strong> 2 horas para São Paulo
                     </span>
                   </div>
 
-                  <!-- CEP Form -->
-              <form class="swift-hero__cep-form" role="search" aria-label="Consulta de CEP" action="#" method="get">
-                <div class="swift-cep-form__container">
-                  <input 
-                    type="text" 
-                    class="swift-cep-form__input" 
-                    name="cep" 
-                    placeholder="Digite seu CEP" 
-                    inputmode="numeric" 
-                    pattern="\d{5}-?\d{3}" 
-                    aria-label="CEP" 
-                  />
-                  <div class="swift-cep-form__icon">
-                      <img
-                        src="./assets/local212747-bexd-200h.png"
-                        alt=""
-                      aria-hidden="true"
-                      class="swift-cep-form__location-icon"
-                      />
-                  </div>
-                    </div>
-                  </form>
-
-              <!-- CTA Button -->
-              <button class="swift-hero__cta-btn">
-                <span class="swift-hero__cta-text">COMPRAR AGORA</span>
-                  </button>
-                </div>
-                      </div>
+                  <!-- CEP Form and CTA Button Container -->
+                  <div class="swift-hero__form-container">
+                    <form class="swift-hero__cep-form" role="search" aria-label="Consulta de CEP" action="#" method="get">
+                      <div class="swift-cep-form__container">
+                        <input 
+                          type="text" 
+                          class="swift-cep-form__input" 
+                          name="cep" 
+                          placeholder="Digite seu CEP" 
+                          inputmode="numeric" 
+                          pattern="\d{5}-?\d{3}" 
+                          aria-label="CEP" 
+                        />
+                        <div class="swift-cep-form__icon">
+                          <img
+                            src="./assets/local212747-bexd-200h.png"
+                            alt=""
+                            aria-hidden="true"
+                            class="swift-cep-form__location-icon"
+                          />
                         </div>
+                      </div>
+                    </form>
+
+                    <!-- CTA Button -->
+                    <button class="swift-hero__cta-btn">
+                      <span class="swift-hero__cta-text">COMPRAR AGORA</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Slide 2: Swift Bem-Estar - Kit Proteínas Premium -->
+          <div class="swift-hero__slide" data-slide="1">
+            <div class="swift-hero__container">
+              <!-- Background Image -->
+              <div class="swift-hero__background">
+                <img
+                  src="./assets/saudavel.jpg"
+                  alt=""
+                  aria-hidden="true"
+                  class="swift-hero__bg-img"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="swift-hero__content">
+                <!-- Main Content -->
+                <div class="swift-hero__main">
+                  <div class="hero-wellness">
+                    <!-- Pílula/Selo no topo esquerdo -->
+                    <div class="hero-wellness__pill">
+                      <span class="hero-wellness__pill-text">Swift Bem-Estar — Kit Proteínas Premium</span>
+                    </div>
+
+                    <!-- Grid Layout -->
+                    <div class="hero-wellness__grid">
+                      <!-- Coluna 1: Conteúdo principal -->
+                      <div class="hero-wellness__content">
+                        <!-- Título forte -->
+                        <h1 class="hero-wellness__heading">Alimentação Saudável<br>ao Seu Alcance</h1>
+                        
+                        <!-- Subtítulo -->
+                        <p class="hero-wellness__desc">
+                          Seleção especial de carnes magras, frangos orgânicos e proteínas<br>de alta qualidade para quem busca saúde e sabor.
+                        </p>
+
+                        <!-- Cards de benefícios com imagens -->
+                        <div class="hero-wellness__benefits">
+                        <div class="hero-wellness__benefit-item">
+                          <div class="hero-wellness__benefit-media">
+                            <div class="hero-wellness__benefit-icon">
+                              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="var(--swift-primary-orange)"/>
+                                <path d="M12 6L12.5 8.5L15 9L12.5 9.5L12 12L11.5 9.5L9 9L11.5 8.5L12 6Z" fill="var(--swift-text-white)"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="hero-wellness__benefit-content">
+                            <h3 class="hero-wellness__benefit-title">Proteína de Qualidade</h3>
+                            <p class="hero-wellness__benefit-desc">cortes selecionados Swift</p>
+                          </div>
+                        </div>
+
+                        <div class="hero-wellness__benefit-item">
+                          <div class="hero-wellness__benefit-media">
+                            <div class="hero-wellness__benefit-icon">
+                              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" fill="var(--swift-primary-orange)"/>
+                                <path d="M12 7.5C12 5.57 10.43 4 8.5 4S5 5.57 5 7.5C5 9.43 6.57 11 8.5 11S12 9.43 12 7.5Z" fill="var(--swift-text-white)"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="hero-wellness__benefit-content">
+                            <h3 class="hero-wellness__benefit-title">Mais Saúde</h3>
+                            <p class="hero-wellness__benefit-desc">baixo teor de gordura</p>
+                          </div>
+                        </div>
+
+                        <div class="hero-wellness__benefit-item">
+                          <div class="hero-wellness__benefit-media">
+                            <div class="hero-wellness__benefit-icon">
+                              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z" fill="var(--swift-primary-orange)"/>
+                                <path d="M12 4L13.5 8L17 8.5L13.5 9L12 13L10.5 9L7 8.5L10.5 8L12 4Z" fill="var(--swift-text-white)"/>
+                                <circle cx="12" cy="12" r="2" fill="var(--swift-text-white)"/>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="hero-wellness__benefit-content">
+                            <h3 class="hero-wellness__benefit-title">Premium</h3>
+                            <p class="hero-wellness__benefit-desc">seleção especial</p>
+                          </div>
+                        </div>
+
+                          <!-- CTA primário -->
+                          <button class="hero-wellness__cta-primary">
+                            <span class="hero-wellness__cta-text">Explorar linha</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Coluna 2: Box de oferta -->
+                      <div class="hero-wellness__offer-box">
+                        <div class="hero-wellness__offer-content">
+                          <h2 class="hero-wellness__offer-title">Tudo isso por:</h2>
+                          <div class="hero-wellness__offer-price">R$ 97,50</div>
+                          <button class="hero-wellness__cta-secondary">
+                            <span class="hero-wellness__cta-text">VEJA MAIS</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <div class="swift-hero__controls">
+          <button class="swift-hero__control swift-hero__control--prev" aria-label="Slide anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="swift-hero__control swift-hero__control--next" aria-label="Próximo slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="swift-hero__indicators">
+          <button class="swift-hero__indicator active" data-slide="0" aria-label="Ir para slide 1"></button>
+          <button class="swift-hero__indicator" data-slide="1" aria-label="Ir para slide 2"></button>
+        </div>
       </section>
 
       <!-- Featured Products Component -->
@@ -266,9 +651,14 @@
                         </div>
                         </div>
               <div class="swift-product-card__actions">
-                <button class="swift-product-card__add-btn">
+                <button class="swift-product-card__add-btn" data-product-id="picanha-premium">
                   <span class="swift-product-card__add-text">Adicionar</span>
                 </button>
+                <div class="swift-product-card__quantity-controls" data-product-id="picanha-premium">
+                  <button class="swift-product-card__quantity-btn" data-action="decrease">-</button>
+                  <span class="swift-product-card__quantity-display">1</span>
+                  <button class="swift-product-card__quantity-btn" data-action="increase">+</button>
+                </div>
                       </div>
             </article>
 
@@ -289,9 +679,14 @@
                       </div>
                         </div>
               <div class="swift-product-card__actions">
-                <button class="swift-product-card__add-btn">
+                <button class="swift-product-card__add-btn" data-product-id="ancho-angus">
                   <span class="swift-product-card__add-text">Adicionar</span>
                 </button>
+                <div class="swift-product-card__quantity-controls" data-product-id="ancho-angus">
+                  <button class="swift-product-card__quantity-btn" data-action="decrease">-</button>
+                  <span class="swift-product-card__quantity-display">1</span>
+                  <button class="swift-product-card__quantity-btn" data-action="increase">+</button>
+                </div>
                         </div>
             </article>
 
@@ -312,9 +707,14 @@
                         </div>
                       </div>
               <div class="swift-product-card__actions">
-                <button class="swift-product-card__add-btn">
+                <button class="swift-product-card__add-btn" data-product-id="file-frango">
                   <span class="swift-product-card__add-text">Adicionar</span>
                 </button>
+                <div class="swift-product-card__quantity-controls" data-product-id="file-frango">
+                  <button class="swift-product-card__quantity-btn" data-action="decrease">-</button>
+                  <span class="swift-product-card__quantity-display">1</span>
+                  <button class="swift-product-card__quantity-btn" data-action="increase">+</button>
+                </div>
                     </div>
             </article>
 
@@ -335,9 +735,14 @@
                         </div>
                         </div>
               <div class="swift-product-card__actions">
-                <button class="swift-product-card__add-btn">
+                <button class="swift-product-card__add-btn" data-product-id="costela-suina">
                   <span class="swift-product-card__add-text">Adicionar</span>
                 </button>
+                <div class="swift-product-card__quantity-controls" data-product-id="costela-suina">
+                  <button class="swift-product-card__quantity-btn" data-action="decrease">-</button>
+                  <span class="swift-product-card__quantity-display">1</span>
+                  <button class="swift-product-card__quantity-btn" data-action="increase">+</button>
+                </div>
                       </div>
             </article>
                         </div>
@@ -491,8 +896,20 @@
             <!-- Video Tips Card -->
             <article class="swift-tips-card swift-tips-card--video">
               <div class="swift-tips-card__image">
-                <div class="swift-tips-card__video-placeholder"></div>
+                <div class="swift-tips-card__video-container" id="video-container">
+                  <!-- Thumbnail do YouTube -->
+                  <div class="swift-tips-card__video-thumbnail" id="video-thumbnail">
+                    <img src="https://img.youtube.com/vi/nK1RZQeY-vE/maxresdefault.jpg" alt="Vídeo de preparo de carne" class="swift-tips-card__thumbnail-img">
                   </div>
+                  <!-- Iframe do YouTube (inicialmente oculto) -->
+                  <iframe class="swift-tips-card__video-iframe" id="video-iframe" 
+                          src="" 
+                          frameborder="0" 
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                          allowfullscreen>
+                  </iframe>
+                </div>
+              </div>
               
               <div class="swift-tips-card__content">
                 <h3 class="swift-tips-card__title">Vídeos de Preparo</h3>
@@ -607,7 +1024,7 @@
           <!-- Background Image -->
           <div class="swift-smart-cart__background">
                   <img
-                    src="./assets/imagedesktopweb11965-9zx-1000h.png"
+                    src="./assets/bg-car-inteligente.png"
               alt=""
               aria-hidden="true"
               class="swift-smart-cart__bg-img"
@@ -862,9 +1279,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="picanha-premium-bs">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="picanha-premium-bs">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
 
@@ -885,9 +1307,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="ancho-angus-bs">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="ancho-angus-bs">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
 
@@ -908,9 +1335,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="costela-suina-bs">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="costela-suina-bs">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
 
@@ -931,9 +1363,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="file-frango-bs">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="file-frango-bs">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
 
@@ -954,9 +1391,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="picanha-premium-bs-2">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="picanha-premium-bs-2">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
 
@@ -976,9 +1418,14 @@
                     </div>
                     </div>
                   <div class="swift-bestseller-card__actions">
-                    <button class="swift-bestseller-card__add-btn">
+                    <button class="swift-bestseller-card__add-btn" data-product-id="ancho-angus-bs-2">
                       <span class="swift-bestseller-card__add-text">Adicionar</span>
                     </button>
+                    <div class="swift-bestseller-card__quantity-controls" data-product-id="ancho-angus-bs-2">
+                      <button class="swift-bestseller-card__quantity-btn" data-action="decrease">-</button>
+                      <span class="swift-bestseller-card__quantity-display">1</span>
+                      <button class="swift-bestseller-card__quantity-btn" data-action="increase">+</button>
+                    </div>
                   </div>
                 </article>
                 </div>
@@ -1029,12 +1476,10 @@
               <div class="swift-app-download__buttons">
                 <a href="#ios" class="swift-app-download__button swift-app-download__button--ios">
                   <img src="./assets/appstoreiossvg11472-j4zqi-200h.png" alt="Download na App Store" class="swift-app-download__button-img" />
-                  <span class="swift-app-download__button-text">Tem iPhone?</span>
                 </a>
                 
                 <a href="#android" class="swift-app-download__button swift-app-download__button--android">
                   <img src="./assets/googleplaystoremobileappslogofreepng11472-nk-200h.png" alt="Download no Google Play" class="swift-app-download__button-img" />
-                  <span class="swift-app-download__button-text">Tem Android?</span>
                 </a>
                     </div>
                   </div>
@@ -1177,57 +1622,127 @@
         <!-- Payment Methods -->
         <div class="swift-footer__payments">
           <h4 class="swift-footer__payments-title">
-            <span class="swift-footer__payments-main">Formas de Pagamento</span>
-            <span class="swift-footer__payments-sub">(apenas cartões de crédito)</span>
+            <span class="swift-footer__payments-main">Formas de Pagamentos</span>
+            <span class="swift-footer__payments-sub">(apenas cartões de créditos)</span>
           </h4>
           
           <div class="swift-footer__payment-methods">
-            <!-- Visa -->
-            <div class="swift-footer__payment-card swift-footer__payment-card--visa">
-              <img src="./assets/rectanglei146-0f4-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
-              <img src="./assets/polygon9i146-y49p.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path11i146-xuzn.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path13i146-yh6.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/combinedshapei146-4mz.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              </div>
-
-            <!-- Mastercard -->
-            <div class="swift-footer__payment-card swift-footer__payment-card--mastercard">
-              <img src="./assets/rectanglei146-l4kp-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
-              <img src="./assets/path3808i146-sg5e.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path3810i146-4a1e.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path3814i146-7rww.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path3822i146-0u0d.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              </div>
-
-            <!-- Elo -->
-            <div class="swift-footer__payment-card swift-footer__payment-card--elo">
-              <img src="./assets/rectangle1465-a8tdm-200h.png" alt="" aria-hidden="true" class="swift-footer__payment-bg" />
-              <img src="./assets/path1465-n4eb.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path1465-5ui.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/path1465-y836.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              <img src="./assets/shape1465-w3z.svg" alt="" aria-hidden="true" class="swift-footer__payment-logo" />
-              </div>
-
-            <!-- Additional Cards -->
-            <img src="./assets/image61465-z60g-200h.png" alt="Cartão de crédito aceito" class="swift-footer__payment-extra" />
-            <img src="./assets/image71465-jf8v-200h.png" alt="Cartão de crédito aceito" class="swift-footer__payment-extra" />
+            <img src="./assets/pagamento-pix.png" alt="Pix">
+            <img src="./assets/pagamento-logo-elo.png" alt="Elo">
+            <img src="./assets/pagamento-logo-amex.png" alt="American Express">
+            <img src="./assets/pagamento-logo-visa.png" alt="Visa">
+            <img src="./assets/pagamento-logo-mastercard.png" alt="Mastercard">
         </div>
       </div>
 
         <!-- Copyright -->
         <div class="swift-footer__bottom">
           <p class="swift-footer__copyright">
-            © 2025 Swift. Todos os direitos reservados.
+            © 2025 - Swift Corporativo - 02.914.460/0382-04. Todos os direitos reservados.
           </p>
     </div>
       </div>
     </footer>
   </div>
 
+  <!-- Login Modal Component -->
+  <div id="swift-login-modal-container">
+    <!-- Content will be loaded from component -->
+  </div>
+
   <!-- Scripts -->
-  <script src="./swift-config.js"></script>
-  <script src="./swift-app.js"></script>
+  <script src="./js/swift-config.js"></script>
+  <script src="./js/swift-auth.js"></script>
+  <script src="./js/product-cart.js"></script>
+  <script src="./js/component-loader.js"></script>
+  <script src="./components/shared/base-dropdown.js"></script>
   <script src="./components/carousel/carousel.js"></script>
+    <script src="./components/modals/login-modal/login-modal.js"></script>
+    <script src="./components/user-dropdown/user-dropdown.js"></script>
+    <script src="./components/cart-dropdown/cart-dropdown.js"></script>
+  <script src="./js/swift-app.js"></script>
+  <script src="./components/chatbot/chatbot.js"></script>
+  <script src="./components/tips-info/tips-info.js"></script>
+  <script src="./components/region-modal/region-modal.js"></script>
+  
+  <!-- Hero Carousel Script -->
+  <script src="./components/hero/hero-carousel.js"></script>
+
+  <!-- Region Modal Component -->
+  <div class="region-modal" id="regionModal" role="dialog" aria-modal="true" aria-labelledby="regionModalTitle" aria-describedby="regionModalDesc" aria-hidden="true">
+    <div class="region-modal__overlay" aria-hidden="true"></div>
+    
+    <div class="region-modal__dialog">
+      <!-- Close Button -->
+      <button class="region-modal__close" type="button" aria-label="Fechar modal de região">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <!-- Modal Content -->
+      <div class="region-modal__content">
+        <!-- Icon -->
+        <div class="region-modal__icon">
+          <img src="./assets/location-icon.png" alt="Ícone de localização" width="80" height="80">
+        </div>
+
+        <!-- Title -->
+        <h1 class="region-modal__title" id="regionModalTitle">Escolha um endereço</h1>
+
+        <!-- Description -->
+        <div class="region-modal__desc" id="regionModalDesc">
+          <p>A Swift oferece diferentes opções de frete e retirada em loja.</p>
+          <p>Verifique a disponibilidade em sua região.</p>
+        </div>
+
+        <!-- Actions -->
+        <div class="region-modal__actions">
+          <button class="region-modal__btn region-modal__btn--primary" type="button" id="useLocationBtn">
+            Usar minha localização
+          </button>
+          
+          <span class="region-modal__or">ou</span>
+          
+          <div class="region-modal__cep-wrapper">
+            <input 
+              type="text" 
+              class="region-modal__cep" 
+              id="cepInput"
+              placeholder="Digite seu CEP"
+              maxlength="9"
+              autocomplete="postal-code"
+              aria-label="Digite seu CEP"
+            >
+            <button 
+              class="region-modal__cep-submit" 
+              type="button" 
+              id="cepSubmitBtn"
+              aria-label="Enviar CEP"
+              style="display: none;"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 2L14 8L8 14M14 8H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div class="region-modal__warning">
+          <p>
+            <strong>Atenção!</strong> O preço dos produtos SWIFT e o frete do seu pedido podem variar de acordo com a região em que você está
+          </p>
+        </div>
+
+        <!-- Logo -->
+        <div class="region-modal__logo">
+          <img src="./assets/logo-swift-principal.png" alt="Logo Swift" width="140" height="auto">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   </body>
 </html>

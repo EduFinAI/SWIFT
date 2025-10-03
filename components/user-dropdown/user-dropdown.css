@@ -1,0 +1,273 @@
+/* User Dropdown Component Styles - Consistent with Site Design */
+.swift-user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.swift-user-dropdown__content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 320px;
+  background: var(--swift-neutral-white);
+  border-radius: var(--swift-radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  z-index: var(--swift-z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: all 0.2s ease;
+  margin-top: var(--swift-space-2);
+  overflow: hidden;
+}
+
+.swift-user-dropdown.is-open .swift-user-dropdown__content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Header */
+.swift-user-dropdown__header {
+  padding: var(--swift-space-6);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--swift-neutral-white);
+  position: relative;
+}
+
+.swift-user-dropdown__title {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 700;
+  color: var(--swift-text-primary);
+  margin-bottom: var(--swift-space-1);
+}
+
+.swift-user-dropdown__subtitle {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  color: var(--swift-text-secondary);
+  margin: 0;
+}
+
+/* User Info (Logged In) */
+.swift-user-dropdown__user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--swift-space-3);
+}
+
+.swift-user-dropdown__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--swift-radius-md);
+  background: var(--swift-neutral-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.swift-user-dropdown__avatar-img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+
+.swift-user-dropdown__user-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.swift-user-dropdown__user-name {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-base);
+  font-weight: 600;
+  color: var(--swift-text-primary);
+  margin: 0 0 var(--swift-space-1) 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.swift-user-dropdown__user-email {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  color: var(--swift-text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Actions (Guest State) */
+.swift-user-dropdown__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-3);
+  padding: var(--swift-space-6);
+}
+
+/* Navigation (Logged In) */
+.swift-user-dropdown__nav {
+  padding: var(--swift-space-4) 0;
+}
+
+.swift-user-dropdown__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.swift-user-dropdown__nav-item {
+  margin: 0;
+}
+
+.swift-user-dropdown__nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--swift-space-3);
+  padding: 10px 16px;
+  color: var(--swift-text-primary);
+  text-decoration: none;
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  font-weight: 400;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.swift-user-dropdown__nav-link:hover {
+  background-color: #f8f8f8;
+  color: var(--swift-primary-orange);
+}
+
+.swift-user-dropdown__nav-icon {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.swift-user-dropdown__nav-link:hover .swift-user-dropdown__nav-icon {
+  opacity: 1;
+}
+
+.swift-user-dropdown__nav-text {
+  flex: 1;
+}
+
+/* Buttons */
+.swift-user-dropdown__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-3) var(--swift-space-4);
+  border: none;
+  border-radius: var(--swift-radius-md);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.swift-user-dropdown__btn--login {
+  background-color: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+  border: 1px solid var(--swift-primary-orange);
+}
+
+.swift-user-dropdown__btn--login:hover {
+  background-color: var(--swift-primary-orange-dark);
+  border-color: var(--swift-primary-orange-dark);
+  transform: translateY(-1px);
+}
+
+.swift-user-dropdown__btn--register {
+  background: transparent;
+  color: var(--swift-primary-orange);
+  border: 1px solid var(--swift-primary-orange);
+}
+
+.swift-user-dropdown__btn--register:hover {
+  background-color: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+}
+
+.swift-user-dropdown__btn--logout {
+  background: transparent;
+  color: var(--swift-text-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin: var(--swift-space-4) var(--swift-space-6) var(--swift-space-6);
+}
+
+.swift-user-dropdown__btn--logout:hover {
+  background-color: #f8f8f8;
+  color: var(--swift-text-primary);
+}
+
+/* Footer */
+.swift-user-dropdown__footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .swift-user-dropdown__content {
+    width: 280px;
+    right: -20px;
+  }
+  
+  .swift-user-dropdown__header,
+  .swift-user-dropdown__actions {
+    padding: var(--swift-space-4);
+  }
+  
+  .swift-user-dropdown__nav-link {
+    padding: var(--swift-space-3) var(--swift-space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-user-dropdown__content {
+    width: calc(100vw - 32px);
+    right: -16px;
+    left: auto;
+  }
+}
+
+/* Animation for dropdown arrow */
+.swift-user-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid var(--swift-neutral-white);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: calc(var(--swift-z-dropdown) + 1);
+}
+
+.swift-user-dropdown.is-open::before {
+  opacity: 1;
+}
+
+/* Focus states for accessibility */
+.swift-user-dropdown__btn:focus,
+.swift-user-dropdown__nav-link:focus {
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}

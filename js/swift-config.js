@@ -8,10 +8,10 @@ window.SwiftConfig = {
   version: '2.0.0',
   
   // Environment
-  environment: 'production', // 'development' | 'production'
+  environment: 'development', // 'development' | 'production'
   
   // Debug mode
-  debug: false,
+  debug: true,
   
   // API Configuration
   api: {

@@ -1,0 +1,125 @@
+<!-- Chatbot Component -->
+<div class="swift-chatbot" id="swift-chatbot">
+  <!-- Chatbot Toggle Button -->
+  <button class="swift-chatbot__toggle" id="swift-chatbot-toggle" aria-label="Abrir chat de atendimento">
+    <div class="swift-chatbot__toggle-icon">
+      <svg class="swift-chatbot__chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 9H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 13H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <svg class="swift-chatbot__close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="swift-chatbot__notification" id="swift-chatbot-notification" style="display: none;">
+      <span class="swift-chatbot__notification-dot"></span>
+    </div>
+  </button>
+
+  <!-- Chatbot Window -->
+  <div class="swift-chatbot__window" id="swift-chatbot-window">
+    <!-- Chatbot Header -->
+    <div class="swift-chatbot__header">
+      <div class="swift-chatbot__header-info">
+        <div class="swift-chatbot__avatar">
+          <img src="./assets/chatbot-avatar.png" alt="Assistente Swift" class="swift-chatbot__avatar-img">
+        </div>
+        <div class="swift-chatbot__header-text">
+          <h3 class="swift-chatbot__title">Assistente Swift</h3>
+          <span class="swift-chatbot__status">Online</span>
+        </div>
+      </div>
+      <button class="swift-chatbot__minimize" id="swift-chatbot-minimize" aria-label="Minimizar chat">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M4 8H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Chatbot Messages -->
+    <div class="swift-chatbot__messages" id="swift-chatbot-messages">
+      <!-- Welcome Message -->
+      <div class="swift-chatbot__message swift-chatbot__message--bot">
+        <div class="swift-chatbot__message-avatar">
+          <img src="./assets/chatbot-avatar.png" alt="Assistente Swift" class="swift-chatbot__message-avatar-img">
+        </div>
+        <div class="swift-chatbot__message-content">
+          <div class="swift-chatbot__message-bubble">
+            <p class="swift-chatbot__message-text">
+              Olá! Sou o assistente virtual da Swift. Como posso te ajudar hoje?
+            </p>
+          </div>
+          <div class="swift-chatbot__message-time">Agora</div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="swift-chatbot__quick-actions">
+        <button class="swift-chatbot__quick-action" data-action="track-order">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+          Rastrear pedido
+        </button>
+        <button class="swift-chatbot__quick-action" data-action="shipping-info">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13"/>
+            <polygon points="16,8 20,8 23,11 23,16 16,16"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+          Informações de entrega
+        </button>
+        <button class="swift-chatbot__quick-action" data-action="product-help">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          Dúvidas sobre produtos
+        </button>
+        <button class="swift-chatbot__quick-action" data-action="contact-support">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M16 11l2 2-2 2"/>
+            <path d="M12 11l-2 2 2 2"/>
+          </svg>
+          Falar com atendente
+        </button>
+      </div>
+    </div>
+
+    <!-- Chatbot Input -->
+    <div class="swift-chatbot__input-container">
+      <div class="swift-chatbot__input-wrapper">
+        <input 
+          type="text" 
+          class="swift-chatbot__input" 
+          id="swift-chatbot-input"
+          placeholder="Digite sua mensagem..."
+          maxlength="500"
+        >
+        <button class="swift-chatbot__send" id="swift-chatbot-send" aria-label="Enviar mensagem">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M18 2L9 11L2 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 2L12 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 2L9 11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="swift-chatbot__typing-indicator" id="swift-chatbot-typing" style="display: none;">
+        <div class="swift-chatbot__typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="swift-chatbot__typing-text">Assistente está digitando...</span>
+      </div>
+    </div>
+  </div>
+</div>
