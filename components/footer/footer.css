@@ -4,6 +4,8 @@
   background: var(--dl-color-theme-primary2, #E65103);
   color: #fff;
   padding: 60px 0 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .swift-footer__container {
@@ -194,43 +196,16 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
-.swift-footer__payment-card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.swift-footer__payment-methods img {
   width: 60px;
   height: 40px;
-  border-radius: 6px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.swift-footer__payment-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swift-footer__payment-logo {
-  position: relative;
-  z-index: 1;
-  max-width: 80%;
-  max-height: 80%;
   object-fit: contain;
-}
-
-.swift-footer__payment-extra {
-  width: 60px;
-  height: 40px;
-  object-fit: cover;
   border-radius: 6px;
+  background: #fff;
+  padding: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -304,6 +279,11 @@
   .swift-footer__payment-methods {
     gap: 12px;
   }
+
+  .swift-footer__payment-methods img {
+    width: 50px;
+    height: 32px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -356,13 +336,12 @@
   }
 
   .swift-footer__payment-methods {
-    gap: 10px;
+    gap: 8px;
   }
 
-  .swift-footer__payment-card,
-  .swift-footer__payment-extra {
-    width: 50px;
-    height: 32px;
+  .swift-footer__payment-methods img {
+    width: 45px;
+    height: 28px;
   }
 
   .swift-footer__copyright {

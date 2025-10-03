@@ -11,7 +11,19 @@
       <!-- Video Tips Card -->
       <article class="swift-tips-card swift-tips-card--video">
         <div class="swift-tips-card__image">
-          <div class="swift-tips-card__video-placeholder"></div>
+          <div class="swift-tips-card__video-container" id="video-container">
+            <!-- Thumbnail do YouTube -->
+            <div class="swift-tips-card__video-thumbnail" id="video-thumbnail">
+              <img src="https://img.youtube.com/vi/nK1RZQeY-vE/maxresdefault.jpg" alt="Vídeo de preparo de carne" class="swift-tips-card__thumbnail-img">
+            </div>
+            <!-- Iframe do YouTube (inicialmente oculto) -->
+            <iframe class="swift-tips-card__video-iframe" id="video-iframe" 
+                    src="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+          </div>
         </div>
         
         <div class="swift-tips-card__content">

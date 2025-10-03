@@ -1,7 +1,7 @@
 /* Featured Products Component - Versão Ultra Simplificada */
 .swift-featured-products {
   width: 100%;
-  padding: 60px 0;
+  padding: 60px 0 0 0;
   background-color: var(--swift-neutral-white);
 }
 
@@ -153,11 +153,66 @@
   display: block;
 }
 
+/* Quantity Controls */
+.swift-product-card__quantity-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  border-radius: var(--swift-radius-lg);
+  box-shadow: 0 4px 12px rgba(230, 81, 3, 0.3);
+}
+
+.swift-product-card__quantity-controls.show {
+  display: flex;
+}
+
+.swift-product-card__quantity-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.swift-product-card__quantity-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.swift-product-card__quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.swift-product-card__quantity-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /* View All Button */
 .swift-featured-products__actions {
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin: 48px 48px;
 }
 
 .swift-featured-products__view-all-btn {

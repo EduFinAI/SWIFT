@@ -1,0 +1,802 @@
+/* Region Modal Component */
+.region-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--swift-z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--swift-transition-normal), visibility var(--swift-transition-normal);
+}
+
+.region-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.region-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.region-modal__dialog {
+  position: relative;
+  z-index: 2;
+  background: var(--swift-neutral-white);
+  border-radius: 24px;
+  box-shadow: var(--swift-shadow-2xl);
+  width: 990px;
+  height: 814px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+  transform: scale(0.9) translateY(20px);
+  transition: transform var(--swift-transition-normal);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.region-modal.is-open .region-modal__dialog {
+  transform: scale(1) translateY(0);
+}
+
+.region-modal__close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--swift-primary-orange-dark);
+  color: var(--swift-text-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--swift-shadow-xl);
+  transition: all var(--swift-transition-fast);
+  z-index: 10;
+}
+
+.region-modal__close:hover,
+.region-modal__close:focus {
+  background: var(--swift-secondary-red);
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}
+
+.region-modal__close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Ensure close button is always visible */
+.region-modal__close {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.region-modal__content {
+  padding: 80px 100px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.region-modal__icon {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.region-modal__icon img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.region-modal__title {
+  font-family: var(--swift-font-display);
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--swift-text-primary);
+  margin: 0 0 32px;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+
+.region-modal__desc {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  color: var(--swift-text-secondary);
+  font-family: var(--swift-font-primary);
+  font-size: 20px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.region-modal__desc p {
+  margin: 0;
+}
+
+.region-modal__desc p + p {
+  margin-top: 4px;
+}
+
+.region-modal__actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 60px;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  flex-shrink: 0;
+}
+
+.region-modal__btn {
+  height: 56px;
+  width: 280px;
+  border-radius: 12px;
+  font-family: var(--swift-font-primary);
+  font-weight: 500;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--swift-transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.region-modal__btn--primary {
+  background: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+}
+
+.region-modal__btn--primary:hover,
+.region-modal__btn--primary:focus {
+  background: var(--swift-primary-orange-dark);
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}
+
+.region-modal__or {
+  color: var(--swift-text-secondary);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--swift-font-primary);
+  flex-shrink: 0;
+}
+
+.region-modal__cep-wrapper {
+  width: 280px;
+  position: relative;
+}
+
+.region-modal__cep {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  padding-right: 64px; /* Space for submit button */
+  border: 1px solid var(--swift-neutral-light);
+  border-radius: 12px;
+  font-family: var(--swift-font-body);
+  font-size: 18px;
+  color: var(--swift-text-primary);
+  background: var(--swift-neutral-white);
+  transition: border-color var(--swift-transition-fast);
+}
+
+.region-modal__cep::placeholder {
+  color: var(--swift-text-muted);
+}
+
+.region-modal__cep:focus {
+  outline: none;
+  border-color: var(--swift-primary-orange);
+  box-shadow: 0 0 0 2px rgba(229, 81, 37, 0.1);
+}
+
+.region-modal__cep-submit {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--swift-transition-fast);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) scale(0.8);
+}
+
+.region-modal__cep-submit.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) scale(1);
+}
+
+.region-modal__cep-submit:hover,
+.region-modal__cep-submit:focus {
+  background: var(--swift-primary-orange-dark);
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.region-modal__cep-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.region-modal__warning {
+  background: rgba(229, 81, 37, 0.05);
+  border: 1px solid rgba(229, 81, 37, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 50px;
+  text-align: left;
+  max-width: 700px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.region-modal__warning p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--swift-text-primary);
+}
+
+.region-modal__warning strong {
+  color: var(--swift-primary-orange);
+  font-weight: 700;
+}
+
+.region-modal__logo {
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.region-modal__logo img {
+  max-width: 140px;
+  height: auto;
+}
+
+/* Desktop Large */
+@media (max-width: 1400px) {
+  .region-modal__dialog {
+    width: 900px;
+    height: 750px;
+  }
+  
+  .region-modal__content {
+    padding: 50px 70px;
+  }
+  
+  .region-modal__title {
+    font-size: 48px;
+    margin-bottom: 28px;
+  }
+  
+  .region-modal__desc {
+    font-size: 18px;
+    margin-bottom: 50px;
+  }
+  
+  .region-modal__actions {
+    margin-bottom: 50px;
+    gap: 28px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 35px;
+  }
+}
+
+/* Desktop Medium */
+@media (max-width: 1200px) {
+  .region-modal__dialog {
+    width: 800px;
+    height: 700px;
+  }
+  
+  .region-modal__content {
+    padding: 40px 50px;
+  }
+  
+  .region-modal__title {
+    font-size: 42px;
+    margin-bottom: 24px;
+  }
+  
+  .region-modal__desc {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+  
+  .region-modal__actions {
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    width: 240px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 35px;
+    padding: 18px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 30px;
+  }
+}
+
+/* Desktop Small / Tablet Large */
+@media (max-width: 1024px) {
+  .region-modal__dialog {
+    width: calc(100vw - 60px);
+    height: calc(100vh - 60px);
+    max-width: 700px;
+    max-height: 600px;
+  }
+  
+  .region-modal__content {
+    padding: 30px 40px;
+    justify-content: space-between;
+  }
+  
+  .region-modal__title {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .region-modal__desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .region-modal__actions {
+    flex-direction: column;
+    gap: 16px;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .region-modal__or {
+    text-align: center;
+    order: -1;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 25px;
+    padding: 16px;
+  }
+  
+  .region-modal__warning p {
+    font-size: 14px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 25px;
+  }
+  
+  .region-modal__icon img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .region-modal__close {
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .region-modal__dialog {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 40px);
+    max-width: 600px;
+    max-height: 550px;
+  }
+  
+  .region-modal__content {
+    padding: 25px 30px;
+    justify-content: space-between;
+  }
+  
+  .region-modal__title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .region-modal__desc {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+  
+  .region-modal__actions {
+    gap: 14px;
+    margin-bottom: 25px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    max-width: 320px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 20px;
+    padding: 14px;
+  }
+  
+  .region-modal__warning p {
+    font-size: 13px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 20px;
+  }
+  
+  .region-modal__icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .region-modal__close {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+  }
+  
+  .region-modal__logo img {
+    max-width: 120px;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 640px) {
+  .region-modal__dialog {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    max-width: 500px;
+    border-radius: 16px;
+  }
+  
+  .region-modal__content {
+    padding: 20px 25px;
+    justify-content: space-between;
+  }
+  
+  .region-modal__title {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  
+  .region-modal__desc {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  .region-modal__actions {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    max-width: 100%;
+    height: 48px;
+  }
+  
+  .region-modal__btn {
+    font-size: 16px;
+  }
+  
+  .region-modal__cep {
+    font-size: 16px;
+    padding: 0 16px;
+    padding-right: 56px;
+  }
+  
+  .region-modal__cep-submit {
+    width: 32px;
+    height: 32px;
+    right: 8px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 16px;
+    padding: 12px;
+  }
+  
+  .region-modal__warning p {
+    font-size: 12px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 16px;
+  }
+  
+  .region-modal__icon img {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .region-modal__close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .region-modal__close svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .region-modal__logo img {
+    max-width: 100px;
+  }
+}
+
+/* Mobile Medium */
+@media (max-width: 480px) {
+  .region-modal__dialog {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 16px);
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  .region-modal__content {
+    padding: 16px 20px;
+    justify-content: space-between;
+  }
+  
+  .region-modal__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  
+  .region-modal__desc {
+    font-size: 13px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .region-modal__actions {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    height: 44px;
+  }
+  
+  .region-modal__btn {
+    font-size: 15px;
+  }
+  
+  .region-modal__cep {
+    font-size: 15px;
+    padding: 0 14px;
+    padding-right: 52px;
+  }
+  
+  .region-modal__cep-submit {
+    width: 30px;
+    height: 30px;
+    right: 7px;
+  }
+  
+  .region-modal__cep-submit svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+  
+  .region-modal__warning p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 12px;
+  }
+  
+  .region-modal__icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .region-modal__close {
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+  }
+  
+  .region-modal__close svg {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .region-modal__logo img {
+    max-width: 80px;
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 360px) {
+  .region-modal__dialog {
+    width: calc(100vw - 12px);
+    height: calc(100vh - 12px);
+    border-radius: 8px;
+  }
+  
+  .region-modal__content {
+    padding: 12px 16px;
+    justify-content: space-between;
+  }
+  
+  .region-modal__title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  
+  .region-modal__desc {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .region-modal__actions {
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  
+  .region-modal__btn,
+  .region-modal__cep-wrapper {
+    height: 40px;
+  }
+  
+  .region-modal__btn {
+    font-size: 14px;
+  }
+  
+  .region-modal__cep {
+    font-size: 14px;
+    padding: 0 12px;
+    padding-right: 48px;
+  }
+  
+  .region-modal__cep-submit {
+    width: 28px;
+    height: 28px;
+    right: 6px;
+  }
+  
+  .region-modal__warning {
+    margin-bottom: 10px;
+    padding: 8px;
+  }
+  
+  .region-modal__warning p {
+    font-size: 10px;
+  }
+  
+  .region-modal__icon {
+    margin-bottom: 10px;
+  }
+  
+  .region-modal__icon img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .region-modal__close {
+    top: 6px;
+    right: 6px;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .region-modal__close svg {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .region-modal__logo img {
+    max-width: 70px;
+  }
+}
+
+/* Focus trap and accessibility */
+.region-modal.is-open {
+  /* Prevent body scroll when modal is open */
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .region-modal__dialog {
+    border: 2px solid var(--swift-text-primary);
+  }
+  
+  .region-modal__btn--primary {
+    border: 2px solid var(--swift-primary-orange-dark);
+  }
+  
+  .region-modal__cep {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .region-modal,
+  .region-modal__dialog,
+  .region-modal__close,
+  .region-modal__btn,
+  .region-modal__cep {
+    transition: none;
+  }
+}

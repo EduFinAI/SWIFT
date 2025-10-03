@@ -62,20 +62,20 @@ app.use((err, req, res, next) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
-  console.log('🚀 Swift Website Server iniciado!');
-  console.log(`📱 Acesse: http://localhost:${PORT}`);
-  console.log(`🏥 Health check: http://localhost:${PORT}/health`);
-  console.log(`🌍 Ambiente: ${process.env.NODE_ENV || 'development'}`);
-  console.log('📁 Servindo arquivos de:', __dirname);
+  console.log('Swift Website Server iniciado!');
+  console.log(`Acesse: http://localhost:${PORT}`);
+  console.log(`Health check: http://localhost:${PORT}/health`);
+  console.log(`Ambiente: ${process.env.NODE_ENV || 'development'}`);
+  console.log('Servindo arquivos de:', __dirname);
 });
 
 // Graceful shutdown
 process.on('SIGTERM', () => {
-  console.log('🛑 Servidor sendo encerrado...');
+  console.log('Servidor sendo encerrado...');
   process.exit(0);
 });
 
 process.on('SIGINT', () => {
-  console.log('🛑 Servidor sendo encerrado...');
+  console.log('Servidor sendo encerrado...');
   process.exit(0);
 });

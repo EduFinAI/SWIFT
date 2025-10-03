@@ -12,7 +12,7 @@ class SwiftCarousel {
       prevSelector: '.swift-carousel__nav--prev, .swift-testimonials__nav--prev, .swift-best-sellers__nav--prev',
       nextSelector: '.swift-carousel__nav--next, .swift-testimonials__nav--next, .swift-best-sellers__nav--next',
       autoScroll: false,
-      autoScrollInterval: 5000,
+      autoScrollInterval: 8000, // Increased from 5s to 8s for better UX
       scrollAmount: 0.8,
       enableTouch: true,
       enableKeyboard: true,
@@ -322,7 +322,7 @@ class SwiftCarouselManager {
     testimonialsCarousels.forEach((element, index) => {
       const carousel = new SwiftCarousel(element, {
         autoScroll: true,
-        autoScrollInterval: 6000 // Slower for testimonials
+        autoScrollInterval: 10000 // 10 seconds for testimonials - users need more time to read
       });
       this.carousels.set(`testimonials-${index}`, carousel);
     });
@@ -332,7 +332,7 @@ class SwiftCarouselManager {
     bestSellersCarousels.forEach((element, index) => {
       const carousel = new SwiftCarousel(element, {
         autoScroll: true,
-        autoScrollInterval: 4000
+        autoScrollInterval: 7000 // 7 seconds for best sellers - balanced time for product viewing
       });
       this.carousels.set(`best-sellers-${index}`, carousel);
     });
@@ -341,7 +341,7 @@ class SwiftCarouselManager {
     const genericCarousels = document.querySelectorAll('[data-carousel]:not(.swift-testimonials__carousel):not(.swift-best-sellers__carousel)');
     genericCarousels.forEach((element, index) => {
       const autoScroll = element.dataset.autoScroll !== 'false'; // Default to true
-      const interval = parseInt(element.dataset.autoScrollInterval) || 5000;
+      const interval = parseInt(element.dataset.autoScrollInterval) || 8000; // Default increased to 8s
       
       const carousel = new SwiftCarousel(element, {
         autoScroll,

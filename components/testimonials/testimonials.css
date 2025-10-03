@@ -1,14 +1,15 @@
 /* Testimonials Component Styles */
 .swift-testimonials {
   width: 100%;
+  height: clamp(500px, 619px, 800px);
   padding: 80px 0;
   background-color: var(--swift-neutral-white, #FFFFFF) !important;
-  /* Debug: Teste da variável */
-  border: 2px solid var(--swift-primary-orange, red) !important;
+  background: var(--swift-neutral-white, #FFFFFF) !important;
 }
 
 .swift-testimonials__container {
   max-width: var(--dl-layout-size-maxwidth, 1400px);
+  height: clamp(500px, 619px, 800px);
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -37,6 +38,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
+  background-color: var(--swift-neutral-white, #FFFFFF) !important;
+  background: var(--swift-neutral-white, #FFFFFF) !important;
 }
 
 .swift-testimonials__track {
@@ -49,6 +52,8 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  background-color: var(--swift-neutral-white, #FFFFFF) !important;
+  background: var(--swift-neutral-white, #FFFFFF) !important;
 }
 
 .swift-testimonials__track::-webkit-scrollbar {
@@ -227,12 +232,36 @@
 }
 
 /* Responsive Design */
+@media (min-width: 1200px) {
+  .swift-testimonials {
+    height: clamp(700px, 8vw, 900px);
+    padding: 100px 0;
+  }
+
+  .swift-testimonials__container {
+    height: clamp(700px, 8vw, 900px);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .swift-testimonials {
+    height: clamp(619px, 6vw, 750px);
+    padding: 90px 0;
+  }
+
+  .swift-testimonials__container {
+    height: clamp(619px, 6vw, 750px);
+  }
+}
+
 @media (max-width: 768px) {
   .swift-testimonials {
+    height: clamp(500px, 80vh, 650px);
     padding: 60px 0;
   }
 
   .swift-testimonials__container {
+    height: clamp(500px, 80vh, 650px);
     padding: 0 20px;
   }
 
@@ -243,6 +272,8 @@
   .swift-testimonials__track {
     padding: 8px 40px;
     gap: 24px;
+    background-color: var(--swift-neutral-white, #FFFFFF) !important;
+  background: var(--swift-neutral-white, #FFFFFF) !important;
   }
 
   .swift-testimonial-card {
@@ -280,16 +311,20 @@
 
 @media (max-width: 480px) {
   .swift-testimonials {
+    height: clamp(450px, 75vh, 600px);
     padding: 48px 0;
   }
 
   .swift-testimonials__container {
+    height: clamp(450px, 75vh, 600px);
     padding: 0 16px;
   }
 
   .swift-testimonials__track {
     padding: 8px 20px;
     gap: 20px;
+    background-color: var(--swift-neutral-white, #FFFFFF) !important;
+  background: var(--swift-neutral-white, #FFFFFF) !important;
   }
 
   .swift-testimonial-card {

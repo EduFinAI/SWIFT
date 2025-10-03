@@ -18,7 +18,7 @@ class SwiftApp {
    */
   async init() {
     try {
-      console.log(`🚀 Swift App v${this.version} initializing...`);
+      console.log(`Swift App v${this.version} initializing...`);
       
       // Check if config is loaded
       if (!window.SwiftConfig) {
@@ -349,6 +349,42 @@ class SwiftApp {
    * Initialize cart functionality
    */
   initializeCart() {
+    // Initialize cart dropdown
+    const cartDropdown = document.getElementById('swift-cart-dropdown');
+    console.log('Cart dropdown element:', cartDropdown);
+    console.log('SwiftCartDropdown class:', window.SwiftCartDropdown);
+    console.log('swiftProductCart instance:', window.swiftProductCart);
+    
+    if (cartDropdown && window.SwiftCartDropdown) {
+      console.log('Initializing cart dropdown...');
+      const cartDropdownInstance = new SwiftCartDropdown(cartDropdown, {
+        onClearCart: () => {
+          console.log('Clear cart callback triggered');
+          if (window.swiftProductCart) {
+            console.log('Clearing cart via swiftProductCart');
+            window.swiftProductCart.clearCart();
+          } else {
+            console.error('swiftProductCart not found');
+          }
+        },
+        onCheckout: () => {
+          console.log('Checkout initiated');
+          // Add checkout logic here
+        },
+        onLogin: () => {
+          console.log('Login requested');
+          // Add login logic here
+        }
+      });
+      this.components.set('cartDropdown', cartDropdownInstance);
+      console.log('Cart dropdown initialized successfully');
+    } else {
+      console.error('Failed to initialize cart dropdown:', {
+        cartDropdown: !!cartDropdown,
+        SwiftCartDropdown: !!window.SwiftCartDropdown
+      });
+    }
+
     const addToCartButtons = document.querySelectorAll('[data-add-to-cart]');
     
     addToCartButtons.forEach(button => {
