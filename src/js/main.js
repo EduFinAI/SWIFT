@@ -347,4 +347,100 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (paymentRadios.length > 0) {
 		updatePaymentView();
 	}
+
+	// ==========================================================================
+	// LÓGICA DE PREENCHIMENTO AUTOMÁTICO DE ENDEREÇO VIA CEP
+	// ==========================================================================
+	const cepInput = document.getElementById('cep');
+
+	if (cepInput) {
+
+		const fetchAddress = async () => {
+			const cep = cepInput.value.replace(/\D/g, '');
+
+			const addressInput = document.getElementById('address');
+			const cityInput = document.getElementById('city');
+			const stateSelect = document.getElementById('state');
+			const numberInput = document.getElementById('number');
+
+			if (cep.length !== 8) {
+				return;
+			}
+
+			try {
+				const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+				const data = await response.json();
+
+				if (data.erro) {
+					alert('CEP não encontrado. Por favor, verifique o número digitado.');
+					addressInput.value = "";
+					cityInput.value = "";
+					stateSelect.value = "";
+				} else {
+					addressInput.value = data.logradouro;
+					cityInput.value = data.localidade;
+					stateSelect.value = data.uf;
+
+					numberInput.focus();
+				}
+			} catch (error) {
+				console.error('Erro ao buscar o CEP:', error);
+				alert('Não foi possível buscar o CEP. Verifique sua conexão.');
+			}
+		};
+
+		cepInput.addEventListener('blur', fetchAddress);
+	}
+
+	// ==========================================================================
+	// LÓGICA DO BOTÃO "PEGAR MINHA LOCALIZAÇÃO"
+	// ==========================================================================
+	const getLocationBtn = document.getElementById('btn-get-location');
+
+	if (getLocationBtn) {
+		const cepInput = document.getElementById('cep');
+
+		getLocationBtn.addEventListener('click', () => {
+			if (!navigator.geolocation) {
+				alert("Geolocalização não é suportada pelo seu navegador.");
+				return;
+			}
+
+			getLocationBtn.classList.add('loading');
+			getLocationBtn.disabled = true;
+
+			navigator.geolocation.getCurrentPosition(
+				async (position) => {
+					const { latitude, longitude } = position.coords;
+
+					try {
+						const response = await fetch(`https://brasilapi.com.br/api/cep/v2?latitude=${latitude}&longitude=${longitude}`);
+						const data = await response.json();
+
+						if (data && data.length > 0 && data[0].cep) {
+							cepInput.value = data[0].cep;
+							cepInput.dispatchEvent(new Event('blur'));
+						} else {
+							alert("Não foi possível encontrar um CEP para sua localização.");
+						}
+					} catch (error) {
+						alert("Erro ao converter a localização em CEP.");
+					} finally {
+						getLocationBtn.classList.remove('loading');
+						getLocationBtn.disabled = false;
+					}
+				},
+				(error) => {
+					let message = "Ocorreu um erro ao obter sua localização.";
+					if (error.code === error.PERMISSION_DENIED) {
+						message = "Você precisa permitir o acesso à localização no seu navegador para usar esta função.";
+					}
+					alert(message);
+
+					getLocationBtn.classList.remove('loading');
+					getLocationBtn.disabled = false;
+				}
+			);
+		});
+	}
 });

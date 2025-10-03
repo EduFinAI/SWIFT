@@ -1677,6 +1677,20 @@ textarea {
     transform: rotate(-180deg);
 }
 
+.checkout-block__header img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.summary-info img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* ESTILOS PARA VALIDAÇÃO DE FORMULÁRIO */
 .error-message {
     display: none;
@@ -1730,4 +1744,66 @@ textarea {
     background-color: #f0f0f0;
     border-color: #a0a0a0;
     color: var(--color-dark);
+}
+
+/* ==========================================================================
+   BOTÃO DE LOCALIZAÇÃO DO CEP
+   ========================================================================== */
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaço entre o input e o botão */
+}
+
+.input-with-button input {
+    flex-grow: 1; /* Faz o input ocupar o espaço disponível */
+}
+
+.location-btn {
+    flex-shrink: 0; /* Impede que o botão encolha */
+    width: 45px;
+    height: 45px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.location-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.location-btn .icon {
+    display: block;
+}
+
+/* --- Estado de Carregamento --- */
+
+.spinner {
+    display: none; /* Começa escondido */
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: var(--color-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.location-btn.loading .icon {
+    display: none; /* Esconde o ícone de localização */
+}
+
+.location-btn.loading .spinner {
+    display: block; /* Mostra o spinner */
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
