@@ -68,7 +68,7 @@
 
                 <section class="checkout-block" data-step="1">
                     <div class="checkout-block__header">
-                        <img src="./assets/icone-localizacao.svg" alt="">
+                        <img src="./assets/icone-checkout-entrega.png" alt="">
                         <h2>Dados de Entrega</h2>
                         <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -82,47 +82,86 @@
                         <form class="checkout-form">
                             <div class="form-group">
                                 <label for="fullname">Nome Completo</label>
-                                <input type="text" id="fullname" value="Fernanda Silva">
+                                <input type="text" id="fullname" placeholder="Digite seu nome completo">
                                 <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="phone">Telefone</label>
-                                <input type="tel" id="phone" value="(11) 99876-5432">
+                                <input type="tel" id="phone" placeholder="(11) 99999-9999">
                                 <span class="error-message"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail</label>
-                                <input type="email" id="email" value="maria.silva@email.com">
+                                <input type="email" id="email" placeholder="seuemail@exemplo.com">
                                 <span class="error-message"></span>
                             </div>
+
+                            <div class="form-group">
+                                <label for="cep">CEP</label>
+                                <input type="text" id="cep" placeholder="00000-000">
+                                <span class="error-message"></span>
+                            </div>
+
                             <div class="form-row">
                                 <div class="form-group form-group--grow">
                                     <label for="address">Endereço</label>
-                                    <input type="text" id="address" value="Rua, Avenida...">
+                                    <input type="text" id="address" placeholder="Rua, Avenida...">
                                     <span class="error-message"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="number">Número</label>
-                                    <input type="text" id="number" value="123" class="input-small">
+                                    <input type="text" id="number" placeholder="123" class="input-small">
                                     <span class="error-message"></span>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="complement">Complemento (Opcional)</label>
                                 <input type="text" id="complement" placeholder="Apartamento, bloco, etc.">
                             </div>
+
                             <div class="form-row">
                                 <div class="form-group form-group--grow">
                                     <label for="city">Cidade</label>
-                                    <input type="text" id="city" value="São Paulo">
+                                    <input type="text" id="city" placeholder="Sua cidade">
                                     <span class="error-message"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="cep">CEP</label>
-                                    <input type="text" id="cep" value="00000-000">
+                                    <label for="state">Estado</label>
+                                    <select id="state" class="form-select">
+                                        <option value="" disabled selected>UF</option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AP">AP</option>
+                                        <option value="AM">AM</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MT">MT</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MG">MG</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PR">PR</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SP">SP</option>
+                                        <option value="SE">SE</option>
+                                        <option value="TO">TO</option>
+                                    </select>
                                     <span class="error-message"></span>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="instructions">Instruções de Entrega (Opcional)</label>
                                 <textarea id="instructions" rows="3"
@@ -144,7 +183,7 @@
 
                 <section class="checkout-block is-collapsed" data-step="2">
                     <div class="checkout-block__header">
-                        <img src="./assets/icone-pagamento.svg" alt="">
+                        <img src="./assets/icone-checkout-pagamento.png" alt="">
                         <h2>Forma de Pagamento</h2>
                         <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -189,9 +228,7 @@
                                 <div class="form-group">
                                     <label for="card-installments">Parcelas</label>
                                     <select id="card-installments" class="form-select">
-                                        <option>1x de R$ 121,60 sem juros</option>
-                                        <option>2x de R$ 60,80 sem juros</option>
-                                        <option>3x de R$ 40,53 sem juros</option>
+                                        <option>1x de R$ 0,00 sem juros</option>
                                     </select>
                                 </div>
                             </div>
@@ -273,7 +310,7 @@
 
                 <section class="checkout-block is-collapsed" data-step="3">
                     <div class="checkout-block__header">
-                        <!-- <img src="./assets/icone-carrinho.png" alt=""> -->
+                        <img src="./assets/icone-checkout-resumo.png" alt="">
                         <h2>Resumo do Pedido</h2>
                         <button class="toggle-collapse-btn" aria-label="Mostrar/Esconder seção">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -285,35 +322,12 @@
                     </div>
                     <div class="checkout-block__body">
                         <ul class="summary-products">
-                            <li class="summary-product">
-                                <img src="./assets/produto-file-de-frango-thumb.png" alt="Filé de Frango">
-                                <div class="summary-product__info">
-                                    <span>Filé de Frango Premium</span>
-                                    <strong>R$ 49,80</strong>
-                                    <small>2x R$ 24,90</small>
-                                </div>
-                            </li>
-                            <li class="summary-product">
-                                <img src="./assets/produto-coracao-de-frango-thumb.png" alt="Coração de Frango">
-                                <div class="summary-product__info">
-                                    <span>Coração de Frango</span>
-                                    <strong>R$ 32,90</strong>
-                                    <small>1x R$ 32,90</small>
-                                </div>
-                            </li>
-                            <li class="summary-product">
-                                <img src="./assets/produto-asas-de-frango-thumb.png" alt="Asas de Frango">
-                                <div class="summary-product__info">
-                                    <span>Asas de Frango Temperadas</span>
-                                    <strong>R$ 38,90</strong>
-                                    <small>1x R$ 38,90</small>
-                                </div>
-                            </li>
+
                         </ul>
                         <div class="summary-totals">
                             <div class="total-row">
                                 <span>Subtotal</span>
-                                <span>R$ 121,60</span>
+                                <span>R$ 0,00</span>
                             </div>
                             <div class="total-row">
                                 <span>Frete</span>
@@ -321,7 +335,7 @@
                             </div>
                             <div class="total-row total-row--bold">
                                 <span>Total</span>
-                                <span>R$ 121,60</span>
+                                <span>R$ 0,00</span>
                             </div>
                         </div>
                         <div class="checkout-actions">
@@ -329,9 +343,9 @@
                             <button class="button--primary button--large">Finalizar Compra</button>
                         </div>
                         <ul class="summary-info">
-                            <li><img src="./assets/icone-check.svg" alt=""> Entrega em até 2 horas</li>
-                            <li><img src="./assets/icone-check.svg" alt=""> Pagamento 100% seguro</li>
-                            <li><img src="./assets/icone-check.svg" alt=""> Política de troca garantida</li>
+                            <li><img src="./assets/icone-info-entrega.png" alt=""> Entrega em até 2 horas</li>
+                            <li><img src="./assets/icone-info-seguranca.png" alt=""> Pagamento 100% seguro</li>
+                            <li><img src="./assets/icone-info-troca.png" alt=""> Política de troca garantida</li>
                         </ul>
                     </div>
                 </section>

@@ -1668,6 +1668,20 @@ textarea {
     transform: rotate(-180deg);
 }
 
+.checkout-block__header img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.summary-info img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 /* ESTILOS PARA VALIDAÇÃO DE FORMULÁRIO */
 .error-message {
     display: none;

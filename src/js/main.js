@@ -347,4 +347,48 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (paymentRadios.length > 0) {
 		updatePaymentView();
 	}
+
+	// ==========================================================================
+	// LÓGICA DE PREENCHIMENTO AUTOMÁTICO DE ENDEREÇO VIA CEP
+	// ==========================================================================
+	const cepInput = document.getElementById('cep');
+
+	if (cepInput) {
+
+		const fetchAddress = async () => {
+			const cep = cepInput.value.replace(/\D/g, '');
+
+			const addressInput = document.getElementById('address');
+			const cityInput = document.getElementById('city');
+			const stateSelect = document.getElementById('state');
+			const numberInput = document.getElementById('number');
+
+			if (cep.length !== 8) {
+				return;
+			}
+
+			try {
+				const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+				const data = await response.json();
+
+				if (data.erro) {
+					alert('CEP não encontrado. Por favor, verifique o número digitado.');
+					addressInput.value = "";
+					cityInput.value = "";
+					stateSelect.value = "";
+				} else {
+					addressInput.value = data.logradouro;
+					cityInput.value = data.localidade;
+					stateSelect.value = data.uf;
+
+					numberInput.focus();
+				}
+			} catch (error) {
+				console.error('Erro ao buscar o CEP:', error);
+				alert('Não foi possível buscar o CEP. Verifique sua conexão.');
+			}
+		};
+
+		cepInput.addEventListener('blur', fetchAddress);
+	}
 });
