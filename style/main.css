@@ -636,6 +636,15 @@ ul {
     flex-grow: 1;
 }
 
+.product-card__seal {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 100px;
+    height: auto;
+    z-index: 3;
+}
+
 .quantity-stepper {
     display: flex;
     border: 1px solid #ddd;
