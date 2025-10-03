@@ -391,4 +391,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		cepInput.addEventListener('blur', fetchAddress);
 	}
+
+	// ==========================================================================
+	// LÓGICA DO BOTÃO "PEGAR MINHA LOCALIZAÇÃO"
+	// ==========================================================================
+	const getLocationBtn = document.getElementById('btn-get-location');
+
+	if (getLocationBtn) {
+		const cepInput = document.getElementById('cep');
+
+		getLocationBtn.addEventListener('click', () => {
+			if (!navigator.geolocation) {
+				alert("Geolocalização não é suportada pelo seu navegador.");
+				return;
+			}
+
+			getLocationBtn.classList.add('loading');
+			getLocationBtn.disabled = true;
+
+			navigator.geolocation.getCurrentPosition(
+				async (position) => {
+					const { latitude, longitude } = position.coords;
+
+					try {
+						const response = await fetch(`https://brasilapi.com.br/api/cep/v2?latitude=${latitude}&longitude=${longitude}`);
+						const data = await response.json();
+
+						if (data && data.length > 0 && data[0].cep) {
+							cepInput.value = data[0].cep;
+							cepInput.dispatchEvent(new Event('blur'));
+						} else {
+							alert("Não foi possível encontrar um CEP para sua localização.");
+						}
+					} catch (error) {
+						alert("Erro ao converter a localização em CEP.");
+					} finally {
+						getLocationBtn.classList.remove('loading');
+						getLocationBtn.disabled = false;
+					}
+				},
+				(error) => {
+					let message = "Ocorreu um erro ao obter sua localização.";
+					if (error.code === error.PERMISSION_DENIED) {
+						message = "Você precisa permitir o acesso à localização no seu navegador para usar esta função.";
+					}
+					alert(message);
+
+					getLocationBtn.classList.remove('loading');
+					getLocationBtn.disabled = false;
+				}
+			);
+		});
+	}
 });
