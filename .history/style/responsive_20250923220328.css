@@ -1,0 +1,166 @@
+/* ===== ESTILOS RESPONSIVOS ===== */
+/* Este arquivo centraliza todas as media queries para facilitar a manutenção. */
+
+/* --- Layout do Header (Desktop-First) --- */
+/* Em telas maiores que 1366px, o header usa flexbox. Abaixo disso, muda para grid. */
+@media (width <= 1366px) {
+  .pginainicial-header {
+    display: grid !important;
+    justify-content: stretch;
+    align-items: center;
+    gap: var(--space-2) var(--space-4); /* 8px 16px */
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "logo icons" "nav nav" "search search";
+  }
+  .pginainicial-image1 { grid-area: logo; justify-self: start; }
+  .pginainicial-header-auth { display: flex; align-items: center; gap: var(--space-3); grid-area: icons; justify-self: end; }
+  .pginainicial-navigation-pill-list { justify-content: center; grid-area: nav; }
+  .pginainicial-search1 { width: 100%; max-width: 760px; margin-top: -6px; grid-area: search; justify-self: center; }
+}
+
+@media (width <= 1024px) {
+  .pginainicial-header {
+    padding: var(--space-5) var(--space-6); /* 20px 24px */
+    gap: var(--space-2) var(--space-3); /* 8px 12px */
+    /* A estrutura de grid é herdada de (width <= 1366px) */
+  }
+  .pginainicial-navigation-pill-list { flex-basis: 100%; justify-content: center; order: 3; }
+  .pginainicial-search1 { max-width: 680px; margin-top: -6px; flex: 1 1 480px; order: 2; }
+  .pginainicial-image1 { order: 1; }
+  .pginainicial-header-auth { margin-left: auto; order: 2; }
+}
+
+@media (width <= 768px) {
+  .pginainicial-header { padding: var(--space-4) var(--space-3); gap: var(--space-3); } /* 16px 12px */
+  .pginainicial-search1 { max-width: 100%; margin-top: -6px; flex-basis: 100%; }
+  .pginainicial-navigation-pill-list {
+    overflow-x: auto;
+    padding-bottom: 6px;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    order: 3;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pginainicial-header-auth { margin-left: auto; }
+}
+
+@media (width <= 480px) {
+  .pginainicial-header { gap: 10px; }
+  .pginainicial-user { width: 28px; height: 28px; }
+  .pginainicial-car { width: 26px; height: 26px; }
+}
+
+/* --- Navegação Principal (Pílulas) --- */
+/* Oculta progressivamente as pílulas de navegação para priorizar busca + ícones */
+@media (width <= 1200px) { .pginainicial-navigation-pill6 { display: none; } }
+@media (width <= 1100px) { .pginainicial-navigation-pill5 { display: none; } }
+@media (width <= 1000px) { .pginainicial-navigation-pill4 { display: none; } }
+@media (width <= 920px)  { .pginainicial-navigation-pill3 { display: none; } }
+@media (width <= 860px)  { .pginainicial-navigation-pill2 { display: none; } }
+@media (width <= 800px)  { .pginainicial-navigation-pill1 { display: none; } }
+
+/* --- Barra de Frete --- */
+@media (width <= 1366px) {
+  .pginainicial-text107 { font-size: 15px; }
+  .pginainicial-truck1 { height: 22px; }
+}
+@media (width <= 768px) {
+  .pginainicial-frete { height: auto; min-height: 48px; padding: var(--space-2) var(--space-3); } /* 8px 12px */
+  .pginainicial-text107 { max-width: min(90vw, 680px); font-size: 13.5px; }
+  .pginainicial-truck1 { height: 20px; display: inline-block !important; margin-right: var(--space-2); }
+  .pginainicial-text107 { display: inline-block; min-width: 0; max-width: 92vw; flex: 0 1 auto; }
+}
+@media (width <= 600px) {
+  .pginainicial-text107 { max-width: min(92vw, 520px); font-size: 13px; }
+}
+@media (width <= 480px) {
+  .pginainicial-frete { height: auto; min-height: 44px; padding: var(--space-2) var(--space-3); }
+  .pginainicial-text107 { max-width: calc(100vw - 24px); font-size: 12.5px; display: inline-block; min-width: 0; max-width: calc(100vw - 28px); flex: 0 1 auto; }
+  .pginainicial-truck1 { display: none; }
+}
+
+/* --- Seção Hero --- */
+/* Garante que todos os elementos do hero fiquem ancorados à ESQUERDA */
+.pginainicial-header22 .pginainicial-text114,
+.pginainicial-header22 .pginainicial-text110,
+.pginainicial-header22 .pginainicial-unnamed211,
+.pginainicial-header22 .pginainicial-retanguloentrega,
+.pginainicial-header22 .pginainicial-search2 {
+  right: auto !important;
+  left: var(--hero-left) !important;
+}
+
+/* Ajuste progressivo do foco da imagem do hero */
+@media (width >= 1400px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 52% center !important; }
+}
+@media (width <= 1366px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 58% center !important; }
+}
+@media (width <= 1200px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 65% center !important; }
+}
+@media (width <= 992px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 75% center !important; }
+}
+@media (width <= 768px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 85% center !important; }
+  .pginainicial-logo211 { top: 60px; left: 3px; }
+}
+@media (width <= 600px) {
+  .pginainicial-header22 { --hero-left: var(--space-4); } /* 16px */
+  .pginainicial-text114 { left: var(--hero-left) !important; max-width: calc(100vw - 32px); font-size: var(--font-size-5xl); } /* 48px */
+  .pginainicial-text110 { left: var(--hero-left) !important; max-width: calc(100vw - 32px); font-size: var(--font-size-base); } /* 14px */
+  .pginainicial-unnamed211 { left: var(--hero-left) !important; width: min(48vw, 260px); }
+  .pginainicial-retanguloentrega { left: var(--hero-left) !important; width: calc(100vw - 32px) !important; }
+  .pginainicial-search2 { left: var(--hero-left) !important; width: calc(100vw - 32px) !important; }
+  .pginainicial-button-danger10 { top: 395px; left: var(--hero-left) !important; }
+}
+@media (width <= 480px) {
+  .pginainicial-header22 .pginainicial-image10 > img,
+  .pginainicial-header22 .pginainicial-image10 .pginainicial-fundo1 { object-position: 90% center !important; }
+}
+
+/* --- Layout dos Cards de Produto --- */
+@media (width <= 1220px) {
+  .pginainicial-group2 .pginainicial-frame27 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6); /* 24px */
+    justify-content: center;
+  }
+}
+@media (width <= 768px) {
+  .pginainicial-group2 .pginainicial-frame27 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4); /* 16px */
+  }
+}
+@media (width <= 600px) {
+  .pginainicial-group2 .pginainicial-frame27 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* --- Layout da Seção "Escolha por Ocasião" --- */
+@media (width <= 1100px) {
+  .pginainicial-escolhas2 { height: auto !important; }
+  .pginainicial-escolhas2 .pginainicial-frame25 {
+    position: static !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100% !important;
+    column-gap: var(--space-8); /* 32px */
+    row-gap: var(--space-12); /* 48px */
+    padding: 0 var(--space-4);
+    box-sizing: border-box;
+  }
+}

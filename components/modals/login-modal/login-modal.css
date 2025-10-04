@@ -1,0 +1,503 @@
+/* Login Modal Component Styles - Consistent with Site Design */
+.swift-login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--swift-z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.swift-login-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.swift-login-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--swift-space-4);
+}
+
+.swift-login-modal__container {
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.swift-login-modal__content {
+  background: var(--swift-neutral-white);
+  border-radius: var(--swift-radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: swift-modal-slide-up 0.3s ease-out;
+  position: relative;
+}
+
+@keyframes swift-modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.swift-login-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: relative;
+  background: var(--swift-neutral-white);
+}
+
+.swift-login-modal__tabs {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+
+.swift-login-modal__tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 500;
+  color: var(--swift-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.swift-login-modal__tab:hover {
+  color: var(--swift-text-primary);
+  background-color: rgba(229, 81, 37, 0.05);
+}
+
+.swift-login-modal__tab--active {
+  background-color: rgba(229, 81, 37, 0.08);
+  color: var(--swift-primary-orange);
+  font-weight: 600;
+}
+
+/* Linha separadora */
+.swift-login-modal__tab:first-child::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 30px;
+  background-color: var(--swift-primary-orange);
+  opacity: 0.3;
+}
+
+.swift-login-modal__close {
+  position: absolute;
+  top: var(--swift-space-2);
+  right: var(--swift-space-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--swift-text-secondary);
+  padding: var(--swift-space-2);
+  border-radius: var(--swift-radius-sm);
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.swift-login-modal__close:hover {
+  color: var(--swift-text-primary);
+  background-color: #f8f8f8;
+}
+
+/* Modal Body */
+.swift-login-modal__body {
+  padding: var(--swift-space-6);
+}
+
+.swift-login-modal__form-container {
+  width: 100%;
+}
+
+.swift-login-modal__welcome {
+  text-align: center;
+  margin-bottom: var(--swift-space-6);
+}
+
+.swift-login-modal__title {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-xl);
+  font-weight: 700;
+  color: var(--swift-text-primary);
+  margin: 0 0 var(--swift-space-2) 0;
+}
+
+.swift-login-modal__logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto var(--swift-space-4);
+  display: block;
+}
+
+.swift-login-modal__subtitle {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-base);
+  color: var(--swift-text-secondary);
+  margin: 0;
+}
+
+/* Form Styles */
+.swift-login-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-4);
+}
+
+.swift-login-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-2);
+}
+
+.swift-login-modal__field-row {
+  display: flex;
+  gap: var(--swift-space-4);
+}
+
+.swift-login-modal__field-row .swift-login-modal__field {
+  flex: 1;
+}
+
+.swift-login-modal__label {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  font-weight: 700;
+  color: var(--swift-primary-orange);
+}
+
+.swift-login-modal__input {
+  background: var(--swift-neutral-light);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--swift-radius-md);
+  padding: var(--swift-space-3) var(--swift-space-4);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-base);
+  color: var(--swift-text-primary);
+  transition: all 0.2s ease;
+}
+
+.swift-login-modal__input:focus {
+  outline: none;
+  border-color: var(--swift-primary-orange);
+  background: var(--swift-neutral-white);
+  box-shadow: 0 0 0 3px rgba(229, 81, 37, 0.1);
+}
+
+.swift-login-modal__input::placeholder {
+  color: var(--swift-text-secondary);
+}
+
+/* Password Wrapper */
+.swift-login-modal__password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.swift-login-modal__password-wrapper .swift-login-modal__input {
+  padding-right: var(--swift-space-10);
+  width: 100%;
+}
+
+.swift-login-modal__password-toggle {
+  position: absolute;
+  right: var(--swift-space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--swift-text-secondary);
+  padding: var(--swift-space-1);
+  border-radius: var(--swift-radius-sm);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.swift-login-modal__password-toggle:hover {
+  color: var(--swift-text-primary);
+}
+
+.swift-login-modal__password-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Person Type Selection */
+.swift-login-modal__person-type {
+  display: flex;
+  justify-content: center;
+  gap: var(--swift-space-8);
+  margin-bottom: var(--swift-space-4);
+}
+
+.swift-login-modal__radio-option {
+  display: flex;
+  align-items: center;
+  gap: var(--swift-space-2);
+  cursor: pointer;
+}
+
+.swift-login-modal__radio-option input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--swift-primary-orange);
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+.swift-login-modal__radio-option input[type="radio"]::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: var(--swift-primary-orange);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.swift-login-modal__radio-option input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.swift-login-modal__radio-label {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 500;
+  color: var(--swift-text-primary);
+  cursor: pointer;
+}
+
+/* Checkboxes */
+.swift-login-modal__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-3);
+  margin: var(--swift-space-4) 0;
+}
+
+.swift-login-modal__checkbox-option {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--swift-space-2);
+  cursor: pointer;
+}
+
+.swift-login-modal__checkbox-option input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--swift-primary-orange);
+  border-radius: var(--swift-radius-sm);
+  cursor: pointer;
+  position: relative;
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.swift-login-modal__checkbox-option input[type="checkbox"]::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--swift-primary-orange);
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.swift-login-modal__checkbox-option input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.swift-login-modal__checkbox-label {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-sm);
+  color: var(--swift-text-secondary);
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.swift-login-modal__submit {
+  background-color: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+  border: 1px solid var(--swift-primary-orange);
+  border-radius: var(--swift-radius-md);
+  padding: var(--swift-space-4) var(--swift-space-8);
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-lg);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: center;
+  min-width: 200px;
+  margin-top: var(--swift-space-4);
+}
+
+.swift-login-modal__submit:hover {
+  background-color: var(--swift-primary-orange-dark);
+  border-color: var(--swift-primary-orange-dark);
+  transform: translateY(-1px);
+}
+
+/* Links */
+.swift-login-modal__links {
+  text-align: center;
+  margin-top: var(--swift-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--swift-space-3);
+}
+
+.swift-login-modal__link {
+  color: var(--swift-primary-orange);
+  text-decoration: none;
+  font-family: var(--swift-font-primary);
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+
+.swift-login-modal__link:hover {
+  text-decoration: underline;
+}
+
+.swift-login-modal__text {
+  font-family: var(--swift-font-primary);
+  color: var(--swift-text-secondary);
+  margin: 0;
+  font-size: var(--swift-text-sm);
+}
+
+.swift-login-modal__hint {
+  font-family: var(--swift-font-primary);
+  font-size: var(--swift-text-xs);
+  color: var(--swift-text-secondary);
+  margin: var(--swift-space-1) 0 0 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swift-login-modal__overlay {
+    padding: var(--swift-space-2);
+  }
+  
+  .swift-login-modal__header {
+    padding: 0;
+  }
+  
+  .swift-login-modal__tabs {
+    height: 50px;
+  }
+  
+  .swift-login-modal__tab {
+    font-size: var(--swift-text-base);
+  }
+  
+  .swift-login-modal__tab:first-child::after {
+    height: 25px;
+  }
+  
+  .swift-login-modal__body {
+    padding: var(--swift-space-4);
+  }
+  
+  .swift-login-modal__field-row {
+    flex-direction: column;
+    gap: var(--swift-space-3);
+  }
+  
+  .swift-login-modal__person-type {
+    gap: var(--swift-space-4);
+  }
+  
+  .swift-login-modal__logo {
+    width: 150px;
+  }
+  
+  .swift-login-modal__submit {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-login-modal__tabs {
+    height: 45px;
+  }
+  
+  .swift-login-modal__tab {
+    font-size: var(--swift-text-sm);
+  }
+  
+  .swift-login-modal__tab:first-child::after {
+    height: 20px;
+  }
+  
+  .swift-login-modal__person-type {
+    flex-direction: column;
+    gap: var(--swift-space-3);
+    align-items: center;
+  }
+}
+
+/* Focus states for accessibility */
+.swift-login-modal__tab:focus,
+.swift-login-modal__close:focus,
+.swift-login-modal__input:focus,
+.swift-login-modal__submit:focus,
+.swift-login-modal__link:focus {
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}

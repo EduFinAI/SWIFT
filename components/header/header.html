@@ -1,0 +1,139 @@
+<!-- Header Component -->
+<header class="swift-header" role="banner">
+  <div class="swift-header__container">
+    <!-- Logo -->
+    <div class="swift-header__logo">
+      <a href="#top">
+        <img
+          src="./assets/image11269-6k6r-200h.png"
+          alt="Logo da Swift"
+          class="swift-header__logo-img"
+        />
+      </a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="swift-header__nav" role="navigation">
+      <ul class="swift-nav__list">
+        <li class="swift-nav__item">
+          <a href="aves.html" class="swift-nav__link">Aves</a>
+        </li>
+        <li class="swift-nav__item">
+          <a href="bovinos.html" class="swift-nav__link">Bovinos</a>
+        </li>
+        <li class="swift-nav__item">
+          <a href="suinos.html" class="swift-nav__link">Suínos</a>
+        </li>
+        <li class="swift-nav__item">
+          <a href="#ocasioes" class="swift-nav__link">Ocasiões</a>
+        </li>
+        <li class="swift-nav__item">
+          <a href="#ofertas" class="swift-nav__link">Ofertas</a>
+        </li>
+        <li class="swift-nav__item swift-nav__item--dropdown">
+          <a href="#outros" class="swift-nav__link swift-nav__link--dropdown">
+            Outros
+            <svg class="swift-nav__dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
+              <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <ul class="swift-nav__dropdown">
+            <li class="swift-nav__dropdown-item">
+              <a href="#prontos-para-comer" class="swift-nav__dropdown-link">Prontos para Comer</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#bovinos" class="swift-nav__dropdown-link">Bovinos</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#aves" class="swift-nav__dropdown-link">Aves</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#peixaria" class="swift-nav__dropdown-link">Peixaria</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#suinos" class="swift-nav__dropdown-link">Suínos</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#churrasco" class="swift-nav__dropdown-link">Churrasco</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#linguicas" class="swift-nav__dropdown-link">Linguiças</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#cortes-especiais" class="swift-nav__dropdown-link">Cortes Especiais</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#frutas-vegetais" class="swift-nav__dropdown-link">Frutas e Vegetais</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#vegetal" class="swift-nav__dropdown-link">100% Vegetal</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#snacks" class="swift-nav__dropdown-link">Snacks</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#mercearia" class="swift-nav__dropdown-link">Mercearia</a>
+            </li>
+            <li class="swift-nav__dropdown-item">
+              <a href="#padaria" class="swift-nav__dropdown-link">Padaria</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <form class="swift-header__search" role="search" aria-label="Buscar produtos" action="#" method="get">
+      <div class="swift-search__container">
+        <img
+          src="./assets/x5714-hcj.svg"
+          alt=""
+          aria-hidden="true"
+          class="swift-search__icon"
+        />
+        <input 
+          type="search" 
+          class="swift-search__input" 
+          name="q" 
+          placeholder="Buscar produtos..." 
+        />
+      </div>
+    </form>
+
+    <!-- User Actions -->
+    <div class="swift-header__actions">
+      <!-- User Dropdown -->
+      <div class="swift-header__user-container">
+        <button class="swift-header__user-btn" aria-label="Conta do usuário" title="Fazer login ou cadastro">
+          <img
+            src="./assets/user5673-doah.svg"
+            alt=""
+            aria-hidden="true"
+            class="swift-header__user-icon"
+          />
+        </button>
+        <!-- User Dropdown Component -->
+        <div class="swift-user-dropdown" id="swift-user-dropdown">
+          <!-- Content will be loaded from component -->
+        </div>
+      </div>
+      
+      <!-- Cart Dropdown -->
+      <div class="swift-header__cart-container">
+        <button class="swift-header__cart-btn" aria-label="Abrir carrinho de compras">
+          <img
+            src="./assets/carrinho.png"
+            alt=""
+            aria-hidden="true"
+            class="swift-header__cart-icon"
+          />
+          <span class="swift-header__cart-count" id="swift-header__cart-count" style="display: none;">0</span>
+        </button>
+        <!-- Cart Dropdown Component -->
+        <div class="swift-cart-dropdown" id="swift-cart-dropdown">
+          <!-- Content will be loaded from component -->
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

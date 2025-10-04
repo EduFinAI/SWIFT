@@ -1,0 +1,72 @@
+<!-- User Dropdown Component -->
+<div class="swift-user-dropdown" id="swift-user-dropdown">
+  <!-- Dropdown Content -->
+  <div class="swift-user-dropdown__content">
+    <!-- Not Logged In State -->
+    <div class="swift-user-dropdown__guest" id="swift-user-dropdown__guest">
+      <div class="swift-user-dropdown__header">
+        <h3 class="swift-user-dropdown__title">Fazer login ou cadastro</h3>
+        <p class="swift-user-dropdown__subtitle">Entre para continuar sua compra</p>
+      </div>
+      
+      <div class="swift-user-dropdown__actions">
+        <button class="swift-user-dropdown__btn swift-user-dropdown__btn--login" data-action="login">
+          <span class="swift-user-dropdown__btn-text">Fazer Login</span>
+        </button>
+        <button class="swift-user-dropdown__btn swift-user-dropdown__btn--register" data-action="register">
+          <span class="swift-user-dropdown__btn-text">Cadastrar</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Logged In State -->
+    <div class="swift-user-dropdown__logged" id="swift-user-dropdown__logged" style="display: none;">
+      <div class="swift-user-dropdown__header">
+        <div class="swift-user-dropdown__user-info">
+          <div class="swift-user-dropdown__avatar">
+            <img src="./assets/user5673-doah.svg" alt="Avatar" class="swift-user-dropdown__avatar-img">
+          </div>
+          <div class="swift-user-dropdown__user-details">
+            <h3 class="swift-user-dropdown__user-name">Nome do Usuário</h3>
+            <p class="swift-user-dropdown__user-email">usuario@email.com</p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="swift-user-dropdown__nav">
+        <ul class="swift-user-dropdown__nav-list">
+          <li class="swift-user-dropdown__nav-item">
+            <a href="#perfil" class="swift-user-dropdown__nav-link">
+              <img src="./assets/user5673-doah.svg" alt="" class="swift-user-dropdown__nav-icon">
+              <span class="swift-user-dropdown__nav-text">Meu Perfil</span>
+            </a>
+          </li>
+          <li class="swift-user-dropdown__nav-item">
+            <a href="#pedidos" class="swift-user-dropdown__nav-link">
+              <img src="./assets/icone-carrinho.png" alt="" class="swift-user-dropdown__nav-icon">
+              <span class="swift-user-dropdown__nav-text">Meus Pedidos</span>
+            </a>
+          </li>
+          <li class="swift-user-dropdown__nav-item">
+            <a href="#seguranca" class="swift-user-dropdown__nav-link">
+              <img src="./assets/icone-busca.png" alt="" class="swift-user-dropdown__nav-icon">
+              <span class="swift-user-dropdown__nav-text">Segurança</span>
+            </a>
+          </li>
+          <li class="swift-user-dropdown__nav-item">
+            <a href="#pagamentos" class="swift-user-dropdown__nav-link">
+              <img src="./assets/payment_icon.png" alt="" class="swift-user-dropdown__nav-icon">
+              <span class="swift-user-dropdown__nav-text">Formas de Pagamento</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="swift-user-dropdown__footer">
+        <button class="swift-user-dropdown__btn swift-user-dropdown__btn--logout" data-action="logout">
+          <span class="swift-user-dropdown__btn-text">Sair</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,548 @@
+
+.swift-chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  font-family: var(--swift-font-primary);
+  transition: right 0.3s ease;
+}
+
+/* Quando o carrinho está aberto, move o chatbot para a esquerda */
+body.cart-open .swift-chatbot {
+  right: 424px; /* 400px (largura do carrinho) + 24px (margem) */
+}
+
+/* Chatbot Toggle Button */
+.swift-chatbot__toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(229, 81, 37, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swift-text-white);
+}
+
+.swift-chatbot__toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(229, 81, 37, 0.5);
+}
+
+.swift-chatbot__toggle:active {
+  transform: scale(0.95);
+}
+
+.swift-chatbot__toggle-icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.swift-chatbot__chat-icon,
+.swift-chatbot__close-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swift-chatbot__close-icon {
+  opacity: 0;
+}
+
+.swift-chatbot__toggle.active .swift-chatbot__chat-icon {
+  opacity: 0;
+}
+
+.swift-chatbot__toggle.active .swift-chatbot__close-icon {
+  opacity: 1;
+}
+
+/* Notification Badge */
+.swift-chatbot__notification {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  background: var(--swift-accent-red);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+.swift-chatbot__notification-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--swift-text-white);
+  border-radius: 50%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Chatbot Window */
+.swift-chatbot__window {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 380px;
+  height: 500px;
+  background: var(--swift-neutral-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--swift-neutral-light);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.swift-chatbot__window.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Chatbot Header */
+.swift-chatbot__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, var(--swift-primary-orange), var(--swift-primary-orange-dark));
+  border-radius: 16px 16px 0 0;
+  color: var(--swift-text-white);
+}
+
+.swift-chatbot__header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.swift-chatbot__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--swift-neutral-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swift-chatbot__avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swift-chatbot__header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.swift-chatbot__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.swift-chatbot__status {
+  font-size: 12px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.swift-chatbot__status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.swift-chatbot__minimize {
+  background: none;
+  border: none;
+  color: var(--swift-text-white);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.swift-chatbot__minimize:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Chatbot Messages */
+.swift-chatbot__messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.swift-chatbot__messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.swift-chatbot__messages::-webkit-scrollbar-track {
+  background: var(--swift-neutral-light);
+  border-radius: 2px;
+}
+
+.swift-chatbot__messages::-webkit-scrollbar-thumb {
+  background: var(--swift-primary-orange);
+  border-radius: 2px;
+}
+
+/* Message Styles */
+.swift-chatbot__message {
+  display: flex;
+  gap: 12px;
+  animation: messageSlideIn 0.3s ease;
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.swift-chatbot__message--bot {
+  align-items: flex-start;
+}
+
+.swift-chatbot__message--user {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+
+.swift-chatbot__message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--swift-neutral-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.swift-chatbot__message-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swift-chatbot__message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 70%;
+}
+
+.swift-chatbot__message--user .swift-chatbot__message-content {
+  align-items: flex-end;
+}
+
+.swift-chatbot__message-bubble {
+  padding: 12px 16px;
+  border-radius: 18px;
+  position: relative;
+}
+
+.swift-chatbot__message--bot .swift-chatbot__message-bubble {
+  background: var(--swift-neutral-light);
+  color: var(--swift-text-primary);
+  border-radius: 18px 18px 18px 4px;
+}
+
+.swift-chatbot__message--user .swift-chatbot__message-bubble {
+  background: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+  border-radius: 18px 18px 4px 18px;
+}
+
+.swift-chatbot__message-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.swift-chatbot__message-time {
+  font-size: 11px;
+  color: var(--swift-text-muted);
+  padding: 0 4px;
+}
+
+/* Quick Actions */
+.swift-chatbot__quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.swift-chatbot__quick-action {
+  background: var(--swift-neutral-white);
+  border: 1px solid var(--swift-neutral-light);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--swift-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.swift-chatbot__quick-action:hover {
+  background: var(--swift-primary-orange);
+  color: var(--swift-text-white);
+  border-color: var(--swift-primary-orange);
+  transform: translateY(-1px);
+}
+
+/* Chatbot Input */
+.swift-chatbot__input-container {
+  padding: 16px 20px;
+  border-top: 1px solid var(--swift-neutral-light);
+  background: var(--swift-neutral-white);
+  border-radius: 0 0 16px 16px;
+}
+
+.swift-chatbot__input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--swift-neutral-light);
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.swift-chatbot__input {
+  flex: 1;
+  border: none;
+  background: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: var(--swift-text-primary);
+  outline: none;
+  border-radius: 20px;
+}
+
+.swift-chatbot__input::placeholder {
+  color: var(--swift-text-muted);
+}
+
+.swift-chatbot__send {
+  width: 40px;
+  height: 40px;
+  background: var(--swift-primary-orange);
+  border: none;
+  border-radius: 50%;
+  color: var(--swift-text-white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.swift-chatbot__send:hover {
+  background: var(--swift-primary-orange-dark);
+  transform: scale(1.05);
+}
+
+.swift-chatbot__send:disabled {
+  background: var(--swift-neutral-light);
+  color: var(--swift-text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Typing Indicator */
+.swift-chatbot__typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  color: var(--swift-text-muted);
+  font-size: 12px;
+}
+
+.swift-chatbot__typing-dots {
+  display: flex;
+  gap: 2px;
+}
+
+.swift-chatbot__typing-dots span {
+  width: 6px;
+  height: 6px;
+  background: var(--swift-primary-orange);
+  border-radius: 50%;
+  animation: typingDot 1.4s infinite ease-in-out;
+}
+
+.swift-chatbot__typing-dots span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.swift-chatbot__typing-dots span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typingDot {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .swift-chatbot {
+    bottom: 16px;
+    right: 16px;
+  }
+  
+  /* No mobile, o carrinho ocupa toda a tela, então não precisa mover o chatbot */
+  body.cart-open .swift-chatbot {
+    right: 16px;
+  }
+  
+  .swift-chatbot__window {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 120px);
+    max-height: 500px;
+    bottom: 80px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+  
+  .swift-chatbot__toggle {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .swift-chatbot__toggle-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .swift-chatbot__window {
+    width: calc(100vw - 16px);
+    height: calc(100vh - 100px);
+    bottom: 70px;
+  }
+  
+  /* No mobile pequeno, o carrinho ocupa toda a tela, então não precisa mover o chatbot */
+  body.cart-open .swift-chatbot {
+    right: 16px;
+  }
+  
+  .swift-chatbot__toggle {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .swift-chatbot__messages {
+    padding: 16px;
+  }
+  
+  .swift-chatbot__input-container {
+    padding: 12px 16px;
+  }
+}
+
+/* Animation Classes */
+.swift-chatbot__message--new {
+  animation: messageSlideIn 0.3s ease;
+}
+
+.swift-chatbot__window--minimized {
+  height: 60px;
+  overflow: hidden;
+}
+
+.swift-chatbot__window--minimized .swift-chatbot__messages,
+.swift-chatbot__window--minimized .swift-chatbot__input-container {
+  display: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .swift-chatbot__toggle,
+  .swift-chatbot__window,
+  .swift-chatbot__message,
+  .swift-chatbot__typing-dots span {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Focus States */
+.swift-chatbot__toggle:focus,
+.swift-chatbot__send:focus,
+.swift-chatbot__input:focus {
+  outline: 2px solid var(--swift-primary-orange);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .swift-chatbot__window {
+    border: 2px solid var(--swift-text-primary);
+  }
+  
+  .swift-chatbot__message-bubble {
+    border: 1px solid var(--swift-text-primary);
+  }
+}

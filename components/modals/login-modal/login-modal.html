@@ -1,0 +1,240 @@
+<!-- Login Modal Component -->
+<div class="swift-login-modal" id="swift-login-modal">
+  <div class="swift-login-modal__overlay">
+    <div class="swift-login-modal__container">
+      <div class="swift-login-modal__content">
+        <!-- Modal Header -->
+        <header class="swift-login-modal__header">
+          <div class="swift-login-modal__tabs">
+            <button class="swift-login-modal__tab swift-login-modal__tab--active" data-tab="login">
+              <span class="swift-login-modal__tab-text">Login</span>
+            </button>
+            <button class="swift-login-modal__tab" data-tab="register">
+              <span class="swift-login-modal__tab-text">Cadastro</span>
+            </button>
+          </div>
+          <button class="swift-login-modal__close" aria-label="Fechar modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="15" y1="9" x2="9" y2="15"></line>
+              <line x1="9" y1="9" x2="15" y2="15"></line>
+            </svg>
+          </button>
+        </header>
+
+        <!-- Modal Body -->
+        <main class="swift-login-modal__body">
+          <!-- Login Form -->
+          <div class="swift-login-modal__form-container" id="swift-login-form-container">
+            <div class="swift-login-modal__welcome">
+              <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-login-modal__logo">
+              <p class="swift-login-modal__subtitle">Entre com seu e-mail e senha:</p>
+            </div>
+
+            <form class="swift-login-modal__form" id="swift-login-form">
+              <div class="swift-login-modal__field">
+                <label for="login-email" class="swift-login-modal__label">E-mail</label>
+                <input 
+                  type="email" 
+                  id="login-email" 
+                  name="email" 
+                  class="swift-login-modal__input" 
+                  placeholder="seuemail@dominio.com" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="login-password" class="swift-login-modal__label">Senha</label>
+                <div class="swift-login-modal__password-wrapper">
+                  <input 
+                    type="password" 
+                    id="login-password" 
+                    name="password" 
+                    class="swift-login-modal__input" 
+                    placeholder="Digite sua senha" 
+                    required
+                  >
+                  <button type="button" class="swift-login-modal__password-toggle" id="login-password-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="swift-login-modal__submit">
+                <span class="swift-login-modal__submit-text">Entrar</span>
+              </button>
+
+              <div class="swift-login-modal__links">
+                <a href="#" class="swift-login-modal__link">Esqueci minha senha.</a>
+                <p class="swift-login-modal__text">
+                  Não tem conta? 
+                  <button type="button" class="swift-login-modal__link" data-action="switch-to-register">
+                    Cadastre-se agora mesmo!
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <!-- Register Form -->
+          <div class="swift-login-modal__form-container" id="swift-register-form-container" style="display: none;">
+            <div class="swift-login-modal__welcome">
+              <h1 class="swift-login-modal__title">Bem-vindo(a) a</h1>
+              <img src="./assets/unnamed214135-zlqw-200h.png" alt="Swift Logo" class="swift-login-modal__logo">
+            </div>
+
+            <form class="swift-login-modal__form" id="swift-register-form">
+              <div class="swift-login-modal__person-type">
+                <div class="swift-login-modal__radio-option">
+                  <input type="radio" id="pessoa-fisica" name="tipo_pessoa" value="fisica" checked>
+                  <label for="pessoa-fisica" class="swift-login-modal__radio-label">Pessoa Física</label>
+                </div>
+                <div class="swift-login-modal__radio-option">
+                  <input type="radio" id="pessoa-juridica" name="tipo_pessoa" value="juridica">
+                  <label for="pessoa-juridica" class="swift-login-modal__radio-label">Pessoa Jurídica</label>
+                </div>
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-email" class="swift-login-modal__label">E-mail</label>
+                <input 
+                  type="email" 
+                  id="register-email" 
+                  name="email" 
+                  class="swift-login-modal__input" 
+                  placeholder="seuemail@dominio.com" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-first-name" class="swift-login-modal__label">Primeiro nome *</label>
+                <input 
+                  type="text" 
+                  id="register-first-name" 
+                  name="first_name" 
+                  class="swift-login-modal__input" 
+                  placeholder="Digite seu primeiro nome" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-last-name" class="swift-login-modal__label">Último Nome *</label>
+                <input 
+                  type="text" 
+                  id="register-last-name" 
+                  name="last_name" 
+                  class="swift-login-modal__input" 
+                  placeholder="Digite seu último nome" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-cpf" class="swift-login-modal__label">CPF *</label>
+                <input 
+                  type="text" 
+                  id="register-cpf" 
+                  name="cpf" 
+                  class="swift-login-modal__input" 
+                  placeholder="000.000.000-00" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__field-row">
+                <div class="swift-login-modal__field">
+                  <label for="register-phone" class="swift-login-modal__label">Telefone celular *</label>
+                  <input 
+                    type="tel" 
+                    id="register-phone" 
+                    name="phone" 
+                    class="swift-login-modal__input" 
+                    placeholder="(11) 99999-9999" 
+                    required
+                  >
+                </div>
+                <div class="swift-login-modal__field">
+                  <label for="register-birthdate" class="swift-login-modal__label">Data de Nascimento</label>
+                  <input 
+                    type="date" 
+                    id="register-birthdate" 
+                    name="birthdate" 
+                    class="swift-login-modal__input" 
+                    required
+                  >
+                </div>
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-password" class="swift-login-modal__label">Cadastre uma Senha *</label>
+                <input 
+                  type="password" 
+                  id="register-password" 
+                  name="password" 
+                  class="swift-login-modal__input" 
+                  placeholder="Crie uma senha forte" 
+                  required
+                >
+                <p class="swift-login-modal__hint">
+                  A senha deve conter 8+ caracteres, incluindo 1 número, 1 maiúscula, 1 minúscula e 1 caractere especial.
+                </p>
+              </div>
+
+              <div class="swift-login-modal__field">
+                <label for="register-confirm-password" class="swift-login-modal__label">Repetir Senha *</label>
+                <input 
+                  type="password" 
+                  id="register-confirm-password" 
+                  name="confirm_password" 
+                  class="swift-login-modal__input" 
+                  placeholder="Repita a senha criada" 
+                  required
+                >
+              </div>
+
+              <div class="swift-login-modal__checkboxes">
+                <div class="swift-login-modal__checkbox-option">
+                  <input type="checkbox" id="privacy-policy" name="privacy_policy" required>
+                  <label for="privacy-policy" class="swift-login-modal__checkbox-label">
+                    Li e aceito a <a href="#" class="swift-login-modal__link">Política de privacidade</a>
+                  </label>
+                </div>
+                <div class="swift-login-modal__checkbox-option">
+                  <input type="checkbox" id="socio-program" name="socio_program">
+                  <label for="socio-program" class="swift-login-modal__checkbox-label">
+                    Aceito participar do programa <a href="#" class="swift-login-modal__link">Sócio Swift</a>
+                  </label>
+                </div>
+                <div class="swift-login-modal__checkbox-option">
+                  <input type="checkbox" id="communications" name="communications">
+                  <label for="communications" class="swift-login-modal__checkbox-label">
+                    Quero receber comunicações da Swift
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="swift-login-modal__submit">
+                <span class="swift-login-modal__submit-text">Cadastrar</span>
+              </button>
+
+              <div class="swift-login-modal__links">
+                <p class="swift-login-modal__text">
+                  Já tem conta? 
+                  <button type="button" class="swift-login-modal__link" data-action="switch-to-login">
+                    Faça login.
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</div>
